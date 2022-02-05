@@ -24,6 +24,8 @@ Esta aplicación pemitirá a los usuarios comprar artículos relacionados con te
 
 ### Trello
 
+* Invitación: https://trello.com/invite/b/T0BwXzKT/1f6016fb6f696502b1e98b5d46096517/practicadaw8
+* Tablero: https://trello.com/b/T0BwXzKT/practicadaw8
 
 ### Entidades
 

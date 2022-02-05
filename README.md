@@ -9,7 +9,7 @@
 
 ### Descripción
 
-
+Esta aplicación pemitirá a los usuarios comprar artículos relacionados con tecnología así como ordenadores, cables, placas base, etc. todo dentro de la legalidad vigente.
 
 ### Equipo de desarrollo
 
@@ -46,6 +46,8 @@ Distinguimos entre 3 tipos de usuario: usuarios no registrados, clientes y admin
 * Cuando un administrador ponga un producto a la venta, este tendrá que venir acompañado de una imagen.
 
 ### Tecnología complementaria
+
+* A la hora de comprar un producto, podremos ver la localización de la tienda en la que se encuentra para que así el cliente decida si va a recogerlo o si por el contrario decide pagar los gastos de envío necesarios y recibirlo en casa.
 
 ### Algoritmo o consulta avanzada
 

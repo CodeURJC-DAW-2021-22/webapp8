@@ -43,7 +43,7 @@ Distinguimos entre 3 tipos de usuario: usuarios no registrados, clientes y admin
 ### Imágenes
 
 * Los usuarios registrados podrán establecer una imagen de perfil.
-* Cuando un administrador ponga un producto a la venta, este tendrá que venir acompañado de una imágen.
+* Cuando un administrador ponga un producto a la venta, este tendrá que venir acompañado de una imagen.
 
 ### Tecnología complementaria
 

@@ -2,7 +2,9 @@
 # Fase 0
 
 ### Nombre de la aplicación web
-
+(posibleS nombreS)
+SPC 
+MPCS (Market PC Software) por ejemplo ;) 
 
 
 

@@ -51,4 +51,4 @@ Distinguimos entre 3 tipos de usuario: usuarios no registrados, clientes y admin
 
 ### Algoritmo o consulta avanzada
 
-* En función de los productos que un cliente haya comprado con anterioridad, se mostrará un listado de "artículos de interés" relacionado con sus compras previas
+* En función de los productos que un cliente haya comprado con anterioridad, se mostrará un listado de "artículos de interés" relacionado con sus compras previas.

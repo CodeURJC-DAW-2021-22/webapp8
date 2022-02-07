@@ -3,9 +3,6 @@
 
 ### Nombre de la aplicación web
 
-(posibles nombres)
-* SPC (Software Personal Computing)
-* MPCS (Market PC Software) (My Personal Computer Software)
 * W&T (Web And Tech)
 
 ### Descripción

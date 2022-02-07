@@ -2,12 +2,10 @@
 # Fase 0
 
 ### Nombre de la aplicación web
-(posibleS nombreS)
-SPC 
-MPCS (Market PC Software) por ejemplo ;) 
 
-
-
+(posibles nombres)
+* SPC (Software Personal Computing)
+* MPCS (Market PC Software) (My Personal Computer Software)
 
 ### Descripción
 

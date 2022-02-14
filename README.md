@@ -112,4 +112,5 @@ AdminGráficas- En esta pantalla permite a los administradores observar las graf
 ![image](https://user-images.githubusercontent.com/80537884/153846628-287f67f2-165a-44c4-9929-4b2457135401.png)
 
 ### Diagrama de navegación
-!FOTO
+![FLUJO](https://user-images.githubusercontent.com/80537884/153850231-3d189c84-0f30-49a8-b0dd-8b3e0dbdc4da.png)
+

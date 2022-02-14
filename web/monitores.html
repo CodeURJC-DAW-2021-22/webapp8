@@ -1,14 +1,8 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html>
-<head>
-<title>Smart Shop a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Mens :: w3layouts</title>
-<!-- for-mobile-apps -->
+	<head>
+		<title>W&T</title>
+		<!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Smart Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -17,11 +11,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <!-- //js -->
+<!-- single -->
+<script src="js/imagezoom.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<!-- single -->
 <!-- cart -->
 	<script src="js/simpleCart.min.js"></script>
 <!-- cart -->
@@ -33,31 +31,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.easing.min.js"></script>
 </head>
 <body>
-<!-- header -->
-<div class="header">
-	<div class="container">
-		<ul>
-			<li><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Free and Fast Delivery</li>
-			<li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Free shipping On all orders</li>
-			<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com">info@example.com</a></li>
-		</ul>
+	<!-- header -->
+	<div class="header">
+		<div class="container">
+			<ul>
+				<li><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Entrega gratuita y rápida</li>
+				<li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Envío gratis en todos los
+					pedidos</li>
+				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a
+						href="mailto:info@example.com">info@w&t.com</a></li>
+			</ul>
+		</div>
 	</div>
-</div>
-<!-- //header -->
+	<!-- //header -->
 <!-- header-bot -->
 <div class="header-bot">
 	<div class="container">
 		<div class="col-md-3 header-left">
-			<h1><a href="index.html"><img src="images/logo3.jpg"></a></h1>
+			<h1><a href="index.html"><img src="images/logo.jpg"></a></h1>
 		</div>
 		<div class="col-md-6 header-middle">
 			<form>
 				<div class="search">
-					<input type="search" value="Buscar" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
+					<input type="search" value="Buscar" onfocus="this.value = '';"
+						onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
 				</div>
 				<div class="section_room">
 					<select id="country" onchange="change_country(this.value)" class="frm-field required">
-						<option value="null">Todo</option>    
+						<option value="null">Todo</option>
 						<option value="AX">Componentes</option>
 						<option value="AX">Periféricos</option>
 						<option value="AX">Teléfonos</option>
@@ -70,15 +71,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</form>
 		</div>
 		<div class="col-md-3 header-right footer-bottom">
-			
+
 			<ul>
 				<li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a>
-					
+
 				</li>
-				<li><a class="fb" href="#"></a></li>
-				<li><a class="twi" href="#"></a></li>
-				<li><a class="insta" href="#"></a></li>
-				<li><a class="you" href="#"></a></li>
+				<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
+				<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
+				<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
+				<li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
 			</ul>
 		</div>
 		<div class="clearfix"></div>
@@ -90,78 +91,90 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="top_nav_left">
 			<nav class="navbar navbar-default">
-			  <div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav menu__list">
+							<li class="active menu__item menu__item--current"><a class="menu__link"
+									href="index.html">Inicio <span class="sr-only">(current)</span></a></li>
+							<li class="dropdown menu__item">
+								<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
+									aria-haspopup="true" aria-expanded="false">COMPONENTES<span
+										class="caret"></span></a>
+								<ul class="dropdown-menu multi-column columns-3">
+									<div class="row">
+										<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
+											<a href="componentes.html"><img src="images/componentes.jpg"
+													alt=" " /></a>
+										</div>
+										<div class="col-sm-3 multi-gd-img">
+											<ul class="multi-column-dropdown">
+												<li><a href="placasbase.html">Placas Bases</a></li>
+												<li><a href="procesadores.html">Procesador</a></li>
+												<li><a href="discosduros.html">Discos Duros</a></li>
+												<li><a href="tarjetasgraficas.html">Tarjetas Gráficas</a></li>
+											</ul>
+										</div>
+
+										<div class="clearfix"></div>
+									</div>
+								</ul>
+							</li>
+							<li class="dropdown menu__item">
+								<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
+									aria-haspopup="true" aria-expanded="false">Periféricos <span
+										class="caret"></span></a>
+								<ul class="dropdown-menu multi-column columns-3">
+									<div class="row">
+										<div class="col-sm-3 multi-gd-img">
+											<ul class="multi-column-dropdown">
+												<li><a href="teclados.html">Teclados</a></li>
+												<li><a href="ratones.html">Ratones</a></li>
+												<li><a href="monitores.html">Monitores</a></li>
+												<li><a href="auriculares.html">Auriculares</a></li>
+											</ul>
+										</div>
+										<div class="col-sm-6 multi-gd-img multi-gd-text ">
+											<a href="perifericos.html"><img src="images/perifericos.jpg"
+													alt=" " /></a>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</ul>
+							</li>
+							<li class=" menu__item"><a class="menu__link" href="electronics.html">Teléfonos</a></li>
+							<li class=" menu__item"><a class="menu__link" href="codes.html">Administrador</a></li>
+							<li class=" menu__item"><a class="menu__link" href="contact.html">Contacto</a></li>
+						</ul>
+					</div>
 				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
-				  <ul class="nav navbar-nav menu__list">
-					<li class="active menu__item menu__item--current"><a class="menu__link" href="index.html">Inicio <span class="sr-only">(current)</span></a></li>
-					<li class="dropdown menu__item">
-						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">COMPONENTES<span class="caret"></span></a>
-							<ul class="dropdown-menu multi-column columns-3">
-								<div class="row">
-									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-										<a href="componentes.html"><img src="images/componentes.jpg" alt=" "/></a>
-									</div>
-									<div class="col-sm-3 multi-gd-img">
-										<ul class="multi-column-dropdown">
-											<li><a href="componentes.html">Placas Bases</a></li>
-											<li><a href="componentes.html">Procesador</a></li>
-											<li><a href="componentes.html">Discos Duros</a></li>
-											<li><a href="componentes.html">Tarjetas Gráficas</a></li>
-										</ul>
-									</div>
-								
-									<div class="clearfix"></div>
-								</div>
-							</ul>
-					</li>
-					<li class="dropdown menu__item">
-						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Periféricos <span class="caret"></span></a>
-							<ul class="dropdown-menu multi-column columns-3">
-								<div class="row">
-									<div class="col-sm-3 multi-gd-img">
-										<ul class="multi-column-dropdown">
-											<li><a href="perifericos.html">Teclados</a></li>
-											<li><a href="perifericos.html">Ratones</a></li>
-											<li><a href="perifericos.html">Pantallas</a></li>
-										</ul>
-									</div>
-									<div class="col-sm-6 multi-gd-img multi-gd-text ">
-										<a href="perifericos.html"><img src="images/perifericos.jpg" alt=" "/></a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</ul>
-					</li>
-					<li class=" menu__item"><a class="menu__link" href="electronics.html">Teléfonos</a></li>
-					<li class=" menu__item"><a class="menu__link" href="codes.html">Short Codes</a></li>
-					<li class=" menu__item"><a class="menu__link" href="contact.html">Contacto</a></li>
-				  </ul>
-				</div>
-			  </div>
-			</nav>	
+			</nav>
 		</div>
 		<div class="top_nav_right">
 			<div class="cart box_1">
-						<a href="checkout.html">
-							<h3> <div class="total">
-								<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
-								<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-								
-							</h3>
-						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Carro vacío</a></p>
-						
-			</div>	
+				<a href="checkout.html">
+					<h3>
+						<div class="total">
+							<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
+							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity"
+								class="simpleCart_quantity"></span> items)
+						</div>
+
+					</h3>
+				</a>
+				<p><a href="javascript:;" class="simpleCart_empty">Carro vacío</a></p>
+
+			</div>
 		</div>
 		<div class="clearfix"></div>
 	</div>
@@ -471,16 +484,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="footer">
 	<div class="container">
 		<div class="col-md-3 footer-left">
-			<h2><a href="index.html"><img src="images/logo3.jpg" alt=" " /></a></h2>
-			<p>Nuestra tienda se compromete a traer siempre lo más nuevo en tecnología a precios excelentes y con seguridad y garantía de que el producto llega a salvo a su casa.</p>
+			<h2><a href="index.html"><img src="images/logo.jpg" alt=" " /></a></h2>
+			<p>Nuestra tienda se compromete a traer siempre lo más nuevo en tecnología a precios excelentes y
+				con seguridad y garantía de que el producto llega a salvo a su casa.</p>
 		</div>
 		<div class="col-md-9 footer-right">
 			<div class="col-sm-6 newsleft">
-				<h3>REGISTRESÉ PARA RECIBIR OFERTAS !</h3>
+				<h3>REGÍSTRESE PARA RECIBIR OFERTAS !</h3>
 			</div>
 			<div class="col-sm-6 newsright">
 				<form>
-					<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+					<input type="text" value="Email" onfocus="this.value = '';"
+						onblur="if (this.value == '') {this.value = 'Email';}" required="">
 					<input type="submit" value="Submit">
 				</form>
 			</div>
@@ -490,41 +505,53 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h4>Información</h4>
 					<ul>
 						<li><a href="index.html">Inicio</a></li>
-						<li><a href="mens.html">Componentes</a></li>
-						<li><a href="womens.html">Periféricos</a></li>
+						<li><a href="componentes.html">Componentes</a></li>
+						<li><a href="perifericos.html">Periféricos</a></li>
 						<li><a href="electronics.html">Teléfonos</a></li>
-						<li><a href="codes.html">Short Codes</a></li>
 						<li><a href="contact.html">Contactos</a></li>
 					</ul>
 				</div>
-				
+
 				<div class="col-md-4 sign-gd-two">
 					<h4>Infomación de la tienda</h4>
 					<ul>
-						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : 1234k Avenue, 4th block, <span>Newyork City.</span></li>
-						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:info@example.com">info@example.com</a></li>
-						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +1234 567 567</li>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Dirección: Avenida
+							de Carlos, s/n <span>Madrid</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a
+								href="mailto:info@example.com">info@w&t.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +1234 567 567
+						</li>
 					</ul>
 				</div>
 				<div class="col-md-4 sign-gd flickr-post">
 					<h4>Publicaciones</h4>
 					<ul>
-						<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b17.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b18.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b17.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b18.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b15.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b16.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b17.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b18.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b15.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b16.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b17.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b18.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b15.jpg" alt=" "
+									class="img-responsive" /></a></li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
 		<div class="clearfix"></div>
-		<p class="copy-right">&copy 2016 Smart Shop. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+		<p class="copy-right">&copy 2022 W&T. Todos los derechos reservdos | Design by <a href="http://urjc.es/"
+				target="_blank">Alumnos de la URJC</a></p>
 	</div>
 </div>
 <!-- //footer -->

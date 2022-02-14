@@ -53,16 +53,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="col-md-6 header-middle">
 			<form>
 				<div class="search">
-					<input type="search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required="">
+					<input type="search" value="Buscar" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
 				</div>
 				<div class="section_room">
 					<select id="country" onchange="change_country(this.value)" class="frm-field required">
-						<option value="null">All categories</option>
-						<option value="null">Electronics</option>     
-						<option value="AX">kids Wear</option>
-						<option value="AX">Men's Wear</option>
-						<option value="AX">Women's Wear</option>
-						<option value="AX">Watches</option>
+						<option value="null">Todo</option>    
+						<option value="AX">Componentes</option>
+						<option value="AX">Periféricos</option>
+						<option value="AX">Teléfonos</option>
 					</select>
 				</div>
 				<div class="sear-sub">
@@ -72,6 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</form>
 		</div>
 		<div class="col-md-3 header-right footer-bottom">
+			
 			<ul>
 				<li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a>
 					
@@ -104,47 +103,48 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav menu__list">
-					<li class="active menu__item "><a class="menu__link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
-					<li class="dropdown menu__item menu__item">
-						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">COMPONENTES <span class="caret"></span></a>
+					<li class="active menu__item menu__item--current"><a class="menu__link" href="index.html">Inicio <span class="sr-only">(current)</span></a></li>
+					<li class="dropdown menu__item">
+						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">COMPONENTES<span class="caret"></span></a>
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="row">
 									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-										<a href="mens.html"><img src="images/componentes.jpg" alt=" "/></a>
+										<a href="componentes.html"><img src="images/componentes.jpg" alt=" "/></a>
 									</div>
 									<div class="col-sm-3 multi-gd-img">
 										<ul class="multi-column-dropdown">
-											<li><a href="mens.html">Placas Bases</a></li>
-											<li><a href="mens.html">Procesador</a></li>
-											<li><a href="mens.html">Discos Duros</a></li>
-											<li><a href="mens.html">Tarjetas Gráficas</a></li>
+											<li><a href="componentes.html">Placas Bases</a></li>
+											<li><a href="componentes.html">Procesador</a></li>
+											<li><a href="componentes.html">Discos Duros</a></li>
+											<li><a href="componentes.html">Tarjetas Gráficas</a></li>
+										</ul>
 									</div>
 								
 									<div class="clearfix"></div>
 								</div>
 							</ul>
 					</li>
-					<li class="dropdown menu__item--current">
-						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">perifericos <span class="caret"></span></a>
+					<li class="dropdown menu__item">
+						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Periféricos <span class="caret"></span></a>
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="row">
+									<div class="col-sm-3 multi-gd-img">
+										<ul class="multi-column-dropdown">
+											<li><a href="perifericos.html">Teclados</a></li>
+											<li><a href="perifericos.html">Ratones</a></li>
+											<li><a href="perifericos.html">Pantallas</a></li>
+										</ul>
+									</div>
 									<div class="col-sm-6 multi-gd-img multi-gd-text ">
 										<a href="perifericos.html"><img src="images/perifericos.jpg" alt=" "/></a>
-									</div>
-									<div class="col-sm-6 multi-gd-img">
-										<ul class="multi-column-dropdown">
-											<li><a href="monitores.html">Monitores</a></li>
-											<li><a href="teclados.html">Teclados</a></li>
-											<li><a href="ratones.html">Ratones</a></li>
-											<li><a href="auriculares.html">Auriculares</a></li>
-										</ul>
 									</div>
 									<div class="clearfix"></div>
 								</div>
 							</ul>
 					</li>
-					<li class=" menu__item"><a class="menu__link" href="electronics.html">Electronics</a></li>
-					<li class=" menu__item "><a class="menu__link" href="contact.html">contacto</a></li>
+					<li class=" menu__item"><a class="menu__link" href="electronics.html">Teléfonos</a></li>
+					<li class=" menu__item"><a class="menu__link" href="codes.html">Short Codes</a></li>
+					<li class=" menu__item"><a class="menu__link" href="contact.html">Contacto</a></li>
 				  </ul>
 				</div>
 			  </div>
@@ -159,7 +159,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								
 							</h3>
 						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+						<p><a href="javascript:;" class="simpleCart_empty">Carro vacío</a></p>
 						
 			</div>	
 		</div>
@@ -474,14 +474,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="col-md-3 footer-left">
 			<h2><a href="index.html"><img src="images/logo3.jpg" alt=" " /></a></h2>
-			<p>Neque porro quisquam est, qui dolorem ipsum quia dolor
-			sit amet, consectetur, adipisci velit, sed quia non 
-			numquam eius modi tempora incidunt ut labore 
-			et dolore magnam aliquam quaerat voluptatem.</p>
+			<p>Nuestra tienda se compromete a traer siempre lo más nuevo en tecnología a precios excelentes y con seguridad y garantía de que el producto llega a salvo a su casa.</p>
 		</div>
 		<div class="col-md-9 footer-right">
 			<div class="col-sm-6 newsleft">
-				<h3>SIGN UP FOR NEWSLETTER !</h3>
+				<h3>REGISTRESÉ PARA RECIBIR OFERTAS !</h3>
 			</div>
 			<div class="col-sm-6 newsright">
 				<form>
@@ -492,18 +489,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"></div>
 			<div class="sign-grds">
 				<div class="col-md-4 sign-gd">
-					<h4>Information</h4>
+					<h4>Información</h4>
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="mens.html">Men's Wear</a></li>
-						<li><a href="womens.html">Women's Wear</a></li>
-						<li><a href="electronics.html">Electronics</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="mens.html">Componentes</a></li>
+						<li><a href="womens.html">Periféricos</a></li>
+						<li><a href="electronics.html">Teléfonos</a></li>
+						<li><a href="codes.html">Short Codes</a></li>
+						<li><a href="contact.html">Contactos</a></li>
 					</ul>
 				</div>
 				
 				<div class="col-md-4 sign-gd-two">
-					<h4>Store Information</h4>
+					<h4>Infomación de la tienda</h4>
 					<ul>
 						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : 1234k Avenue, 4th block, <span>Newyork City.</span></li>
 						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:info@example.com">info@example.com</a></li>
@@ -511,7 +509,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 				<div class="col-md-4 sign-gd flickr-post">
-					<h4>Flickr Posts</h4>
+					<h4>Publicaciones</h4>
 					<ul>
 						<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a></li>
 						<li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a></li>

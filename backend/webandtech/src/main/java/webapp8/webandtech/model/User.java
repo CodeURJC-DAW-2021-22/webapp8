@@ -11,16 +11,11 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonView;
 
 @Entity
 @Table(name = "users")
 public class User {
 	
-	public interface Basic{}
-	public interface Detailed extends User.Basic{}
-	
-	@JsonView(Basic.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int iduser;

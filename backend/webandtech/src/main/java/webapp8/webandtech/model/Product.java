@@ -4,8 +4,8 @@ package webapp8.webandtech.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "products")
+//@Entity
+//@Table(name = "products")
 public class Product {
 
 }

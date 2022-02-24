@@ -26,7 +26,7 @@ public class User {
 	@Column
 	private String pass;
 	@Column
-	private String name;
+	private String completname;
 	@Lob
 	@JsonIgnore
 	private Blob userimg;
@@ -43,7 +43,7 @@ public class User {
 		this.email = email;
 		this.username = username;
 		this.pass = pass;
-		this.name = name;
+		this.completname = name;
 		this.userimg = userimg;
 		this.userprofile = userprofile;
 		this.address = address;
@@ -73,11 +73,11 @@ public class User {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
-	public String getName() {
-		return name;
+	public String getCompletname() {
+		return completname;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setCompletname(String name) {
+		this.completname = name;
 	}
 	public Blob getUserimg() {
 		return userimg;

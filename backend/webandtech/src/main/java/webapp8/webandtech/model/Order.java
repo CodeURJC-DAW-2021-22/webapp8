@@ -23,40 +23,60 @@ public class Order {
 	private User iduser;
 	@Column
 	private String idproducts;
+	@Column
+	private String orderdate;
 	
 	public Order() {}
-	public Order(int idorder, float price, User iduser, String idproducts) {
+
+	public Order(int idorder, float price, User iduser, String idproducts, String date) {
 		super();
 		this.idorder = idorder;
 		this.price = price;
 		this.iduser = iduser;
 		this.idproducts = idproducts;
+		this.orderdate = date;
 	}
-	
+
 	public int getIdorder() {
 		return idorder;
 	}
+
 	public void setIdorder(int idorder) {
 		this.idorder = idorder;
 	}
+
 	public float getPrice() {
 		return price;
 	}
+
 	public void setPrice(float price) {
 		this.price = price;
 	}
+
 	public User getIduser() {
 		return iduser;
 	}
+
 	public void setIduser(User iduser) {
 		this.iduser = iduser;
 	}
+
 	public String getIdproducts() {
 		return idproducts;
 	}
+
 	public void setIdproducts(String idproducts) {
 		this.idproducts = idproducts;
 	}
+
+	public String getOrderdate() {
+		return orderdate;
+	}
+
+	public void setOrderdate(String date) {
+		this.orderdate = date;
+	}
+	
 	
 	
 }

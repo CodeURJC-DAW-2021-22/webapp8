@@ -153,8 +153,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</ul>
 							</li>
 							<li class=" menu__item"><a class="menu__link" href="electronics.html">Teléfonos</a></li>
-							<li class=" menu__item"><a class="menu__link" href="codes.html">Administrador</a></li>
 							<li class=" menu__item"><a class="menu__link" href="contact.html">Contacto</a></li>
+							{#admin}
+							<li class=" menu__item"><a class="menu__link" href="codes.html">Administrador</a></li>
+							{{/admin}}
 						</ul>
 					</div>
 				</div>
@@ -179,11 +181,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"></div>
 	</div>
 </div>
-<!-- //banner-top -->
+<!-- //banner-top -->	
 <!-- banner -->
 <div class="page-head">
 	<div class="container">
-		<h3>Newskill Suiko Teclado Mecánico Gaming Full RGB Switch Kailh Blue</h3>
+		<h3>{{product.nameproduct}}</h3>
 	</div>
 </div>
 <!-- //banner -->
@@ -205,20 +207,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</script>
 					<!-- //FlexSlider-->
 					<ul class="slides">
-						<li data-thumb="images/teclado1.jpg">
-							<div class="thumb-image"> <img src="images/teclado1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+						<li data-thumb="{{product.image1}}">
+							<div class="thumb-image"> <img src="https://localhost:8443/api/userimg" data-imagezoom="true" class="img-responsive"> </div>
 						</li>
-						<li data-thumb="images/teclado1_1.jpg">
-							<div class="thumb-image"> <img src="images/teclado1_1.jpg" data-imagezoom="true" class="img-responsive"> </div>
-						</li>		
+						<li data-thumb="images/discoduro1_1.jpg">
+							<div class="thumb-image"> <img src="images/discoduro1_1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+						</li>
 					</ul>
 					<div class="clearfix"></div>
 				</div>	
 			</div>
 		</div>
 		<div class="col-md-6 single-right-left simpleCart_shelfItem animated wow slideInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInRight;">
-					<h3>Newskill Suiko Teclado Mecánico Gaming Full RGB Switch Kailh Blue</h3>
-					<p><span class="item_price">64,99€</span></p>
+					<h3>{{product.nameproduct}}</h3>
+					<p><span class="item_price">{{product.price}}</span></p>
 					<div class="rating1">
 						<span class="starRating">
 							<input id="rating5" type="radio" name="rating" value="5">
@@ -234,8 +236,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</span>
 					</div>
 					<div class="description">
-						<h5>Check delivery, payment options and charges at your location</h5>
-						<input type="text" value="Enter pincode" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter pincode';}" required="">
+						<h5>Consulte la entrega, las opciones de pago y los cargos en su ubicación</h5>
+						<input type="text" value="Código descuento" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Código descuento';}" required="">
 						<input type="submit" value="Check">
 					</div>
 					<div class="color-quality">
@@ -258,7 +260,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 					<div class="occasion-cart">
 						<a href="#" class="item_add hvr-outline-out button2">Añadir al carrito</a>
+						{{#admin}}
 						<a href="#" class="item_add hvr-outline-out button3">Editar producto</a>
+						{{/admin}}
 					</div>
 					
 		</div>
@@ -267,14 +271,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="bootstrap-tab animated wow slideInUp animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInUp;">
 			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 				<ul id="myTab" class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Description</a></li>
-					<li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Reviews</a></li>
+					<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Descripción</a></li>
+					<li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Valoraciones</a></li>
 					
 				</ul>
 				<div id="myTabContent" class="tab-content">
 					<div role="tabpanel" class="tab-pane fade in active bootstrap-tab-text" id="home" aria-labelledby="home-tab">
-						<h5>Newskill Suiko Teclado Mecánico Gaming Full RGB Switch Kailh Blue</h5>
-						<p>Newskill Suiko destaca por su novedoso sistema RGB desde el que podrás crear un halo de retroiluminación a su alrededor con efectos realmente impresionantes para tu zona de juego. Suiko forma parte de la gama de teclados mecánicos fabricados con switches premium. La tecnología Kailh estará a nuestro servicio con sus versiones Red, Blue y Brown ofreciendo una excelente velocidad de respuesta en cada click. Para mejorar la experiencia en cada partida hemos incorporado a la gama Suiko un reposamuñecas anexo acolchado que nos dará esa comodidad extra que buscamos.</p>
+						<h5>{{product.nameproduct}}</h5>
+						<p>{{product.description}}</p>
 						
 							
 							<h4>Características:</h4>
@@ -288,22 +292,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li type="disc">Aumento de audio: recompense sus oídos con calidad de sonido de estudio	</li>  
 								<li type="disc">Steel Armor: protege las tarjetas VGA contra la flexión y las interferencias electromagnéticas para un mejor rendimiento, estabilidad y resistencia.</li>  
 							
-							
-								<h4>Características:</h4>
-
-								<li type="disc">Model Name B560M PRO-VDH</li> 
-								<li type="disc">CPU Support Supports 10th Gen Intel® Core™ Processors, 11th Gen Intel® Core™ Processors, Pentium® Gold and Celeron® Processors</li> 
-								<li type="disc">CPU Socket LGA 1200</li> 
-								<li type="disc">Chipset Intel® B560 Chipset</li> 
-								<li type="disc">Graphics Interface 1x PCIe 4.0 x16 slot Display Interface Support 4K@60Hz as specified in HDMI 2.0b, DisplayPort 1.4, VGA – Requires Processor Graphics</li> 
-								<li type="disc">Memory Support 4 DIMMs, Dual Channel DDR4-5066MHz (OC)</li> 
-								<li type="disc">Expansion Slots 2x PCIe 3.0 x1 slots</li> 
-								<li type="disc">Storage 1x M.2 Gen4 x4 64Gb/s slot 1x M.2 Gen3 x4 32Gb/s slot 6x SATA 6Gb/s ports</li> 
-								<li type="disc">USB ports 2x USB3.2 Gen 2 10Gbps (2 Type-A) 4x USB 3.2 Gen 1 5Gbps (4 Type-A) 6x USB 2.0</li> 
-								<li type="disc">LAN Realtek® 8125B 2.5G LAN</li> 
-								<li type="disc">Audio 8-Channel (7.1) HD Audio with Audio Boost</li> 
-
-							</div>
+				</div>
 
 
 					

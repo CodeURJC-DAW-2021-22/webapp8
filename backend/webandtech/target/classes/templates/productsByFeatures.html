@@ -73,9 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-3 header-right footer-bottom">
 
 				<ul>
-					<li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a>
-
-					</li>
+					<li><a class="use1"  href="login.html"><span>Login</span></a></li>
 					<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
 					<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
 					<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
@@ -153,8 +151,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</ul>
 									</li>
 									<li class=" menu__item"><a class="menu__link" href="electronics.html">Teléfonos</a></li>
-									<li class=" menu__item"><a class="menu__link" href="codes.html">Administrador</a></li>
 									<li class=" menu__item"><a class="menu__link" href="contact.html">Contacto</a></li>
+									{#admin}
+									<li class=" menu__item"><a class="menu__link" href="codes.html">Administrador</a></li>
+									{{/admin}}
 								</ul>
 							</div>
 						</div>
@@ -186,7 +186,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- banner -->
 <div class="page-head">
 	<div class="container">
-		<h3>PLACAS BASE</h3>
+		<h3>{{products.nameproduct}}</h3>
 	</div>
 </div>
 <!-- //banner -->
@@ -328,6 +328,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 			<div class="clearfix"></div>
 		</div>
+		{{#admin}}
+		<a href="#" class="item_add single-item hvr-outline-out button2">CREAR PRODUCTO</a>		
+		{{/admin}}
 		<div class="col-md-8 products-right">
 			<h5></h5>
 			<div class="sort-grid">
@@ -379,16 +382,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div  id="top" class="callbacks_container">
 					<ul class="rslides" id="slider3">
 						<li>
-							<img class="img-responsive" src="images/placabase1.jpg" alt=" "/>
+							<img class="img-responsive" src="product.image1" alt=" "/>
 						</li>
 						<li>
-							<img class="img-responsive" src="images/placabase2.jpg" alt=" "/>
+							<img class="img-responsive" src="product.image1" alt=" "/>
 						</li>
 						<li>
-							<img class="img-responsive" src="images/placabase1_4.jpg" alt=" "/>
+							<img class="img-responsive" src="product.image1" alt=" "/>
 						</li>
 						<li>
-							<img class="img-responsive" src="images/placabase1_2.jpg" alt=" "/>
+							<img class="img-responsive" src="product.image1" alt=" "/>
 						</li>
 					</ul>
 				</div>
@@ -400,8 +403,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 product-men no-pad-men">
 					<div class="men-pro-item simpleCart_shelfItem">
 						<div class="men-thumb-item">
-							<img src="images/placabase1.jpg" alt="" class="pro-image-front">
-							<img src="images/placabase1.jpg" alt="" class="pro-image-back">
+							<img src="product.image1" alt="" class="pro-image-front">
+							<img src="product.image1" alt="" class="pro-image-back">
 										<div class="men-cart-pro">
 											<div class="inner-men-cart-pro">
 												<a href="placabase1.html" class="link-product-add-cart">VER PRUDUCTO</a>
@@ -411,11 +414,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										
 						</div>
 						<div class="item-info-product ">
-									<h4><a href="placabase1.html">Placa Base</a></h4>
-									<h4><a href="placabase1.html">MSI B560M PRO-VDH</a></h4>
+									<h4><a href="placabase1.html">{{product.productcategory}}</a></h4>
+									<h4><a href="placabase1.html">{{product.nameproduct}}</a></h4>
 									<div class="info-product-price">
-										<span class="item_price">99,98€</span>
-										<del>$135.71</del>
+										<span class="item_price">{{product.price}}</span>
 									</div>
 									<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al carrito</a>									
 						</div>
@@ -425,31 +427,145 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 product-men no-pad-men">
 					<div class="men-pro-item simpleCart_shelfItem">
 						<div class="men-thumb-item">
-							<img src="images/placabase2.jpg" alt="" class="pro-image-front">
-							<img src="images/placabase2.jpg" alt="" class="pro-image-back">
+							<img src="images/discoduro1.jpg" alt="" class="pro-image-front">
+							<img src="images/discoduro1.jpg" alt="" class="pro-image-back">
 										<div class="men-cart-pro">
 											<div class="inner-men-cart-pro">
-												<a href="placabase2.html" class="link-product-add-cart">VER PRUDUCTO</a>
+												<a href="single.html" class="link-product-add-cart">VER PRUDUCTO</a>
 											</div>
 										</div>
 										<span class="product-new-top">Nuevo</span>
 										
 						</div>
 						<div class="item-info-product ">
-									<h4><a href="placabase1.html">Placa Base</a></h4>
-									<h4><a href="placabase1.html">Gigabyte H310M S2H 2.0</a></h4>
+									<h4><a href="single.html">Disco Duro</a></h4>
 									<div class="info-product-price">
-										<span class="item_price">31,25€</span>
-										<del>78.45€</del>
+										<span class="item_price">$31.99</span>
+										<del>$89.99</del>
 									</div>
 									<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al carrito</a>									
 						</div>
 					</div>
 				</div>
-				
-				
-				
 
+				<div class="col-md-4 product-men no-pad-men">
+					<div class="men-pro-item simpleCart_shelfItem">
+						<div class="men-thumb-item">
+							<img src="images/procesador1.jpg" alt="" class="pro-image-front">
+							<img src="images/procesador1.jpg" alt="" class="pro-image-back">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="single.html" class="link-product-add-cart">VER PRUDUCTO</a>
+											</div>
+										</div>
+										<span class="product-new-top">Nuevo</span>
+										
+						</div>
+						<div class="item-info-product ">
+									<h4><a href="single.html">Procesador</a></h4>
+									<div class="info-product-price">
+										<span class="item_price">$45.99</span>
+										<del>$69.71</del>
+									</div>
+									<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al carrito</a>									
+						</div>
+					</div>
+				</div>
+		</div>
+
+		<div class="clearfix"></div>
+		<div class="single-pro">
+			
+			<div class="col-md-3 product-men">
+				<div class="men-pro-item simpleCart_shelfItem">
+					<div class="men-thumb-item">
+						<img src="images/discoduro2.jpg" alt="" class="pro-image-front">
+						<img src="images/discoduro2.jpg" alt="" class="pro-image-back">
+							<div class="men-cart-pro">
+								<div class="inner-men-cart-pro">
+									<a href="single.html" class="link-product-add-cart">VER PRUDUCTO</a>
+								</div>
+							</div>
+							<span class="product-new-top">Nuevo</span>				
+					</div>
+					<div class="item-info-product ">
+						<h4><a href="single.html">Disco Duro 2</a></h4>
+						<div class="info-product-price">
+							<span class="item_price">$45.99</span>
+							<del>$69.71</del>
+						</div>
+						<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al carrito</a>									
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 product-men">
+				<div class="men-pro-item simpleCart_shelfItem">
+					<div class="men-thumb-item">
+						<img src="images/procesador2.jpg" alt="" class="pro-image-front">
+						<img src="images/procesador2.jpg" alt="" class="pro-image-back">
+							<div class="men-cart-pro">
+								<div class="inner-men-cart-pro">
+									<a href="single.html" class="link-product-add-cart">VER PRUDUCTO</a>
+								</div>
+							</div>
+							<span class="product-new-top">Nuevo</span>				
+					</div>
+					<div class="item-info-product ">
+						<h4><a href="single.html">Procesador2</a></h4>
+						<div class="info-product-price">
+							<span class="item_price">$45.99</span>
+							<del>$69.71</del>
+						</div>
+						<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al carrito</a>									
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 product-men">
+				<div class="men-pro-item simpleCart_shelfItem">
+					<div class="men-thumb-item">
+						<img src="images/tarjetagrafica1.jpg" alt="" class="pro-image-front">
+						<img src="images/tarjetagrafica1.jpg" alt="" class="pro-image-back">
+							<div class="men-cart-pro">
+								<div class="inner-men-cart-pro">
+									<a href="single.html" class="link-product-add-cart">VER PRUDUCTO</a>
+								</div>
+							</div>
+							<span class="product-new-top">Nuevo</span>				
+					</div>
+					<div class="item-info-product ">
+						<h4><a href="single.html">Tarjeta Grafica</a></h4>
+						<div class="info-product-price">
+							<span class="item_price">$45.99</span>
+							<del>$69.71</del>
+						</div>
+						<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al carrito</a>									
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 product-men">
+				<div class="men-pro-item simpleCart_shelfItem">
+					<div class="men-thumb-item">
+						<img src="images/placabase2.jpg" alt="" class="pro-image-front">
+						<img src="images/placabase2.jpg" alt="" class="pro-image-back">
+							<div class="men-cart-pro">
+								<div class="inner-men-cart-pro">
+									<a href="single.html" class="link-product-add-cart">VER PRUDUCTO</a>
+								</div>
+							</div>
+							<span class="product-new-top">Nuevo</span>				
+					</div>
+					<div class="item-info-product ">
+						<h4><a href="single.html">PlacaBase2</a></h4>
+						<div class="info-product-price">
+							<span class="item_price">$45.99</span>
+							<del>$69.71</del>
+						</div>
+						<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al carrito</a>									
+					</div>
+				</div>
+			</div>
 
 
 			

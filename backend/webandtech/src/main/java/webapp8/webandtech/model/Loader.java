@@ -264,7 +264,7 @@ public class Loader {
 
 
         //User creations
-        User User1 = new User(1,"user.1@hotmail.com","Jonathan",encoder.encode("f"), "Jonathan Joestar", imgU1, true, "Londres");
+        User User1 = new User(1, "user.1@hotmail.com","Jonathan",encoder.encode("f"), "Jonathan Joestar", imgU1, true, "Londres");
         User User2 = new User(2,"user.2@hotmail.com","Joseph",encoder.encode("f"), "Joseph Joestar", imgU2, true, "Londres");
         User User3 = new User(3,"user.3@hotmail.com","Jotaro",encoder.encode("f"), "Jotaro Kuujou", imgU3, true, "Egypt");
         User User4 = new User(4,"user.4@hotmail.com","Josuke",encoder.encode("f"), "Josuke Higashikata", imgU4, true, "Morioh");
@@ -285,78 +285,107 @@ public class Loader {
         User User19 = new User(19,"user.19@hotmail.com","Ghirga",encoder.encode("f"), "Ghirga Narancia", imgU19, true, "Napoles");
         User User20 = new User(20,"user.20@hotmail.com","Abbacchio",encoder.encode("f"), "Abbacchio Leone", imgU20, true, "Napoles");
 
+        //Rol creation for users - "USER"
+        Rol Rol1 = new Rol("USER", User1);
+		Rol Rol2 = new Rol("USER", User2);
+		Rol Rol3 = new Rol("USER", User3);
+		Rol Rol4 = new Rol("USER", User4);
+		Rol Rol5 = new Rol("USER", User5);
+		Rol Rol6 = new Rol("USER", User6);
+		Rol Rol7 = new Rol("USER", User7);
+		Rol Rol8 = new Rol("USER", User8);
+		Rol Rol9 = new Rol("USER", User9);
+		Rol Rol10 = new Rol("USER", User10);
+		Rol Rol11 = new Rol("USER", User11);
+		Rol Rol12 = new Rol("USER", User12);
+		Rol Rol13 = new Rol("USER", User13);
+		Rol Rol14 = new Rol("USER", User14);
+		Rol Rol15 = new Rol("USER", User15);
+		Rol Rol16 = new Rol("USER", User16);
+		Rol Rol17 = new Rol("USER", User17);
+		Rol Rol18 = new Rol("USER", User18);
+		Rol Rol19 = new Rol("USER", User19);
+		Rol Rol20 = new Rol("USER", User20);
+
+        //rol creation for users - "Admin"
+        Rol Rol21 = new Rol("ADmIN", User1);
+		Rol Rol22 = new Rol("ADMIN", User2);
+		Rol Rol23 = new Rol("ADMIN", User3);
+		Rol Rol24 = new Rol("ADMIN", User4);
+		Rol Rol25 = new Rol("ADMIN", User5);
+
         //Product creations
         Product prod1 = new Product(1,"Forgeon General Auriculares Gaming Inalámbricos PC/PS4/PS5/Xbox/Xbox X/Switch Negros", 146,
                 "Desde Forgeon presentamos los nuevos auriculares Forgeon General Wireless Headset 2,4 GHz. Unos auriculares con unos"
                 +"acabados de primera, acompañados de la más novedosa tecnología de triple conexión que te da la libertad que necesitas" 
                 +"para jugar cómodamente. Esto unido a sus extras y a su peso de tan solo 350 g hace de estos auriculares imprescindibles"
-                +"en tu setup gaming ¡No te quedes sin ellos!", 4, "auriculares", "perifericos", "forgeon", imgP1, imgP2, imgP3);
-        Product prod2 = new Product(1,"Tempest GHS110 Knight Auriculares Gaming RGB PC", 16, "Desde Forgeon presentamos los nuevos"
+                +"en tu setup gaming ¡No te quedes sin ellos!", 4, "auriculares", "perifericos", "forgeon", imgP1, imgP2, imgP3, true, true, true);
+        Product prod2 = new Product(2,"Tempest GHS110 Knight Auriculares Gaming RGB PC", 16, "Desde Forgeon presentamos los nuevos"
                 +"auriculares Tempest GHS110 Knight 2,4 GHz. Unos auriculares con unos acabados de primera, acompañados de la más novedosa"
                 +"tecnología de triple conexión que te da la libertad que necesitas para jugar cómodamente. Esto unido a sus extras y a su"
                 +"peso de tan solo 350 g hace de estos auriculares imprescindibles en tu setup gaming ¡No te quedes sin ellos!", 3, 
-                "auriculares", "perifericos", "tempest", imgP4, imgP5);
-        Product prod3 = new Product(1,"Kingston A400 SSD 480GB", 500, "La unidad A400 de estado sólido de Kingston ofrece enormes mejoras"
+                "auriculares", "perifericos", "tempest", imgP4, imgP5, null, true, true, false);
+        Product prod3 = new Product(3,"Kingston A400 SSD 480GB", 500, "La unidad A400 de estado sólido de Kingston ofrece enormes mejoras"
                 +"en la velocidad de respuesta, sin actualizaciones adicionales del hardware. Brinda lapsos de arranque, carga y de"
                 +"transferencia de archivos increíblemente más breves en comparación con las unidades de disco duro mecánico.", 3, 
-                "discos duros", "componentes", "forgeon", imgP6, imgP7);
+                "discos duros", "componentes", "forgeon", imgP6, imgP7, null, true, true, false);
         Product prod4 = new Product(1,"Nfortec Alcyon X 512GB SSD M.2 NVMe", 52, "Si estás pensando en subir de nivel y mejorar tu equipo"
                 +"PC gaming, Nfortec Alcyon SSD está disponible en capacidades de 256 y 512 GB, a la altura de los mejores SSD del mercado"
-                +"actual de componentes.", 3, "discos duros", "componentes", "alcyon x", imgP8, imgP9, imgP10);
+                +"actual de componentes.", 3, "discos duros", "componentes", "alcyon x", imgP8, imgP9, imgP10, true, true, true);
         Product prod5 = new Product(1,"IPhone 6", 146, "El iPhone 6 es un teléfono inteligente de gama alta desarrollado por Apple Inc."
                 +"Funciona con el sistema operativo iOS 12. Fue presentado el 9 de septiembre de 2014 y lanzado a la venta el 19 de octubre de 2014."
-                +"La serie iPhone 6 es en conjunto un sucesor del iPhone 5s y el iPhone 5C", 3, "telefono", "telefono", "apple", imgP11, imgP12);
+                +"La serie iPhone 6 es en conjunto un sucesor del iPhone 5s y el iPhone 5C", 3, "telefono", "telefono", "apple", imgP11, imgP12, null, true, true, false);
         Product prod6 = new Product(1,"IPhone 6s", 799, "El iPhone 6s es un teléfono inteligente de gama alta diseñado por Apple Inc."
                 +"con procesador de dos núcleos a 1.85 GHz, 2 GB de memoria RAM y pantalla de 4,7 pulgadas. Es parte de la serie iPhone y fue"
                 +"anunciado el 9 de septiembre de 2015. El iPhone 6s y 6s Plus son conjuntamente sucesores del iPhone 6 y iPhone 6 Plus de 2014.", 
-                4, "telefono", "telefono", "apple", imgP13, imgP14);
+                4, "telefono", "telefono", "apple", imgP13, imgP14, null, true, true, false);
         Product prod7 = new Product(1,"PcCom Discovery 27 pulgadas LED FullHD 165Hz FreeSync Curvo", 239, "Desde PCCOM presentamos el Monitor"
                 +"Discovery de 27 pulgadas. Un exclusivo modelo de 27 pulgadas curvo 1500R que te ofrece una experiencia gaming totalmente envolvente"
                 +"gracias a su resolución Full HD y tasa de refresco de hasta 165 Hz con 1ms de respuesta MPRT. Si quieres disfrutar de las buenas"
-                +"características de este monitor, no puede faltar en tu setup gaming.", 4, "monitores", "perifericos", "PcCom", imgP15, imgP16);
+                +"características de este monitor, no puede faltar en tu setup gaming.", 4, "monitores", "perifericos", "PcCom", imgP15, imgP16, null, true, true, false);
         Product prod8 = new Product(1,"Samsung S22F350FHU 22 pulgadas Full HD LED", 36, "Te presentamos el monitor S22F350FHU de 22 de Samsung. Un"
                 +"monitor Full HD de tan sólo 10mm de grosor, 'Modo Juego' para disfrutar de una experiencia gaming única y el 'Eye Saver Mode' que"
-                +"reduce la emisión de ondas de luz azul que fatigan tus retinas.", 3, "monitores", "perifericos", "samsung", imgP17, imgP18);     
+                +"reduce la emisión de ondas de luz azul que fatigan tus retinas.", 3, "monitores", "perifericos", "samsung", imgP17, imgP18, null, true, true, false);     
         Product prod9 = new Product(1,"MSI B560M PRO-VDH", 99, "La serie PRO ayuda a los usuarios a trabajar de forma más inteligente al ofrecer una"
                 +"experiencia eficiente y productiva. Con una funcionalidad estable y un ensamblaje de alta calidad, las placas base de la serie PRO"
                 +"brindan no solo flujos de trabajo profesionales optimizados, sino también menos resolución de problemas y longevidad.", 4, 
-                "placas bases", "componentes", "msi", imgP19, imgP20, imgP21);     
+                "placas bases", "componentes", "msi", imgP19, imgP20, imgP21, true, true, true);     
         Product prod10 = new Product(1,"Gigabyte H310M S2H 2.0", 36, "Te presentamos la 310M S2H 2.0 de Gigabyte, una placa base con socket LGA 1151"
-                +"y chipset B360.", 3, "placas bases", "componentes", "gigabyte", imgP22, imgP23);  
+                +"y chipset B360.", 3, "placas bases", "componentes", "gigabyte", imgP22, imgP23, null, true, true, false);  
         Product prod11 = new Product(1,"MSI B560M PRO-VDH", 99, "La serie PRO ayuda a los usuarios a trabajar de forma más inteligente al ofrecer"
                 +"una experiencia eficiente y productiva. Con una funcionalidad estable y un ensamblaje de alta calidad, las placas base de la serie"
                 +"PRO brindan no solo flujos de trabajo profesionales optimizados, sino también menos resolución de problemas y longevidad.", 4, 
-                "procesadores", "componentes", "ryzen", imgP24, imgP25);
+                "procesadores", "componentes", "ryzen", imgP24, imgP25, null, true, true, false);
         Product prod12 = new Product(1,"Intel Celeron G5905 3.50GHz", 37, "Los nuevos procesadores Intel® Core™ de 10ª generación ofrecen mejoras"
                 +"de rendimiento notables para conseguir una productividad mejorada y un entretenimiento impresionante, incluyendo Intel® Wi-Fi 6 (Gig+),"
-                +"tecnología Thunderbolt™ 3, HDR 4K, optimización de sistema inteligente y mucho más.", 3, "procesadores", "componentes", "intel", imgP26);
+                +"tecnología Thunderbolt™ 3, HDR 4K, optimización de sistema inteligente y mucho más.", 3, "procesadores", "componentes", "intel", imgP26, null, null, true, true, false);
         Product prod13 = new Product(1,"Forgeon Darrowspike Ratón Gaming RGB Wireless 19000DPI Negro", 99, "Presentamos el nuevo mouse gaming Forgeon"
                 +"Darrowspike Wireless. Este mouse inalámbrico ofrece unas prestaciones inigualables a un precio muy competitivo. Con el receptor"
                 +"inalámbrico incorporado sencillamente con conectarlo empezarás a disfrutar de tus mejores partidas dejando de lado esos cables que"
-                +"dificultan el movimiento", 5, "ratones", "perifericos", "forgeon", imgP27, imgP28);
+                +"dificultan el movimiento", 5, "ratones", "perifericos", "forgeon", imgP27, imgP28, null, true, true, false);
         Product prod14 = new Product(1,"Tempest MS-300 RGB Soldier Ratón Gaming 4000DPI", 9, "Presentamos el nuevo mouse gaming Forgeon Darrowspike Wireless."
                 +"Este mouse inalámbrico ofrece unas prestaciones inigualables a un precio muy competitivo. Con el receptor inalámbrico incorporado"
                 +"sencillamente con conectarlo empezarás a disfrutar de tus mejores partidas dejando de lado esos cables que dificultan el movimiento.", 3, 
-                "ratones", "perifericos", "tempest", imgP29, imgP30);    
+                "ratones", "perifericos", "tempest", imgP29, imgP30, null, true, true, false);    
         Product prod15 = new Product(1,"MSI GeForce RTX 3070 Ti VENTUS 3X OC 8GB GDDR6X", 999, "Disfruta de los mayores éxitos de ventas de hoy como nunca"
                 +"antes con la fidelidad visual del trazado de rayos en tiempo real y el rendimiento definitivo de DLSS con tecnología de IA.", 5, 
-                "tarjetas graficas", "componentes", "msi", imgP31, imgP32, imgP33);  
+                "tarjetas graficas", "componentes", "msi", imgP31, imgP32, imgP33, true, true, true);  
         Product prod16 = new Product(1,"Asus Radeon R7 240 2GB GDDR5 Low Profile", 31, "Disfruta de los mayores éxitos de ventas de hoy como nunca antes"
                 +"con la fidelidad visual del trazado de rayos en tiempo real y el rendimiento definitivo de DLSS con tecnología de IA.", 3, 
-                "tarjetas graficas", "componentes", "forgeon", imgP34, imgP35, imgP36);    
+                "tarjetas graficas", "componentes", "forgeon", imgP34, imgP35, imgP36, true, true, true);    
         Product prod17 = new Product(1,"Newskill Suiko Teclado Mecánico Gaming Full RGB Switch Kailh Blue", 64, "Newskill Suiko destaca por su novedoso"
                 +"sistema RGB desde el que podrás crear un halo de retroiluminación a su alrededor con efectos realmente impresionantes para tu zona de"
                 +"juego. Suiko forma parte de la gama de teclados mecánicos fabricados con switches premium. La tecnología Kailh estará a nuestro servicio"
                 +"con sus versiones Red, Blue y Brown ofreciendo una excelente velocidad de respuesta en cada click. Para mejorar la experiencia en cada"
                 +"partida hemos incorporado a la gama Suiko un reposamuñecas anexo acolchado que nos dará esa comodidad extra que buscamos.", 4, "teclados", 
-                "perifericos", "newskill", imgP37, imgP38);
+                "perifericos", "newskill", imgP37, imgP38, null, true, true, false);
         Product prod18 = new Product(1,"Logitech MK295 Silent Wireless Combo De Ratón Y Teclado Inalámbricos", 24, "Mantén la concentración y haz más cosas"
                 +"con la combinación silenciosa de teclado y ratón inalámbricos Logitech MK295, ambos dispositivos diseñados para eliminar el exceso de"
                 +"ruido molesto para ti y la gente alrededor. Demos la bienvenida a una nueva experiencia de teclado y ratón prácticamente silenciosa.", 2, 
-                "auriculares", "perifericos", "forgeon", imgP39);
-
+                "auriculares", "perifericos", "forgeon", imgP39, null, null, true, false, false);
 
         //DataSave
+        //user
         if(userRepo.findAll().isEmpty()) {
             userRepo.save(User1);
             userRepo.save(User2);
@@ -379,6 +408,36 @@ public class Loader {
             userRepo.save(User19);
             userRepo.save(User20);
         }
+        //rol
+        if(rolRepo.findAll().isEmpty()) {
+            rolRepo.save(Rol1);
+            rolRepo.save(Rol2);
+            rolRepo.save(Rol3);
+            rolRepo.save(Rol4);
+            rolRepo.save(Rol5);
+            rolRepo.save(Rol6);
+            rolRepo.save(Rol7);
+            rolRepo.save(Rol8);
+            rolRepo.save(Rol9);
+            rolRepo.save(Rol10);
+            rolRepo.save(Rol11);
+            rolRepo.save(Rol12);
+            rolRepo.save(Rol13);
+            rolRepo.save(Rol14);
+            rolRepo.save(Rol15);
+            rolRepo.save(Rol16);
+            rolRepo.save(Rol17);
+            rolRepo.save(Rol18);
+            rolRepo.save(Rol18);
+            rolRepo.save(Rol19);
+            rolRepo.save(Rol20);
+            rolRepo.save(Rol21);
+            rolRepo.save(Rol22);
+            rolRepo.save(Rol23);
+            rolRepo.save(Rol24);
+            rolRepo.save(Rol25);
+        }
+        //product
         if(productRepo.findAll().isEmpty()) {
 			productRepo.save(prod1);
             productRepo.save(prod2);

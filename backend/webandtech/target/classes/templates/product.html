@@ -71,11 +71,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</form>
 		</div>
 		<div class="col-md-3 header-right footer-bottom">
-
 			<ul>
-				<li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a>
-
-				</li>
+				<li><a  href="login.html" class="use1" ></a></li>
 				<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
 				<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
 				<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
@@ -114,15 +111,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<ul class="dropdown-menu multi-column columns-3">
 									<div class="row">
 										<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-											<a href="componentes.html"><img src="images/componentes.jpg"
+											<a href="componentes"><img src="images/componentes.jpg"
 													alt=" " /></a>
 										</div>
 										<div class="col-sm-3 multi-gd-img">
 											<ul class="multi-column-dropdown">
-												<li><a href="placasbase.html">Placas Bases</a></li>
-												<li><a href="procesadores.html">Procesador</a></li>
-												<li><a href="discosduros.html">Discos Duros</a></li>
-												<li><a href="tarjetasgraficas.html">Tarjetas Gráficas</a></li>
+												<li><a href="placas-base">Placas Bases</a></li>
+												<li><a href="procesadores">Procesador</a></li>
+												<li><a href="discosduros">Discos Duros</a></li>
+												<li><a href="tarjetas-graficas">Tarjetas Gráficas</a></li>
 											</ul>
 										</div>
 
@@ -138,24 +135,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="row">
 										<div class="col-sm-3 multi-gd-img">
 											<ul class="multi-column-dropdown">
-												<li><a href="teclados.html">Teclados</a></li>
-												<li><a href="ratones.html">Ratones</a></li>
-												<li><a href="monitores.html">Monitores</a></li>
-												<li><a href="auriculares.html">Auriculares</a></li>
+												<li><a href="teclados">Teclados</a></li>
+												<li><a href="ratones">Ratones</a></li>
+												<li><a href="monitores">Monitores</a></li>
+												<li><a href="auriculares">Auriculares</a></li>
 											</ul>
 										</div>
 										<div class="col-sm-6 multi-gd-img multi-gd-text ">
-											<a href="perifericos.html"><img src="images/perifericos.jpg"
+											<a href="perifericos"><img src="images/perifericos.jpg"
 													alt=" " /></a>
 										</div>
 										<div class="clearfix"></div>
 									</div>
 								</ul>
 							</li>
-							<li class=" menu__item"><a class="menu__link" href="electronics.html">Teléfonos</a></li>
-							<li class=" menu__item"><a class="menu__link" href="contact.html">Contacto</a></li>
+							<li class=" menu__item"><a class="menu__link" href="electronics">Teléfonos</a></li>
+							<li class=" menu__item"><a class="menu__link" href="contact">Contacto</a></li>
 							{#admin}
-							<li class=" menu__item"><a class="menu__link" href="codes.html">Administrador</a></li>
+							<li class=" menu__item"><a class="menu__link" href="graphics">Administrador</a></li>
 							{{/admin}}
 						</ul>
 					</div>
@@ -164,7 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="top_nav_right">
 			<div class="cart box_1">
-				<a href="checkout.html">
+				<a href="checkout">
 					<h3>
 						<div class="total">
 							<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
@@ -278,33 +275,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div id="myTabContent" class="tab-content">
 					<div role="tabpanel" class="tab-pane fade in active bootstrap-tab-text" id="home" aria-labelledby="home-tab">
 						<h5>{{product.nameproduct}}</h5>
-						<p>{{product.description}}</p>
-						
-							
+						{{#product.descriptions}}
 							<h4>Características:</h4>
-							
-								<li type="disc">Admite procesadores Intel® Core ™ de 10.a generación, Intel® Core ™ de 11.a generación, Pentium® Gold y Celeron® para zócalo LGA 1200</li>
-								<li type="disc">dmite memoria DDR4, hasta 5066 (OC) MHz</li>
-								<li type="disc">Core Boost: con diseño premium y diseño de energía digital para admitir más núcleos y proporcionar un mejor rendimiento.</li>
-								<li type="disc">DDR4 Boost: tecnología avanzada para entregar señales de datos puros para el mejor rendimiento y estabilidad.</li>
-								<li type="disc">Experiencia ultrarrápida: PCIe 4.0, Lightning Gen4 x4 M.2 con M.2 Shield Frozr</li>
-								<li type="disc">LAN 2.5G: Solución de red mejorada para uso profesional y multimedia. Ofrece una conexión de red segura, estable y rápida</li>  
-								<li type="disc">Aumento de audio: recompense sus oídos con calidad de sonido de estudio	</li>  
-								<li type="disc">Steel Armor: protege las tarjetas VGA contra la flexión y las interferencias electromagnéticas para un mejor rendimiento, estabilidad y resistencia.</li>  
-							
+							<ul>
+								<li type="disc">{{product.description}}</li>
+							</ul>
+						{{/product.descriptions}}
 				</div>
-
-
-					
 					<div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="profile" aria-labelledby="profile-tab">
 						<div class="bootstrap-tab-text-grids">
 							<div class="bootstrap-tab-text-grid">
 								<div class="bootstrap-tab-text-grid-left">
-									<img src="images/user.png" alt=" " class="img-responsive">
+									<img src="{{user.userimg}}" alt=" " class="img-responsive">
 								</div>
 								<div class="bootstrap-tab-text-grid-right">
 									<ul>
-										<li><a href="#">Javi</a></li>
+										<li><a href="#">{{user.username}}</a></li>
 										<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>Reply</a></li>
 									</ul>
 									<p>Calidad precio bastante buena, admite overclock, conexiones en placa abundantes y posibilidad de sincronización RGB</p>
@@ -313,7 +299,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								
 								<div class="bootstrap-tab-text-grid-right">
 									<ul>
-										<li><a href="#">Aitor</a></li>
+										<li><a href="#">{{user.username}}</a></li>
 										<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>Reply</a></li>
 									</ul>
 									<p>Perfecta Placa Base para los chipset de intel 10 y 11 Generación. Tiene muchos USB, PCI express 4.0 y cuatro ranuras de Ram DDR4 hasta 5066 Mhz y todo eso en una Micro ATX. En cuanto a relación calidad/precio, la recomiendo.</p>
@@ -399,11 +385,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 sign-gd">
 					<h4>Información</h4>
 					<ul>
-						<li><a href="index.html">Inicio</a></li>
-						<li><a href="componentes.html">Componentes</a></li>
-						<li><a href="perifericos.html">Periféricos</a></li>
-						<li><a href="electronics.html">Teléfonos</a></li>
-						<li><a href="contact.html">Contactos</a></li>
+						<li><a href="index">Inicio</a></li>
+						<li><a href="componentes">Componentes</a></li>
+						<li><a href="perifericos">Periféricos</a></li>
+						<li><a href="electronics">Teléfonos</a></li>
+						<li><a href="contact">Contactos</a></li>
 					</ul>
 				</div>
 
@@ -450,68 +436,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </div>
 <!-- //footer -->
-<!-- login -->
-			<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content modal-info">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-						</div>
-						<div class="modal-body modal-spa">
-							<div class="login-grids">
-								<div class="login">
-									<div class="login-bottom">
-										<h3>Sign up for free</h3>
-										<form>
-											<div class="sign-up">
-												<h4>Email :</h4>
-												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
-											</div>
-											<div class="sign-up">
-												<h4>Password :</h4>
-												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-												
-											</div>
-											<div class="sign-up">
-												<h4>Re-type Password :</h4>
-												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-												
-											</div>
-											<div class="sign-up">
-												<input type="submit" value="REGISTER NOW" >
-											</div>
-											
-										</form>
-									</div>
-									<div class="login-right">
-										<h3>Sign in with your account</h3>
-										<form>
-											<div class="sign-in">
-												<h4>Email :</h4>
-												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
-											</div>
-											<div class="sign-in">
-												<h4>Password :</h4>
-												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-												<a href="#">Forgot password?</a>
-											</div>
-											<div class="single-bottom">
-												<input type="checkbox"  id="brand" value="">
-												<label for="brand"><span></span>Remember Me.</label>
-											</div>
-											<div class="sign-in">
-												<input type="submit" value="SIGNIN" >
-											</div>
-										</form>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-<!-- //login -->
 </body>
 </html>

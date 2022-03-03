@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>W&T</title>
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Smart Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<meta charset="utf-8">
+	<!--  All snippets are MIT license http://bootdey.com/license -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- //for-mobile-apps -->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- //js -->
+	<!-- single -->
+	<script src="js/imagezoom.js"></script>
+	<script src="js/jquery.flexslider.js"></script>
+	<!-- single -->
+	<!-- cart -->
+	<script src="js/simpleCart.min.js"></script>
+	<!-- cart -->
+	<!-- for bootstrap working -->
+	<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+	<!-- //for bootstrap working -->
+	<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link
+		href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic'
+		rel='stylesheet' type='text/css'>
+	<script src="js/jquery.easing.min.js"></script>
+</head>
+
+<body>
+	<!-- header -->
+	<div class="header">
+		<div class="container">
+			<ul>
+				<li><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Entrega gratuita y rápida</li>
+				<li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Envío gratis en todos los
+					pedidos</li>
+				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a
+						href="mailto:info@example.com">info@w&t.com</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- //header -->
+	<!-- header-bot -->
+	<div class="header-bot">
+		<div class="container">
+			<div class="col-md-3 header-left">
+				<h1><a href="index.html"><img src="images/logo.jpg"></a></h1>
+			</div>
+			<div class="col-md-6 header-middle">
+				<form>
+					<div class="search">
+						<input type="search" value="Buscar" onfocus="this.value = '';"
+							onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
+					</div>
+					<div class="section_room">
+						<select id="country" onchange="change_country(this.value)" class="frm-field required">
+							<option value="null">Todo</option>
+							<option value="AX">Componentes</option>
+							<option value="AX">Periféricos</option>
+							<option value="AX">Teléfonos</option>
+						</select>
+					</div>
+					<div class="sear-sub">
+						<input type="submit" value=" ">
+					</div>
+					<div class="clearfix"></div>
+				</form>
+			</div>
+			<div class="col-md-3 header-right footer-bottom">
+
+				<ul>
+					<li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a>
+
+					</li>
+					<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //header-bot -->
+	<!-- banner -->
+	<div class="ban-top">
+		<div class="container">
+			<div class="top_nav_left">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+								data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+					</div>
+				</nav>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //banner-top -->
+	<div class="container-xl px-2 mt-4">
+		<!-- Account page navigation-->
+		<nav class="nav nav-borders">
+			<a class="nav-link active ms-0" href="graphics" target="__blank">GRÁFICOS</a>
+			<a class="nav-link" href="userList" target="__blank">LISTA USUARIOS</a>
+			<a class="nav-link" href="orderList" target="__blank">LISTA PEDIDOS</a>
+			<a class="nav-link" href="index.html" target="__blank">Salir</a>
+		</nav>
+		<hr class="mt-0 mb-4">
+
+
+	<div class="dashboard-wrapper">
+		<div class="dashboard-ecommerce">
+			<div class="container-fluid dashboard-content ">
+				<!-- ============================================================== -->
+				<!-- pageheader  -->
+				<!-- ============================================================== -->
+				<div class="row">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+						<div class="page-header">
+							<h2 class="pageheader-title">Gráficos y ventas </h2>
+
+							<div class="page-breadcrumb">
+								<nav aria-label="breadcrumb">
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item"><a href="#"
+												class="breadcrumb-link">Administración</a></li>
+										<li class="breadcrumb-item active" aria-current="page">Gráficos y ventas</li>
+									</ol>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- end pageheader  -->
+				<!-- ============================================================== -->
+				<div class="ecommerce-widget">
+
+
+					<!-- ============================================================== -->
+
+					<!-- ============================================================== -->
+
+					<!-- recent orders  -->
+					<!-- ============================================================== -->
+					<div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+						<div class="card">
+							<h5 class="card-header">Órdenes recientes</h5>
+							<div class="card-body p-0">
+								<div class="table-responsive">
+									<table class="table">
+										<thead class="bg-light">
+											<tr class="border-0">
+												<th class="border-0">#</th>
+												<th class="border-0">Nombre producto</th>
+												<th class="border-0">ID</th>
+												<th class="border-0">Cantidad</th>
+												<th class="border-0">Precio</th>
+												<th class="border-0">Fecha pedido</th>
+												<th class="border-0">Cliente</th>
+												<th class="border-0">Estado</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+
+												<td>1</td> <!-- poner un contador-->
+												<td>Product #1 </td> <!-- poner un contador-->
+												<td>{{oredr.idproduct}} </td>
+												<td>{{order.count}}</td>
+												<!-- poner un contador para los productos que se han pedido-->
+												<td>{{order.price}}</td>
+												<td>{{order.date}}}}</td>
+												<td>{{order.iduser}}</td>
+												<td><span class="badge-dot badge-brand mr-1"></span>{{order.status}}
+												</td> <!-- añadir el estado del producto-->
+											</tr>
+											<tr>
+												<td>2</td>
+
+												<td>Product #2 </td>
+												<td>id000002 </td>
+												<td>12</td>
+												<td>$180.00</td>
+												<td>25-08-2018 21:12:56</td>
+												<td>Rachel J. Wicker </td>
+												<td><span class="badge-dot badge-success mr-1"></span>Delivered </td>
+											</tr>
+											<tr>
+												<td>3</td>
+
+
+												<td>Product #3 </td>
+												<td>id000003 </td>
+												<td>23</td>
+												<td>$820.00</td>
+												<td>24-08-2018 14:12:77</td>
+												<td>Michael K. Ledford </td>
+												<td><span class="badge-dot badge-success mr-1"></span>Delivered </td>
+											</tr>
+											<tr>
+												<td>4</td>
+
+
+												<td>Product #4 </td>
+												<td>id000004 </td>
+												<td>34</td>
+												<td>$340.00</td>
+												<td>23-08-2018 09:12:35</td>
+												<td>Michael K. Ledford </td>
+												<td><span class="badge-dot badge-success mr-1"></span>Delivered </td>
+											</tr>
+											<tr>
+												<td colspan="9"><a href="#"
+														class="btn btn-outline-light float-right">Ver detalles</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- ============================================================== -->
+					<!-- end recent orders  -->
+
+
+					<!-- ============================================================== -->
+					<!-- ============================================================== -->
+
+					<!-- ============================================================== -->
+				</div>
+			</div>
+			<div class="row">
+				<!-- ============================================================== -->
+				<!-- product category  -->
+				<!-- ============================================================== -->
+				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+					<div class="card">
+						<h5 class="card-header">Categorías</h5>
+						<div class="card-body">
+							<div class="ct-chart-category ct-golden-section" style="height: 315px;"></div>
+							<div class="text-center m-t-40">
+								<span class="legend-item mr-3">
+									<span class="fa-xs text-primary mr-1 legend-tile"><i
+											class="fa fa-fw fa-square-full "></i></span><span
+										class="legend-text">Periféricos</span>
+								</span>
+								<span class="legend-item mr-3">
+									<span class="fa-xs text-secondary mr-1 legend-tile"><i
+											class="fa fa-fw fa-square-full"></i></span>
+									<span class="legend-text">Componentes</span>
+								</span>
+								<span class="legend-item mr-3">
+									<span class="fa-xs text-info mr-1 legend-tile"><i
+											class="fa fa-fw fa-square-full"></i></span>
+									<span class="legend-text">Móviles</span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- end product category  -->
+				<!-- product sales  -->
+				<!-- ============================================================== -->
+				<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+					<div class="card">
+						<div class="card-header">
+							<!-- <div class="float-right">
+                                                <select class="custom-select">
+                                                    <option selected>Today</option>
+                                                    <option value="1">Weekly</option>
+                                                    <option value="2">Monthly</option>
+                                                    <option value="3">Yearly</option>
+                                                </select>
+                                            </div> -->
+							<h5 class="mb-0"> Ventas</h5>
+						</div>
+						<div class="card-body">
+							<div class="ct-chart-product ct-golden-section"></div>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- end product sales  -->
+				<!-- ============================================================== -->
+				<div class="col-xl-3 col-lg-12 col-md-6 col-sm-12 col-12">
+					<!-- ============================================================== -->
+					<!-- top perfomimg  -->
+					<!-- ============================================================== -->
+					<div class="card">
+						<h5 class="card-header">Top campañas anuales</h5>
+						<div class="card-body p-0">
+							<div class="table-responsive">
+								<table class="table no-wrap p-table">
+									<thead class="bg-light">
+										<tr class="border-0">
+											<th class="border-0">Campaña</th>
+											<th class="border-0">Visitas</th>
+											<th class="border-0">Beneficios</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Campaign#1</td>
+											<td>98,789 </td>
+											<td>$4563</td>
+										</tr>
+										<tr>
+											<td>Campaign#2</td>
+											<td>2,789 </td>
+											<td>$325</td>
+										</tr>
+										<tr>
+											<td>Campaign#3</td>
+											<td>1,459 </td>
+											<td>$225</td>
+										</tr>
+										<tr>
+											<td>Campaign#4</td>
+											<td>5,035 </td>
+											<td>$856</td>
+										</tr>
+										<tr>
+											<td>Campaign#5</td>
+											<td>10,000 </td>
+											<td>$1000</td>
+										</tr>
+										<tr>
+											<td>Campaign#5</td>
+											<td>10,000 </td>
+											<td>$1000</td>
+										</tr>
+										<tr>
+											<td colspan="3">
+												<a href="#" class="btn btn-outline-light float-right">Details</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- ============================================================== -->
+					<!-- end top perfomimg  -->
+					<!-- ============================================================== -->
+				</div>
+			</div>
+
+			<div class="row">
+				<!-- ============================================================== -->
+				<!-- sales  -->
+				<!-- ============================================================== -->
+				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+					<div class="card border-3 border-top border-top-primary">
+						<div class="card-body">
+							<h5 class="text-muted">Ventas</h5>
+							<div class="metric-value d-inline-block">
+								<h1 class="mb-1">$12099</h1>
+							</div>
+							<div class="metric-label d-inline-block float-right text-success font-weight-bold">
+								<span class="icon-circle-small icon-box-xs text-success bg-success-light"><i
+										class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5.86%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- end sales  -->
+				<!-- ============================================================== -->
+				<!-- ============================================================== -->
+				<!-- new customer  -->
+				<!-- ============================================================== -->
+				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+					<div class="card border-3 border-top border-top-primary">
+						<div class="card-body">
+							<h5 class="text-muted">Nuevos clientes</h5>
+							<div class="metric-value d-inline-block">
+								<h1 class="mb-1">1245</h1>
+							</div>
+							<div class="metric-label d-inline-block float-right text-success font-weight-bold">
+								<span class="icon-circle-small icon-box-xs text-success bg-success-light"><i
+										class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- end new customer  -->
+				<!-- ============================================================== -->
+				<!-- ============================================================== -->
+				<!-- visitor  -->
+				<!-- ============================================================== -->
+				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+					<div class="card border-3 border-top border-top-primary">
+						<div class="card-body">
+							<h5 class="text-muted">Visitantes</h5>
+							<div class="metric-value d-inline-block">
+								<h1 class="mb-1">13000</h1>
+							</div>
+							<div class="metric-label d-inline-block float-right text-success font-weight-bold">
+								<span class="icon-circle-small icon-box-xs text-success bg-success-light"><i
+										class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- end visitor  -->
+				<!-- ============================================================== -->
+				<!-- ============================================================== -->
+				<!-- total orders  -->
+				<!-- ============================================================== -->
+				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+					<div class="card border-3 border-top border-top-primary">
+						<div class="card-body">
+							<h5 class="text-muted">Órdenes totales</h5>
+							<div class="metric-value d-inline-block">
+								<h1 class="mb-1">1340</h1>
+							</div>
+							<div class="metric-label d-inline-block float-right text-danger font-weight-bold">
+								<span
+									class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i
+										class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- end total orders  -->
+				<!-- ============================================================== -->
+			</div>
+			<div class="row">
+				<!-- ============================================================== -->
+				<!-- total revenue  -->
+				<!-- ============================================================== -->
+
+
+				<!-- ============================================================== -->
+				<!-- ============================================================== -->
+				<!-- category revenue  -->
+				<!-- ============================================================== -->
+				<div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+					<div class="card">
+						<h5 class="card-header">Beneficios por categoría</h5>
+						<div class="card-body">
+							<div id="c3chart_category" style="height: 420px;"></div>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- end category revenue  -->
+				<!-- ============================================================== -->
+
+				<div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
+					<div class="card">
+						<h5 class="card-header"> Beneficio total</h5>
+						<div class="card-body">
+							<div id="morris_totalrevenue"></div>
+						</div>
+						<div class="card-footer">
+							<p class="display-7 font-weight-bold"><span
+									class="text-primary d-inline-block">$26,000</span><span
+									class="text-success float-right">+9.45%</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+					<!-- ============================================================== -->
+
+					<!-- ============================================================== -->
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- ============================================================== -->
+	<!-- ============================================================== -->
+	</div>
+	<!-- ============================================================== -->
+	<!-- end wrapper  -->
+	<!-- ============================================================== -->
+	</div>
+	<!-- ============================================================== -->
+	<!-- end main wrapper  -->
+	<!-- ============================================================== -->
+	<!-- Optional JavaScript -->
+	<!-- jquery 3.3.1 -->
+	<script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+	<!-- bootstap bundle js -->
+	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+	<!-- slimscroll js -->
+	<script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+	<!-- main js -->
+	<script src="assets/libs/js/main-js.js"></script>
+	<!-- chart chartist js -->
+	<script src="assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+	<!-- sparkline js -->
+	<script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+	<!-- morris js -->
+	<script src="assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+	<script src="assets/vendor/charts/morris-bundle/morris.js"></script>
+	<!-- chart c3 js -->
+	<script src="assets/vendor/charts/c3charts/c3.min.js"></script>
+	<script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+	<script src="assets/vendor/charts/c3charts/C3chartjs.js"></script>
+	<script src="assets/libs/js/dashboard-ecommerce.js"></script>
+
+
+</body>
+
+</html>

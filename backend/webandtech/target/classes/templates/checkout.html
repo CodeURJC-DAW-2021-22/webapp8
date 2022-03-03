@@ -190,19 +190,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- check out -->
 <div class="checkout">
 	<div class="container">
-		<h3>My Shopping Bag</h3>
+		<h3>Mi carrito</h3>
 		<div class="table-responsive checkout-right animated wow slideInUp" data-wow-delay=".5s">
 			<table class="timetable_sub">
 				<thead>
 					<tr>
-						<th>Remove</th>
-						<th>Product</th>
-						<th>Quantity</th>
-						<th>Product Name</th>
-						<th>Price</th>
+						<th>Quitar</th>
+						<th>Producto</th>
+						<th>Cantidad</th>
+						<th>Nombre del producto</th>
+						<th>Precio</th>
 					</tr>
 				</thead>
 					<tr class="rem1">
+						{{#products}}
 						<td class="invert-closeb">
 							<div class="rem">
 								<div class="close1"> </div>
@@ -216,7 +217,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								});
 						   </script>
 						</td>
-						<td class="invert-image"><a href="single.html"><img src="images/monitor1.jpg" alt=" " class="img-responsive" /></a></td>
+						<td class="invert-image"><a href="single.html"><img src="https://localhost:8443/imageProduct0/{{product.idproduct}}" alt=" " class="img-responsive" /></a></td>
 						<td class="invert">
 							 <div class="quantity"> 
 								<div class="quantity-select">                           
@@ -226,92 +227,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 						</td>
-						<td class="invert">Monitor</td>
-						<td class="invert">$239</td>
-					</tr>
-					<tr class="rem2">
-						<td class="invert-closeb">
-							<div class="rem">
-								<div class="close2"> </div>
-							</div>
-							<script>$(document).ready(function(c) {
-								$('.close2').on('click', function(c){
-									$('.rem2').fadeOut('slow', function(c){
-										$('.rem2').remove();
-									});
-									});	  
-								});
-						   </script>
-						</td>
-						<td class="invert-image"><a href="single.html"><img src="images/teclado2.jpg" alt=" " class="img-responsive" /></a></td>
-						<td class="invert">
-							 <div class="quantity"> 
-								<div class="quantity-select">                           
-									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
-									<div class="entry value-plus active">&nbsp;</div>
-								</div>
-							</div>
-						</td>
-						<td class="invert">Teclado</td>
-						<td class="invert">$24.99</td>
-						
-					</tr>
-					<tr class="rem3">
-						<td class="invert-closeb">
-							<div class="rem">
-								<div class="close3"> </div>
-							</div>
-							<script>$(document).ready(function(c) {
-								$('.close3').on('click', function(c){
-									$('.rem3').fadeOut('slow', function(c){
-										$('.rem3').remove();
-									});
-									});	  
-								});
-						   </script>
-						</td>
-						<td class="invert-image"><a href="single.html"><img src="images/raton2.jpg" alt=" " class="img-responsive" /></a></td>
-						<td class="invert">
-							 <div class="quantity"> 
-								<div class="quantity-select">                           
-									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
-									<div class="entry value-plus active">&nbsp;</div>
-								</div>
-							</div>
-						</td>
-						<td class="invert">Ratón</td>
-						<td class="invert">$9.99</td>
-						
-					</tr>
-					<tr class="rem4">
-						<td class="invert-closeb">
-							<div class="rem">
-								<div class="close4"> </div>
-							</div>
-							<script>$(document).ready(function(c) {
-								$('.close4').on('click', function(c){
-									$('.rem4').fadeOut('slow', function(c){
-										$('.rem4').remove();
-									});
-									});	  
-								});
-						   </script>
-						</td>
-						<td class="invert-image"><a href="single.html"><img src="images/auriculares1.jpg" alt=" " class="img-responsive" /></a></td>
-						<td class="invert">
-							 <div class="quantity"> 
-								<div class="quantity-select">                           
-									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
-									<div class="entry value-plus active">&nbsp;</div>
-								</div>
-							</div>
-						</td>
-						<td class="invert">auriculares</td>
-						<td class="invert">$146.99</td>
-						
+						<td class="invert">{{product.nameproduct}}</td>
+						<td class="invert">{{product.price}}</td>
+						{{/products}}
 					</tr>
 					
 								<!--quantity-->
@@ -332,18 +250,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="checkout-left">	
 				
 				<div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
-					<a href="mens.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Back To Shopping</a>
+					<a href="mens.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Volver </a>
 					<a href="#" class="botoncompra item_add hvr-outline-out button2">COMPRAR</a>
 					
 				</div>
 				<div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
-					<h4>Shopping basket</h4>
+					<h4>Compra total</h4>
 					<ul>
-						<li>Monitor <i>-</i> <span>$239</span></li>
-						<li>Teclado <i>-</i> <span>$24.99</span></li>
-						<li>Ratón <i>-</i> <span>$9.99</span></li>
-						<li>Auriculares <i>-</i> <span>$146.99</span></li>
-						<li>Total <i>-</i> <span>$420.97</span></li>
+						<li>{{product.nameproduct}} <i>-</i> <span>{{product.price}}</span></li>
+						
+						
 					</ul>
 				</div>
 				<div class="clearfix"> </div>

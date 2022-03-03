@@ -29,7 +29,7 @@ public class NavigationController {
     @GetMapping("/login")
 	private String getSignIn(Model model,HttpServletRequest request) throws IOException {
 		//userService.loadDataBase();
-		return "login";
+		return "index";
 	}
     @GetMapping("/index")
 	private String getIndex(Model model,HttpServletRequest request) throws IOException {

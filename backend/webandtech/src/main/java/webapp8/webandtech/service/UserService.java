@@ -11,12 +11,15 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import webapp8.webandtech.model.Rol;
 import webapp8.webandtech.model.User;
+import webapp8.webandtech.repository.OrderRepository;
 import webapp8.webandtech.repository.RatingRepository;
 import webapp8.webandtech.repository.RolRepository;
 import webapp8.webandtech.repository.UserRepository;
@@ -24,7 +27,10 @@ import webapp8.webandtech.repository.UserRepository;
 @Service
 public class UserService {
 	@Autowired
-	private RatingRepository ratingrepo;
+	private RatingRepository ratingRepository;
+
+	@Autowired
+	private OrderRepository orderRepository;
 	
 	@Autowired
 	 private UserRepository userRepository;
@@ -89,189 +95,82 @@ public class UserService {
 		}
 	}
 	
-	// @Modifying
-	// public void modifyDataUser(Users user, String username, MultipartFile image, MultipartFile imageProfilePage) throws IOException {
-	// 	Users prev = userRepository.findByusername(username).orElseThrow(() -> new NoSuchElementException("User not found"));
-	// 	if(image != null){
-	// 		if(!image.isEmpty()) {
-	// 			prev.setUserimg(BlobProxy.generateProxy(image.getInputStream(), image.getSize()));
-	// 		}
-	// 	}
+	@Modifying
+	public void modifyDataUser(User user, String username, MultipartFile image) throws IOException {
+		User prev = userRepository.findByusername(username).orElseThrow(() -> new NoSuchElementException("User not found"));
+		if(image != null){
+			if(!image.isEmpty()) {
+				prev.setUserimg(BlobProxy.generateProxy(image.getInputStream(), image.getSize()));
+			}
+		}
 		
-	// 	if(imageProfilePage != null){
-	// 		if(!imageProfilePage.isEmpty()) {
-	//     		prev.setImageprofile(BlobProxy.generateProxy(imageProfilePage.getInputStream(), imageProfilePage.getSize()));
-	//     	}
-	// 	}
-	// 	if(user.getUsername() != null) {
-	// 		if(!user.getUsername().isEmpty()) {
-	// 			prev.setUsername(user.getUsername());
-	// 		}
-	// 	}
+		if(user.getUsername() != null) {
+			if(!user.getUsername().isEmpty()) {
+				prev.setUsername(user.getUsername());
+			}
+		}
 		
-	// 	if(user.getEmail() != null) {
-	// 		if(!user.getEmail().isEmpty()) {
-	// 			prev.setEmail(user.getEmail());
-	// 		}
-	// 	}
+		if(user.getEmail() != null) {
+			if(!user.getEmail().isEmpty()) {
+				prev.setEmail(user.getEmail());
+			}
+		}
 		
-	// 	if(user.getName() != null) {
-	// 		if(!user.getName().isEmpty()) {
-	// 			prev.setName(user.getName());
-	// 		}
-	// 	}	
+		if(user.getCompletname() != null) {
+			if(!user.getCompletname().isEmpty()) {
+				prev.setCompletname(user.getCompletname());
+			}
+		}	
 			
-	// 	if(user.getCity() != null) {
-	// 		if(!user.getCity().isEmpty()) {
-	// 			prev.setCity(user.getCity());
-	// 		}
-	// 	}
-		
-	// 	if(user.getLinkfacebook() != null) {
-	// 		if(!user.getLinkfacebook().isEmpty()) {
-	// 			prev.setLinkfacebook(user.getLinkfacebook());
-	// 		}
-	// 	}
-		
-	// 	if(user.getLinkinstagram() != null) {
-	// 		if(!user.getLinkinstagram().isEmpty()) {
-	// 			prev.setLinkinstagram(user.getLinkinstagram());
-	// 		}
-	// 	}
-		
-	// 	if(user.getLinktwitter() != null) {
-	// 		if(!user.getLinktwitter().isEmpty()) {
-	// 			prev.setLinktwitter(user.getLinktwitter());
-	// 		}
-	// 	}
-		
-	// 	userRepository.save(prev);
-	// }
+		if(user.getAddress() != null) {
+			if(!user.getAddress().isEmpty()) {
+				prev.setAddress(user.getAddress());
+			}
+		}
+	
+		userRepository.save(prev);
+	}
 
-	// @Modifying
-	// public void modifyPass(String username, String newpassword) {
-	// 	Users prev = userRepository.findByusername(username).orElseThrow(() -> new NoSuchElementException("User not found"));
-	// 	prev.setPass(encoder.encode(newpassword));
-	// 	userRepository.save(prev);
-	// }
+	@Modifying
+	public void modifyPass(String username, String newpassword) {
+		User prev = userRepository.findByusername(username).orElseThrow(() -> new NoSuchElementException("User not found"));
+		prev.setPass(encoder.encode(newpassword));
+		userRepository.save(prev);
+	}
 	
-	// @Transactional
-	// public void deleteUser(String username) {
-    // 	Users prev = userRepository.findByusername(username).orElseThrow(() -> new NoSuchElementException("User not found"));
-	// 	listproductrepo.deleteByIduser(prev);
-    // 	relationrepo.deleteByUserone(prev);
-    // 	relationrepo.deleteByUsertwo(prev);
-    // 	messagerepo.deleteByIduser(prev);
-    // 	messagerepo.deleteByIduserto(prev);
-    // 	likerepo.deleteByIduser(prev);
-    // 	postsrepo.deleteByIduser(prev);
-    // 	productrepo.deleteByIduser(prev);
-    // 	relationrepo.deleteByUserone(prev);
-    // 	rolesRepository.deleteByIduser(prev);
-    // 	userRepository.deleteById(prev.getIdusers());
-	// }
+	@Transactional
+	public void deleteUser(String username) {
+    	User prev = userRepository.findByusername(username).orElseThrow(() -> new NoSuchElementException("User not found"));
+    	ratingRepository.deleteByIduser(prev);
+    	orderRepository.deleteByIduser(prev);
+    	rolRepository.deleteByIduser(prev);
+    	userRepository.deleteById(prev.getIduser());
+	}
 	
-	// public void saveMessage(String to , MessageModel message) {
-	// 	Users f =  userRepository.findByusername(message.getFromLogin()).orElseThrow(() -> new NoSuchElementException("User not found"));
-    // 	Users t =  userRepository.findByusername(to).orElseThrow(() -> new NoSuchElementException("User not found"));
-    // 	Message m = new Message();
-    // 	m.setIduser(f);
-    // 	m.setIduserto(t);
-    // 	m.setMessage(message.getMessage());
-    // 	m.setTime(message.getTime());
-    // 	messagerepo.save(m);
-	// }
+	public void saveUser(User user) {
+		user.setPass(encoder.encode(user.getPass()));
+		userRepository.save(user);
+	}
+	
+	@Transactional
+	public void deleteUserById(int id) {
+		User prev = userRepository.findById(id).orElseThrow(() -> new NoSuchElementException("User not found"));
+		ratingRepository.deleteByIduser(prev);
+    	orderRepository.deleteByIduser(prev);
+    	rolRepository.deleteByIduser(prev);
+    	userRepository.deleteById(prev.getIduser());
+	}
 
-	// public List<Message> getChat(String from, String to) {
-    // 	Users f = userRepository.findByusername(from).orElseThrow(() -> new NoSuchElementException("User not found"));
-	// 	Users t = userRepository.findByusername(to).orElseThrow(() -> new NoSuchElementException("User not found"));
-    // 	List<Message> m = messagerepo.findByIduserAndIduserto(t, f);
-    // 	List<Message> m2 = messagerepo.findByIduserAndIduserto(f, t);
-    // 	m.addAll(m2);
-    // 	Collections.sort(m);
-    // 	return m;
-	// }
-	
-	// public List<Users> getListMostFollowed(){
-	// 	return relationrepo.findMostFollowers(PageRequest.of(0, 5));
-	// }
-	
-	// public List<UsersRelations> getFollowing(String username){
-	// 	Users s = userRepository.findByusername(username).orElseThrow(() -> new NoSuchElementException("User not found"));
-	// 	return relationrepo.findByuserone(s);
-	// }
-	
-	// public List<UsersRelations> getFollowers(String username){
-	// 	Users s = userRepository.findByusername(username).orElseThrow(() -> new NoSuchElementException("User not found"));
-	// 	return relationrepo.findByusertwo(s);	
-	// }
-	
-	// public String existsRealtion(Users actual,Users follow) {
-	// 	String color = "#53D690";
-	// 	UsersRelations s =  relationrepo.findByuseroneAndUsertwo(actual, follow);
-    // 	if(s != null) {
-    // 		color = "#e44d3a";
-    // 	}
-    // 	return color;
-	// }
-	
-	// public boolean existsRelationUsers(Users actual,Users follow) {
-	// 	UsersRelations s =  relationrepo.findByuseroneAndUsertwo(actual, follow);
-	// 	return (s != null);
-	// }
+	public boolean existsUser(String username) {
+		return userRepository.existsIdusersByUsername(username);
+	}
 
-	// public void saveRelation(UsersRelations relation) {
-	// 	relationrepo.save(relation);
-	// }
-	
-	// public List<UsersRelations> getAllRelations(){
-    //     return relationrepo.findAll();
-	// }
-	
-	// public Optional<UsersRelations> getRelations(int id){
-    //     return relationrepo.findById(id);
-	// }
+	public boolean existEmail(String email) {
+		return userRepository.existsIdusersByEmail(email);
+	}
 
-	// public void deleteRelation(UsersRelations usersRelations) {
-	// 	relationrepo.delete(usersRelations);
-	// }
-
-	// public void saveUser(Users user) {
-	// 	user.setPass(encoder.encode(user.getPass()));
-	// 	userRepository.save(user);
-	// }
-
-	// public int getRelationId(UsersRelations relation) {
-	// 	UsersRelations rela = relationrepo.findByuseroneAndUsertwo(relation.getUserone(), relation.getUsertwo());
-	// 	return rela.getIduserrelation();
-	// }
-	
-	// @Transactional
-	// public void deleteUserById(int id) {
-	// 	Users prev = userRepository.findById(id).orElseThrow(() -> new NoSuchElementException("User not found"));
-	// 	listproductrepo.deleteByIduser(prev);
-    // 	relationrepo.deleteByUserone(prev);
-    // 	relationrepo.deleteByUsertwo(prev);
-    // 	messagerepo.deleteByIduser(prev);
-    // 	messagerepo.deleteByIduserto(prev);
-    // 	likerepo.deleteByIduser(prev);
-    // 	postsrepo.deleteByIduser(prev);
-    // 	productrepo.deleteByIduser(prev);
-    // 	relationrepo.deleteByUserone(prev);
-    // 	rolesRepository.deleteByIduser(prev);
-    // 	userRepository.deleteById(prev.getIdusers());
-	// }
-
-	// public boolean existsUser(String username) {
-	// 	return userRepository.existsIdusersByUsername(username);
-	// }
-
-	// public boolean existEmail(String email) {
-	// 	return userRepository.existsIdusersByEmail(email);
-	// }
-
-	// public boolean existsUserById(Users iduser) {
-	// 	Optional<Users> user = userRepository.findById(iduser.getIdusers());
-	// 	return user.isPresent();
-	// }
+	public boolean existsUserById(User iduser) {
+		Optional<User> user = userRepository.findById(iduser.getIduser());
+		return user.isPresent();
+	}
 }

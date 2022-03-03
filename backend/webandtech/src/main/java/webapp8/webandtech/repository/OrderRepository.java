@@ -14,6 +14,7 @@ public interface OrderRepository extends JpaRepository<Order, Integer>{
     public List<Order> findAll();
     public Order findByidorder (Integer idorder);
     public Page<Order> findByiduser(User iduser, Pageable page);
+    public Long deleteByIduser(User iduser);
     //public boolean existsidorderByiduser(Integer iduser);
 
 }

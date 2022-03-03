@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/css/style.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <title>Order List</title>
+</head>
+
+<body>
+    <!-- main wrapper -->
+    <div class="dashboard-main-wrapper">
+        <!-- wrapper  -->
+        <div class="dashboard-orderlist">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <!-- pageheader  -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">Order List</h2>
+                                <div class="container-xl px-2 mt-4">
+                                    <!-- Account page navigation-->
+                                    <nav class="nav nav-borders">
+                                        <a class="nav-link active ms-0" href="graphics" target="__blank">GRÁFICOS</a>
+                                        <a class="nav-link" href="user-list" target="__blank">LISTA USUARIOS</a>
+                                        <a class="nav-link" href="order-list" target="__blank">LISTA PEDIDOS</a>
+                                        <a class="nav-link" href="new-product" target="__blank">CREAR PRODUCTO</a>
+                                        <a class="nav-link" href="index.html" target="__blank">SALIR</a>
+                                    </nav>
+                                    <hr class="mt-0 mb-4">
+                                </div>
+                                <div class="page-breadcrumb">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end pageheader  -->
+                    <div class="ecommerce-widget">
+                        <!-- recent orders  -->
+                        <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12 ">
+                            <div class="card">
+                                <h5 class="card-header">Listado de pedidos</h5>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="bg-light">
+                                                <tr class="border-0">
+                                                    <th class="border-0">#</th>
+                                                    <th class="border-0">Nombre producto</th>
+                                                    <th class="border-0">ID</th>
+                                                    <th class="border-0">Cantidad</th>
+                                                    <th class="border-0">Precio</th>
+                                                    <th class="border-0">Fecha pedido</th>
+                                                    <th class="border-0">Cliente</th>
+                                                    <th class="border-0">Estado</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td> <!-- poner un contador-->
+                                                    <td>Product #1 </td> <!-- poner un contador-->
+                                                    <td>{{oredr.idproduct}} </td>
+                                                    <td>{{order.count}}</td>
+                                                    <!-- poner un contador para los productos que se han pedido-->
+                                                    <td>{{order.price}}</td>
+                                                    <td>{{order.date}}}}</td>
+                                                    <td>{{order.iduser}}</td>
+                                                    <td><span class="badge-dot badge-brand mr-1"></span>{{order.status}}
+                                                    </td> <!-- añadir el estado del producto-->
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+
+                                                    <td>Product #2 </td>
+                                                    <td>id000002 </td>
+                                                    <td>12</td>
+                                                    <td>$180.00</td>
+                                                    <td>25-08-2018 21:12:56</td>
+                                                    <td>Rachel J. Wicker </td>
+                                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+
+                                                    <td>Product #3 </td>
+                                                    <td>id000003 </td>
+                                                    <td>23</td>
+                                                    <td>$820.00</td>
+                                                    <td>24-08-2018 14:12:77</td>
+                                                    <td>Michael K. Ledford </td>
+                                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+
+                                                    <td>Product #4 </td>
+                                                    <td>id000004 </td>
+                                                    <td>34</td>
+                                                    <td>$340.00</td>
+                                                    <td>23-08-2018 09:12:35</td>
+                                                    <td>Michael K. Ledford </td>
+                                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="9"><a href="#"
+                                                            class="btn btn-outline-light float-right">Ver detalles</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="assets/libs/js/main-js.js"></script>
+    <!-- chart chartist js -->
+    <script src="assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <!-- sparkline js -->
+    <script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <!-- morris js -->
+    <script src="assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="assets/vendor/charts/morris-bundle/morris.js"></script>
+    <!-- chart c3 js -->
+    <script src="assets/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="assets/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script src="assets/libs/js/dashboard-ecommerce.js"></script>
+</body>
+
+</html>

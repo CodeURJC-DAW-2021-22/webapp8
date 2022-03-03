@@ -139,27 +139,26 @@ public class Loader {
 
 
         //User creations
-        User User1 = new User(1,"user.1@hotmail.com","Jonathan",encoder.encode("f"), "Jonathan Joestar", img1, true, "Madrid");
-        User User2 = new User(2,"user.2@hotmail.com","Joseph",encoder.encode("f"), "Joseph Joestar", img2, true, "Madrid");
-        User User3 = new User(3,"user.3@hotmail.com","Jotaro",encoder.encode("f"), "Jotaro Kujou", img3, true, "Madrid");
-        User User4 = new User(4,"user.4@hotmail.com","Josuke",encoder.encode("f"), "Josuke Higashikata", img4, true, "Madrid");
-        User User5 = new User(5,"user.5@hotmail.com","Giorno",encoder.encode("f"), "Giorno Giovanna", img5, true, "Madrid");
-        User User6 = new User(6,"user.6@hotmail.com","Jolyne",encoder.encode("f"), "Jolyne Kujou", img6, true, "Madrid");
-        
-        User User7 = new User(7,"user.7@hotmail.com","eeeeee",encoder.encode("f"), "Jonathan Joestar", img7, true, "Madrid");
-        User User8 = new User(8,"user.8@hotmail.com","Joseph",encoder.encode("f"), "Joseph Joestar", img8, true, "Madrid");
-        User User9 = new User(9,"user.9@hotmail.com","Jotaro",encoder.encode("f"), "Jotaro Kujou", img9, true, "Madrid");
-        User User10 = new User(10,"user.10@hotmail.com","Josuke",encoder.encode("f"), "Josuke Higashikata", img10, true, "Madrid");
-        User User11 = new User(11,"user.11@hotmail.com","Giorno",encoder.encode("f"), "Giorno Giovanna", img11, true, "Madrid");
-        User User12 = new User(12,"user.12@hotmail.com","Jolyne",encoder.encode("f"), "Jolyne Kujou", img12, true, "Madrid");
-        User User13 = new User(13,"user.13@hotmail.com","Jonathan",encoder.encode("f"), "Jonathan Joestar", img13, true, "Madrid");
-        User User14 = new User(14,"user.14@hotmail.com","Joseph",encoder.encode("f"), "Joseph Joestar", img14, true, "Madrid");
-        User User15 = new User(15,"user.15@hotmail.com","Jotaro",encoder.encode("f"), "Jotaro Kujou", img15, true, "Madrid");
-        User User16 = new User(16,"user.16@hotmail.com","Josuke",encoder.encode("f"), "Josuke Higashikata", img16, true, "Madrid");
-        User User17 = new User(17,"user.17@hotmail.com","Giorno",encoder.encode("f"), "Giorno Giovanna", img17, true, "Madrid");
-        User User18 = new User(18,"user.18@hotmail.com","Jolyne",encoder.encode("f"), "Jolyne Kujou", img18, true, "Madrid");
-        User User19 = new User(19,"user.19@hotmail.com","Jonathan",encoder.encode("f"), "Jonathan Joestar", img19, true, "Madrid");
-        User User20 = new User(20,"user.20@hotmail.com","Joseph",encoder.encode("f"), "Joseph Joestar", img20, true, "Madrid");
+        User User1 = new User(1,"user.1@hotmail.com","Jonathan",encoder.encode("f"), "Jonathan Joestar", img1, true, "Londres");
+        User User2 = new User(2,"user.2@hotmail.com","Joseph",encoder.encode("f"), "Joseph Joestar", img2, true, "Londres");
+        User User3 = new User(3,"user.3@hotmail.com","Jotaro",encoder.encode("f"), "Jotaro Kuujou", img3, true, "Egypt");
+        User User4 = new User(4,"user.4@hotmail.com","Josuke",encoder.encode("f"), "Josuke Higashikata", img4, true, "Morioh");
+        User User5 = new User(5,"user.5@hotmail.com","Giorno",encoder.encode("f"), "Giorno Giovanna", img5, true, "Napoles");
+        User User6 = new User(6,"user.6@hotmail.com","Jolyne",encoder.encode("f"), "Jolyne Kujou", img6, true, "Florida");
+        User User7 = new User(7,"user.7@hotmail.com","Anthonio",encoder.encode("f"), "Anthonio Zeppeli", img7, true, "Londres");
+        User User8 = new User(8,"user.8@hotmail.com","Dio",encoder.encode("f"), "Dio Brando", img8, true, "Londres");
+        User User9 = new User(9,"user.9@hotmail.com","Robert",encoder.encode("f"), "Robert Speedwagon", img9, true, "Londres");
+        User User10 = new User(10,"user.10@hotmail.com","Caesar",encoder.encode("f"), "Caesar Zeppeli", img10, true, "Londres");
+        User User11 = new User(11,"user.11@hotmail.com","Mohammed",encoder.encode("f"), "Mohammed Avdol", img11, true, "Egypt");
+        User User12 = new User(12,"user.12@hotmail.com","Jean-Pierre",encoder.encode("f"), "Jean-Pierre Polnaref", img12, true, "Egypt");
+        User User13 = new User(13,"user.13@hotmail.com","Noriaki",encoder.encode("f"), "Noriaki kakyouin", img13, true, "Egypt");
+        User User14 = new User(14,"user.14@hotmail.com","Hirose",encoder.encode("f"), "Hirose Kouichi", img14, true, "Morioh");
+        User User15 = new User(15,"user.15@hotmail.com","Kira",encoder.encode("f"), "Kira Yoshikage", img15, true, "Morioh");
+        User User16 = new User(16,"user.16@hotmail.com","Rohan",encoder.encode("f"), "Rohan Kishibe", img16, true, "Morioh");
+        User User17 = new User(17,"user.17@hotmail.com","Bruno",encoder.encode("f"), "Bruno Bucciarati", img17, true, "Napoles");
+        User User18 = new User(18,"user.18@hotmail.com","Mista",encoder.encode("f"), "Mista guido", img18, true, "Napoles");
+        User User19 = new User(19,"user.19@hotmail.com","Ghirga",encoder.encode("f"), "Ghirga Narancia", img19, true, "Napoles");
+        User User20 = new User(20,"user.20@hotmail.com","Abbacchio",encoder.encode("f"), "Abbacchio Leone", img20, true, "Napoles");
 
 
         if(userRepo.findAll().isEmpty()) {

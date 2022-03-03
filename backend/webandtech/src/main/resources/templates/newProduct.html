@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>W&T</title>
+		<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Smart Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<meta charset="utf-8">
+<!--  All snippets are MIT license http://bootdey.com/license -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<!-- single -->
+<script src="js/imagezoom.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<!-- single -->
+<!-- cart -->
+	<script src="js/simpleCart.min.js"></script>
+<!-- cart -->
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<!-- //for bootstrap working -->
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+<script src="js/jquery.easing.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="container-xl px-4 mt-4">
+
+	<div class="container-xl px-2 mt-4">
+		<!-- Account page navigation-->
+		<nav class="nav nav-borders">
+			<a class="nav-link active ms-0" href="graphics" target="__blank">GRÁFICOS</a>
+			<a class="nav-link" href="user-list" target="__blank">LISTA USUARIOS</a>
+			<a class="nav-link" href="order-list" target="__blank">LISTA PEDIDOS</a>
+			<a class="nav-link" href="new-product" target="__blank">CREAR PRODUCTO</a>
+			<a class="nav-link" href="index.html" target="__blank">SALIR</a>
+		</nav>
+		<hr class="mt-0 mb-4">
+	</div>
+    <!-- Account page navigation-->
+    
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Perfil picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header">Foto 1</div>
+                <div class="card-body text-center">
+                    <div class="drag-drop">
+						<input type="file" multiple="multiple" id="photo" />
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
+							<i class="fa fa-circle fa-stack-1x top medium"></i>
+							<i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
+						</span>
+					</div>
+					<button type="button" class="btn btn-danger">Cancelar</button>
+                </div>
+            </div>
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header">Foto 2</div>
+                <div class="card-body text-center">
+                    <div class="drag-drop">
+						<input type="file" multiple="multiple" id="photo" />
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
+							<i class="fa fa-circle fa-stack-1x top medium"></i>
+							<i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
+						</span>
+						<span class="desc">Pulse aquí para añadir archivos</span>
+					</div>
+					<button type="button" class="btn btn-danger">Cancelar</button>
+                </div>
+            </div>
+			<div class="card mb-4 mb-xl-0">
+                <div class="card-header">Foto 3</div>
+                <div class="card-body text-center">
+                    <div class="drag-drop">
+						<input type="file" multiple="multiple" id="photo" />
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
+							<i class="fa fa-circle fa-stack-1x top medium"></i>
+							<i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
+						</span>
+						<span class="desc">Pulse aquí para añadir archivos</span>
+					</div>
+					<button type="button" class="btn btn-danger">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Detalles del producto</div>
+                <div class="card-body">
+                    <form>
+                        <!-- Form Group (producto)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Nombre del producto</label>
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Gigabyte B550 AORUS ELITE V2" value="">
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputFirstName">Categoría:  </label>
+                                <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
+                                    <option value="null">Placa Base</option>
+                                    <option value="null">Disco Duro</option>
+                                    <option value="null">Procesador</option>
+                                    <option value="null">Tarjeta Gráfica</option>
+                                    <option value="null">Teclado</option>
+                                    <option value="null">Ratón</option>
+                                    <option value="null">Monitor</option>
+                                    <option value="null">Auriculares</option>
+                                    <option value="null">Teléfono</option>
+                                </select>
+                            </div>
+                            <!-- Form Group (last name)-->
+                            
+                        </div>
+                        
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (Precio)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Precio: </label>
+                                <input class="form-control" id="inputLocation" type="text" placeholder="99,99€" >
+                            </div>
+                        </div>
+
+                        <div class="row gx-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Descripción: </label>
+                                <p><textarea name="comentario" rows="5" cols="90" placeholder="Placa base AMD B550 AORUS con VRM digital..." ></textarea></p>
+                            </div>
+                        </div>
+
+                        <div class="row gx-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Características: </label>
+                                <p><textarea name="comentario" rows="5" cols="90" placeholder="Admite AMD Ryzen ™ 5000 Series / 3rd Gen Ryzen ™ y 3rd Gen Ryzen ™ con procesadores gráficos Radeon ™ DDR4 sin búfer ECC / no ECC de doble canal, 4 DIMM..."></textarea></p>
+                            </div>
+                        </div>
+       
+                        <!-- Save changes button-->
+						<button type="button" class="btn btn-success">Crear producto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="footer">
+	<div class="container">
+		<div class="col-md-3 footer-left">
+			<h2><a href="index.html"><img src="images/logo.jpg" alt=" " /></a></h2>
+			<p>Nuestra tienda se compromete a traer siempre lo más nuevo en tecnología a precios excelentes y
+				con seguridad y garantía de que el producto llega a salvo a su casa.</p>
+		</div>
+		<div class="col-md-9 footer-right">
+			<div class="col-sm-6 newsleft">
+				<h3>REGÍSTRESE PARA RECIBIR OFERTAS !</h3>
+			</div>
+			<div class="col-sm-6 newsright">
+				<form>
+					<input type="text" value="Email" onfocus="this.value = '';"
+						onblur="if (this.value == '') {this.value = 'Email';}" required="">
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+			<div class="sign-grds">
+				<div class="col-md-4 sign-gd">
+					<h4>Información</h4>
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="componentes.html">Componentes</a></li>
+						<li><a href="perifericos.html">Periféricos</a></li>
+						<li><a href="electronics.html">Teléfonos</a></li>
+						<li><a href="contact.html">Contactos</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-4 sign-gd-two">
+					<h4>Infomación de la tienda</h4>
+					<ul>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Dirección: Avenida
+							de Carlos, s/n <span>Madrid</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a
+								href="mailto:info@example.com">info@w&t.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +1234 567 567
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4 sign-gd flickr-post">
+					<h4>Publicaciones</h4>
+					<ul>
+						<li><a href="single.html"><img src="images/b15.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b16.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b17.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b18.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b15.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b16.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b17.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b18.jpg" alt=" "
+									class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="images/b15.jpg" alt=" "
+									class="img-responsive" /></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<p class="copy-right">&copy 2022 W&T. Todos los derechos reservdos | Design by <a href="http://urjc.es/"
+				target="_blank">Alumnos de la URJC</a></p>
+	</div>
+</div>
+<!-- //footer -->
+
+
+
+
+
+<!-- login -->
+			<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content modal-info">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+						</div>
+						<div class="modal-body modal-spa">
+							<div class="login-grids">
+								<div class="login">
+									<div class="login-bottom">
+										<h3>Sign up for free</h3>
+										<form>
+											<div class="sign-up">
+												<h4>Email :</h4>
+												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
+											</div>
+											<div class="sign-up">
+												<h4>Password :</h4>
+												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+												
+											</div>
+											<div class="sign-up">
+												<h4>Re-type Password :</h4>
+												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+												
+											</div>
+											<div class="sign-up">
+												<input type="submit" value="REGISTER NOW" >
+											</div>
+											
+										</form>
+									</div>
+									<div class="login-right">
+										<h3>Sign in with your account</h3>
+										<form>
+											<div class="sign-in">
+												<h4>Email :</h4>
+												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
+											</div>
+											<div class="sign-in">
+												<h4>Password :</h4>
+												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+												<a href="#">Forgot password?</a>
+											</div>
+											<div class="single-bottom">
+												<input type="checkbox"  id="brand" value="">
+												<label for="brand"><span></span>Remember Me.</label>
+											</div>
+											<div class="sign-in">
+												<input type="submit" value="SIGNIN" >
+											</div>
+										</form>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+<!-- //login -->
+
+
+
+</body>
+</html>

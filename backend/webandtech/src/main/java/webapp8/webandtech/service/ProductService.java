@@ -1,9 +1,11 @@
 package webapp8.webandtech.service;
 
 import java.io.IOException;
+import java.util.NoSuchElementException;
 
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -39,6 +41,14 @@ public class ProductService {
 		} else {
 			product.setImg3(false);
 		}
-		save(product);
+		productRepository.save(product);
+	}
+
+    public Page<Product> getProductsPage(org.springframework.data.domain.Pageable page) {
+		return productRepository.findAll(page);
+	}
+
+    public Product getProduct(int idproduct) {
+		return productRepository.findById(idproduct).orElseThrow(() -> new NoSuchElementException("Product not found"));
 	}
 }

@@ -2,7 +2,6 @@ package webapp8.webandtech.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -50,31 +49,31 @@ public class ProductController {
 	
 	@GetMapping("/imageProduct0/{idproduct}")
     private ResponseEntity<Object> downloadImageProduct0(@PathVariable int idproduct) throws SQLException{
-		Product p = productService.getProduct(idproduct);
-    	Resource file = new InputStreamResource(p.getImage1().getBinaryStream());
+		Product product = productService.getProduct(idproduct);
+    	Resource file = new InputStreamResource(product.getImage1().getBinaryStream());
     	return ResponseEntity.ok()
 				.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
-				.contentLength(p.getImage1().length())
+				.contentLength(product.getImage1().length())
 				.body(file);
     }
 	
 	@GetMapping("/imageProduct1/{idproduct}")
     private ResponseEntity<Object> downloadImageProduct1( @PathVariable int idproduct) throws SQLException{
-		Product p = productService.getProduct(idproduct);
-		Resource file = new InputStreamResource(p.getImage2().getBinaryStream());
+		Product product = productService.getProduct(idproduct);
+		Resource file = new InputStreamResource(product.getImage2().getBinaryStream());
     	return ResponseEntity.ok()
 				.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
-				.contentLength(p.getImage2().length())
+				.contentLength(product.getImage2().length())
 				.body(file);
     }
 	
 	@GetMapping("/imageProduct2/{idproduct}")
     private ResponseEntity<Object> downloadImageProduct2( @PathVariable int idproduct) throws SQLException{
-		Product p = productService.getProduct(idproduct);
-		Resource file = new InputStreamResource(p.getImage3().getBinaryStream());
+		Product product = productService.getProduct(idproduct);
+		Resource file = new InputStreamResource(product.getImage3().getBinaryStream());
     	return ResponseEntity.ok()
 				.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
-				.contentLength(p.getImage3().length())
+				.contentLength(product.getImage3().length())
 				.body(file);
     }
 }

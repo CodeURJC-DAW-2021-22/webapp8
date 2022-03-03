@@ -189,20 +189,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<form>
 					<div class="sign-up">
 						<h4>Email :</h4>
-						<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
+						<input type="text" name="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">	
 					</div>
 					<div class="sign-up">
 						<h4>Contraseña :</h4>
-						<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+						<input type="password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
 						
 					</div>
 					<div class="sign-up">
 						<h4>Introduce de nuevo la contraseña :</h4>
-						<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+						<input type="password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
 						
 					</div>
 					<div class="sign-up">
-						<input type="submit" value="REGISTRARSE" >
+						<button type="submit" value="submit"><input type="hidden" name="_csrf" value="{{token}}"/>Registrarse</button>
 					</div>
 					
 				</form>
@@ -212,19 +212,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<form>
 					<div class="sign-in">
 						<h4>Email :</h4>
-						<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
+						<input type="text" name="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">	
 					</div>
 					<div class="sign-in">
 						<h4>Contraseña :</h4>
-						<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-						<a href="#">Has olvidado la contraseña?</a>
+						<input type="password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+						<a href="/forgotPassword">Has olvidado la contraseña?</a>
 					</div>
 					<div class="single-bottom">
 						<input type="checkbox"  id="brand" value="">
 						<label for="brand"><span></span>He leído y acepto la política de privacidad</label>
 					</div>
 					<div class="sign-in">
-						<input type="submit" value="INICIAR SESION" >
+						<button type="submit" value="submit">Iniciar sesión</button>
+						<input type="hidden" name="_csrf" value="{{token}}"/>
 					</div>
 				</form>
 			</div>

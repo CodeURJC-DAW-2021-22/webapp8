@@ -1,18 +1,23 @@
-package webapp8.webandtech.model;
+package webapp8.webandtech.service;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.sql.Blob;
 
-import javax.annotation.PostConstruct;
 
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
+import webapp8.webandtech.model.Brand;
+import webapp8.webandtech.model.Order;
+import webapp8.webandtech.model.Product;
+import webapp8.webandtech.model.ProductType;
+import webapp8.webandtech.model.Rating;
+import webapp8.webandtech.model.Rol;
+import webapp8.webandtech.model.User;
 import webapp8.webandtech.repository.BrandRepository;
 import webapp8.webandtech.repository.OrderRepository;
 import webapp8.webandtech.repository.ProductRepository;
@@ -21,8 +26,8 @@ import webapp8.webandtech.repository.RatingRepository;
 import webapp8.webandtech.repository.RolRepository;
 import webapp8.webandtech.repository.UserRepository;
 
-public class Loader {
-    private static final Path ImgFolder = Paths.get(System.getProperty("user.dir"), "src/main/resources/static/images/");
+@Service
+public class LoaderService {
 
     @Autowired
     private OrderRepository orderRepo;
@@ -49,68 +54,28 @@ public class Loader {
 	private PasswordEncoder encoder;
 
 
-    public Loader() {
-
-    }
-
-
-    public Loader(OrderRepository orderRepo, ProductRepository productRepo, ProductTypeRepository productTypeRepo, 
-            UserRepository userRepo, RolRepository rolRepo, RatingRepository ratingRepo, BrandRepository brandRepo, PasswordEncoder encoder) {
-        super();
-        this.orderRepo = orderRepo;
-		this.productRepo = productRepo;
-        this.productTypeRepo = productTypeRepo;
-		this.userRepo = userRepo;
-        this.rolRepo = rolRepo;
-		this.ratingRepo = ratingRepo;
-        this.brandRepo = brandRepo;
-		this.encoder = encoder;
-    }
-
-
-    @PostConstruct
     public void Load() throws IOException{
         //User  img
-        Path imagePathUser1 = ImgFolder.resolve("imgUser1.jpg");
-		Resource imageUser1 = new UrlResource(imagePathUser1.toUri());
-        Path imagePathUser2 = ImgFolder.resolve("imgUser2.jpg");
-		Resource imageUser2 = new UrlResource(imagePathUser2.toUri());
-        Path imagePathUser3 = ImgFolder.resolve("imgUser3.jpg");
-		Resource imageUser3 = new UrlResource(imagePathUser3.toUri());
-        Path imagePathUser4 = ImgFolder.resolve("imgUser4.jpg");
-		Resource imageUser4 = new UrlResource(imagePathUser4.toUri());
-        Path imagePathUser5 = ImgFolder.resolve("imgUser5.jpg");
-		Resource imageUser5 = new UrlResource(imagePathUser5.toUri());
-        Path imagePathUser6 = ImgFolder.resolve("imgUser6.jpg");
-		Resource imageUser6 = new UrlResource(imagePathUser6.toUri());
-        Path imagePathUser7 = ImgFolder.resolve("imgUser7.jpg");
-		Resource imageUser7 = new UrlResource(imagePathUser7.toUri());
-        Path imagePathUser8 = ImgFolder.resolve("imgUser8.jpg");
-		Resource imageUser8 = new UrlResource(imagePathUser8.toUri());
-        Path imagePathUser9 = ImgFolder.resolve("imgUser9.jpg");
-		Resource imageUser9 = new UrlResource(imagePathUser9.toUri());
-        Path imagePathUser10 = ImgFolder.resolve("imgUser10.jpg");
-		Resource imageUser10 = new UrlResource(imagePathUser10.toUri());
-        Path imagePathUser11 = ImgFolder.resolve("imgUser11.jpg");
-		Resource imageUser11 = new UrlResource(imagePathUser11.toUri());
-        Path imagePathUser12 = ImgFolder.resolve("imgUser12.jpg");
-		Resource imageUser12 = new UrlResource(imagePathUser12.toUri());
-        Path imagePathUser13 = ImgFolder.resolve("imgUser13.jpg");
-		Resource imageUser13 = new UrlResource(imagePathUser13.toUri());
-        Path imagePathUser14 = ImgFolder.resolve("imgUser14.jpg");
-		Resource imageUser14 = new UrlResource(imagePathUser14.toUri());
-        Path imagePathUser15 = ImgFolder.resolve("imgUser15.jpg");
-		Resource imageUser15 = new UrlResource(imagePathUser15.toUri());
-        Path imagePathUser16 = ImgFolder.resolve("imgUser16.jpg");
-		Resource imageUser16 = new UrlResource(imagePathUser16.toUri());
-        Path imagePathUser17 = ImgFolder.resolve("imgUser17.jpg");
-		Resource imageUser17 = new UrlResource(imagePathUser17.toUri());
-        Path imagePathUser18 = ImgFolder.resolve("imgUser18.jpg");
-		Resource imageUser18 = new UrlResource(imagePathUser18.toUri());
-        Path imagePathUser19 = ImgFolder.resolve("imgUser19.jpg");
-		Resource imageUser19 = new UrlResource(imagePathUser19.toUri());
-        Path imagePathUser20 = ImgFolder.resolve("imgUser20.jpg");
-		Resource imageUser20 = new UrlResource(imagePathUser20.toUri());
+        Resource imageUser1 = new ClassPathResource("/static/images/imgUser1.jpg");
+		Resource imageUser2 = new ClassPathResource("/static/images/imgUser2.jpg");
+		Resource imageUser3 = new ClassPathResource("/static/images/imgUser3.jpg");
+		Resource imageUser4 = new ClassPathResource("/static/images/imgUser4.jpg");
+		Resource imageUser5 = new ClassPathResource("/static/images/imgUser5.jpg");
+		Resource imageUser6 = new ClassPathResource("/static/images/imgUser6.jpg");
+		Resource imageUser7 = new ClassPathResource("/static/images/imgUser7.jpg");
+		Resource imageUser8 = new ClassPathResource("/static/images/imgUser8.jpg");
+		Resource imageUser9 = new ClassPathResource("/static/images/imgUser9.jpg");
+		Resource imageUser10 = new ClassPathResource("/static/images/imgUser10.jpg");
+		Resource imageUser11 = new ClassPathResource("/static/images/imgUser11.jpg");
+		Resource imageUser12 = new ClassPathResource("/static/images/imgUser12.jpg");
+		Resource imageUser13 = new ClassPathResource("/static/images/imgUser13.jpg");
+		Resource imageUser14 = new ClassPathResource("/static/images/imgUser14.jpg");
+		Resource imageUser15 = new ClassPathResource("/static/images/imgUser15.jpg");
+		Resource imageUser16 = new ClassPathResource("/static/images/imgUser16.jpg");
+		Resource imageUser17 = new ClassPathResource("/static/images/imgUser17.jpg");
+		Resource imageUser18 = new ClassPathResource("/static/images/imgUser18.jpg");
+		Resource imageUser19 = new ClassPathResource("/static/images/imgUser19.jpg");
+		Resource imageUser20 = new ClassPathResource("/static/images/imgUser20.jpg");
 
 
         Blob imgU1 = BlobProxy.generateProxy(imageUser1.getInputStream(), imageUser1.contentLength());
@@ -136,85 +101,47 @@ public class Loader {
 
 
         //Product img
-        Path imagePathProd1 = ImgFolder.resolve("auriculares1.jpg");
-		Resource imageProd1 = new UrlResource(imagePathProd1.toUri());
-        Path imagePathProd2 = ImgFolder.resolve("auriculares1_2.jpg");
-		Resource imageProd2 = new UrlResource(imagePathProd2.toUri());
-        Path imagePathProd3 = ImgFolder.resolve("auriculares1_4.jpg");
-		Resource imageProd3 = new UrlResource(imagePathProd3.toUri());
-        Path imagePathProd4 = ImgFolder.resolve("auriculares2.jpg");
-		Resource imageProd4 = new UrlResource(imagePathProd4.toUri());
-        Path imagePathProd5 = ImgFolder.resolve("auriculares2_1.jpg");
-		Resource imageProd5 = new UrlResource(imagePathProd5.toUri());
-        Path imagePathProd6 = ImgFolder.resolve("discoduro1.jpg");
-		Resource imageProd6 = new UrlResource(imagePathProd6.toUri());
-        Path imagePathProd7 = ImgFolder.resolve("discoduro1_1.jpg");
-		Resource imageProd7 = new UrlResource(imagePathProd7.toUri());
-        Path imagePathProd8 = ImgFolder.resolve("discoduro2.jpg");
-		Resource imageProd8 = new UrlResource(imagePathProd8.toUri());
-        Path imagePathProd9 = ImgFolder.resolve("discoduro2_2.jpg");
-		Resource imageProd9 = new UrlResource(imagePathProd9.toUri());
-        Path imagePathProd10 = ImgFolder.resolve("discoduro2_3.jpg");
-		Resource imageProd10 = new UrlResource(imagePathProd10.toUri());
-        Path imagePathProd11 = ImgFolder.resolve("iPhone6_1.png");
-		Resource imageProd11 = new UrlResource(imagePathProd11.toUri());
-        Path imagePathProd12 = ImgFolder.resolve("iPhone6_2.jpg");
-		Resource imageProd12 = new UrlResource(imagePathProd12.toUri());
-        Path imagePathProd13 = ImgFolder.resolve("iPhone6s_1.png");
-		Resource imageProd13 = new UrlResource(imagePathProd13.toUri());
-        Path imagePathProd14 = ImgFolder.resolve("iPhone6s_2.png");
-		Resource imageProd14 = new UrlResource(imagePathProd14.toUri());
-        Path imagePathProd15 = ImgFolder.resolve("monitor1.jpg");
-		Resource imageProd15 = new UrlResource(imagePathProd15.toUri());
-        Path imagePathProd16 = ImgFolder.resolve("monitor1_1.jpg");
-		Resource imageProd16 = new UrlResource(imagePathProd16.toUri());
-        Path imagePathProd17 = ImgFolder.resolve("monitor2.jpg");
-		Resource imageProd17 = new UrlResource(imagePathProd17.toUri());
-        Path imagePathProd18 = ImgFolder.resolve("monitor2_1.jpg");
-		Resource imageProd18 = new UrlResource(imagePathProd18.toUri());
-        Path imagePathProd19 = ImgFolder.resolve("placabase1.jpg");
-		Resource imageProd19 = new UrlResource(imagePathProd19.toUri());
-        Path imagePathProd20 = ImgFolder.resolve("placabase1_1.jpg");
-		Resource imageProd20 = new UrlResource(imagePathProd20.toUri());
-        Path imagePathProd21 = ImgFolder.resolve("placabase1_3.jpg");
-		Resource imageProd21 = new UrlResource(imagePathProd21.toUri());
-        Path imagePathProd22 = ImgFolder.resolve("placabase2.jpg");
-		Resource imageProd22 = new UrlResource(imagePathProd22.toUri());
-        Path imagePathProd23 = ImgFolder.resolve("placabase2_1.jpg");
-		Resource imageProd23 = new UrlResource(imagePathProd23.toUri());
-        Path imagePathProd24 = ImgFolder.resolve("procesador1.jpg");
-		Resource imageProd24 = new UrlResource(imagePathProd24.toUri());
-        Path imagePathProd25 = ImgFolder.resolve("procesador1_1.jpg");
-		Resource imageProd25 = new UrlResource(imagePathProd25.toUri());
-        Path imagePathProd26 = ImgFolder.resolve("procesador2.jpg");
-		Resource imageProd26 = new UrlResource(imagePathProd26.toUri());
-        Path imagePathProd27 = ImgFolder.resolve("raton1.jpg");
-		Resource imageProd27 = new UrlResource(imagePathProd27.toUri());
-        Path imagePathProd28 = ImgFolder.resolve("raton1_1.jpg");
-		Resource imageProd28 = new UrlResource(imagePathProd28.toUri());
-        Path imagePathProd29 = ImgFolder.resolve("raton2.jpg");
-		Resource imageProd29 = new UrlResource(imagePathProd29.toUri());
-        Path imagePathProd30 = ImgFolder.resolve("raton2_1.jpg");
-		Resource imageProd30 = new UrlResource(imagePathProd30.toUri());
-        Path imagePathProd31 = ImgFolder.resolve("tarjetagrafica1_1.jpg");
-		Resource imageProd31 = new UrlResource(imagePathProd31.toUri());
-        Path imagePathProd32 = ImgFolder.resolve("tarjetagrafica1_2.jpg");
-		Resource imageProd32 = new UrlResource(imagePathProd32.toUri());
-        Path imagePathProd33 = ImgFolder.resolve("tarjetagrafica1_4.jpg");
-		Resource imageProd33 = new UrlResource(imagePathProd33.toUri());
-        Path imagePathProd34 = ImgFolder.resolve("tarjetagrafica2.jpg");
-		Resource imageProd34 = new UrlResource(imagePathProd34.toUri());
-        Path imagePathProd35 = ImgFolder.resolve("tarjetagrafica2_2.jpg");
-		Resource imageProd35 = new UrlResource(imagePathProd35.toUri());
-        Path imagePathProd36 = ImgFolder.resolve("tarjetagrafica2_3.jpg");
-		Resource imageProd36 = new UrlResource(imagePathProd36.toUri());
-        Path imagePathProd37 = ImgFolder.resolve("teclado1.jpg");
-		Resource imageProd37 = new UrlResource(imagePathProd37.toUri());
-        Path imagePathProd38 = ImgFolder.resolve("teclado1_1.jpg");
-		Resource imageProd38 = new UrlResource(imagePathProd38.toUri());
-        Path imagePathProd39 = ImgFolder.resolve("teclado2.jpg");
-		Resource imageProd39 = new UrlResource(imagePathProd39.toUri());
-
+        Resource imageProd1 = new ClassPathResource("/static/images/auriculares1.jpg");
+        Resource imageProd2 = new ClassPathResource("/static/images/auriculares1_2.jpg");
+        Resource imageProd3 = new ClassPathResource("/static/images/auriculares1_4.jpg");
+        Resource imageProd4 = new ClassPathResource("/static/images/auriculares2.jpg");
+        Resource imageProd5 = new ClassPathResource("/static/images/auriculares2_1.jpg");
+        Resource imageProd6 = new ClassPathResource("/static/images/discoduro1.jpg");
+        Resource imageProd7 = new ClassPathResource("/static/images/discoduro1_1.jpg");
+        Resource imageProd8 = new ClassPathResource("/static/images/discoduro2.jpg");
+        Resource imageProd9 = new ClassPathResource("/static/images/discoduro2_2.jpg");
+        Resource imageProd10 = new ClassPathResource("/static/images/discoduro2_3.jpg");
+        Resource imageProd11 = new ClassPathResource("/static/images/iPhone6_1.png");
+        Resource imageProd12 = new ClassPathResource("/static/images/iPhone6_2.jpg");
+        Resource imageProd13 = new ClassPathResource("/static/images/iPhone6s_1.png");
+        Resource imageProd14 = new ClassPathResource("/static/images/iPhone6s_2.png");
+        Resource imageProd15 = new ClassPathResource("/static/images/monitor1.jpg");
+        Resource imageProd16 = new ClassPathResource("/static/images/monitor1_1.jpg");
+        Resource imageProd17 = new ClassPathResource("/static/images/monitor2.jpg");
+        Resource imageProd18 = new ClassPathResource("/static/images/monitor2_1.jpg");
+        Resource imageProd19 = new ClassPathResource("/static/images/placabase1.jpg");
+        Resource imageProd20 = new ClassPathResource("/static/images/placabase1_1.jpg");
+        Resource imageProd21 = new ClassPathResource("/static/images/placabase1_3.jpg");
+        Resource imageProd22 = new ClassPathResource("/static/images/placabase2.jpg");
+        Resource imageProd23 = new ClassPathResource("/static/images/placabase2_1.jpg");
+        Resource imageProd24 = new ClassPathResource("/static/images/procesador1.jpg");
+        Resource imageProd25 = new ClassPathResource("/static/images/procesador1_1.jpg");
+        Resource imageProd26 = new ClassPathResource("/static/images/procesador2.jpg");
+        Resource imageProd27 = new ClassPathResource("/static/images/raton1.jpg");
+        Resource imageProd28 = new ClassPathResource("/static/images/raton1_1.jpg");
+        Resource imageProd29 = new ClassPathResource("/static/images/raton2.jpg");
+        Resource imageProd30 = new ClassPathResource("/static/images/raton2_1.jpg");
+        Resource imageProd31 = new ClassPathResource("/static/images/tarjetagrafica1_1.jpg");
+        Resource imageProd32 = new ClassPathResource("/static/images/tarjetagrafica1_2.jpg");
+        Resource imageProd33 = new ClassPathResource("/static/images/tarjetagrafica1_4.jpg");
+        Resource imageProd34 = new ClassPathResource("/static/images/tarjetagrafica2.jpg");
+        Resource imageProd35 = new ClassPathResource("/static/images/tarjetagrafica2_2.jpg");
+        Resource imageProd36 = new ClassPathResource("/static/images/tarjetagrafica2_3.jpg");
+        Resource imageProd37 = new ClassPathResource("/static/images/teclado1.jpg");
+        Resource imageProd38 = new ClassPathResource("/static/images/teclado1_1.jpg");
+        Resource imageProd39 = new ClassPathResource("/static/images/teclado2.jpg");
+       
+        
 
         Blob imgP1 = BlobProxy.generateProxy(imageProd1.getInputStream(), imageProd1.contentLength());
         Blob imgP2 = BlobProxy.generateProxy(imageProd2.getInputStream(), imageProd2.contentLength());
@@ -304,7 +231,7 @@ public class Loader {
 
 
         //rol creation for users - "Admin"
-        Rol Rol21 = new Rol("ADmIN", User1);
+        Rol Rol21 = new Rol("ADMIN", User1);
 		Rol Rol22 = new Rol("ADMIN", User2);
 		Rol Rol23 = new Rol("ADMIN", User3);
 		Rol Rol24 = new Rol("ADMIN", User4);
@@ -637,4 +564,5 @@ public class Loader {
             ratingRepo.save(rating36);
         }
     }
+    
 }

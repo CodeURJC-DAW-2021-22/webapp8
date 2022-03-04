@@ -15,33 +15,32 @@
     <link rel="stylesheet" href="assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <title>Graficos Admin</title>
 </head>
 
 <body>
-    <!-- ============================================================== -->
     <!-- main wrapper -->
-    <!-- ============================================================== -->
     <div class="dashboard-main-wrapper">
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
         <!-- wrapper  -->
-        <!-- ============================================================== -->
         <div class="dashboard-wrapper">
             <div class="dashboard-ecommerce">
                 <div class="container-fluid dashboard-content ">
-                    <!-- ============================================================== -->
                     <!-- pageheader  -->
-                    <!-- ============================================================== -->
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">Gráficos y ventas </h2>
-                                
+                                <h2 class="pageheader-title">Gráficos y ventas</h2>
+                                <div class="container-xl px-2 mt-4">
+                                    <!-- Account page navigation-->
+                                    <nav class="nav nav-borders">
+                                        <a class="nav-link active ms-0" href="graphics" target="__blank">GRÁFICOS</a>
+                                        <a class="nav-link" href="user-list" target="__blank">LISTA USUARIOS</a>
+                                        <a class="nav-link" href="order-list" target="__blank">LISTA PEDIDOS</a>
+                                        <a class="nav-link" href="new-product" target="__blank">CREAR PRODUCTO</a>
+                                        <a class="nav-link" href="index.html" target="__blank">SALIR</a>
+                                    </nav>
+                                    <hr class="mt-0 mb-4">
+                                </div>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
@@ -53,19 +52,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- ============================================================== -->
                     <!-- end pageheader  -->
-                    <!-- ============================================================== -->
                     <div class="ecommerce-widget">
-
-                        
-                            <!-- ============================================================== -->
-                      
-                            <!-- ============================================================== -->
-
                                           <!-- recent orders  -->
-                            <!-- ============================================================== -->
-                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12 ">
                                 <div class="card">
                                     <h5 class="card-header">Órdenes recientes</h5>
                                     <div class="card-body p-0">
@@ -85,14 +75,14 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>1</td>
-                                                        <td>Product #1 </td>
-                                                        <td>id000001 </td>
-                                                        <td>20</td>
-                                                        <td>$80.00</td>
-                                                        <td>27-08-2018 01:22:12</td>
-                                                        <td>Patricia J. King </td>
-                                                        <td><span class="badge-dot badge-brand mr-1"></span>InTransit </td>
+                                                        <td>1</td> <!-- poner un contador-->
+                                                        <td>Product #1 </td>  <!-- poner un contador-->
+                                                        <td>{{oredr.idproduct}} </td>
+                                                        <td>{{order.count}}</td>  <!-- poner un contador para los productos que se han pedido-->
+                                                        <td>{{order.price}}</td>
+                                                        <td>{{order.date}}}}</td>
+                                                        <td>{{order.iduser}}</td>
+                                                        <td><span class="badge-dot badge-brand mr-1"></span>{{order.status}} </td>  <!-- añadir el estado del producto-->
                                                     </tr>
                                                     <tr>
                                                         <td>2</td>
@@ -107,8 +97,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>3</td>
-                                                      
-                                                           
+
                                                         <td>Product #3 </td>
                                                         <td>id000003 </td>
                                                         <td>23</td>
@@ -119,8 +108,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>4</td>
-                                                       
-                                                            
+                                                         
                                                         <td>Product #4 </td>
                                                         <td>id000004 </td>
                                                         <td>34</td>
@@ -130,7 +118,7 @@
                                                         <td><span class="badge-dot badge-success mr-1"></span>Delivered </td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
+                                                        <td colspan="9"><a href="#" class="btn btn-outline-light float-right">Ver detalles</a></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -138,22 +126,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- ============================================================== -->
                             <!-- end recent orders  -->
-
-    
-                            <!-- ============================================================== -->
-                            <!-- ============================================================== -->
-                            
-                            <!-- ============================================================== -->
                         </div>
                         <div class="row">
-                            <!-- ============================================================== -->
               				                        <!-- product category  -->
-                            <!-- ============================================================== -->
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
-                                    <h5 class="card-header"> Categorías</h5>
+                                    <h5 class="card-header">Categorías</h5>
                                     <div class="card-body">
                                         <div class="ct-chart-category ct-golden-section" style="height: 315px;"></div>
                                         <div class="text-center m-t-40">
@@ -172,10 +151,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- ============================================================== -->
                             <!-- end product category  -->
                                    <!-- product sales  -->
-                            <!-- ============================================================== -->
                             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-header">

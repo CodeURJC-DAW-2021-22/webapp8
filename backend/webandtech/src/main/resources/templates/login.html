@@ -19,6 +19,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- single -->
 <script src="js/imagezoom.js"></script>
 <script src="js/jquery.flexslider.js"></script>
+<script src="js/script.js"></script>
 <!-- single -->
 <!-- cart -->
 	<script src="js/simpleCart.min.js"></script>
@@ -48,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header-bot">
 	<div class="container">
 		<div class="col-md-3 header-left">
-			<h1><a href="index.html"><img src="images/logo.jpg"></a></h1>
+			<h1><a href="/"><img src="images/logo.jpg"></a></h1>
 		</div>
 		<div class="col-md-6 header-middle">
 			<form>
@@ -186,37 +187,82 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="login-bottom">
 				<h3>¿Eres nuevo cliente? Registrate GRATIS </h3>
 			
-				<form>
-					<div class="sign-up">
-						<h4>Email :</h4>
-						<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
+				<form action="/registerUser" method="POST" enctype="multipart/form-data">
+					<div class="row">
+						<div class="col-lg-12 no-pdd">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12 imgUp">
+										<div class="imagePreview"></div>
+										<label class="btn btn-primary">
+											Upload<input name="image" type="file" class="uploadFile img"
+												value="Upload Photo"
+												style="width: 0px;height: 0px;overflow: hidden;"
+												accept="image/*" required="">
+										</label>
+										<i class="fa fa-times del"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12 no-pdd">
+							<div class="sn-field">
+								<input type="text" class="form-control" required="" placeholder="johndoe@example.com" name="email" required />
+								<i class="la la-user"></i>
+							</div>
+						</div>
+						<div class="col-lg-12 no-pdd">
+							<div class="sn-field">
+								<input type="text" name="username" placeholder="Nombre de usuario" required="">
+								<i class="la la-user"></i>
+							</div>
+						</div>
+						<div class="col-lg-12 no-pdd">
+							<div class="sn-field">
+								<input type="text" name="completname" placeholder="Nombre completo ">
+								<i class="la la-globe"></i>
+							</div>
+						</div>
+						<div class="col-lg-12 no-pdd">
+							<div class="sn-field">
+								<input type="password" name="pass" placeholder="Contraseña" required="">
+								<i class="la la-lock"></i>
+							</div>
+						</div>
+						<div class="col-lg-12 no-pdd">
+							<div class="sn-field">
+								<input type="password" name="repeat-password" placeholder="Repetir contraseña" required="">
+								<i class="la la-lock"></i>
+							</div>
+						</div>
+						<div class="col-lg-12 no-pdd">
+							<div class="checky-sec st2">
+								<div class="fgt-sec">
+									<input type="checkbox" name="cc" id="c2" required>
+									<label for="c2">
+										<span></span>
+									</label>
+									<small>Sí, Entiendo y estoy de acuerdo con los terminos y condiciones.</small>
+								</div><!--fgt-sec end-->
+							</div>
+						</div>
+						<div class="sign-in">
+							<input type="hidden" name="_csrf" value="{{token}}"/>
+							<input type="submit" value="REGISTRARSE">
+						</div>
 					</div>
-					<div class="sign-up">
-						<h4>Contraseña :</h4>
-						<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-						
-					</div>
-					<div class="sign-up">
-						<h4>Introduce de nuevo la contraseña :</h4>
-						<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-						
-					</div>
-					<div class="sign-up">
-						<input type="submit" value="REGISTRARSE" >
-					</div>
-					
 				</form>
 			</div>
 			<div class="login-right">
 				<h3>Iniciar sesión: </h3>
-				<form>
+				<form action="/login" method="POST">
 					<div class="sign-in">
-						<h4>Email :</h4>
-						<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
+						<h4>Nombre de usuario :</h4>
+						<input type="text" name="username" placeholder="Nombre de usuario" required="">	
 					</div>
 					<div class="sign-in">
 						<h4>Contraseña :</h4>
-						<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+						<input type="password" name="password" placeholder="Contraseña" required="">
 						<a href="#">Has olvidado la contraseña?</a>
 					</div>
 					<div class="single-bottom">
@@ -224,6 +270,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<label for="brand"><span></span>He leído y acepto la política de privacidad</label>
 					</div>
 					<div class="sign-in">
+						<input type="hidden" name="_csrf" value="{{token}}"/>
 						<input type="submit" value="INICIAR SESION" >
 					</div>
 				</form>
@@ -361,10 +408,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
 												<a href="#">Forgot password?</a>
 											</div>
-											<div class="single-bottom">
-												<input type="checkbox"  id="brand" value="">
-												<label for="brand"><span></span>Remember Me.</label>
-											</div>
+											
 											<div class="sign-in">
 												<input type="submit" value="SIGNIN" >
 											</div>

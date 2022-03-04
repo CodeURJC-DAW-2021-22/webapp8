@@ -19,7 +19,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- single -->
 <script src="js/imagezoom.js"></script>
 <script src="js/jquery.flexslider.js"></script>
-<script src="js/script.js"></script>
 <!-- single -->
 <!-- cart -->
 	<script src="js/simpleCart.min.js"></script>
@@ -49,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header-bot">
 	<div class="container">
 		<div class="col-md-3 header-left">
-			<h1><a href="/"><img src="images/logo.jpg"></a></h1>
+			<h1><a href="index.html"><img src="images/logo.jpg"></a></h1>
 		</div>
 		<div class="col-md-6 header-middle">
 			<form>
@@ -72,11 +71,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</form>
 		</div>
 		<div class="col-md-3 header-right footer-bottom">
-
 			<ul>
-				<li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a>
-
-				</li>
+				<li><a  href="login.html" class="use1" ></a></li>
 				<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
 				<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
 				<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
@@ -115,15 +111,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<ul class="dropdown-menu multi-column columns-3">
 									<div class="row">
 										<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-											<a href="componentes.html"><img src="images/componentes.jpg"
+											<a href="componentes"><img src="images/componentes.jpg"
 													alt=" " /></a>
 										</div>
 										<div class="col-sm-3 multi-gd-img">
 											<ul class="multi-column-dropdown">
-												<li><a href="placasbase.html">Placas Bases</a></li>
-												<li><a href="procesadores.html">Procesador</a></li>
-												<li><a href="discosduros.html">Discos Duros</a></li>
-												<li><a href="tarjetasgraficas.html">Tarjetas Gráficas</a></li>
+												<li><a href="placas-base">Placas Bases</a></li>
+												<li><a href="procesadores">Procesador</a></li>
+												<li><a href="discosduros">Discos Duros</a></li>
+												<li><a href="tarjetas-graficas">Tarjetas Gráficas</a></li>
 											</ul>
 										</div>
 
@@ -139,23 +135,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="row">
 										<div class="col-sm-3 multi-gd-img">
 											<ul class="multi-column-dropdown">
-												<li><a href="teclados.html">Teclados</a></li>
-												<li><a href="ratones.html">Ratones</a></li>
-												<li><a href="monitores.html">Monitores</a></li>
-												<li><a href="auriculares.html">Auriculares</a></li>
+												<li><a href="teclados">Teclados</a></li>
+												<li><a href="ratones">Ratones</a></li>
+												<li><a href="monitores">Monitores</a></li>
+												<li><a href="auriculares">Auriculares</a></li>
 											</ul>
 										</div>
 										<div class="col-sm-6 multi-gd-img multi-gd-text ">
-											<a href="perifericos.html"><img src="images/perifericos.jpg"
+											<a href="perifericos"><img src="images/perifericos.jpg"
 													alt=" " /></a>
 										</div>
 										<div class="clearfix"></div>
 									</div>
 								</ul>
 							</li>
-							<li class=" menu__item"><a class="menu__link" href="electronics.html">Teléfonos</a></li>
-							<li class=" menu__item"><a class="menu__link" href="codes.html">Administrador</a></li>
-							<li class=" menu__item"><a class="menu__link" href="contact.html">Contacto</a></li>
+							<li class=" menu__item"><a class="menu__link" href="electronics">Teléfonos</a></li>
+							<li class=" menu__item"><a class="menu__link" href="contact">Contacto</a></li>
+							{#admin}
+							<li class=" menu__item"><a class="menu__link" href="graphics">Administrador</a></li>
+							{{/admin}}
 						</ul>
 					</div>
 				</div>
@@ -163,7 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="top_nav_right">
 			<div class="cart box_1">
-				<a href="checkout.html">
+				<a href="checkout">
 					<h3>
 						<div class="total">
 							<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
@@ -180,109 +178,189 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"></div>
 	</div>
 </div>
-<!-- //banner-top -->
-<div class="modal-body modal-spa">
-	<div class="login-grids">
-		<div class="login">
-			<div class="login-bottom">
-				<h3>¿Eres nuevo cliente? Registrate GRATIS </h3>
-			
-				<form action="/registerUser" method="POST" enctype="multipart/form-data">
-					<div class="row">
-						<div class="col-lg-12 no-pdd">
-							<div class="container">
-								<div class="row">
-									<div class="col-md-12 imgUp">
-										<div class="imagePreview"></div>
-										<label class="btn btn-primary">
-											Upload<input name="image" type="file" class="uploadFile img"
-												value="Upload Photo"
-												style="width: 0px;height: 0px;overflow: hidden;"
-												accept="image/*" required="">
-										</label>
-										<i class="fa fa-times del"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12 no-pdd">
-							<div class="sn-field">
-								<input type="text" class="form-control" required="" placeholder="johndoe@example.com" name="email" required />
-								<i class="la la-user"></i>
-							</div>
-						</div>
-						<div class="col-lg-12 no-pdd">
-							<div class="sn-field">
-								<input type="text" name="username" placeholder="Nombre de usuario" required="">
-								<i class="la la-user"></i>
-							</div>
-						</div>
-						<div class="col-lg-12 no-pdd">
-							<div class="sn-field">
-								<input type="text" name="completname" placeholder="Nombre completo ">
-								<i class="la la-globe"></i>
-							</div>
-						</div>
-						<div class="col-lg-12 no-pdd">
-							<div class="sn-field">
-								<input type="password" name="pass" placeholder="Contraseña" required="">
-								<i class="la la-lock"></i>
-							</div>
-						</div>
-						<div class="col-lg-12 no-pdd">
-							<div class="sn-field">
-								<input type="password" name="repeat-password" placeholder="Repetir contraseña" required="">
-								<i class="la la-lock"></i>
-							</div>
-						</div>
-						<div class="col-lg-12 no-pdd">
-							<div class="checky-sec st2">
-								<div class="fgt-sec">
-									<input type="checkbox" name="cc" id="c2" required>
-									<label for="c2">
-										<span></span>
-									</label>
-									<small>Sí, Entiendo y estoy de acuerdo con los terminos y condiciones.</small>
-								</div><!--fgt-sec end-->
-							</div>
-						</div>
-						<div class="sign-in">
-							<input type="hidden" name="_csrf" value="{{token}}"/>
-							<input type="submit" value="REGISTRARSE">
-						</div>
-					</div>
-				</form>
-			</div>
-			<div class="login-right">
-				<h3>Iniciar sesión: </h3>
-				<form action="/login" method="POST">
-					<div class="sign-in">
-						<h4>Nombre de usuario :</h4>
-						<input type="text" name="username" placeholder="Nombre de usuario" required="">	
-					</div>
-					<div class="sign-in">
-						<h4>Contraseña :</h4>
-						<input type="password" name="password" placeholder="Contraseña" required="">
-						<a href="#">Has olvidado la contraseña?</a>
-					</div>
-					<div class="single-bottom">
-						<input type="checkbox"  id="brand" value="">
-						<label for="brand"><span></span>He leído y acepto la política de privacidad</label>
-					</div>
-					<div class="sign-in">
-						<input type="hidden" name="_csrf" value="{{token}}"/>
-						<input type="submit" value="INICIAR SESION" >
-					</div>
-				</form>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
+<!-- //banner-top -->	
+<!-- banner -->
+<div class="page-head">
+	<div class="container">
+		<h3>{{product.nameproduct}}</h3>
 	</div>
 </div>
+<!-- //banner -->
+<!-- single -->
+<div class="single">
+	<div class="container">
+		<div class="col-md-6 single-right-left animated wow slideInUp animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInUp;">
+			<div class="grid images_3_of_2">
+				<div class="flexslider">
+					<!-- FlexSlider -->
+						<script>
+						// Can also be used with $(document).ready()
+							$(window).load(function() {
+								$('.flexslider').flexslider({
+								animation: "slide",
+								controlNav: "thumbnails"
+								});
+							});
+						</script>
+					<!-- //FlexSlider-->
+					<ul class="slides">
+						<li data-thumb="{{product.image1}}">
+							<div class="thumb-image"> <img src="https://localhost:8443/api/userimg" data-imagezoom="true" class="img-responsive"> </div>
+						</li>
+						<li data-thumb="images/discoduro1_1.jpg">
+							<div class="thumb-image"> <img src="images/discoduro1_1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>	
+			</div>
+		</div>
+		<div class="col-md-6 single-right-left simpleCart_shelfItem animated wow slideInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInRight;">
+					<h3>{{product.nameproduct}}</h3>
+					<p><span class="item_price">{{product.price}}</span></p>
+					<div class="rating1">
+						<span class="starRating">
+							<input id="rating5" type="radio" name="rating" value="5">
+							<label for="rating5">5</label>
+							<input id="rating4" type="radio" name="rating" value="4">
+							<label for="rating4">4</label>
+							<input id="rating3" type="radio" name="rating" value="3" checked="">
+							<label for="rating3">3</label>
+							<input id="rating2" type="radio" name="rating" value="2">
+							<label for="rating2">2</label>
+							<input id="rating1" type="radio" name="rating" value="1">
+							<label for="rating1">1</label>
+						</span>
+					</div>
+					<div class="description">
+						<h5>Consulte la entrega, las opciones de pago y los cargos en su ubicación</h5>
+						<input type="text" value="Código descuento" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Código descuento';}" required="">
+						<input type="submit" value="Check">
+					</div>
+					<div class="color-quality">
+						<div class="color-quality-right">
+							<h5>Cantidad:</h5>
+							<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
+								<option value="null">1</option>
+								<option value="null">2</option>
+								<option value="null">3</option>
+								<option value="null">4</option>
+								<option value="null">5</option>
+								<option value="null">6</option>
+								<option value="null">7</option>
+								<option value="null">8</option>
+								<option value="null">9</option>
+								<option value="null">10</option>								
+							</select>
+						</div>
+					</div>
+				
+					<div class="occasion-cart">
+						<a href="#" class="item_add hvr-outline-out button2">Añadir al carrito</a>
+						{{#admin}}
+						<a href="#" class="item_add hvr-outline-out button3">Editar producto</a>
+						{{/admin}}
+					</div>
+					
+		</div>
+		<div class="clearfix"> </div>
 
-
-
+		<div class="bootstrap-tab animated wow slideInUp animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInUp;">
+			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+				<ul id="myTab" class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Descripción</a></li>
+					<li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Valoraciones</a></li>
+					
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div role="tabpanel" class="tab-pane fade in active bootstrap-tab-text" id="home" aria-labelledby="home-tab">
+						<h5>{{product.nameproduct}}</h5>
+						{{#product.descriptions}}
+							<h4>Características:</h4>
+							<ul>
+								<li type="disc">{{product.description}}</li>
+							</ul>
+						{{/product.descriptions}}
+				</div>
+					<div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="profile" aria-labelledby="profile-tab">
+						<div class="bootstrap-tab-text-grids">
+							<div class="bootstrap-tab-text-grid">
+								<div class="bootstrap-tab-text-grid-left">
+									<img src="{{user.userimg}}" alt=" " class="img-responsive">
+								</div>
+								<div class="bootstrap-tab-text-grid-right">
+									<ul>
+										<li><a href="#">{{user.username}}</a></li>
+										<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>Reply</a></li>
+									</ul>
+									<p>Calidad precio bastante buena, admite overclock, conexiones en placa abundantes y posibilidad de sincronización RGB</p>
+									<br>
+								</div>
+								
+								<div class="bootstrap-tab-text-grid-right">
+									<ul>
+										<li><a href="#">{{user.username}}</a></li>
+										<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>Reply</a></li>
+									</ul>
+									<p>Perfecta Placa Base para los chipset de intel 10 y 11 Generación. Tiene muchos USB, PCI express 4.0 y cuatro ranuras de Ram DDR4 hasta 5066 Mhz y todo eso en una Micro ATX. En cuanto a relación calidad/precio, la recomiendo.</p>
+									<br>
+								</div>
+								<div class="bootstrap-tab-text-grid-right">
+									<ul>
+										<li><a href="#">Rafael</a></li>
+										<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>Reply</a></li>
+									</ul>
+									<p>Placa base con un aspecto básico, pero que lo tiene todo. Admite 10° y 11° generación de intel. Montado con un i5 10400f con esta placa puedes subir la ram a 3200mhz desde la bios súper fácil. Muy recomendable su compra.</p>
+									<br> 
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							
+							<div class="add-review">
+								<h4>add a review</h4>
+								<form>
+									<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+									<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+									
+									<textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+									<input type="submit" value="SEND">
+								</form>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+</div>
+</div>
+<!-- //single -->
+<!-- //product-nav -->
+	<div class="coupons">
+			<div class="container">
+				<div class="coupons-grids text-center">
+					<div class="col-md-3 coupons-gd">
+						<h3>Compra tu producto de forma simple</h3>
+					</div>
+					<div class="col-md-3 coupons-gd">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+						<h4>ACCEDE A TU CUENTA</h4>
+						<p>Si no tiene una puede crearsela de forma gratis y rápida.</p>
+					</div>
+					<div class="col-md-3 coupons-gd">
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						<h4>SELECCIONA TU COMPRA</h4>
+						<p>Puede usar la función del carro de compra para adquirir varios objetos a la vez.</p>
+					</div>
+					<div class="col-md-3 coupons-gd">
+						<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
+						<h4>PAGUE COMO QUIERA</h4>
+						<p>Hemos facilitado varias formas de pago para que pueda elegir el que quiera.</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
 <!-- footer -->
 <div class="footer">
 	<div class="container">
@@ -307,11 +385,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 sign-gd">
 					<h4>Información</h4>
 					<ul>
-						<li><a href="index.html">Inicio</a></li>
-						<li><a href="componentes.html">Componentes</a></li>
-						<li><a href="perifericos.html">Periféricos</a></li>
-						<li><a href="electronics.html">Teléfonos</a></li>
-						<li><a href="contact.html">Contactos</a></li>
+						<li><a href="index">Inicio</a></li>
+						<li><a href="componentes">Componentes</a></li>
+						<li><a href="perifericos">Periféricos</a></li>
+						<li><a href="electronics">Teléfonos</a></li>
+						<li><a href="contact">Contactos</a></li>
 					</ul>
 				</div>
 
@@ -358,73 +436,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </div>
 <!-- //footer -->
-
-
-
-
-
-<!-- login -->
-			<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content modal-info">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-						</div>
-						<div class="modal-body modal-spa">
-							<div class="login-grids">
-								<div class="login">
-									<div class="login-bottom">
-										<h3>Sign up for free</h3>
-										<form>
-											<div class="sign-up">
-												<h4>Email :</h4>
-												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
-											</div>
-											<div class="sign-up">
-												<h4>Password :</h4>
-												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-												
-											</div>
-											<div class="sign-up">
-												<h4>Re-type Password :</h4>
-												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-												
-											</div>
-											<div class="sign-up">
-												<input type="submit" value="REGISTER NOW" >
-											</div>
-											
-										</form>
-									</div>
-									<div class="login-right">
-										<h3>Sign in with your account</h3>
-										<form>
-											<div class="sign-in">
-												<h4>Email :</h4>
-												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
-											</div>
-											<div class="sign-in">
-												<h4>Password :</h4>
-												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-												<a href="#">Forgot password?</a>
-											</div>
-											
-											<div class="sign-in">
-												<input type="submit" value="SIGNIN" >
-											</div>
-										</form>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-<!-- //login -->
-
-
-
 </body>
 </html>

@@ -311,6 +311,29 @@ public class Loader {
 		Rol Rol25 = new Rol("ADMIN", User5);
 
 
+        //Order creation
+        Order order1 = new Order(1, 299, User6, "2/3/7", "1/2/2022");
+        Order order2 = new Order(2, 353, User6, "1/6/13/15", "2/2/2022");
+        Order order3 = new Order(3, 736, User7, "4/5/7/11/12/13/18", "3/2/2022");
+        Order order4 = new Order(4, 234, User7, "2/3/7", "4/2/2022");
+        Order order5 = new Order(5, 525, User8, "1/3/14/16/17", "5/2/2022");
+        Order order6 = new Order(6, 99, User9, "2/3/7", "6/2/2022");
+        Order order7 = new Order(7, 25, User9, "4", "7/2/2022");
+        Order order8 = new Order(8, 64, User9, "7", "8/2/2022");
+        Order order9 = new Order(9, 120, User10, "2/3/7", "9/2/2022");
+        Order order10 = new Order(10, 56, User10, "5", "10/2/2022");
+        Order order11 = new Order(11, 25, User11, "4", "11/2/2022");
+        Order order12 = new Order(12, 400, User12, "1/3/7/14/16", "12/2/2022");
+        Order order13 = new Order(13, 36, User13, "8", "13/2/2022");
+        Order order14 = new Order(14, 64, User14, "7", "14/2/2022");
+        Order order15 = new Order(15, 99, User15, "2/3/7", "15/2/2022");
+        Order order16 = new Order(16, 18, User16, "2/3/7", "16/2/2022");
+        Order order17 = new Order(17, 36, User17, "8", "17/2/2022");
+        Order order18 = new Order(18, 199, User18, "2/3/5/8", "18/2/2022");
+        Order order19 = new Order(19, 299, User19, "2/3/7", "19/2/2022");
+        Order order20 = new Order(20, 56, User20, "5", "20/2/2022");
+
+
         //ProductType creation
         ProductType prodType1 = new ProductType(1, "placas bases");
         ProductType prodType2 = new ProductType(2, "discos duros");
@@ -464,6 +487,29 @@ public class Loader {
             rolRepo.save(Rol23);
             rolRepo.save(Rol24);
             rolRepo.save(Rol25);
+        }
+        //Order
+        if(orderRepo.findAll().isEmpty()){
+            orderRepo.save(order1);
+            orderRepo.save(order2);
+            orderRepo.save(order3);
+            orderRepo.save(order4);
+            orderRepo.save(order5);
+            orderRepo.save(order6);
+            orderRepo.save(order7);
+            orderRepo.save(order8);
+            orderRepo.save(order9);
+            orderRepo.save(order10);
+            orderRepo.save(order11);
+            orderRepo.save(order12);
+            orderRepo.save(order13);
+            orderRepo.save(order14);
+            orderRepo.save(order15);
+            orderRepo.save(order16);
+            orderRepo.save(order17);
+            orderRepo.save(order18);
+            orderRepo.save(order19);
+            orderRepo.save(order20);
         }
         //ProducType
         if(productTypeRepo.findAll().isEmpty()){

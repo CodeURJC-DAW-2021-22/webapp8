@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import webapp8.webandtech.service.AdminService;
+import webapp8.webandtech.service.LoaderService;
 import webapp8.webandtech.service.UserService;
 
 @Controller
@@ -23,9 +24,14 @@ public class NavigationController {
     private UserService userService;
 	@Autowired
     private AdminService adminService;
+	@Autowired
+    private LoaderService loaderService;
 
     @GetMapping("/")
-	private void getInitialPage(HttpServletResponse response) throws IOException {
+	private void getInitialPage(Model model,HttpServletRequest request, HttpServletResponse response) throws IOException {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken());
+		loaderService.Load();
 		response.sendRedirect("/index");		
 	}
     @GetMapping("/login")

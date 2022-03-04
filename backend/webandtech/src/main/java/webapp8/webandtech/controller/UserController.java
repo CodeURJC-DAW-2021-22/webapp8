@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
+@CrossOrigin
 public class UserController {
 
     @Autowired
@@ -48,8 +50,9 @@ public class UserController {
     
     @PostMapping("/registerUser")
 	private void registerUser(User user,HttpServletResponse response , HttpServletRequest sesion, @RequestParam(required = false) MultipartFile image) throws IOException, SQLException {
-    	userService.registerUsers(user, image);
-    	response.sendRedirect("/sign-in");
+    	System.out.println(user.getEmail());
+		userService.registerUsers(user, image);
+    	response.sendRedirect("/login");
     }
     @GetMapping("/imageprofile")
     private ResponseEntity<Object> downloadImage(HttpServletRequest request) throws SQLException, IOException{

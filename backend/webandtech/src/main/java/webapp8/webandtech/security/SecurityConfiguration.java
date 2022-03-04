@@ -44,7 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
           http.authorizeRequests().antMatchers("/").permitAll();
           http.authorizeRequests().antMatchers("/index").permitAll();
           http.authorizeRequests().antMatchers("/login").permitAll();
-          http.authorizeRequests().antMatchers("/api/registerUser").permitAll();
+          http.authorizeRequests().antMatchers("/registerUser").permitAll();
           http.authorizeRequests().antMatchers("/forgotPassword").permitAll();
           http.authorizeRequests().antMatchers("/error").permitAll();
           http.authorizeRequests().antMatchers("httpss://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js").permitAll();

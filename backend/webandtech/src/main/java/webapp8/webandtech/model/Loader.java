@@ -314,6 +314,20 @@ public class Loader {
 		Rol Rol24 = new Rol("ADMIN", User4);
 		Rol Rol25 = new Rol("ADMIN", User5);
 
+
+        //ProductType creation
+        ProductType prodType1 = new ProductType(1, "placas bases");
+        ProductType prodType2 = new ProductType(1, "discos duros");
+        ProductType prodType3 = new ProductType(1, "procesadores");
+        ProductType prodType4 = new ProductType(1, "tarjetas graficas");
+        ProductType prodType5 = new ProductType(1, "monitores");
+        ProductType prodType6 = new ProductType(1, "auriculares");
+        ProductType prodType7 = new ProductType(1, "teclados");
+        ProductType prodType8 = new ProductType(1, "ratones");
+        ProductType prodType9 = new ProductType(1, "telefonos"); 
+        
+
+
         //Product creations
         Product prod1 = new Product(1,"Forgeon General Auriculares Gaming Inalámbricos PC/PS4/PS5/Xbox/Xbox X/Switch Negros", 146,
                 "Desde Forgeon presentamos los nuevos auriculares Forgeon General Wireless Headset 2,4 GHz. Unos auriculares con unos"
@@ -334,7 +348,8 @@ public class Loader {
                 +"actual de componentes.", 3, "discos duros", "componentes", "alcyon x", imgP8, imgP9, imgP10, true, true, true);
         Product prod5 = new Product(1,"IPhone 6", 146, "El iPhone 6 es un teléfono inteligente de gama alta desarrollado por Apple Inc."
                 +"Funciona con el sistema operativo iOS 12. Fue presentado el 9 de septiembre de 2014 y lanzado a la venta el 19 de octubre de 2014."
-                +"La serie iPhone 6 es en conjunto un sucesor del iPhone 5s y el iPhone 5C", 3, "telefono", "telefono", "apple", imgP11, imgP12, null, true, true, false);
+                +"La serie iPhone 6 es en conjunto un sucesor del iPhone 5s y el iPhone 5C", 3, "telefono", "telefono", "apple", imgP11, imgP12, null, 
+                true, true, false);
         Product prod6 = new Product(1,"IPhone 6s", 799, "El iPhone 6s es un teléfono inteligente de gama alta diseñado por Apple Inc."
                 +"con procesador de dos núcleos a 1.85 GHz, 2 GB de memoria RAM y pantalla de 4,7 pulgadas. Es parte de la serie iPhone y fue"
                 +"anunciado el 9 de septiembre de 2015. El iPhone 6s y 6s Plus son conjuntamente sucesores del iPhone 6 y iPhone 6 Plus de 2014.", 
@@ -342,10 +357,12 @@ public class Loader {
         Product prod7 = new Product(1,"PcCom Discovery 27 pulgadas LED FullHD 165Hz FreeSync Curvo", 239, "Desde PCCOM presentamos el Monitor"
                 +"Discovery de 27 pulgadas. Un exclusivo modelo de 27 pulgadas curvo 1500R que te ofrece una experiencia gaming totalmente envolvente"
                 +"gracias a su resolución Full HD y tasa de refresco de hasta 165 Hz con 1ms de respuesta MPRT. Si quieres disfrutar de las buenas"
-                +"características de este monitor, no puede faltar en tu setup gaming.", 4, "monitores", "perifericos", "PcCom", imgP15, imgP16, null, true, true, false);
+                +"características de este monitor, no puede faltar en tu setup gaming.", 4, "monitores", "perifericos", "PcCom", imgP15, imgP16, null, 
+                true, true, false);
         Product prod8 = new Product(1,"Samsung S22F350FHU 22 pulgadas Full HD LED", 36, "Te presentamos el monitor S22F350FHU de 22 de Samsung. Un"
                 +"monitor Full HD de tan sólo 10mm de grosor, 'Modo Juego' para disfrutar de una experiencia gaming única y el 'Eye Saver Mode' que"
-                +"reduce la emisión de ondas de luz azul que fatigan tus retinas.", 3, "monitores", "perifericos", "samsung", imgP17, imgP18, null, true, true, false);     
+                +"reduce la emisión de ondas de luz azul que fatigan tus retinas.", 3, "monitores", "perifericos", "samsung", imgP17, imgP18, null, 
+                true, true, false);     
         Product prod9 = new Product(1,"MSI B560M PRO-VDH", 99, "La serie PRO ayuda a los usuarios a trabajar de forma más inteligente al ofrecer una"
                 +"experiencia eficiente y productiva. Con una funcionalidad estable y un ensamblaje de alta calidad, las placas base de la serie PRO"
                 +"brindan no solo flujos de trabajo profesionales optimizados, sino también menos resolución de problemas y longevidad.", 4, 
@@ -358,7 +375,8 @@ public class Loader {
                 "procesadores", "componentes", "ryzen", imgP24, imgP25, null, true, true, false);
         Product prod12 = new Product(1,"Intel Celeron G5905 3.50GHz", 37, "Los nuevos procesadores Intel® Core™ de 10ª generación ofrecen mejoras"
                 +"de rendimiento notables para conseguir una productividad mejorada y un entretenimiento impresionante, incluyendo Intel® Wi-Fi 6 (Gig+),"
-                +"tecnología Thunderbolt™ 3, HDR 4K, optimización de sistema inteligente y mucho más.", 3, "procesadores", "componentes", "intel", imgP26, null, null, true, true, false);
+                +"tecnología Thunderbolt™ 3, HDR 4K, optimización de sistema inteligente y mucho más.", 3, "procesadores", "componentes", "intel", imgP26, 
+                null, null, true, true, false);
         Product prod13 = new Product(1,"Forgeon Darrowspike Ratón Gaming RGB Wireless 19000DPI Negro", 99, "Presentamos el nuevo mouse gaming Forgeon"
                 +"Darrowspike Wireless. Este mouse inalámbrico ofrece unas prestaciones inigualables a un precio muy competitivo. Con el receptor"
                 +"inalámbrico incorporado sencillamente con conectarlo empezarás a disfrutar de tus mejores partidas dejando de lado esos cables que"
@@ -383,6 +401,7 @@ public class Loader {
                 +"con la combinación silenciosa de teclado y ratón inalámbricos Logitech MK295, ambos dispositivos diseñados para eliminar el exceso de"
                 +"ruido molesto para ti y la gente alrededor. Demos la bienvenida a una nueva experiencia de teclado y ratón prácticamente silenciosa.", 2, 
                 "auriculares", "perifericos", "forgeon", imgP39, null, null, true, false, false);
+
 
         //DataSave
         //user
@@ -436,6 +455,18 @@ public class Loader {
             rolRepo.save(Rol23);
             rolRepo.save(Rol24);
             rolRepo.save(Rol25);
+        }
+        //ProducType
+        if(productTypeRepo.findAll().isEmpty()){
+            productTypeRepo.save(prodType1);
+            productTypeRepo.save(prodType2);
+            productTypeRepo.save(prodType3);
+            productTypeRepo.save(prodType4);
+            productTypeRepo.save(prodType5);
+            productTypeRepo.save(prodType6);
+            productTypeRepo.save(prodType7);
+            productTypeRepo.save(prodType8);
+            productTypeRepo.save(prodType9);
         }
         //product
         if(productRepo.findAll().isEmpty()) {

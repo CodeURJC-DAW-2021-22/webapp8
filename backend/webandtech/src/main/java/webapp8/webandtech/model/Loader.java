@@ -49,13 +49,9 @@ public class Loader {
 	private PasswordEncoder encoder;
 
 
-
-
     public Loader() {
 
     }
-
-
 
 
     public Loader(OrderRepository orderRepo, ProductRepository productRepo, ProductTypeRepository productTypeRepo, 
@@ -70,8 +66,6 @@ public class Loader {
         this.brandRepo = brandRepo;
 		this.encoder = encoder;
     }
-
-
 
 
     @PostConstruct
@@ -139,6 +133,7 @@ public class Loader {
         Blob imgU18 = BlobProxy.generateProxy(imageUser18.getInputStream(), imageUser18.contentLength());
         Blob imgU19 = BlobProxy.generateProxy(imageUser19.getInputStream(), imageUser19.contentLength());
         Blob imgU20 = BlobProxy.generateProxy(imageUser20.getInputStream(), imageUser20.contentLength());
+
 
         //Product img
         Path imagePathProd1 = ImgFolder.resolve("auriculares1.jpg");
@@ -262,7 +257,6 @@ public class Loader {
         Blob imgP39 = BlobProxy.generateProxy(imageProd39.getInputStream(), imageProd39.contentLength());
 
 
-
         //User creations
         User User1 = new User(1, "user.1@hotmail.com","Jonathan",encoder.encode("f"), "Jonathan Joestar", imgU1, true, "Londres");
         User User2 = new User(2,"user.2@hotmail.com","Joseph",encoder.encode("f"), "Joseph Joestar", imgU2, true, "Londres");
@@ -284,6 +278,7 @@ public class Loader {
         User User18 = new User(18,"user.18@hotmail.com","Mista",encoder.encode("f"), "Mista guido", imgU18, true, "Napoles");
         User User19 = new User(19,"user.19@hotmail.com","Ghirga",encoder.encode("f"), "Ghirga Narancia", imgU19, true, "Napoles");
         User User20 = new User(20,"user.20@hotmail.com","Abbacchio",encoder.encode("f"), "Abbacchio Leone", imgU20, true, "Napoles");
+
 
         //Rol creation for users - "USER"
         Rol Rol1 = new Rol("USER", User1);
@@ -307,6 +302,7 @@ public class Loader {
 		Rol Rol19 = new Rol("USER", User19);
 		Rol Rol20 = new Rol("USER", User20);
 
+
         //rol creation for users - "Admin"
         Rol Rol21 = new Rol("ADmIN", User1);
 		Rol Rol22 = new Rol("ADMIN", User2);
@@ -317,15 +313,28 @@ public class Loader {
 
         //ProductType creation
         ProductType prodType1 = new ProductType(1, "placas bases");
-        ProductType prodType2 = new ProductType(1, "discos duros");
-        ProductType prodType3 = new ProductType(1, "procesadores");
-        ProductType prodType4 = new ProductType(1, "tarjetas graficas");
-        ProductType prodType5 = new ProductType(1, "monitores");
-        ProductType prodType6 = new ProductType(1, "auriculares");
-        ProductType prodType7 = new ProductType(1, "teclados");
-        ProductType prodType8 = new ProductType(1, "ratones");
-        ProductType prodType9 = new ProductType(1, "telefonos"); 
-        
+        ProductType prodType2 = new ProductType(2, "discos duros");
+        ProductType prodType3 = new ProductType(3, "procesadores");
+        ProductType prodType4 = new ProductType(4, "tarjetas graficas");
+        ProductType prodType5 = new ProductType(5, "monitores");
+        ProductType prodType6 = new ProductType(6, "auriculares");
+        ProductType prodType7 = new ProductType(7, "teclados");
+        ProductType prodType8 = new ProductType(8, "ratones");
+        ProductType prodType9 = new ProductType(9, "telefonos"); 
+
+
+        //Brand creation
+        Brand brand1 = new Brand(1, "forgeon");
+        Brand brand2 = new Brand(2, "tempest");
+        Brand brand3 = new Brand(3, "alcyon x");
+        Brand brand4 = new Brand(4, "apple");
+        Brand brand5 = new Brand(5, "PcCom");
+        Brand brand6 = new Brand(6, "samsung");
+        Brand brand7 = new Brand(7, "msi");
+        Brand brand8 = new Brand(8, "gigabyte");
+        Brand brand9 = new Brand(9, "ryzen");
+        Brand brand10 = new Brand(10, "intel");
+        Brand brand11 = new Brand(11, "newskill");
 
 
         //Product creations
@@ -467,6 +476,20 @@ public class Loader {
             productTypeRepo.save(prodType7);
             productTypeRepo.save(prodType8);
             productTypeRepo.save(prodType9);
+        }
+        //brand
+        if(brandRepo.findAll().isEmpty()){
+            brandRepo.save(brand1);
+            brandRepo.save(brand2);
+            brandRepo.save(brand3);
+            brandRepo.save(brand4);
+            brandRepo.save(brand5);
+            brandRepo.save(brand6);
+            brandRepo.save(brand7);
+            brandRepo.save(brand8);
+            brandRepo.save(brand9);
+            brandRepo.save(brand10);
+            brandRepo.save(brand11);
         }
         //product
         if(productRepo.findAll().isEmpty()) {

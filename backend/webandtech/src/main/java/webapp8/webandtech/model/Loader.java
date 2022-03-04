@@ -435,6 +435,45 @@ public class Loader {
                 "auriculares", "perifericos", "forgeon", imgP39, null, null, true, false, false);
 
 
+        //rating creation
+        Rating rating1 = new Rating(1, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod1, User6);
+        Rating rating2 = new Rating(2, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod1, User7);
+        Rating rating3 = new Rating(3, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod2, User8);
+        Rating rating4 = new Rating(4, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod2, User9);
+        Rating rating5 = new Rating(5, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod3, User10);
+        Rating rating6 = new Rating(6, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod3, User11);
+        Rating rating7 = new Rating(7, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod4, User12);
+        Rating rating8 = new Rating(8, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod4, User13);
+        Rating rating9 = new Rating(9, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod5, User14);
+        Rating rating10 = new Rating(10, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod5, User15);
+        Rating rating11 = new Rating(11, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod6, User16);
+        Rating rating12 = new Rating(12, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod6, User17);
+        Rating rating13 = new Rating(13, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod7, User18);
+        Rating rating14 = new Rating(14, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod7, User19);
+        Rating rating15 = new Rating(15, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod8, User20);
+        Rating rating16 = new Rating(16, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod8, User6);
+        Rating rating17 = new Rating(17, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod9, User7);
+        Rating rating18 = new Rating(18, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod9, User8);
+        Rating rating19 = new Rating(19, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod10, User9);
+        Rating rating20 = new Rating(20, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod10, User10);
+        Rating rating21 = new Rating(21, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod11, User11);
+        Rating rating22 = new Rating(22, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod11, User12);
+        Rating rating23 = new Rating(23, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod12, User13);
+        Rating rating24 = new Rating(24, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod12, User14);
+        Rating rating25 = new Rating(25, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod13, User15);
+        Rating rating26 = new Rating(26, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod13, User16);
+        Rating rating27 = new Rating(27, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod14, User17);
+        Rating rating28 = new Rating(28, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod14, User18);
+        Rating rating29 = new Rating(29, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod15, User19);
+        Rating rating30 = new Rating(30, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod15, User20);
+        Rating rating31 = new Rating(31, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod16, User6);
+        Rating rating32 = new Rating(32, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod16, User7);
+        Rating rating33 = new Rating(33, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod17, User8);
+        Rating rating34 = new Rating(34, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod17, User9);
+        Rating rating35 = new Rating(35, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod18, User10);
+        Rating rating36 = new Rating(36, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod18, User11);
+
+
         //DataSave
         //user
         if(userRepo.findAll().isEmpty()) {
@@ -557,6 +596,45 @@ public class Loader {
             productRepo.save(prod16);
             productRepo.save(prod17);
             productRepo.save(prod18);
+        }
+        //Rating
+        if(ratingRepo.findAll().isEmpty()){
+            ratingRepo.save(rating1);
+            ratingRepo.save(rating2);
+            ratingRepo.save(rating3);
+            ratingRepo.save(rating4);
+            ratingRepo.save(rating5);
+            ratingRepo.save(rating6);
+            ratingRepo.save(rating7);
+            ratingRepo.save(rating8);
+            ratingRepo.save(rating9);
+            ratingRepo.save(rating10);
+            ratingRepo.save(rating11);
+            ratingRepo.save(rating12);
+            ratingRepo.save(rating13);
+            ratingRepo.save(rating14);
+            ratingRepo.save(rating15);
+            ratingRepo.save(rating16);
+            ratingRepo.save(rating17);
+            ratingRepo.save(rating18);
+            ratingRepo.save(rating19);
+            ratingRepo.save(rating20);
+            ratingRepo.save(rating21);
+            ratingRepo.save(rating22);
+            ratingRepo.save(rating23);
+            ratingRepo.save(rating24);
+            ratingRepo.save(rating25);
+            ratingRepo.save(rating26);
+            ratingRepo.save(rating27);
+            ratingRepo.save(rating28);
+            ratingRepo.save(rating29);
+            ratingRepo.save(rating30);
+            ratingRepo.save(rating31);
+            ratingRepo.save(rating32);
+            ratingRepo.save(rating33);
+            ratingRepo.save(rating34);
+            ratingRepo.save(rating35);
+            ratingRepo.save(rating36);
         }
     }
 }

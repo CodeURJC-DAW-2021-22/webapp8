@@ -2,8 +2,8 @@ package webapp8.webandtech.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import webapp8.webandtech.model.Product;
+import webapp8.webandtech.model.ProductType;
 import webapp8.webandtech.service.ProductService;
 
 @RestController
@@ -31,24 +32,44 @@ public class ProductController {
 	@Autowired
 	 private ProductService productService;
 	
-	@PostMapping("/uploadProduct")
-	private void uploadProduct(HttpServletResponse response, HttpServletRequest request, Product product, @RequestParam(required = false) MultipartFile image1, @RequestParam(required = false) MultipartFile image2, @RequestParam(required = false) MultipartFile image3) throws IOException {
+	@PostMapping("/productUpload")
+	private void productUpload(HttpServletResponse response, Product product, @RequestParam(required = false) MultipartFile image1, @RequestParam(required = false) MultipartFile image2, @RequestParam(required = false) MultipartFile image3) throws IOException {
 		productService.saveProduct (product, image1, image2, image3);
 		response.sendRedirect("/index");
 	}
-	
-	@GetMapping("/getMoreProducts")
-	private Page<Product> getMoreProduct(Pageable page){
+
+	@GetMapping("/componentPage")
+	private Page<Product> getComponentsPage(Pageable page){
+		return productService.getComponentsPage(page);		
+	}
+
+	@GetMapping("/peipheralPage")
+	private Page<Product> getPeripheralsPage(Pageable page){
+		return productService.getPeripheralsPage(page);		
+	}
+
+	@GetMapping("/phonePage")
+	private Page<Product> getPhonesPage(Pageable page){
+		return productService.getPhonesPage(page);		
+	}
+
+	@GetMapping("/products/{productType}")
+	private List<Product> getProuctTypePage(ProductType productType){
+		return productService.getProductType(productType);		
+	}
+
+	@GetMapping("/moreProducts")
+	private Page<Product> getMoreProducts(Pageable page){
 		return productService.getProductsPage(page);
 	}
 	
-	@GetMapping("/getProducts")
+	@GetMapping("/products")
 	private Page<Product> getProducts(Pageable page){
 		return productService.getProductsPage(page);
 	}
 	
-	@GetMapping("/imageProduct0/{idproduct}")
-    private ResponseEntity<Object> downloadImageProduct0(@PathVariable int idproduct) throws SQLException{
+	@GetMapping("/productImg0/{idproduct}")
+    private ResponseEntity<Object> getProductImg0(@PathVariable int idproduct) throws SQLException{
 		Product product = productService.getProduct(idproduct);
     	Resource file = new InputStreamResource(product.getImage1().getBinaryStream());
     	return ResponseEntity.ok()
@@ -57,8 +78,8 @@ public class ProductController {
 				.body(file);
     }
 	
-	@GetMapping("/imageProduct1/{idproduct}")
-    private ResponseEntity<Object> downloadImageProduct1( @PathVariable int idproduct) throws SQLException{
+	@GetMapping("/productImg1/{idproduct}")
+    private ResponseEntity<Object> getProductImg1( @PathVariable int idproduct) throws SQLException{
 		Product product = productService.getProduct(idproduct);
 		Resource file = new InputStreamResource(product.getImage2().getBinaryStream());
     	return ResponseEntity.ok()
@@ -67,8 +88,8 @@ public class ProductController {
 				.body(file);
     }
 	
-	@GetMapping("/imageProduct2/{idproduct}")
-    private ResponseEntity<Object> downloadImageProduct2( @PathVariable int idproduct) throws SQLException{
+	@GetMapping("/productImg2/{idproduct}")
+    private ResponseEntity<Object> getProductImg2( @PathVariable int idproduct) throws SQLException{
 		Product product = productService.getProduct(idproduct);
 		Resource file = new InputStreamResource(product.getImage3().getBinaryStream());
     	return ResponseEntity.ok()

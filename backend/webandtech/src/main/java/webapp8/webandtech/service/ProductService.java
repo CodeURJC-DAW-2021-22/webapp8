@@ -1,16 +1,19 @@
 package webapp8.webandtech.service;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import webapp8.webandtech.repository.ProductRepository;
 import webapp8.webandtech.model.Product;
+import webapp8.webandtech.model.ProductType;
 
 @Service
 public class ProductService {
@@ -44,11 +47,27 @@ public class ProductService {
 		productRepository.save(product);
 	}
 
-    public Page<Product> getProductsPage(org.springframework.data.domain.Pageable page) {
+    public Page<Product> getProductsPage(Pageable page) {
 		return productRepository.findAll(page);
 	}
 
     public Product getProduct(int idproduct) {
 		return productRepository.findById(idproduct).orElseThrow(() -> new NoSuchElementException("Product not found"));
+	}
+
+	public Page<Product> getComponentsPage(Pageable page){
+		return productRepository.findByproductcategory("productcategory");
+	}
+
+	public Page<Product> getPeripheralsPage(Pageable page){
+		return productRepository.findByproductcategory("peripheral");
+	}
+
+	public Page<Product> getPhonesPage(Pageable page){
+		return productRepository.findByproductcategory("phone");
+	}
+	
+	public List<Product> getProductType(ProductType productType){
+		return productRepository.findByproductType(productType);
 	}
 }

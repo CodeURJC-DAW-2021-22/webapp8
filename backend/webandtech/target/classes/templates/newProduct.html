@@ -35,88 +35,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
 <script src="js/jquery.easing.min.js"></script>
+
+
 </head>
 <body>
-	<!-- header -->
-	<div class="header">
-		<div class="container">
-			<ul>
-				<li><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Entrega gratuita y rápida</li>
-				<li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Envío gratis en todos los
-					pedidos</li>
-				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a
-						href="mailto:info@example.com">info@w&t.com</a></li>
-			</ul>
-		</div>
-	</div>
-	<!-- //header -->
-<!-- header-bot -->
-<div class="header-bot">
-	<div class="container">
-		<div class="col-md-3 header-left">
-			<h1><a href="index.html"><img src="images/logo.jpg"></a></h1>
-		</div>
-		<div class="col-md-6 header-middle">
-			<form>
-				<div class="search">
-					<input type="search" value="Buscar" onfocus="this.value = '';"
-						onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
-				</div>
-				<div class="section_room">
-					<select id="country" onchange="change_country(this.value)" class="frm-field required">
-						<option value="null">Todo</option>
-						<option value="AX">Componentes</option>
-						<option value="AX">Periféricos</option>
-						<option value="AX">Teléfonos</option>
-					</select>
-				</div>
-				<div class="sear-sub">
-					<input type="submit" value=" ">
-				</div>
-				<div class="clearfix"></div>
-			</form>
-		</div>
-		<div class="col-md-3 header-right footer-bottom">
 
-			<ul>
-				<li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a>
-
-				</li>
-				<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
-				<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
-				<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
-				<li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
-			</ul>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- //header-bot -->
-<!-- banner -->
-<div class="ban-top">
-	<div class="container">
-		<div class="top_nav_left">
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-							data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-					</div>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-				</div>
-			</nav>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- //banner-top -->
 <div class="container-xl px-4 mt-4">
+
+	<div class="container-xl px-2 mt-4">
+		<!-- Account page navigation-->
+		<nav class="nav nav-borders">
+			<a class="nav-link active ms-0" href="graphics" target="__blank">GRÁFICOS</a>
+			<a class="nav-link" href="user-list" target="__blank">LISTA USUARIOS</a>
+			<a class="nav-link" href="order-list" target="__blank">LISTA PEDIDOS</a>
+			<a class="nav-link" href="new-product" target="__blank">CREAR PRODUCTO</a>
+			<a class="nav-link" href="index.html" target="__blank">SALIR</a>
+		</nav>
+		<hr class="mt-0 mb-4">
+	</div>
     <!-- Account page navigation-->
     
     <hr class="mt-0 mb-4">
@@ -124,38 +60,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="col-xl-4">
             <!-- Perfil picture card-->
             <div class="card mb-4 mb-xl-0">
-                <div class="card-header">Foto principal del producto</div>
-                <div class="card-body text-center">
-                    <!-- Perfil picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                    <!-- Perfil picture help block-->
-                    <div class="small font-italic text-muted mb-4">PNG o JPG no mayor de 5 MB</div>
-                    <!-- Perfil picture upload button-->
-                    <button class="btn btn-primary" type="button">Cambiar foto</button>
-                </div>
-            </div>
-
-            <div class="card mb-4 mb-xl-0">
                 <div class="card-header">Foto 1</div>
                 <div class="card-body text-center">
-                    <!-- Perfil picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="">
-                    <!-- Perfil picture help block-->
-                    <div class="small font-italic text-muted mb-4">PNG o JPG no mayor de 5 MB</div>
-                    <!-- Perfil picture upload button-->
-                    <button class="btn btn-primary" type="button">Cambiar foto</button>
+                    <div class="drag-drop">
+						<input type="file" multiple="multiple" id="photo" />
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
+							<i class="fa fa-circle fa-stack-1x top medium"></i>
+							<i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
+						</span>
+					</div>
+					<button type="button" class="btn btn-danger">Cancelar</button>
                 </div>
             </div>
-
             <div class="card mb-4 mb-xl-0">
                 <div class="card-header">Foto 2</div>
                 <div class="card-body text-center">
-                    <!-- Perfil picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-                    <!-- Perfil picture help block-->
-                    <div class="small font-italic text-muted mb-4">PNG o JPG no mayor de 5 MB</div>
-                    <!-- Perfil picture upload button-->
-                    <button class="btn btn-primary" type="button">Cambiar foto</button>
+                    <div class="drag-drop">
+						<input type="file" multiple="multiple" id="photo" />
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
+							<i class="fa fa-circle fa-stack-1x top medium"></i>
+							<i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
+						</span>
+						<span class="desc">Pulse aquí para añadir archivos</span>
+					</div>
+					<button type="button" class="btn btn-danger">Cancelar</button>
+                </div>
+            </div>
+			<div class="card mb-4 mb-xl-0">
+                <div class="card-header">Foto 3</div>
+                <div class="card-body text-center">
+                    <div class="drag-drop">
+						<input type="file" multiple="multiple" id="photo" />
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
+							<i class="fa fa-circle fa-stack-1x top medium"></i>
+							<i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
+						</span>
+						<span class="desc">Pulse aquí para añadir archivos</span>
+					</div>
+					<button type="button" class="btn btn-danger">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -203,26 +148,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="row gx-3 mb-3">
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLocation">Descripción: </label>
-                                <p><textarea name="comentario" rows="5" cols="90">Placa base AMD B550 AORUS con VRM digital real de 12 + 2 fases, disipadores de calor de superficie agrandados, ranura PCIe 4.0 x16, PCIe 4.0 / 3.0 x4 M.2 dual  con un protector térmico, LAN de 2.5GbE, RGB FUSION 2.0, Q-Flash Plus</textarea></p>
+                                <p><textarea name="comentario" rows="5" cols="90" placeholder="Placa base AMD B550 AORUS con VRM digital..." ></textarea></p>
                             </div>
                         </div>
 
                         <div class="row gx-3 mb-3">
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLocation">Características: </label>
-                                <p><textarea name="comentario" rows="5" cols="90">Admite AMD Ryzen ™ 5000 Series / 3rd Gen Ryzen ™ y 3rd Gen Ryzen ™ con procesadores gráficos Radeon ™
-                                    DDR4 sin búfer ECC / no ECC de doble canal, 4 DIMM
-                                    Diseño digital de potencia doble de 12 + 2 fases con DrMOS de 50 A
-                                    Diseño térmico avanzado con disipadores de calor de superficie agrandados
-                                    Ranura Ultra Durable ™ PCIe 4.0 x16
-                                    Dual Ultrarrápido NVMe PCIe 4.0 / 3.0 x4 M.2 con un protector térmico
-                                    Audio AMP-UP con condensadores ALC1200 y WIMA
-                                    LAN de 2,5 GbE ultrarrápida con gestión de ancho de banda</textarea></p>
+                                <p><textarea name="comentario" rows="5" cols="90" placeholder="Admite AMD Ryzen ™ 5000 Series / 3rd Gen Ryzen ™ y 3rd Gen Ryzen ™ con procesadores gráficos Radeon ™ DDR4 sin búfer ECC / no ECC de doble canal, 4 DIMM..."></textarea></p>
                             </div>
                         </div>
-                        
+       
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Crear producto</button>
+						<button type="button" class="btn btn-success">Crear producto</button>
                     </form>
                 </div>
             </div>

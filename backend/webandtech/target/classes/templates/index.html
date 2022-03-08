@@ -74,10 +74,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 				</form>
 			</div>
-			<div class="col-md-3 header-right footer-bottom">
 
+			<nav class="col-md-3 header-right footer-bottom dropdown">
+				<div class="dropdown-content">
+					<li><a href="perfil">Ajustes</a></li>
+					<li><a href="products">Pedidos</a></li>
+					{{#admin}}
+					<li><a href="#">Crear producto</a></li>
+					<li><a href="#">Consultar pedidos</a></li>
+					<li><a href="#">Consultar usuarios</a></li>
+					<li><a href="#">Consultar gráficas</a></li>
+					{{/admin}}
+				
+				</div>	
 				<ul>
-					<li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a>
+					<li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"></a>
+						
+							<!--
+							<li><a href="#">Ajustes</a></li>
+							<li><a href="#">Pedidos</a></li>
+							{{#admin}}
+							<li><a href="#">Crear producto</a></li>
+							<li><a href="#">Consultar pedidos</a></li>
+							<li><a href="#">Consultar usuarios</a></li>
+							<li><a href="#">Consultar gráficas</a></li>
+							{{/admin}}
+						
+							
+						</ul> 
+
+						-->
+
 
 					</li>
 					<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
@@ -85,7 +112,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
 					<li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
 				</ul>
-			</div>
+			</nav>
+
+
+
+
+			
+
+
+
+
 			<div class="clearfix"></div>
 		</div>
 	</div>

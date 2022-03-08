@@ -5094,3 +5094,88 @@ td.invert-image a img {
 }
 }
 /*-- //responsive media queries --*/
+
+
+
+
+
+
+/*-- submanuoctavio --*/
+.submanuoctavio > li {
+	float:left;
+}
+
+.submanuoctavio li a {
+	background-color:#000;
+	color:#fff;
+	text-decoration:none;
+	padding:10px 12px;
+	display:block;
+}
+
+.submanuoctavio li a:hover {
+	background-color:#434343;
+}
+
+.submenu li ul {
+	display:none;
+	position:absolute;
+
+}
+
+.submenu li:hover > ul {
+	display:block;
+}
+
+.submanuoctavio li ul li {
+	position:relative;
+}
+
+#manuds li ul li {
+	float:none;
+	width:150px;
+   }
+
+   #menu ul li:hover  {
+	display:block;
+   }
+
+
+   .dropbtn {
+	background-color: #04AA6D;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+  }
+  
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	list-style: none;
+	top: 90%;
+	text-align: left;
+	z-index: 100;
+  }
+  
+  .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}

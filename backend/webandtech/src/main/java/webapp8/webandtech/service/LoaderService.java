@@ -56,7 +56,7 @@ public class LoaderService {
 
     public void Load() throws IOException{
         //User  img
-        Resource imageUser1 = new ClassPathResource("/static/images/imgUser1.jpg");
+                Resource imageUser1 = new ClassPathResource("/static/images/imgUser1.jpg");
 		Resource imageUser2 = new ClassPathResource("/static/images/imgUser2.jpg");
 		Resource imageUser3 = new ClassPathResource("/static/images/imgUser3.jpg");
 		Resource imageUser4 = new ClassPathResource("/static/images/imgUser4.jpg");

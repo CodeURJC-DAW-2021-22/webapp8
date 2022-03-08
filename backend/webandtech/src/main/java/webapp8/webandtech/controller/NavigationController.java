@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.csrf.CsrfToken;
@@ -35,14 +36,22 @@ public class NavigationController {
 		response.sendRedirect("/index");		
 	}
     @GetMapping("/login")
-	private String getSignIn(Model model,HttpServletRequest request) throws IOException {
+	private String getSignIn(Model model,HttpServletRequest request, HttpSession sesion) throws IOException {
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
 		model.addAttribute("token", token.getToken());
+		model.addAttribute("login", (request.getSession(false) != null));
+		
+		
 		return "login";
 	}
     @GetMapping("/index")
 	private String getIndex(Model model,HttpServletRequest request) throws IOException {
-		//userService.loadDataBase();
+		if(request.getUserPrincipal() != null){
+			model.addAttribute("user", request.getUserPrincipal().getName());
+			model.addAttribute("login", (request.getUserPrincipal() != null));
+		}else{
+			model.addAttribute("login", false);
+		}
 		return "index";
 	}
 

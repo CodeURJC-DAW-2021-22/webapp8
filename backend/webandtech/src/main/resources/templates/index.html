@@ -3,6 +3,8 @@
 
 <head>
 	<title>W&T</title>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
 	<!-- for-mobile-apps -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -56,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-bot">
 		<div class="container">
 			<div class="col-md-3 header-left">
-				<h1><a href="index.html"><img src="images/logo.jpg"></a></h1>
+				<h1><a href="/"><img src="images/logo.jpg"></a></h1>
 			</div>
 			<div class="col-md-6 header-middle">
 				<form>
@@ -81,42 +83,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 			<nav class="col-md-3 header-right footer-bottom dropdown">
 				<div class="dropdown-content">
-					<li><a href="perfil">Ajustes</a></li>
-					<li><a href="products">Pedidos</a></li>
-					{{#admin}}
-					<li><a href="#">Crear producto</a></li>
-					<li><a href="#">Consultar pedidos</a></li>
-					<li><a href="#">Consultar usuarios</a></li>
-					<li><a href="#">Consultar gráficas</a></li>
-					{{/admin}}
-				
-				</div>	
-				<ul>
 					{{#login}}
-						<li><a href="/perfil" class="use1"><span>{{user}}</span></a></li>
-					{{/login}}
-					{{^login}}
-						<li><a href="/login" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a></li>
-					{{/login}}
-					
-					<li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"></a>
-						
-							<!--
-							<li><a href="#">Ajustes</a></li>
-							<li><a href="#">Pedidos</a></li>
-							{{#admin}}
+						<li><a href="perfil">Ajustes</a></li>
+						<li><a href="products">Pedidos</a></li>
+						{{#admin}}
 							<li><a href="#">Crear producto</a></li>
 							<li><a href="#">Consultar pedidos</a></li>
 							<li><a href="#">Consultar usuarios</a></li>
 							<li><a href="#">Consultar gráficas</a></li>
-							{{/admin}}
-						
-							
-						</ul> 
-
-						-->
-
-
+						{{/admin}}
+						<li>
+							<form action="/logout" method="POST">
+								<input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf" value="{{token}}"/>
+							</form>
+						</li>
+					{{/login}}
+				</div>	
+				<ul>
+					
+					{{^login}}
+						<li><a href="/login" class="use1"><span>Login</span></a></li>
+					{{/login}}
+					{{#login}}
+						<li><a href="/perfil" class="use1"></a>
+					{{/login}}
 					</li>
 					<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
 					<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
@@ -124,14 +114,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
 				</ul>
 			</nav>
-
-
-
-
-			
-
-
-
 
 			<div class="clearfix"></div>
 		</div>
@@ -157,7 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav menu__list">
 								<li class="active menu__item menu__item--current"><a class="menu__link"
-										href="index.html">Inicio <span class="sr-only">(current)</span></a></li>
+										href="/">Inicio <span class="sr-only">(current)</span></a></li>
 								<li class="dropdown menu__item">
 									<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
 										aria-haspopup="true" aria-expanded="false">COMPONENTES<span
@@ -165,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<ul class="dropdown-menu multi-column columns-3">
 										<div class="row">
 											<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-												<a href="componentes"><img src="images/componentes.jpg"
+												<a href="/componentes"><img src="images/componentes.jpg"
 														alt=" " /></a>
 											</div>
 											<div class="col-sm-3 multi-gd-img">
@@ -204,7 +186,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</ul>
 								</li>
 								<li class=" menu__item"><a class="menu__link" href="electronics">Teléfonos</a></li>
-								<li class=" menu__item"><a class="menu__link" href="admin">Administrador</a></li>
 								<li class=" menu__item"><a class="menu__link" href="contact">Contacto</a></li>
 							</ul>
 						</div>
@@ -286,170 +267,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<div class="product-easy">
 		<div class="container">
-
-			
 			<div class="sap_tabs">
-				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+				<div id="horizontalTab" style="display: block; inline-size: 100%; margin: 0px;">
 					<ul class="resp-tabs-list">
 						<li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Lo último</span></li>
-						<li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Ofertas especiales</span>
-						</li>
+						<li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Ofertas especiales</span></li>
 						<li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Colecciones</span></li>
 					</ul>
 					<div class="resp-tabs-container">
 						<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
-							<div class="col-md-4 product-men no-pad-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="images/monitor1.jpg" alt="" class="pro-image-front">
-										<img src="images/monitor1.jpg" alt="" class="pro-image-back">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="monitor1" class="link-product-add-cart">VER PRUDUCTO</a>
+							{{#products}}
+								<div class="col-md-4 product-men no-pad-men">
+									<div class="men-pro-item simpleCart_shelfItem">
+										<div class="men-thumb-item">
+											{{#img1}}
+											<img src="https://localhost:8443/productImg1/{{idproduct}}" alt="" class="pro-image-front">
+											<img src="https://localhost:8443/productImg1/{{idproduct}}" alt="" class="pro-image-back">
+											{{/img1}}
+											<div class="men-cart-pro">
+												<div class="inner-men-cart-pro">
+													<a href="/products/{{idproduct}}" class="link-product-add-cart">VER PRUDUCTO</a>
+												</div>
 											</div>
-										</div>
-										<span class="product-new-top">Nuevo</span>
+											<span class="product-new-top">Nuevo</span>
 
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="monitor1">Monitor</a></h4>
-										<h4><a href="monitor1">PcCom Discovery 27" LED FullHD 165Hz </a></h4>
-										<div class="info-product-price">
-											<span class="item_price"></span>
-										
 										</div>
-										<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al
-											carro</a>
+										<div class="item-info-product ">
+											<h4><a href="/products/{{idproduct}}">{{productcategory}}</a></h4>
+											<h4><a href="/products/{{idproduct}}">{{nameproduct}} </a></h4>
+											<div class="info-product-price">
+												<span class="item_price">{{price}}€</span>
+											
+											</div>
+											<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al
+												carro</a>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-4 product-men no-pad-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="images/monitor2.jpg" alt="" class="pro-image-front">
-										<img src="images/monitor2.jpg" alt="" class="pro-image-back">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="monitor2.html" class="link-product-add-cart">VER PRUDUCTO</a>
-											</div>
-										</div>
-										<span class="product-new-top">Nuevo</span>
-
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="monitor2.html">Monitor</a></h4>
-										<h4><a href="monitor2.html">Samsung S22F350FHU 22" Full HD LED</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">36€</span>
-										</div>
-										<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al
-											carro</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 product-men no-pad-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="images/placabase1.jpg" alt="" class="pro-image-front">
-										<img src="images/placabase1.jpg" alt="" class="pro-image-back">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="placabase1.html" class="link-product-add-cart">VER PRUDUCTO</a>
-											</div>
-										</div>
-										<span class="product-new-top">Nuevo</span>
-
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="placabase1.html">Placa Base</a></h4>
-										<h4><a href="placabase1.html">Gigabyte H310M S2H 2.0</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">31,25€</span>
-											<del>78.45€</del>
-										</div>
-										<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al
-											carro</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 product-men no-pad-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="images/placabase2.jpg" alt="" class="pro-image-front">
-										<img src="images/placabase2.jpg" alt="" class="pro-image-back">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="placabase2.html" class="link-product-add-cart">VER PRUDUCTO</a>
-											</div>
-										</div>
-										<span class="product-new-top">Nuevo</span>
-
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="placabase1.html">Placa Base</a></h4>
-										<h4><a href="placabase1.html">Gigabyte H310M S2H 2.0</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">31,25€</span>
-											<del>78.45€</del>
-										</div>
-										<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al
-											carro</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 product-men no-pad-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="images/procesador1.jpg" alt="" class="pro-image-front">
-										<img src="images/procesador1.jpg" alt="" class="pro-image-back">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="procesador1.html" class="link-product-add-cart">VER
-													PRUDUCTO</a>
-											</div>
-										</div>
-										<span class="product-new-top">nuevo</span>
-
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="procesador1.html">Procesador</a></h4>
-										<h4><a href="procesador1.html">MSI B560M PRO-VDH</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">99,98€</span>
-											<del>$135.71</del>
-										</div>
-										<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al
-											carro</a>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4 product-men no-pad-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="images/procesador2.jpg" alt="" class="pro-image-front">
-										<img src="images/procesador2.jpg" alt="" class="pro-image-back">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="procesador2.html" class="link-product-add-cart">VER
-													PRUDUCTO</a>
-											</div>
-										</div>
-										<span class="product-new-top">Nuevo</span>
-
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="procesador2.html">Procesador</a></h4>
-										<h4><a href="procesador2.html">Intel Celeron G5905 3.50GHz</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">37,87€</span>
-											<del>56.45€</del>
-										</div>
-										<a href="#" class="item_add single-item hvr-outline-out button2">Añadir al
-											carro</a>
-									</div>
-								</div>
-							</div>
+							{{/products}}
 						</div>
 					</div>
 				</div>
@@ -557,76 +412,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<!-- //footer -->
-		<!-- login -->
-		<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content modal-info">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-								aria-hidden="true">&times;</span></button>
-					</div>
-					<div class="modal-body modal-spa">
-						<div class="login-grids">
-							<div class="login">
-								<div class="login-bottom">
-									<h3>Sign up for free</h3>
-									<form>
-										<div class="sign-up">
-											<h4>Email :</h4>
-											<input type="text" value="Type here" onfocus="this.value = '';"
-												onblur="if (this.value == '') {this.value = 'Type here';}" required="">
-										</div>
-										<div class="sign-up">
-											<h4>Password :</h4>
-											<input type="password" value="Password" onfocus="this.value = '';"
-												onblur="if (this.value == '') {this.value = 'Password';}" required="">
-
-										</div>
-										<div class="sign-up">
-											<h4>Re-type Password :</h4>
-											<input type="password" value="Password" onfocus="this.value = '';"
-												onblur="if (this.value == '') {this.value = 'Password';}" required="">
-
-										</div>
-										<div class="sign-up">
-											<input type="submit" value="REGISTER NOW">
-										</div>
-
-									</form>
-								</div>
-								<div class="login-right">
-									<h3>Sign in with your account</h3>
-									<form>
-										<div class="sign-in">
-											<h4>Email :</h4>
-											<input type="text" value="Type here" onfocus="this.value = '';"
-												onblur="if (this.value == '') {this.value = 'Type here';}" required="">
-										</div>
-										<div class="sign-in">
-											<h4>Password :</h4>
-											<input type="password" value="Password" onfocus="this.value = '';"
-												onblur="if (this.value == '') {this.value = 'Password';}" required="">
-											<a href="#">Forgot password?</a>
-										</div>
-										<div class="single-bottom">
-											<input type="checkbox" id="brand" value="">
-											<label for="brand"><span></span>Remember Me.</label>
-										</div>
-										<div class="sign-in">
-											<input type="submit" value="SIGNIN">
-										</div>
-									</form>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a
-									href="#">Privacy Policy</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- //login -->
 </body>
 
 </html>

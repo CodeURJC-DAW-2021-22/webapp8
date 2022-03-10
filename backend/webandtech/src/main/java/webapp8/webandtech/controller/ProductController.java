@@ -68,8 +68,8 @@ public class ProductController {
 		return productService.getProductsPage(page);
 	}
 	
-	@GetMapping("/productImg0/{idproduct}")
-    private ResponseEntity<Object> getProductImg0(@PathVariable int idproduct) throws SQLException{
+	@GetMapping("/productImg1/{idproduct}")
+    private ResponseEntity<Object> getProductImg1(@PathVariable int idproduct) throws SQLException{
 		Product product = productService.getProduct(idproduct);
     	Resource file = new InputStreamResource(product.getImage1().getBinaryStream());
     	return ResponseEntity.ok()
@@ -78,8 +78,8 @@ public class ProductController {
 				.body(file);
     }
 	
-	@GetMapping("/productImg1/{idproduct}")
-    private ResponseEntity<Object> getProductImg1( @PathVariable int idproduct) throws SQLException{
+	@GetMapping("/productImg2/{idproduct}")
+    private ResponseEntity<Object> getProductImg2( @PathVariable int idproduct) throws SQLException{
 		Product product = productService.getProduct(idproduct);
 		Resource file = new InputStreamResource(product.getImage2().getBinaryStream());
     	return ResponseEntity.ok()
@@ -88,8 +88,8 @@ public class ProductController {
 				.body(file);
     }
 	
-	@GetMapping("/productImg2/{idproduct}")
-    private ResponseEntity<Object> getProductImg2( @PathVariable int idproduct) throws SQLException{
+	@GetMapping("/productImg3/{idproduct}")
+    private ResponseEntity<Object> getProductImg3( @PathVariable int idproduct) throws SQLException{
 		Product product = productService.getProduct(idproduct);
 		Resource file = new InputStreamResource(product.getImage3().getBinaryStream());
     	return ResponseEntity.ok()

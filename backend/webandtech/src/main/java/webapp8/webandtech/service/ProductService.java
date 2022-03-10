@@ -7,7 +7,9 @@ import java.util.NoSuchElementException;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -56,18 +58,29 @@ public class ProductService {
 	}
 
 	public Page<Product> getComponentsPage(Pageable page){
-		return productRepository.findByproductcategory("productcategory");
+		return productRepository.findByproductcategory("productcategory", page);
 	}
 
 	public Page<Product> getPeripheralsPage(Pageable page){
-		return productRepository.findByproductcategory("peripheral");
+		return productRepository.findByproductcategory("peripheral", page);
 	}
 
 	public Page<Product> getPhonesPage(Pageable page){
-		return productRepository.findByproductcategory("phone");
+		return productRepository.findByproductcategory("phone", page);
 	}
 	
 	public List<Product> getProductType(ProductType productType){
 		return productRepository.findByproductType(productType);
+	}
+	public List<Product> getTop6ByOrderByIdDesc(){
+		return productRepository.findTopByOrderByIdproductDesc();
+	}
+	public List<Product> getNewProucts(){
+		Page<Product> products = productRepository.findAll(PageRequest.of(0, 6, Sort.by("idproduct").descending()));
+		return products.getContent();
+	}
+	public List<Product> getComponents(){
+		Page<Product> components = productRepository.findAll(PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		return components.getContent();
 	}
 }

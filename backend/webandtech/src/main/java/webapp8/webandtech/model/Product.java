@@ -43,11 +43,17 @@ public class Product {
 	@Lob
 	@JsonIgnore
 	private Blob image3;
+	@Column
+	private boolean img1;
+	@Column
+	private boolean img2;
+	@Column
+	private boolean img3;
 	
 	public Product() {}
 
 	public Product(int idproduct, String nameproduct, float price, String description, float ratingProducto,
-			String productType, String productcategory, String productbrand, Blob image1, Blob image2, Blob image3) {
+			String productType, String productcategory, String productbrand, Blob image1, Blob image2, Blob image3, boolean img1, boolean img2, boolean img3) {
 		super();
 		this.idproduct = idproduct;
 		this.nameproduct = nameproduct;
@@ -60,6 +66,9 @@ public class Product {
 		this.image1 = image1;
 		this.image2 = image2;
 		this.image3 = image3;
+		this.img1 = img1;
+		this.img2 = img2;
+		this.img3 = img3;
 	}
 
 	public int getIdproduct() {
@@ -148,6 +157,30 @@ public class Product {
 
 	public void setImage3(Blob image3) {
 		this.image3 = image3;
+	}
+
+	public boolean getImg1() {
+		return img1;
+	}
+
+	public void setImg1(boolean img1) {
+		this.img1 = img1;
+	}
+
+	public boolean getImg2() {
+		return img2;
+	}
+
+	public void setImg2(boolean img2) {
+		this.img2 = img2;
+	}
+
+	public boolean getImg3() {
+		return img3;
+	}
+
+	public void setImg3(boolean img3) {
+		this.img3 = img3;
 	}
 	
 

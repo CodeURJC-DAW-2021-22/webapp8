@@ -18,5 +18,6 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	public List<User> findByuserprofile(boolean userprofile);
 	public Page<User> findByuserprofile(boolean userprofile, Pageable page);
 	boolean existsIdusersByUsername(String username);
+	boolean existsIdusersByEmail(String email);
 
 }

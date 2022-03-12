@@ -81,47 +81,47 @@ $('#horizontalTab').easyResponsiveTabs({
     fit: true   // 100% fit in a container
 });
 
-// $( "#slider-range" ).slider({
-//     range: true,
-//     min: 0,
-//     max: 5000,
-//     values: [ 0, 2000 ],
-//     slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-//     }
-// });
-// $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+$( "#slider-range" ).slider({
+    range: true,
+    min: 0,
+    max: 5000,
+    values: [ 0, 2000 ],
+    slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+    }
+});
+$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 
-// $('#multi').mdbRange({
-//     width: '100%',
-//     direction: 'vertical',
-//     value: {
-//       min: 0,
-//       max: 100,
-//     },
-//     single: {
-//       active: true,
-//       value: {
-//         step: 1,
-//         symbol: ''
-//       },
-//       counting: false,
-//       countingTarget: null,
-//       bgThumbColor: '#4285F4',
-//       textThumbColor: '#fff',
-//       multi: {
-//         active: true,
-//         value: {
-//           step: 1,
-//           symbol: ''
-//         },
-//         counting: false,
-//         rangeLength: 2,
-//         countingTarget: null,
-//         bgThumbColor: '#4285F4',
-//         textThumbColor: '#fff'
-//       },
-//     }
-// });
+$('#multi').mdbRange({
+    width: '100%',
+    direction: 'vertical',
+    value: {
+      min: 0,
+      max: 100,
+    },
+    single: {
+      active: true,
+      value: {
+        step: 1,
+        symbol: ''
+      },
+      counting: false,
+      countingTarget: null,
+      bgThumbColor: '#4285F4',
+      textThumbColor: '#fff',
+      multi: {
+        active: true,
+        value: {
+          step: 1,
+          symbol: ''
+        },
+        counting: false,
+        rangeLength: 2,
+        countingTarget: null,
+        bgThumbColor: '#4285F4',
+        textThumbColor: '#fff'
+      },
+    }
+});
 
     $('.flexslider').flexslider({
         animation: "slide",

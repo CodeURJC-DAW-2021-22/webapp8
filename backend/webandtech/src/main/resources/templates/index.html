@@ -84,7 +84,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<nav class="col-md-3 header-right footer-bottom dropdown">
 				<div class="dropdown-content">
 					{{#login}}
-						<li><a href="perfil">Ajustes</a></li>
+					{{#userr}}
+						<li><a href="/users/profile/{{user}}">Ajustes</a></li>
 						<li><a href="products">Pedidos</a></li>
 						{{#admin}}
 							<li><a href="/admin/newProduct">Crear producto</a></li>
@@ -97,6 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf" value="{{token}}"/>
 							</form>
 						</li>
+					{{/userr}}
 					{{/login}}
 				</div>	
 				<ul>

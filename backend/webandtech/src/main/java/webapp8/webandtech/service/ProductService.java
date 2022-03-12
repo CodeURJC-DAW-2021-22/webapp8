@@ -15,7 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import webapp8.webandtech.repository.ProductRepository;
 import webapp8.webandtech.model.Product;
-import webapp8.webandtech.model.ProductType;
 
 @Service
 public class ProductService {
@@ -58,7 +57,8 @@ public class ProductService {
 	}
 
 	public Page<Product> getComponentsPage(Pageable page){
-		return productRepository.findByproductcategory("productcategory", page);
+		
+		return productRepository.findByproductcategory("Componente", page);
 	}
 
 	public Page<Product> getPeripheralsPage(Pageable page){
@@ -69,8 +69,9 @@ public class ProductService {
 		return productRepository.findByproductcategory("phone", page);
 	}
 	
-	public List<Product> getProductType(ProductType productType){
-		return productRepository.findByproductType(productType);
+	public List<Product> getProductType(String productType){
+		Page<Product> components = productRepository.findByproductType(productType,PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		return components.getContent();
 	}
 	public List<Product> getTop6ByOrderByIdDesc(){
 		return productRepository.findTopByOrderByIdproductDesc();
@@ -80,7 +81,15 @@ public class ProductService {
 		return products.getContent();
 	}
 	public List<Product> getComponents(){
-		Page<Product> components = productRepository.findAll(PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		Page<Product> components = productRepository.findByproductcategory("Componente",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
 		return components.getContent();
+	}
+	public List<Product> getPeripherals(){
+		Page<Product> peripherals = productRepository.findByproductcategory("Periferico",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		return peripherals.getContent();
+	}
+	public List<Product> getPhones(){
+		Page<Product> phones = productRepository.findByproductcategory("telefono",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		return phones.getContent();
 	}
 }

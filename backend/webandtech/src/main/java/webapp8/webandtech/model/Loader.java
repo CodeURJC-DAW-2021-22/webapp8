@@ -196,17 +196,17 @@ public class Loader {
 		Resource imageProd29 = new UrlResource(imagePathProd29.toUri());
         Path imagePathProd30 = ImgFolder.resolve("raton2_1.jpg");
 		Resource imageProd30 = new UrlResource(imagePathProd30.toUri());
-        Path imagePathProd31 = ImgFolder.resolve("tarjetagráfica1_1.jpg");
+        Path imagePathProd31 = ImgFolder.resolve("tarjetagrafica1_1.jpg");
 		Resource imageProd31 = new UrlResource(imagePathProd31.toUri());
-        Path imagePathProd32 = ImgFolder.resolve("tarjetagráfica1_2.jpg");
+        Path imagePathProd32 = ImgFolder.resolve("tarjetagrafica1_2.jpg");
 		Resource imageProd32 = new UrlResource(imagePathProd32.toUri());
-        Path imagePathProd33 = ImgFolder.resolve("tarjetagráfica1_4.jpg");
+        Path imagePathProd33 = ImgFolder.resolve("tarjetagrafica1_4.jpg");
 		Resource imageProd33 = new UrlResource(imagePathProd33.toUri());
-        Path imagePathProd34 = ImgFolder.resolve("tarjetagráfica2.jpg");
+        Path imagePathProd34 = ImgFolder.resolve("tarjetagrafica2.jpg");
 		Resource imageProd34 = new UrlResource(imagePathProd34.toUri());
-        Path imagePathProd35 = ImgFolder.resolve("tarjetagráfica2_2.jpg");
+        Path imagePathProd35 = ImgFolder.resolve("tarjetagrafica2_2.jpg");
 		Resource imageProd35 = new UrlResource(imagePathProd35.toUri());
-        Path imagePathProd36 = ImgFolder.resolve("tarjetagráfica2_3.jpg");
+        Path imagePathProd36 = ImgFolder.resolve("tarjetagrafica2_3.jpg");
 		Resource imageProd36 = new UrlResource(imagePathProd36.toUri());
         Path imagePathProd37 = ImgFolder.resolve("teclado1.jpg");
 		Resource imageProd37 = new UrlResource(imagePathProd37.toUri());
@@ -338,12 +338,12 @@ public class Loader {
         ProductType prodType1 = new ProductType(1, "Placa base");
         ProductType prodType2 = new ProductType(2, "discos duros");
         ProductType prodType3 = new ProductType(3, "Procesador");
-        ProductType prodType4 = new ProductType(4, "Tarjeta gráfica");
+        ProductType prodType4 = new ProductType(4, "Tarjeta grafica");
         ProductType prodType5 = new ProductType(5, "Monitor");
         ProductType prodType6 = new ProductType(6, "Auriculares");
         ProductType prodType7 = new ProductType(7, "Teclado");
         ProductType prodType8 = new ProductType(8, "Ratón");
-        ProductType prodType9 = new ProductType(9, "Teléfono"); 
+        ProductType prodType9 = new ProductType(9, "Telefono"); 
 
 
         //Brand creation
@@ -361,116 +361,116 @@ public class Loader {
 
 
         //Product creations
-        Product prod1 = new Product(1,"Forgeon General Auriculares Gaming Inalámbricos PC/PS4/PS5/Xbox/Xbox X/Switch Negros", 146,
+        Product prod1 = new Product(1,"Forgeon General Auriculares Gaming Inalambricos PC/PS4/PS5/Xbox/Xbox X/Switch Negros", 146,
                 "Desde Forgeon presentamos los nuevos Auriculares Forgeon General Wireless Headset 2,4 GHz. Unos Auriculares con unos"
-                +"acabados de primera, acompañados de la más novedosa tecnología de triple conexión que te da la libertad que necesitas" 
+                +"acabados de primera, acompañados de la mas novedosa tecnología de triple conexión que te da la libertad que necesitas" 
                 +"para jugar cómodamente. Esto unido a sus extras y a su peso de tan solo 350 g hace de estos Auriculares imprescindibles"
-                +"en tu setup gaming ¡No te quedes sin ellos!", 4, "Auriculares", "Periférico", "forgeon", imgP1, imgP2, imgP3, true, true, true);
+                +"en tu setup gaming ¡No te quedes sin ellos!", 4, "Auriculares", "Periferico", "forgeon", imgP1, imgP2, imgP3, true, true, true);
         Product prod2 = new Product(2,"Tempest GHS110 Knight Auriculares Gaming RGB PC", 16, "Desde Forgeon presentamos los nuevos"
-                +"Auriculares Tempest GHS110 Knight 2,4 GHz. Unos Auriculares con unos acabados de primera, acompañados de la más novedosa"
+                +"Auriculares Tempest GHS110 Knight 2,4 GHz. Unos Auriculares con unos acabados de primera, acompañados de la mas novedosa"
                 +"tecnología de triple conexión que te da la libertad que necesitas para jugar cómodamente. Esto unido a sus extras y a su"
                 +"peso de tan solo 350 g hace de estos Auriculares imprescindibles en tu setup gaming ¡No te quedes sin ellos!", 3, 
-                "Auriculares", "Periférico", "tempest", imgP4, imgP5, null, true, true, false);
+                "Auriculares", "Periferico", "tempest", imgP4, imgP5, null, true, true, false);
         Product prod3 = new Product(3,"Kingston A400 SSD 480GB", 500, "La unidad A400 de estado sólido de Kingston ofrece enormes mejoras"
                 +"en la velocidad de respuesta, sin actualizaciones adicionales del hardware. Brinda lapsos de arranque, carga y de"
-                +"transferencia de archivos increíblemente más breves en comparación con las unidades de disco duro mecánico.", 3, 
+                +"transferencia de archivos increíblemente mas breves en comparación con las unidades de disco duro mecanico.", 3, 
                 "discos duros", "Componente", "forgeon", imgP6, imgP7, null, true, true, false);
-        Product prod4 = new Product(1,"Nfortec Alcyon X 512GB SSD M.2 NVMe", 52, "Si estás pensando en subir de nivel y mejorar tu equipo"
-                +"PC gaming, Nfortec Alcyon SSD está disponible en capacidades de 256 y 512 GB, a la altura de los mejores SSD del mercado"
+        Product prod4 = new Product(1,"Nfortec Alcyon X 512GB SSD M.2 NVMe", 52, "Si estas pensando en subir de nivel y mejorar tu equipo"
+                +"PC gaming, Nfortec Alcyon SSD esta disponible en capacidades de 256 y 512 GB, a la altura de los mejores SSD del mercado"
                 +"actual de Componente.", 3, "discos duros", "Componente", "alcyon x", imgP8, imgP9, imgP10, true, true, true);
-        Product prod5 = new Product(1,"IPhone 6", 146, "El iPhone 6 es un teléfono inteligente de gama alta desarrollado por Apple Inc."
+        Product prod5 = new Product(1,"IPhone 6", 146, "El iPhone 6 es un telefono inteligente de gama alta desarrollado por Apple Inc."
                 +"Funciona con el sistema operativo iOS 12. Fue presentado el 9 de septiembre de 2014 y lanzado a la venta el 19 de octubre de 2014."
                 +"La serie iPhone 6 es en conjunto un sucesor del iPhone 5s y el iPhone 5C", 3, "telefono", "telefono", "apple", imgP11, imgP12, null, 
                 true, true, false);
-        Product prod6 = new Product(1,"IPhone 6s", 799, "El iPhone 6s es un teléfono inteligente de gama alta diseñado por Apple Inc."
+        Product prod6 = new Product(1,"IPhone 6s", 799, "El iPhone 6s es un telefono inteligente de gama alta diseñado por Apple Inc."
                 +"con procesador de dos núcleos a 1.85 GHz, 2 GB de memoria RAM y pantalla de 4,7 pulgadas. Es parte de la serie iPhone y fue"
                 +"anunciado el 9 de septiembre de 2015. El iPhone 6s y 6s Plus son conjuntamente sucesores del iPhone 6 y iPhone 6 Plus de 2014.", 
                 4, "telefono", "telefono", "apple", imgP13, imgP14, null, true, true, false);
         Product prod7 = new Product(1,"PcCom Discovery 27 pulgadas LED FullHD 165Hz FreeSync Curvo", 239, "Desde PCCOM presentamos el Monitor"
                 +"Discovery de 27 pulgadas. Un exclusivo modelo de 27 pulgadas curvo 1500R que te ofrece una experiencia gaming totalmente envolvente"
                 +"gracias a su resolución Full HD y tasa de refresco de hasta 165 Hz con 1ms de respuesta MPRT. Si quieres disfrutar de las buenas"
-                +"características de este monitor, no puede faltar en tu setup gaming.", 4, "Monitor", "Periférico", "PcCom", imgP15, imgP16, null, 
+                +"características de este monitor, no puede faltar en tu setup gaming.", 4, "Monitor", "Periferico", "PcCom", imgP15, imgP16, null, 
                 true, true, false);
         Product prod8 = new Product(1,"Samsung S22F350FHU 22 pulgadas Full HD LED", 36, "Te presentamos el monitor S22F350FHU de 22 de Samsung. Un"
                 +"monitor Full HD de tan sólo 10mm de grosor, 'Modo Juego' para disfrutar de una experiencia gaming única y el 'Eye Saver Mode' que"
-                +"reduce la emisión de ondas de luz azul que fatigan tus retinas.", 3, "Monitor", "Periférico", "samsung", imgP17, imgP18, null, 
+                +"reduce la emisión de ondas de luz azul que fatigan tus retinas.", 3, "Monitor", "Periferico", "samsung", imgP17, imgP18, null, 
                 true, true, false);     
-        Product prod9 = new Product(1,"MSI B560M PRO-VDH", 99, "La serie PRO ayuda a los usuarios a trabajar de forma más inteligente al ofrecer una"
+        Product prod9 = new Product(1,"MSI B560M PRO-VDH", 99, "La serie PRO ayuda a los usuarios a trabajar de forma mas inteligente al ofrecer una"
                 +"experiencia eficiente y productiva. Con una funcionalidad estable y un ensamblaje de alta calidad, las placas base de la serie PRO"
-                +"brindan no solo flujos de trabajo profesionales optimizados, sino también menos resolución de problemas y longevidad.", 4, 
+                +"brindan no solo flujos de trabajo profesionales optimizados, sino tambien menos resolución de problemas y longevidad.", 4, 
                 "Placa base", "Componente", "msi", imgP19, imgP20, imgP21, true, true, true);     
         Product prod10 = new Product(1,"Gigabyte H310M S2H 2.0", 36, "Te presentamos la 310M S2H 2.0 de Gigabyte, una Placa base con socket LGA 1151"
                 +"y chipset B360.", 3, "Placa base", "Componente", "gigabyte", imgP22, imgP23, null, true, true, false);  
-        Product prod11 = new Product(1,"MSI B560M PRO-VDH", 99, "La serie PRO ayuda a los usuarios a trabajar de forma más inteligente al ofrecer"
+        Product prod11 = new Product(1,"MSI B560M PRO-VDH", 99, "La serie PRO ayuda a los usuarios a trabajar de forma mas inteligente al ofrecer"
                 +"una experiencia eficiente y productiva. Con una funcionalidad estable y un ensamblaje de alta calidad, las placas base de la serie"
-                +"PRO brindan no solo flujos de trabajo profesionales optimizados, sino también menos resolución de problemas y longevidad.", 4, 
+                +"PRO brindan no solo flujos de trabajo profesionales optimizados, sino tambien menos resolución de problemas y longevidad.", 4, 
                 "Procesador", "Componente", "ryzen", imgP24, imgP25, null, true, true, false);
         Product prod12 = new Product(1,"Intel Celeron G5905 3.50GHz", 37, "Los nuevos Procesador Intel® Core™ de 10ª generación ofrecen mejoras"
                 +"de rendimiento notables para conseguir una productividad mejorada y un entretenimiento impresionante, incluyendo Intel® Wi-Fi 6 (Gig+),"
-                +"tecnología Thunderbolt™ 3, HDR 4K, optimización de sistema inteligente y mucho más.", 3, "Procesador", "Componente", "intel", imgP26, 
+                +"tecnología Thunderbolt™ 3, HDR 4K, optimización de sistema inteligente y mucho mas.", 3, "Procesador", "Componente", "intel", imgP26, 
                 null, null, true, true, false);
         Product prod13 = new Product(1,"Forgeon Darrowspike Ratón Gaming RGB Wireless 19000DPI Negro", 99, "Presentamos el nuevo mouse gaming Forgeon"
-                +"Darrowspike Wireless. Este mouse inalámbrico ofrece unas prestaciones inigualables a un precio muy competitivo. Con el receptor"
-                +"inalámbrico incorporado sencillamente con conectarlo empezarás a disfrutar de tus mejores partidas dejando de lado esos cables que"
-                +"dificultan el movimiento", 5, "Ratón", "Periférico", "forgeon", imgP27, imgP28, null, true, true, false);
+                +"Darrowspike Wireless. Este mouse inalambrico ofrece unas prestaciones inigualables a un precio muy competitivo. Con el receptor"
+                +"inalambrico incorporado sencillamente con conectarlo empezaras a disfrutar de tus mejores partidas dejando de lado esos cables que"
+                +"dificultan el movimiento", 5, "Ratón", "Periferico", "forgeon", imgP27, imgP28, null, true, true, false);
         Product prod14 = new Product(1,"Tempest MS-300 RGB Soldier Ratón Gaming 4000DPI", 9, "Presentamos el nuevo mouse gaming Forgeon Darrowspike Wireless."
-                +"Este mouse inalámbrico ofrece unas prestaciones inigualables a un precio muy competitivo. Con el receptor inalámbrico incorporado"
-                +"sencillamente con conectarlo empezarás a disfrutar de tus mejores partidas dejando de lado esos cables que dificultan el movimiento.", 3, 
-                "Ratón", "Periférico", "tempest", imgP29, imgP30, null, true, true, false);    
-        Product prod15 = new Product(1,"MSI GeForce RTX 3070 Ti VENTUS 3X OC 8GB GDDR6X", 999, "Disfruta de los mayores éxitos de ventas de hoy como nunca"
+                +"Este mouse inalambrico ofrece unas prestaciones inigualables a un precio muy competitivo. Con el receptor inalambrico incorporado"
+                +"sencillamente con conectarlo empezaras a disfrutar de tus mejores partidas dejando de lado esos cables que dificultan el movimiento.", 3, 
+                "Ratón", "Periferico", "tempest", imgP29, imgP30, null, true, true, false);    
+        Product prod15 = new Product(1,"MSI GeForce RTX 3070 Ti VENTUS 3X OC 8GB GDDR6X", 999, "Disfruta de los mayores exitos de ventas de hoy como nunca"
                 +"antes con la fidelidad visual del trazado de rayos en tiempo real y el rendimiento definitivo de DLSS con tecnología de IA.", 5, 
-                "Tarjeta gráfica", "Componente", "msi", imgP31, imgP32, imgP33, true, true, true);  
-        Product prod16 = new Product(1,"Asus Radeon R7 240 2GB GDDR5 Low Profile", 31, "Disfruta de los mayores éxitos de ventas de hoy como nunca antes"
+                "Tarjeta grafica", "Componente", "msi", imgP31, imgP32, imgP33, true, true, true);  
+        Product prod16 = new Product(1,"Asus Radeon R7 240 2GB GDDR5 Low Profile", 31, "Disfruta de los mayores exitos de ventas de hoy como nunca antes"
                 +"con la fidelidad visual del trazado de rayos en tiempo real y el rendimiento definitivo de DLSS con tecnología de IA.", 3, 
-                "Tarjeta gráfica", "Componente", "forgeon", imgP34, imgP35, imgP36, true, true, true);    
-        Product prod17 = new Product(1,"Newskill Suiko Teclado Mecánico Gaming Full RGB Switch Kailh Blue", 64, "Newskill Suiko destaca por su novedoso"
-                +"sistema RGB desde el que podrás crear un halo de retroiluminación a su alrededor con efectos realmente impresionantes para tu zona de"
-                +"juego. Suiko forma parte de la gama de Teclado mecánicos fabricados con switches premium. La tecnología Kailh estará a nuestro servicio"
+                "Tarjeta grafica", "Componente", "forgeon", imgP34, imgP35, imgP36, true, true, true);    
+        Product prod17 = new Product(1,"Newskill Suiko Teclado Mecanico Gaming Full RGB Switch Kailh Blue", 64, "Newskill Suiko destaca por su novedoso"
+                +"sistema RGB desde el que podras crear un halo de retroiluminación a su alrededor con efectos realmente impresionantes para tu zona de"
+                +"juego. Suiko forma parte de la gama de Teclado mecanicos fabricados con switches premium. La tecnología Kailh estara a nuestro servicio"
                 +"con sus versiones Red, Blue y Brown ofreciendo una excelente velocidad de respuesta en cada click. Para mejorar la experiencia en cada"
-                +"partida hemos incorporado a la gama Suiko un reposamuñecas anexo acolchado que nos dará esa comodidad extra que buscamos.", 4, "Teclado", 
-                "Periférico", "newskill", imgP37, imgP38, null, true, true, false);
-        Product prod18 = new Product(1,"Logitech MK295 Silent Wireless Combo De Ratón Y Teclado Inalámbricos", 24, "Mantén la concentración y haz más cosas"
-                +"con la combinación silenciosa de teclado y ratón inalámbricos Logitech MK295, ambos dispositivos diseñados para eliminar el exceso de"
-                +"ruido molesto para ti y la gente alrededor. Demos la bienvenida a una nueva experiencia de teclado y ratón prácticamente silenciosa.", 2, 
-                "Auriculares", "Periférico", "forgeon", imgP39, null, null, true, false, false);
+                +"partida hemos incorporado a la gama Suiko un reposamuñecas anexo acolchado que nos dara esa comodidad extra que buscamos.", 4, "Teclado", 
+                "Periferico", "newskill", imgP37, imgP38, null, true, true, false);
+        Product prod18 = new Product(1,"Logitech MK295 Silent Wireless Combo De Ratón Y Teclado Inalambricos", 24, "Manten la concentración y haz mas cosas"
+                +"con la combinación silenciosa de teclado y ratón inalambricos Logitech MK295, ambos dispositivos diseñados para eliminar el exceso de"
+                +"ruido molesto para ti y la gente alrededor. Demos la bienvenida a una nueva experiencia de teclado y ratón practicamente silenciosa.", 2, 
+                "Auriculares", "Periferico", "forgeon", imgP39, null, null, true, false, false);
 
 
         //rating creation
-        Rating rating1 = new Rating(1, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod1, User6);
+        Rating rating1 = new Rating(1, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod1, User6);
         Rating rating2 = new Rating(2, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod1, User7);
-        Rating rating3 = new Rating(3, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod2, User8);
+        Rating rating3 = new Rating(3, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod2, User8);
         Rating rating4 = new Rating(4, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod2, User9);
-        Rating rating5 = new Rating(5, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod3, User10);
+        Rating rating5 = new Rating(5, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod3, User10);
         Rating rating6 = new Rating(6, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod3, User11);
-        Rating rating7 = new Rating(7, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod4, User12);
+        Rating rating7 = new Rating(7, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod4, User12);
         Rating rating8 = new Rating(8, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod4, User13);
-        Rating rating9 = new Rating(9, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod5, User14);
+        Rating rating9 = new Rating(9, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod5, User14);
         Rating rating10 = new Rating(10, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod5, User15);
-        Rating rating11 = new Rating(11, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod6, User16);
+        Rating rating11 = new Rating(11, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod6, User16);
         Rating rating12 = new Rating(12, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod6, User17);
-        Rating rating13 = new Rating(13, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod7, User18);
+        Rating rating13 = new Rating(13, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod7, User18);
         Rating rating14 = new Rating(14, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod7, User19);
-        Rating rating15 = new Rating(15, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod8, User20);
+        Rating rating15 = new Rating(15, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod8, User20);
         Rating rating16 = new Rating(16, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod8, User6);
-        Rating rating17 = new Rating(17, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod9, User7);
+        Rating rating17 = new Rating(17, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod9, User7);
         Rating rating18 = new Rating(18, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod9, User8);
-        Rating rating19 = new Rating(19, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod10, User9);
+        Rating rating19 = new Rating(19, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod10, User9);
         Rating rating20 = new Rating(20, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod10, User10);
-        Rating rating21 = new Rating(21, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod11, User11);
+        Rating rating21 = new Rating(21, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod11, User11);
         Rating rating22 = new Rating(22, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod11, User12);
-        Rating rating23 = new Rating(23, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod12, User13);
+        Rating rating23 = new Rating(23, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod12, User13);
         Rating rating24 = new Rating(24, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod12, User14);
-        Rating rating25 = new Rating(25, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod13, User15);
+        Rating rating25 = new Rating(25, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod13, User15);
         Rating rating26 = new Rating(26, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod13, User16);
-        Rating rating27 = new Rating(27, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod14, User17);
+        Rating rating27 = new Rating(27, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod14, User17);
         Rating rating28 = new Rating(28, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod14, User18);
-        Rating rating29 = new Rating(29, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod15, User19);
+        Rating rating29 = new Rating(29, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod15, User19);
         Rating rating30 = new Rating(30, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod15, User20);
-        Rating rating31 = new Rating(31, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod16, User6);
+        Rating rating31 = new Rating(31, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod16, User6);
         Rating rating32 = new Rating(32, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod16, User7);
-        Rating rating33 = new Rating(33, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod17, User8);
+        Rating rating33 = new Rating(33, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod17, User8);
         Rating rating34 = new Rating(34, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod17, User9);
-        Rating rating35 = new Rating(35, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rápido.", prod18, User10);
+        Rating rating35 = new Rating(35, 4, "Calidad precio lo mejor va bastante bien y no tiene ningun problema lo recomiendo y el envio muy rapido.", prod18, User10);
         Rating rating36 = new Rating(36, 5, "Buscaba un producto sencillo y económico del estilo y me ha sorprendido mucho, no puedo pedir mas, lo recomiendo.", prod18, User11);
 
 

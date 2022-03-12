@@ -13,28 +13,28 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import webapp8.webandtech.model.Product;
-import webapp8.webandtech.model.ProductType;
 import webapp8.webandtech.service.ProductService;
 
-@RestController
+@Controller
 @CrossOrigin
 public class ProductController {
 		
 	@Autowired
 	 private ProductService productService;
 	
-	@PostMapping("/productUpload")
-	private void productUpload(HttpServletResponse response, Product product, @RequestParam(required = false) MultipartFile image1, @RequestParam(required = false) MultipartFile image2, @RequestParam(required = false) MultipartFile image3) throws IOException {
-		productService.saveProduct (product, image1, image2, image3);
+	@PostMapping("/admin/productUpload")
+	private void productUpload(Product product, HttpServletResponse response, @RequestParam(required = false) MultipartFile image11, @RequestParam(required = false) MultipartFile image22, @RequestParam(required = false) MultipartFile image33) throws IOException {
+		System.out.println(product);
+		productService.saveProduct (product, image11, image22, image33);
 		response.sendRedirect("/index");
 	}
 
@@ -53,8 +53,8 @@ public class ProductController {
 		return productService.getPhonesPage(page);		
 	}
 
-	@GetMapping("/products/{productType}")
-	private List<Product> getProuctTypePage(ProductType productType){
+	@GetMapping("/types/{productType}")
+	private List<Product> getProuctTypePage(String productType){
 		return productService.getProductType(productType);		
 	}
 
@@ -62,6 +62,10 @@ public class ProductController {
 	private Page<Product> getMoreProducts(Pageable page){
 		return productService.getProductsPage(page);
 	}
+	// @GetMapping("/moreProductsPage")
+	// private Page<Product> getMoreProductsPage(Pageable page, @RequestParam(required = false) String typeProduct, @RequestParam(required = false) String typeProduct){
+	// 	return productService.getProductsPage(page);
+	// }
 	
 	@GetMapping("/products")
 	private Page<Product> getProducts(Pageable page){

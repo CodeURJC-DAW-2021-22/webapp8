@@ -45,9 +45,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
           http.authorizeRequests().antMatchers("/index").permitAll();
           http.authorizeRequests().antMatchers("/login").permitAll();
           http.authorizeRequests().antMatchers("/registerUser").permitAll();
-          http.authorizeRequests().antMatchers("/componentes").permitAll();
-          http.authorizeRequests().antMatchers("/perifericos").permitAll();
-          http.authorizeRequests().antMatchers("/telefonos").permitAll();
+          http.authorizeRequests().antMatchers("/components").permitAll();
+          http.authorizeRequests().antMatchers("/peripherals").permitAll();
+          http.authorizeRequests().antMatchers("/phones").permitAll();
           http.authorizeRequests().antMatchers("/productImg1/**").permitAll();
           http.authorizeRequests().antMatchers("/productImg2").permitAll();
           http.authorizeRequests().antMatchers("/productImg3").permitAll();
@@ -55,8 +55,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
           http.authorizeRequests().antMatchers("/forgotPassword").permitAll();
           http.authorizeRequests().antMatchers("/error").permitAll();
           http.authorizeRequests().antMatchers("httpss://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js").permitAll();
-          http.authorizeRequests().antMatchers("/api/**").hasAnyRole("USER");
-          http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
+          http.authorizeRequests().antMatchers("/carShop").permitAll();
+          http.authorizeRequests().antMatchers("/checkout").hasAnyRole("USER");
+          http.authorizeRequests().antMatchers("/admin/**").hasAnyRole("ADMIN");
  
           
           http.authorizeRequests().anyRequest().authenticated();

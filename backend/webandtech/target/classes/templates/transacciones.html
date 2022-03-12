@@ -126,93 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<a class="nav-link" href="index.html"  target="__blank">Tienda</a>
     </nav>
     <hr class="mt-0 mb-4">
-    <div class="row">
-        <div class="col-lg-4 mb-4">
-            <!-- Billing card 1-->
-            <div class="card h-100 border-start-lg border-start-primary">
-                <div class="card-body">
-                    <div class="small text-muted">Pedido en curso</div>
-                    <div class="h3">id #30465</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-            <!-- Billing card 2-->
-            <div class="card h-100 border-start-lg border-start-secondary">
-                <div class="card-body">
-                    <div class="small text-muted">Fecha llegada del pedido</div>
-                    <div class="h3">Julio 15</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-            <!-- Billing card 3-->
-            <div class="card h-100 border-start-lg border-start-success">
-                <div class="card-body">
-                    <div class="small text-muted">Estado cliente</div>
-                    <div class="h3 d-flex align-items-center">Casual</div>
-                    <a class="text-arrow-icon small text-success" href="#!">
-                        Convertirse a premium
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Payment methods card-->
-    <div class="card card-header-actions mb-4">
-        <div class="card-header">
-            Método de pago
-            <button class="btn btn-sm btn-primary" type="button">Añadir método de pago</button>
-        </div>
-        <div class="card-body px-0">
-            <!-- Payment method 1-->
-            <div class="d-flex align-items-center justify-content-between px-4">
-                <div class="d-flex align-items-center">
-                     <i class="fab fa-cc-visa fa-2x cc-color-visa"></i>
-                    <div class="ms-4">
-                        <div class="small">Visa terminada en 1234</div>
-                        <div class="text-xs text-muted">Expira 04/2024</div>
-                    </div>
-                </div>
-                <div class="ms-4 small">
-                    <div class="badge bg-light text-dark me-3">Por defecto</div>
-                    <a href="#!">Borrar</a>
-                </div>
-            </div>
-            <hr>
-            <!-- Payment method 2-->
-            <div class="d-flex align-items-center justify-content-between px-4">
-                <div class="d-flex align-items-center">
-                    <i class="fab fa-cc-mastercard fa-2x cc-color-mastercard"></i>
-                    <div class="ms-4">
-                        <div class="small">Mastercard treminada en 5678</div>
-                        <div class="text-xs text-muted">Expira 05/2022</div>
-                    </div>
-                </div>
-                <div class="ms-4 small">
-                    <a class="text-muted me-3" href="#!">Seleccionar por defecto</a>
-                    <a href="#!">Borrar</a>
-                </div>
-            </div>
-            <hr>
-            <!-- Payment method 3-->
-            <div class="d-flex align-items-center justify-content-between px-4">
-                <div class="d-flex align-items-center">
-                    <i class="fab fa-cc-amex fa-2x cc-color-amex"></i>
-                    <div class="ms-4">
-                        <div class="small">American Express terminada en 9012</div>
-                        <div class="text-xs text-muted">Expira 01/2026</div>
-                    </div>
-                </div>
-                <div class="ms-4 small">
-                    <a class="text-muted me-3" href="#!">Seleccionar por defecto</a>
-                    <a href="#!">Borrar</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Billing history card-->
+   
     <div class="card mb-4">
         <div class="card-header">Historial de pedidos</div>
         <div class="card-body p-0">
@@ -224,33 +138,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <th class="border-gray-200" scope="col">Transaccion ID</th>
                             <th class="border-gray-200" scope="col">Fecha</th>
                             <th class="border-gray-200" scope="col">Cantidad</th>
-                            <th class="border-gray-200" scope="col">Estado</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>#39201</td>
-                            <td>06/15/2021</td>
-                            <td>29.99€</td>
-                            <td><span class="badge bg-light text-dark">En curso</span></td>
-                        </tr>
-                        <tr>
-                            <td>#38594</td>
-                            <td>05/15/2021</td>
-                            <td>29.99€</td>
-                            <td><span class="badge bg-success">Completado</span></td>
-                        </tr>
-                        <tr>
-                            <td>#38223</td>
-                            <td>04/15/2021</td>
-                            <td>29.99€</td>
-                            <td><span class="badge bg-success">Completado</span></td>
-                        </tr>
-                        <tr>
-                            <td>#38125</td>
-                            <td>03/15/2021</td>
-                            <td>29.99€</td>
-                            <td><span class="badge bg-success">Completado</span></td>
+                            {{#orders}}
+							<td>{{idorder}}</td>
+                            <td>{{orderdate}}</td>
+                            <td>{{price}}€</td>
+							{{/orders}}
                         </tr>
                     </tbody>
                 </table>

@@ -217,7 +217,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								});
 						   </script>
 						</td>
-						<td class="invert-image"><a href="single.html"><img src="https://localhost:8443/imageProduct0/{{product.idproduct}}" alt=" " class="img-responsive" /></a></td>
+						<td class="invert-image"><a href="#"><img src="https://localhost:8443/imageProduct0/{{product.idproduct}}" alt=" " class="img-responsive" /></a></td>
 						<td class="invert">
 							 <div class="quantity"> 
 								<div class="quantity-select">                           
@@ -250,15 +250,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="checkout-left">	
 				
 				<div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
-					<a href="mens.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Volver </a>
-					<a href="#" class="botoncompra item_add hvr-outline-out button2">COMPRAR</a>
+					<a href="index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Volver </a>
+					<a href="payment.html" class="botoncompra item_add hvr-outline-out button2">COMPRAR</a>
 					
 				</div>
 				<div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
 					<h4>Compra total</h4>
 					<ul>
-						<li>{{product.nameproduct}} <i>-</i> <span>{{product.price}}</span></li>
-						
+						{{#order}}
+						<li>{{idproducts}} <i>-</i> <span>{{price}}</span></li>
+						{{/order}}
 						
 					</ul>
 				</div>

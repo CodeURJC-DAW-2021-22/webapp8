@@ -128,76 +128,69 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <hr class="mt-0 mb-4">
     <div class="row">
         <div class="col-xl-4">
+			<form action="/modifyUser" method="POST" enctype="multipart/form-data">
             <!-- Perfil picture card-->
             <div class="card mb-4 mb-xl-0">
                 <div class="card-header">Foto del Perfil</div>
                 <div class="card-body text-center">
                     <!-- Perfil picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <img class="img-account-profile rounded-circle mb-2" src="https://localhost:8443/imageprofile{{username}};" alt="">
                     <!-- Perfil picture help block-->
                     <div class="small font-italic text-muted mb-4">PNG o JPG no mayor de 5 MB</div>
-                    <!-- Perfil picture upload button-->
-                    <button class="btn btn-primary" type="button">Cambiar foto</button>
+                    <label class="btn btn-primary">Cambiar foto<input
+						name="image" type="file" class="uploadFile img"
+						value="Upload Photo"
+						style="width: 0px;height: 0px;overflow: hidden;"
+						accept="image/*">
+					</label>
+					
                 </div>
             </div>
+			</form>
         </div>
         <div class="col-xl-8">
             <!-- Account details card-->
             <div class="card mb-4">
                 <div class="card-header">Detalles de la cuenta</div>
                 <div class="card-body">
-                    <form>
-                        <!-- Form Group (username)-->
-                        <div class="mb-3">
-                            <label class="small mb-1" for="inputUsername">Nombre de usuario (como aparecerás en la aplicación)</label>
-                            <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
-                        </div>
+                    <form action="/modifyUser" method="POST" enctype="multipart/form-data">
+                        
+						<!-- Form Group (username)-->
+                        
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (first name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputFirstName">Nombre</label>
-                                <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie">
+                                <input class="form-control" name="username" type="text" placeholder={{username}} value="">
                             </div>
                             <!-- Form Group (last name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLastName">Apellidos</label>
-                                <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna">
+                                <input class="form-control" name="completename" type="text" placeholder={{completname}} value="">
                             </div>
                         </div>
                         <!-- Form Row        -->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (location)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputLocation">Localización</label>
-                                <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA">
+                                <label class="small mb-1" for="inputLocation">Dirección</label>
+                                <input class="form-control" name="adress" type="text" placeholder={{adress}} value="">
                             </div>
 							<!-- Form Group (calle)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputOrgName">Calle/Número/Piso</label>
-                                <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap">
-                            </div>
+                            
                         </div>
                         <!-- Form Group (email address)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputEmailAddress">Correo electrónico</label>
-                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                            <input class="form-control" name="email" type="email" placeholder={{email}} value="name@example.com">
                         </div>
                         <!-- Form Row-->
-                        <div class="row gx-3 mb-3">
-                            <!-- Form Group (phone number)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputPhone">Número de teléfono</label>
-                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
-                            </div>
-                            <!-- Form Group (birthday)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputBirthday">Fecha de nacimiento</label>
-                                <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
-                            </div>
-                        </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Guardar cambios</button>
+						<li><button type="submit">Guardar cambios</button><input type="hidden"
+							name="_csrf" value="{{token}}" /></li>
+						<li><button type="reset">Cancelar</button></li>
+
                     </form>
                 </div>
             </div>
@@ -209,21 +202,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="footer">
 	<div class="container">
 		<div class="col-md-3 footer-left">
-			<h2><a href="index.html"><img src="images/logo.jpg" alt=" " /></a></h2>
+			<h2><a href="/index"><img src="images/logo.jpg" alt=" " /></a></h2>
 			<p>Nuestra tienda se compromete a traer siempre lo más nuevo en tecnología a precios excelentes y
 				con seguridad y garantía de que el producto llega a salvo a su casa.</p>
 		</div>
 		<div class="col-md-9 footer-right">
-			<div class="col-sm-6 newsleft">
-				<h3>REGÍSTRESE PARA RECIBIR OFERTAS !</h3>
-			</div>
-			<div class="col-sm-6 newsright">
-				<form>
-					<input type="text" value="Email" onfocus="this.value = '';"
-						onblur="if (this.value == '') {this.value = 'Email';}" required="">
-					<input type="submit" value="Submit">
-				</form>
-			</div>
+			
 			<div class="clearfix"></div>
 			<div class="sign-grds">
 				<div class="col-md-4 sign-gd">
@@ -248,29 +232,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 					</ul>
 				</div>
-				<div class="col-md-4 sign-gd flickr-post">
-					<h4>Publicaciones</h4>
-					<ul>
-						<li><a href="single.html"><img src="images/b15.jpg" alt=" "
-									class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b16.jpg" alt=" "
-									class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b17.jpg" alt=" "
-									class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b18.jpg" alt=" "
-									class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b15.jpg" alt=" "
-									class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b16.jpg" alt=" "
-									class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b17.jpg" alt=" "
-									class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b18.jpg" alt=" "
-									class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b15.jpg" alt=" "
-									class="img-responsive" /></a></li>
-					</ul>
-				</div>
+				
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -285,69 +247,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
-<!-- login -->
-			<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content modal-info">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-						</div>
-						<div class="modal-body modal-spa">
-							<div class="login-grids">
-								<div class="login">
-									<div class="login-bottom">
-										<h3>Sign up for free</h3>
-										<form>
-											<div class="sign-up">
-												<h4>Email :</h4>
-												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
-											</div>
-											<div class="sign-up">
-												<h4>Password :</h4>
-												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-												
-											</div>
-											<div class="sign-up">
-												<h4>Re-type Password :</h4>
-												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-												
-											</div>
-											<div class="sign-up">
-												<input type="submit" value="REGISTER NOW" >
-											</div>
-											
-										</form>
-									</div>
-									<div class="login-right">
-										<h3>Sign in with your account</h3>
-										<form>
-											<div class="sign-in">
-												<h4>Email :</h4>
-												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
-											</div>
-											<div class="sign-in">
-												<h4>Password :</h4>
-												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-												<a href="#">Forgot password?</a>
-											</div>
-											<div class="single-bottom">
-												<input type="checkbox"  id="brand" value="">
-												<label for="brand"><span></span>Remember Me.</label>
-											</div>
-											<div class="sign-in">
-												<input type="submit" value="SIGNIN" >
-											</div>
-										</form>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-<!-- //login -->
+
 
 
 

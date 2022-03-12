@@ -132,89 +132,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="card mb-4">
 				<div class="card-header">Cambiar contraseña</div>
 				<div class="card-body">
-					<form>
+					<form action ="/changePassword" method="POST" enctype="multipart/form-data"></form>>
 						<!-- Form Group (current password)-->
 						<div class="mb-3">
 							<label class="small mb-1" for="currentPassword">Contraseña actual</label>
-							<input class="form-control" id="currentPassword" type="password" placeholder="Enter current password">
+							<input class="form-control" id="currentPassword" type="password" placeholder="Actual contraseña">
 						</div>
 						<!-- Form Group (new password)-->
 						<div class="mb-3">
 							<label class="small mb-1" for="newPassword">Nueva contraseña</label>
-							<input class="form-control" id="newPassword" type="password" placeholder="Enter new password">
+							<input class="form-control" id="newPassword" type="password" placeholder="Nueva contraseña">
 						</div>
 						<!-- Form Group (confirm password)-->
 						<div class="mb-3">
 							<label class="small mb-1" for="confirmPassword">Confirmar contraseña</label>
-							<input class="form-control" id="confirmPassword" type="password" placeholder="Confirm new password">
+							<input class="form-control" id="confirmPassword" type="password" placeholder="Confirmar nueva contraseña">
 						</div>
-						<button class="btn btn-primary" type="button">Guardar</button>
+						<li><button type="submit">Guardar</button><input type="hidden"
+							name="_csrf" value="{{token}}" /></li>
 					</form>
 				</div>
 			</div>
 			<!-- Security preferences card-->
-			<div class="card mb-4">
-				<div class="card-header">Preferencias de seguridad</div>
-				<div class="card-body">
-					<!-- Account privacy optinos-->
-					<h5 class="mb-1">Privacidad de la cuenta</h5>
-					<p class="small text-muted">Al configurar su cuenta como privada, la información de su perfil no será visible para otros usuarios</p>
-					<form>
-						<div class="form-check">
-							<input class="form-check-input" id="radioPrivacy1" type="radio" name="radioPrivacy" checked="">
-							<label class="form-check-label" for="radioPrivacy1">Público (información visible para otros usuarios)</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" id="radioPrivacy2" type="radio" name="radioPrivacy">
-							<label class="form-check-label" for="radioPrivacy2">Privado (información invisible para otros usuarios)</label>
-						</div>
-					</form>
-					<hr class="my-4">
-					<!-- Data sharing options-->
-					<h5 class="mb-1">Compartición de datos</h5>
-					<p class="small text-muted">Compartir datos de uso puede ayudarnos a mejorar nuestros productos y servir mejor a nuestros usuarios mientras navegan por nuestra aplicación. Cuando acepta compartir datos de uso con nosotros, los informes de fallas y los análisis de uso se enviarán automáticamente a nuestro equipo de desarrollo para su investigación.</p>
-					<form>
-						<div class="form-check">
-							<input class="form-check-input" id="radioUsage1" type="radio" name="radioUsage" checked="">
-							<label class="form-check-label" for="radioUsage1">Si, quiero compartir los datos para poder ayudar a la mejora de esta aplicación web</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" id="radioUsage2" type="radio" name="radioUsage">
-							<label class="form-check-label" for="radioUsage2">No, quiero limitar los datos personales compartidos</label>
-						</div>
-					</form>
-				</div>
-			</div>
+			
 		</div>
 		<div class="col-lg-4">
-			<!-- Two factor authentication card-->
-			<div class="card mb-4">
-				<div class="card-header">Verificación de dos pasos</div>
-				<div class="card-body">
-					<p>Agregue otro nivel de seguridad a su cuenta habilitando la autenticación de dos pasos. Le enviaremos un mensaje de texto para verificar sus compras</p>
-					<form>
-						<div class="form-check">
-							<input class="form-check-input" id="twoFactorOn" type="radio" name="twoFactor" checked="">
-							<label class="form-check-label" for="twoFactorOn">On</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" id="twoFactorOff" type="radio" name="twoFactor">
-							<label class="form-check-label" for="twoFactorOff">Off</label>
-						</div>
-						<div class="mt-3">
-							<label class="small mb-1" for="twoFactorSMS">SMS Número</label>
-							<input class="form-control" id="twoFactorSMS" type="tel" placeholder="Enter a phone number" value="555-123-4567">
-						</div>
-					</form>
-				</div>
-			</div>
+		
+			
 			<!-- Delete account card-->
 			<div class="card mb-4">
 				<div class="card-header">Borrar cuenta</div>
 				<div class="card-body">
 					<p>
 						La eliminación de su cuenta es una acción permanente y no se puede deshacer. Si está seguro de que desea eliminar su cuenta, seleccione el botón a continuación.</p>
-					<button class="btn btn-danger-soft text-danger" type="button">Lo entiendo, quiero borrar mi cuenta</button>
+					<li><button class="btn btn-danger-soft text-danger" type="button">Lo entiendo, quiero borrar mi cuenta</button>
+						<input type="hidden" name="_csrf" value="{{token}}"/></li>
 				</div>
 			</div>
 		</div>

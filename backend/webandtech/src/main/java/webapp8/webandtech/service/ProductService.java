@@ -1,11 +1,15 @@
 package webapp8.webandtech.service;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -44,11 +48,48 @@ public class ProductService {
 		productRepository.save(product);
 	}
 
-    public Page<Product> getProductsPage(org.springframework.data.domain.Pageable page) {
+    public Page<Product> getProductsPage(Pageable page) {
 		return productRepository.findAll(page);
 	}
 
     public Product getProduct(int idproduct) {
 		return productRepository.findById(idproduct).orElseThrow(() -> new NoSuchElementException("Product not found"));
+	}
+
+	public Page<Product> getComponentsPage(Pageable page){
+		
+		return productRepository.findByproductcategory("Componente", page);
+	}
+
+	public Page<Product> getPeripheralsPage(Pageable page){
+		return productRepository.findByproductcategory("peripheral", page);
+	}
+
+	public Page<Product> getPhonesPage(Pageable page){
+		return productRepository.findByproductcategory("phone", page);
+	}
+	
+	public List<Product> getProductType(String productType){
+		Page<Product> components = productRepository.findByproductType(productType,PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		return components.getContent();
+	}
+	public List<Product> getTop6ByOrderByIdDesc(){
+		return productRepository.findTopByOrderByIdproductDesc();
+	}
+	public List<Product> getNewProucts(){
+		Page<Product> products = productRepository.findAll(PageRequest.of(0, 6, Sort.by("idproduct").descending()));
+		return products.getContent();
+	}
+	public List<Product> getComponents(){
+		Page<Product> components = productRepository.findByproductcategory("Componente",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		return components.getContent();
+	}
+	public List<Product> getPeripherals(){
+		Page<Product> peripherals = productRepository.findByproductcategory("Periferico",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		return peripherals.getContent();
+	}
+	public List<Product> getPhones(){
+		Page<Product> phones = productRepository.findByproductcategory("telefono",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		return phones.getContent();
 	}
 }

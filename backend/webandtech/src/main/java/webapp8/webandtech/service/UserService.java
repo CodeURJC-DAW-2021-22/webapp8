@@ -57,8 +57,13 @@ public class UserService {
         return userRepository.findAll();
 	}
 	
-	public Page<User> getAllUsersPage(){
-        return userRepository.findAll(PageRequest.of(0, 10,Sort.by("username").ascending()));
+	public List<User> getAllUsersPage(){
+        Page<User> userList = userRepository.findAll(PageRequest.of(0, 10,Sort.by("username").ascending()));
+        return userList.getContent();
+	}
+	public List<User> getMoreUsersPage(Pageable page){
+        Page<User> userList = userRepository.findAll(page);
+        return userList.getContent();
 	}
 	
 	public Page<User> getUsersPage(){

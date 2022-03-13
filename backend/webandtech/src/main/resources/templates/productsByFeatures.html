@@ -35,6 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		rel='stylesheet' type='text/css'>
 	<script src="/js/jquery.easing.min.js"></script>
 	<script src="/js/pignose.layerslider.js"></script>
+	<script src="/js/responsiveslides.min.js"></script>
 	<script src="/js/easyResponsiveTabs.js"></script>
 	<script src="/js/script.js"></script>
 
@@ -339,7 +340,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="info-product-price">
 								<span class="item_price">{{price}}€</span>
 							</div>
-							<a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>
+							<form action="/carShop" method="post">
+								<input type="hidden" name="_csrf" value="{{token}}"/>
+								<input type="hidden" name="idproduct" value="{{idproduct}}"/>
+								<input type="submit" class="item_add single-item hvr-outline-out button2" value="Añadir al carro">
+							</form>
 						</div>
 					</div>
 				</div>
@@ -350,7 +355,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 			<div class="pagination-grid text-right">
 				<ul class="pagination paging">
-					<li><a aria-label="Next" id="viewMore" onclick="viewMore('{{category}}','{{type}}')"><span aria-hidden="true">Ver más</span></a></li>
+					<li><a aria-label="Next" id="viewMore" onclick="viewMoreProducts('{{category}}','{{type}}')"><span aria-hidden="true">Ver más</span></a></li>
 				</ul>
 			</div>
 		</div>

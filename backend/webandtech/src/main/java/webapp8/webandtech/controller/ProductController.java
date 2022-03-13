@@ -62,10 +62,22 @@ public class ProductController {
 	private Page<Product> getMoreProducts(Pageable page){
 		return productService.getProductsPage(page);
 	}
-	// @GetMapping("/moreProductsPage")
-	// private Page<Product> getMoreProductsPage(Pageable page, @RequestParam(required = false) String typeProduct, @RequestParam(required = false) String typeProduct){
-	// 	return productService.getProductsPage(page);
-	// }
+	@GetMapping("/moreProductsPage")
+	private Page<Product> getMoreProductsPage(Pageable page, @RequestParam(required = false) String productType, @RequestParam(required = false) String productcategory){
+		Page<Product> products;
+		if(productType != "undefined"){
+			products = productService.getMoreProductType(page,productType);
+		} else{
+			if(productcategory == "Componente"){
+				products = productService.getMoreComponents(page);
+			} else if(productcategory == "Periferico"){
+				products = productService.getMorePeripherals(page);
+			} else{
+				products = productService.getMorePhones(page);
+			}
+		}
+		return products;
+	}
 	
 	@GetMapping("/products")
 	private Page<Product> getProducts(Pageable page){

@@ -1,6 +1,9 @@
 package webapp8.webandtech.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,23 +18,33 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import webapp8.webandtech.model.CarShop;
+import webapp8.webandtech.model.Order;
+import webapp8.webandtech.model.OrderModel;
+import webapp8.webandtech.model.Product;
+import webapp8.webandtech.model.User;
 // import webapp8.webandtech.service.AdminService;
 import webapp8.webandtech.service.LoaderService;
+import webapp8.webandtech.service.OrderService;
 import webapp8.webandtech.service.ProductService;
-// import webapp8.webandtech.service.UserService;
+import webapp8.webandtech.service.UserService;
 
 @Controller
 @CrossOrigin
 public class NavigationController {
 
-    // @Autowired
-    // private UserService userService;
+	@Autowired
+    private CarShop carShop;
+    @Autowired
+    private UserService userService;
 	// @Autowired
     // private AdminService adminService;
 	@Autowired
     private LoaderService loaderService;
 	@Autowired
     private ProductService productService;
+	@Autowired
+    private OrderService orderService;
 
     @GetMapping("/")
 	private void getInitialPage(Model model,HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -93,6 +106,7 @@ public class NavigationController {
 			model.addAttribute("login", false);
 		}
 	
+		model.addAttribute("shopCar", carShop.getCarShop());
 		model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		model.addAttribute("userr", request.isUserInRole("USER"));
 
@@ -200,5 +214,54 @@ public class NavigationController {
 		return "productElement";
 	}
 
+	@GetMapping("/users/profile/{username}")
+	private String getUserProfile(Model model,HttpServletRequest request) throws IOException {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken());
+		String userName = request.getUserPrincipal().getName();
+		if(request.getUserPrincipal() != null){
+			model.addAttribute("user", request.getUserPrincipal().getName());
+			model.addAttribute("login", (request.getUserPrincipal() != null));
+		}else{
+			model.addAttribute("login", false);
+		}
+		model.addAttribute("usersdata", userService.getUser(userName));
+		model.addAttribute("admin", request.isUserInRole("ADMIN"));
+		model.addAttribute("userr", request.isUserInRole("USER"));
 
+		return "perfil";
+	}
+	@GetMapping("/users/orders/{username}")
+	private String getUserOrders(Model model,HttpServletRequest request) throws IOException {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken());
+		String userName = request.getUserPrincipal().getName();
+		User userData = userService.getUser(userName);
+		List<Order> orders = orderService.getUserOrders(userData);
+		List<OrderModel> orderModelData = new ArrayList<>();
+		for (Order order : orders){
+			String[] parts = order.getIdproducts().split("/");
+			List<Product> products = new ArrayList<>();
+			OrderModel ordermodel = new OrderModel();
+			for (int i = 0; i < parts.length; i++){
+				products.add(productService.getProduct(Integer. parseInt(parts[i])));
+			}
+			ordermodel.setOrder(order);
+			ordermodel.setProducts(products);
+			orderModelData.add(ordermodel);
+		}
+		if(request.getUserPrincipal() != null){
+			model.addAttribute("user", request.getUserPrincipal().getName());
+			model.addAttribute("login", (request.getUserPrincipal() != null));
+		}else{
+			model.addAttribute("login", false);
+		}
+		model.addAttribute("usersdata", userService.getUser(userName));
+		model.addAttribute("usersorders", orderModelData);
+		model.addAttribute("admin", request.isUserInRole("ADMIN"));
+		model.addAttribute("userr", request.isUserInRole("USER"));
+
+		return "transacciones";
+	}
+	
 }

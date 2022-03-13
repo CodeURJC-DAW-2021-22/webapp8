@@ -222,15 +222,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<table class="timetable_sub">
 				<thead>
 					<tr>
-						<th>Quitar</th>
-						<th>Producto</th>
-						<th>Cantidad</th>
-						<th>Nombre del producto</th>
-						<th>Precio</th>
+						<th>Remove</th>
+						<th>Product</th>
+						<th>Product Name</th>
+						<th>Price</th>
 					</tr>
 				</thead>
+				{{#shopCar}}
 					<tr class="rem1">
-						{{#product}}
 						<td class="invert-closeb">
 							<div class="rem">
 								<div class="close1"> </div>
@@ -244,22 +243,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								});
 						   </script>
 						</td>
-						{{#Img1}}
-						<td class="invert-image"><a href="#"><img src="https://localhost:8443/productImg1/{{idproduct}}" alt=" " class="img-responsive" /></a></td>
-						{{/Img1}}
-						<td class="invert">
-							 <div class="quantity"> 
-								<div class="quantity-select">                           
-									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
-									<div class="entry value-plus active">&nbsp;</div>
-								</div>
-							</div>
-						</td>
-						<td class="invert">{{product.nameproduct}}</td>
-						<td class="invert">{{product.price}}</td>
-						{{/product}}
+						{{#img1}}
+						<td class="invert-image"><a href="/products/{{idproduct}}"><img src="https://localhost:8443/productImg1/{{idproduct}}" alt=" " class="img-responsive" /></a></td>
+						{{/img1}}
+						<td class="invert">{{nameproduct}}</td>
+						<td class="invert">{{price}}</td>
 					</tr>
+				{{/shopCar}}
+					
 					
 								<!--quantity-->
 									<script>

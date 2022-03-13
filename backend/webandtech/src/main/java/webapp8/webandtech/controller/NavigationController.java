@@ -105,7 +105,7 @@ public class NavigationController {
 		}else{
 			model.addAttribute("login", false);
 		}
-	
+		System.out.println(carShop.getCarShop());
 		model.addAttribute("shopCar", carShop.getCarShop());
 		model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		model.addAttribute("userr", request.isUserInRole("USER"));

@@ -42,83 +42,86 @@
 	
 	<body>
 		<!-- header -->
-		<div class="header">
-			<div class="container">
-				<ul>
-					<li><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Entrega gratuita y rápida</li>
-					<li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Envío gratis en todos los
-						pedidos</li>
-					<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a
-							href="mailto:info@example.com">info@w&t.com</a></li>
-				</ul>
-			</div>
+	<div class="header">
+		<div class="container">
+			<ul>
+				<li><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Entrega gratuita y rápida</li>
+				<li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Envío gratis en todos los
+					pedidos</li>
+				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a
+						href="mailto:info@example.com">info@w&t.com</a></li>
+			</ul>
 		</div>
-		<!-- //header -->
-		<!-- header-bot -->
-		<div class="header-bot">
-			<div class="container">
-				<div class="col-md-3 header-left">
-					<h1><a href="/"><img src="/images/logo.jpg"></a></h1>
-				</div>
-				<div class="col-md-6 header-middle">
-					<form>
-						<div class="search">
-							<input type="search" value="Buscar" onfocus="this.value = '';"
-								onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
-						</div>
-						<div class="section_room">
-							<select id="country" onchange="change_country(this.value)" class="frm-field required">
-								<option value="null">Todo</option>
-								<option value="AX">Componentes</option>
-								<option value="AX">Periféricos</option>
-								<option value="AX">Teléfonos</option>
-							</select>
-						</div>
-						<div class="sear-sub">
-							<input type="submit" value=" ">
-						</div>
-						<div class="clearfix"></div>
-					</form>
-				</div>
-	
-				<nav class="col-md-3 header-right footer-bottom dropdown">
-					<div class="dropdown-content">
-						{{#login}}
-							<li><a href="perfil">Ajustes</a></li>
-							<li><a href="products">Pedidos</a></li>
-							{{#admin}}
-								<li><a href="#">Crear producto</a></li>
-								<li><a href="#">Consultar pedidos</a></li>
-								<li><a href="#">Consultar usuarios</a></li>
-								<li><a href="#">Consultar gráficas</a></li>
-							{{/admin}}
-							<li>
-								<form action="/logout" method="POST">
-									<input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf" value="{{token}}"/>
-								</form>
-							</li>
-						{{/login}}
-					</div>	
-					<ul>
-						
-						{{^login}}
-							<li><a href="/login" class="use1"><span>Login</span></a></li>
-						{{/login}}
-						{{#login}}
-							<li><a href="/perfil" class="use1"></a>
-						{{/login}}
+	</div>
+	<!-- //header -->
+	<!-- header-bot -->
+	<div class="header-bot">
+		<div class="container">
+			<div class="col-md-3 header-left">
+				<h1><a href="/"><img src="/images/logo.jpg"></a></h1>
+			</div>
+			<div class="col-md-6 header-middle">
+				<form>
+					<div class="search">
+						<input type="search" value="Buscar" onfocus="this.value = '';"
+							onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
+					</div>
+					<div class="section_room">
+						<select id="country" onchange="change_country(this.value)" class="frm-field required">
+							<option value="null">Todo</option>
+							<option value="AX">Componentes</option>
+							<option value="AX">Periféricos</option>
+							<option value="AX">Teléfonos</option>
+						</select>
+					</div>
+					<div class="sear-sub">
+						<input type="submit" value=" ">
+					</div>
+					<div class="clearfix"></div>
+				</form>
+			</div>
+
+			<nav class="col-md-3 header-right footer-bottom dropdown">
+				<div class="dropdown-content">
+					{{#login}}
+					{{#userr}}
+						<li><a href="/users/profile/{{user}}">Ajustes</a></li>
+						<li><a href="/users/orders/{{user}}">Pedidos</a></li>
+						<li><a href="/users/security/{{user}}">Seguridad</a></li>
+						{{#admin}}
+							<li><a href="/admin/newProduct">Crear producto</a></li>
+							<li><a href="/admin/orders">Consultar pedidos</a></li>
+							<li><a href="/admin/users">Consultar usuarios</a></li>
+							<li><a href="/admin/graphics">Consultar gráficas</a></li>
+						{{/admin}}
+						<li>
+							<form action="/logout" method="POST">
+								<input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf" value="{{token}}"/>
+							</form>
 						</li>
-						<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
-						<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
-						<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
-						<li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
-					</ul>
-				</nav>
-	
-				<div class="clearfix"></div>
-			</div>
+					{{/userr}}
+					{{/login}}
+				</div>	
+				<ul>
+					
+					{{^login}}
+						<li><a href="/login" class="use1"><span>Login</span></a></li>
+					{{/login}}
+					{{#login}}
+						<li><a class="use1"></a>
+					{{/login}}
+					</li>
+					<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
+				</ul>
+			</nav>
+
+			<div class="clearfix"></div>
 		</div>
-		<!-- //header-bot -->
+	</div>
+	<!-- //header-bot -->
 	<!-- banner -->
 	<div class="ban-top">
 		<div class="container">
@@ -147,15 +150,15 @@
 									<ul class="dropdown-menu multi-column columns-3">
 										<div class="row">
 											<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-												<a href="/componentes"><img src="/images/componentes.jpg"
+												<a href="/components"><img src="/images/componentes.jpg"
 														alt=" " /></a>
 											</div>
 											<div class="col-sm-3 multi-gd-img">
 												<ul class="multi-column-dropdown">
-													<li><a href="placas-base">Placas Bases</a></li>
-													<li><a href="prcesadores">Procesador</a></li>
-													<li><a href="discosduros">Discos Duros</a></li>
-													<li><a href="tarjetas-graficas">Tarjetas Gráficas</a></li>
+													<li><a href="/components?typeProduct=Placa base">Placas Bases</a></li>
+													<li><a href="/components?typeProduct=Procesador">Procesador</a></li>
+													<li><a href="/components?typeProduct=Disco duro">Discos Duros</a></li>
+													<li><a href="/components?typeProduct=Tarjeta grafica">Tarjetas Gráficas</a></li>
 												</ul>
 											</div>
 
@@ -171,22 +174,22 @@
 										<div class="row">
 											<div class="col-sm-3 multi-gd-img">
 												<ul class="multi-column-dropdown">
-													<li><a href="teclados">Teclados</a></li>
-													<li><a href="ratones">Ratones</a></li>
-													<li><a href="monitores">Monitores</a></li>
-													<li><a href="auriculares">Auriculares</a></li>
+													<li><a href="/peripherals?typeProduct=Teclado">Teclados</a></li>
+													<li><a href="/peripherals?typeProduct=Raton">Ratones</a></li>
+													<li><a href="/peripherals?typeProduct=Monitor">Monitores</a></li>
+													<li><a href="/peripherals?typeProduct=Auriculares">Auriculares</a></li>
 												</ul>
 											</div>
 											<div class="col-sm-6 multi-gd-img multi-gd-text ">
-												<a href="perifericos"><img src="/images/perifericos.jpg"
+												<a href="/peripherals"><img src="/images/perifericos.jpg"
 														alt=" " /></a>
 											</div>
 											<div class="clearfix"></div>
 										</div>
 									</ul>
 								</li>
-								<li class=" menu__item"><a class="menu__link" href="electronics">Teléfonos</a></li>
-								<li class=" menu__item"><a class="menu__link" href="contact">Contacto</a></li>
+								<li class=" menu__item"><a class="menu__link" href="/phones">Teléfonos</a></li>
+								<li class=" menu__item"><a class="menu__link" href="/contact">Contacto</a></li>
 							</ul>
 						</div>
 					</div>
@@ -194,7 +197,7 @@
 			</div>
 			<div class="top_nav_right">
 				<div class="cart box_1">
-					<a href="checkout.html">
+					<a href="/checkout">
 						<h3>
 							<div class="total">
 								<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
@@ -211,6 +214,7 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
+	<!-- //banner-top -->
 	<!-- //banner-top -->
 <!-- banner -->
 {{#product}}
@@ -344,24 +348,42 @@
 	</div>
 </div>
 <!-- footer -->
+<!-- //product-nav -->
+<div class="clearfix"></div>
+<div class="coupons">
+	<div class="container">
+		<div class="coupons-grids text-center">
+			<div class="col-md-3 coupons-gd">
+				<h3>Compra tu producto de forma simple</h3>
+			</div>
+			<div class="col-md-3 coupons-gd">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+				<h4>ACCEDE A TU CUENTA</h4>
+				<p>Si no tiene una puede crearsela de forma gratis y rápida.</p>
+			</div>
+			<div class="col-md-3 coupons-gd">
+				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				<h4>SELECCIONA TU COMPRA</h4>
+				<p>Puede usar la función del carro de compra para adquirir varios objetos a la vez.</p>
+			</div>
+			<div class="col-md-3 coupons-gd">
+				<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
+				<h4>PAGUE COMO QUIERA</h4>
+				<p>Hemos facilitado varias formas de pago para que pueda elegir el que quiera.</p>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- footer -->
 <div class="footer">
 	<div class="container">
 		<div class="col-md-3 footer-left">
-			<h2><a href="index.html"><img src="/images/logo.jpg" alt=" " /></a></h2>
+			<h2><a href="/index"><img src="/images/logo.jpg" alt=" " /></a></h2>
 			<p>Nuestra tienda se compromete a traer siempre lo más nuevo en tecnología a precios excelentes y
 				con seguridad y garantía de que el producto llega a salvo a su casa.</p>
 		</div>
 		<div class="col-md-9 footer-right">
-			<div class="col-sm-6 newsleft">
-				<h3>REGÍSTRESE PARA RECIBIR OFERTAS !</h3>
-			</div>
-			<div class="col-sm-6 newsright">
-				<form>
-					<input type="text" value="Email" onfocus="this.value = '';"
-						onblur="if (this.value == '') {this.value = 'Email';}" required="">
-					<input type="submit" value="Submit">
-				</form>
-			</div>
 			<div class="clearfix"></div>
 			<div class="sign-grds">
 				<div class="col-md-4 sign-gd">
@@ -418,5 +440,6 @@
 	</div>
 </div>
 <!-- //footer -->
+
 </body>
 </html>

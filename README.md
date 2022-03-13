@@ -114,3 +114,13 @@ AdminGráficas- En esta pantalla permite a los administradores observar las graf
 ### Diagrama de navegación
 ![FLUJO](https://user-images.githubusercontent.com/80537884/153850231-3d189c84-0f30-49a8-b0dd-8b3e0dbdc4da.png)
 
+# Fase 2
+
+### Participación de miembros
+| Nombre	| Enlaces commits	| Enlaces ficheros |
+| --- | :---: | :---: |
+| Guillermo Martín García	| insertar enlace	| insertar enlace |
+| Sergio Octavio Mancebo | insertar enlace | insertar enlace |
+| Víctor López Rodríguez | insertar enlace | insertar enlace |
+|	Rodrigo Montilla Fernández | insertar enlace | insertar enlace |
+| Fernando Prieto Olías | insertar enlace | insertar enlace |

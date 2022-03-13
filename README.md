@@ -16,8 +16,8 @@ Esta aplicación pemitirá a los usuarios comprar artículos relacionados con te
 | Guillermo Martín García	| g.martingarcia@alumnos.urjc.es	| Wilhelm-mar |
 | Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es	| sergio-octavio |
 | Víctor López Rodríguez |v.lopezrodr@alumnos.urjc.es	|Victorlopezro |
-|	Rodrigo Montilla Fernández|	r.montilla.2019@alumnos.urjc.es| romofe01|
-|Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es| Fervo8564 |
+|	Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es | romofe01|
+| Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es| Fervo8564 |
 
 
 ### Trello
@@ -117,10 +117,62 @@ AdminGráficas- En esta pantalla permite a los administradores observar las graf
 # Fase 2
 
 ### Participación de miembros
-| Nombre	| Enlaces commits	| Enlaces ficheros |
-| --- | :---: | :---: |
-| Guillermo Martín García	| insertar enlace	| insertar enlace |
-| Sergio Octavio Mancebo | insertar enlace | insertar enlace |
-| Víctor López Rodríguez | insertar enlace | insertar enlace |
-|	Rodrigo Montilla Fernández | insertar enlace | insertar enlace |
-| Fernando Prieto Olías | insertar enlace | insertar enlace |
+Guillermo Martín García	| g.martingarcia@alumnos.urjc.es
+
+> descripción de lo realizado en esta fase  
+
+> * Nombre y enlace
+> * Nombre y enlace
+> * Nombre y enlace                   
+> * Nombre y enlace
+> * Nombre y enlace
+
+Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es
+
+> descripción de lo realizado en esta fase  
+
+> * Nombre y enlace
+> * Nombre y enlace
+> * Nombre y enlace                   
+> * Nombre y enlace
+> * Nombre y enlace
+
+Víctor López Rodríguez | v.lopezrodr@alumnos.urjc.es
+
+> descripción de lo realizado en esta fase  
+
+> * Nombre y enlace
+> * Nombre y enlace
+> * Nombre y enlace                   
+> * Nombre y enlace
+> * Nombre y enlace
+
+Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es
+
+> descripción de lo realizado en esta fase  
+
+> * Nombre y enlace
+> * Nombre y enlace
+> * Nombre y enlace                   
+> * Nombre y enlace
+> * Nombre y enlace
+
+Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es
+
+> descripción de lo realizado en esta fase  
+
+> * Nombre y enlace
+> * Nombre y enlace
+> * Nombre y enlace                   
+> * Nombre y enlace
+> * Nombre y enlace
+
+## Ficheros que más se haya participado
+
+| Nombre | Correo | Ficheros |
+|---------------------------|---------------------------------|---------------------------------|
+| Guillermo Martín García	| g.martingarcia@alumnos.urjc.es	| Insertar ficheros |
+| Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es	| Insertar ficheros |
+| Víctor López Rodríguez |v.lopezrodr@alumnos.urjc.es	|Insertar ficheros |
+|	Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es | Insertar ficheros |
+| Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es| Insertar ficheros |

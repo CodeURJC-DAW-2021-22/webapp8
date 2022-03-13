@@ -7,6 +7,7 @@ let selectedUser;
 var pageusers;
 var useractual;
 let token;
+var pageProduct = 1;
 var products = [];
 
 
@@ -129,51 +130,69 @@ $('#multi').mdbRange({
     });
 
 });
-function viewMore(category, typeProduct) {
+function viewMoreProducts(category, typeProduct) {
     size = 10;
-    sort = 'idpost';
+    sort = 'idproduct';
     console.log(category, typeProduct);
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: ('/getMorePostsUser?page=' + pagepostuser + '&size=' + size + '&sort=' + sort + ',desc' + '&username=' + user),
+        url: ('/moreProductsPage?page=' + pageProduct + '&size=' + size + '&sort=' + sort + ',desc' + '&productType=' + typeProduct + '&productcategory=' + category),
         success: function (result) {
-            
+            console.log(result);
             $.each(result.content, function (index, value) {
-                var icon = "la la-heart-o";
-                var type = "company";
-                if (value.iduser.userprofile) {
-                    type = "user";
-                }
-                if (likes.includes(value.idpost)) {
-                    icon = "la la-heart";
-                }
-            //     $(".single-pro").append("<div class='col-md-3 product-men'><div class='men-pro-item simpleCart_shelfItem'><div class='men-thumb-item'><img src="https://localhost:8443/productImg1/{{idproduct}}" alt="" class="pro-image-front">
-            //             <img src="https://localhost:8443/productImg1/{{idproduct}}" alt="" class="pro-image-back">
-            //             {{/img1}}
-            //             <div class="men-cart-pro">
-            //                 <div class="inner-men-cart-pro">
-            //                     <a href="/products/{{idproduct}}" class="link-product-add-cart">Quick View</a>
-            //                 </div>
-            //             </div>
-
-            //         </div>
-            //         <div class="item-info-product ">
-            //             <h4><a href="/products/{{idproduct}}">{{nameproduct}}</a></h4>
-            //             <div class="info-product-price">
-            //                 <span class="item_price">{{price}}€</span>
-            //             </div>
-            //             <a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>
-            //         </div>
-            //     </div>
-            // </div>");
-                $(".single-pro").append("<div class='post-bar'><div class='post_topbar'><div class='row usy-dt'><div class='user-post-icon'><img src='https://localhost:8443/imageprofile/" + value.iduser.username + "' alt=''></div><div class='usy-name'><h3>" + value.iduser.username + "</h3></div></div></div><div class='epi-sec'><ul class='descp'><li><img src='images/icon8.png' alt=''><span>" + type + "</span></li><li><img src='images/icon9.png' alt=''><span>" + value.iduser.city + "</span></li></ul><ul class='bk-links'><li><a id='" + value.idpost + "' title=''><i onclick='like(" + value.idpost + ")' class='" + icon + "'></i></a></li><li><a href='./messages?to=" + value.iduser.username + "' title=''><i class='la la-envelope'></i></a></li></ul></div><div class='job_descp'><h3>" + value.title + "</h3><div class='row'><ul class='image-store'><li><img src='https://localhost:8443/imagepost/" + value.idpost + "' alt=''></li></ul></div><div class='row'><ul class='description-store'><li><p>" + value.description + "</p></li></ul></div><br><a id='readmore" + value.idpost + "' class='btn btn-primary stretched-link' onclick='readmore(" + value.idpost + ")' title=''>view more</a></div></div>");
+                base = base.concat("<div class='col-md-3 product-men'>");
+				base = base.concat("<div class='men-pro-item simpleCart_shelfItem'>");
+				base = base.concat("	<div class='men-thumb-item'>");
+				base = base.concat("		{{#"+value.img1+"}}");
+                base = base.concat("			<img src='https://localhost:8443/productImg1/{{"+value.idproduct+"}}' alt='' class='pro-image-front'>");
+                base = base.concat("			<img src='https://localhost:8443/productImg1/{{"+value.idproduct+"}}' alt='' class='pro-image-back'>");
+				base = base.concat("			{{/"+value.img1+"}}");
+				base = base.concat("			<div class='men-cart-pro'>");
+				base = base.concat("				<div class='inner-men-cart-pro'>");
+				base = base.concat("					<a href='/products/{{"+value.idproduct+"}}' class='link-product-add-cart'>Quick View</a>");
+				base = base.concat("				</div>");
+				base = base.concat("			</div>");
+				base = base.concat("		</div>");
+				base = base.concat("		<div class='item-info-product '>");
+				base = base.concat("			<h4><a href='/products/{{"+value.idproduct+"}}'>{{"+value.nameproduct+"}}</a></h4>");
+				base = base.concat("			<div class='info-product-price'>");
+				base = base.concat("				<span class='item_price'>{{"+value.price+"}}€</span>");
+				base = base.concat("			</div>");
+				base = base.concat("			<form action='/carShop' method='post'>");
+				base = base.concat("				<input type='hidden' name='_csrf' value='{{token}}'/>");
+				base = base.concat("				<input type='hidden' name='idproduct' value='{{"+value.idproduct+"}}'/>");
+				base = base.concat("				<input type='submit' class='item_add single-item hvr-outline-out button2' value='Añadir al carro'>");
+				base = base.concat("			</form>");
+				base = base.concat("		</div>");
+				base = base.concat("	</div>");
+				base = base.concat("</div>");
+                
+                $(".single-pro").append(base);
             });
-            if (pagepostuser + 1 <= result.totalPages) {
-                pagepostuser++;
+            
+            if (pageProduct + 1 <= result.totalPages) {
+                pageProduct++;
             } else {
                 $("#viewMore").remove();
             }
         }
     });
 };
+
+$(function () {
+    // Slideshow 4
+   $("#slider3").responsiveSlides({
+       auto: true,
+       pager: true,
+       nav: false,
+       speed: 500,
+       namespace: "callbacks",
+       before: function () {
+   $('.events').append("<li>before event fired.</li>");
+   },
+   after: function () {
+       $('.events').append("<li>after event fired.</li>");
+       }
+       });
+   });

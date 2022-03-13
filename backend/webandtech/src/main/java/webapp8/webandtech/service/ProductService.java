@@ -73,6 +73,10 @@ public class ProductService {
 		Page<Product> components = productRepository.findByproductType(productType,PageRequest.of(0, 10, Sort.by("idproduct").descending()));
 		return components.getContent();
 	}
+	public Page<Product> getMoreProductType(Pageable page, String productType){
+		Page<Product> components = productRepository.findByproductType(productType,page);
+		return components;
+	}
 	public List<Product> getTop6ByOrderByIdDesc(){
 		return productRepository.findTopByOrderByIdproductDesc();
 	}
@@ -84,12 +88,24 @@ public class ProductService {
 		Page<Product> components = productRepository.findByproductcategory("Componente",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
 		return components.getContent();
 	}
+	public Page<Product> getMoreComponents(Pageable page){
+		Page<Product> components = productRepository.findByproductcategory("Componente",page);
+		return components;
+	}
 	public List<Product> getPeripherals(){
 		Page<Product> peripherals = productRepository.findByproductcategory("Periferico",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
 		return peripherals.getContent();
 	}
+	public Page<Product> getMorePeripherals(Pageable page){
+		Page<Product> peripherals = productRepository.findByproductcategory("Periferico",page);
+		return peripherals;
+	}
 	public List<Product> getPhones(){
 		Page<Product> phones = productRepository.findByproductcategory("telefono",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
 		return phones.getContent();
+	}
+	public Page<Product> getMorePhones(Pageable page){
+		Page<Product> phones = productRepository.findByproductcategory("telefono",page);
+		return phones;
 	}
 }

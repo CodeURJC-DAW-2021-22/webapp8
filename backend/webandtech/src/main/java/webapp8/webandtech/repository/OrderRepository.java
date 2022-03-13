@@ -12,8 +12,8 @@ import webapp8.webandtech.model.User;
 public interface OrderRepository extends JpaRepository<Order, Integer>{
     public Page<Order> findAll(Pageable page);
     public List<Order> findAll();
-    public Order findByidorder (Integer idorder);
-    public Page<Order> findByiduser(User iduser, Pageable page);
+    public Order findByidorder (int idorder);
+    public Page<Order> findByIduser(User iduser, Pageable page);
     public Long deleteByIduser(User iduser);
     //public boolean existsidorderByiduser(Integer iduser);
 

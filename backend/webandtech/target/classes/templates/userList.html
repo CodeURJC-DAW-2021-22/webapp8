@@ -41,7 +41,17 @@
 </head>
 
 <body>
-    
+    <div class="header">
+		<div class="container">
+			<ul>
+				<li><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Entrega gratuita y rápida</li>
+				<li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Envío gratis en todos los
+					pedidos</li>
+				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a
+						href="mailto:info@example.com">info@w&t.com</a></li>
+			</ul>
+		</div>
+	</div>
 	<!-- //header -->
 	<!-- header-bot -->
 	<div class="header-bot">
@@ -49,26 +59,7 @@
 			<div class="col-md-3 header-left">
 				<h1><a href="/"><img src="/images/logo.jpg"></a></h1>
 			</div>
-			<div class="col-md-6 header-middle">
-				<form>
-					<div class="search">
-						<input type="search" value="Buscar" onfocus="this.value = '';"
-							onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
-					</div>
-					<div class="section_room">
-						<select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">Todo</option>
-							<option value="AX">Componentes</option>
-							<option value="AX">Periféricos</option>
-							<option value="AX">Teléfonos</option>
-						</select>
-					</div>
-					<div class="sear-sub">
-						<input type="submit" value=" ">
-					</div>
-					<div class="clearfix"></div>
-				</form>
-			</div>
+			
 
 			<nav class="col-md-3 header-right footer-bottom dropdown">
 				<div class="dropdown-content">
@@ -111,99 +102,7 @@
 		</div>
 	</div>
 	<!-- //header-bot -->
-	<!-- banner -->
-	<div class="ban-top">
-		<div class="container">
-			<div class="top_nav_left">
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-								data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav menu__list">
-								<li class="active menu__item menu__item--current"><a class="menu__link"
-										href="/">Inicio <span class="sr-only">(current)</span></a></li>
-								<li class="dropdown menu__item">
-									<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
-										aria-haspopup="true" aria-expanded="false">COMPONENTES<span
-											class="caret"></span></a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-												<a href="/components"><img src="/images/componentes.jpg"
-														alt=" " /></a>
-											</div>
-											<div class="col-sm-3 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li><a href="/components?typeProduct=Placa base">Placas Bases</a></li>
-													<li><a href="/components?typeProduct=Procesador">Procesador</a></li>
-													<li><a href="/components?typeProduct=Disco duro">Discos Duros</a></li>
-													<li><a href="/components?typeProduct=Tarjeta grafica">Tarjetas Gráficas</a></li>
-												</ul>
-											</div>
-
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
-								<li class="dropdown menu__item">
-									<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
-										aria-haspopup="true" aria-expanded="false">Periféricos <span
-											class="caret"></span></a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											<div class="col-sm-3 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li><a href="/peripherals?typeProduct=Teclado">Teclados</a></li>
-													<li><a href="/peripherals?typeProduct=Raton">Ratones</a></li>
-													<li><a href="/peripherals?typeProduct=Monitor">Monitores</a></li>
-													<li><a href="/peripherals?typeProduct=Auriculares">Auriculares</a></li>
-												</ul>
-											</div>
-											<div class="col-sm-6 multi-gd-img multi-gd-text ">
-												<a href="/peripherals"><img src="/images/perifericos.jpg"
-														alt=" " /></a>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
-								<li class=" menu__item"><a class="menu__link" href="/phones">Teléfonos</a></li>
-								<li class=" menu__item"><a class="menu__link" href="/contact">Contacto</a></li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</div>
-			<div class="top_nav_right">
-				<div class="cart box_1">
-					<a href="/checkout">
-						<h3>
-							<div class="total">
-								<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
-								<span class="simpleCart_total"></span> (<span id="simpleCart_quantity"
-									class="simpleCart_quantity"></span> items)
-							</div>
-
-						</h3>
-					</a>
-					<p><a href="javascript:;" class="simpleCart_empty">Carro vacío</a></p>
-
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<!-- //banner-top -->
+	
     
     
     <!-- ============================================================== -->
@@ -223,22 +122,17 @@
                                 <div class="container-xl px-2 mt-4">
                                     <!-- Account page navigation-->
                                     <nav class="nav nav-borders">
-                                        <a class="nav-link active ms-0" href="graphics" target="__blank">GRÁFICOS</a>
-                                        <a class="nav-link" href="user-list" target="__blank">LISTA USUARIOS</a>
-                                        <a class="nav-link" href="order-list" target="__blank">LISTA PEDIDOS</a>
-                                        <a class="nav-link" href="new-product" target="__blank">CREAR PRODUCTO</a>
-                                        <a class="nav-link" href="index.html" target="__blank">SALIR</a>
+                                        {{#admin}}
+                                        <a class="nav-link" href="/admin/graphics" target="__blank">GRÁFICOS</a>
+                                        <a class="nav-link active ms-0" href="/admin/users" target="__blank">LISTA USUARIOS</a>
+                                        <a class="nav-link" href="/admin/orders" target="__blank">LISTA PEDIDOS</a>
+                                        <a class="nav-link" href="/admin/newProduct" target="__blank">CREAR PRODUCTO</a>
+                                        <a class="nav-link" href="/index" target="__blank">SALIR</a>
+                                        {{/admin}}
                                     </nav>
                                     <hr class="mt-0 mb-4">
                                 </div>
-                                <div class="page-breadcrumb">
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">User Finder</li>
-                                        </ol>
-                                    </nav>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -250,20 +144,7 @@
                     <!-- ============================================================== -->
                     <div class="row">
                         <!-- ============================================================== -->
-                        <!-- search bar  -->
-                        <!-- ============================================================== -->
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <form>
-                                        <input class="form-control form-control-lg" type="search" placeholder="Search" aria-label="Search">
-                                        <button class="btn btn-primary search-btn" type="submit">Search</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ============================================================== -->
-                        <!-- end search bar  -->
+                        
                         <!-- ============================================================== -->
                         <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
                             <!-- ============================================================== -->
@@ -449,20 +330,7 @@
                                 <!-- ============================================================== -->
                             </div>
                             <!-- ============================================================== -->
-                            <!-- influencer sidebar  -->
-                            <!-- ============================================================== -->
-                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h3 class="font-16">Sorting By</h3>
-                                    </div>
-                                    <div class="card-body border-top">
-                                        <a href="#" class="btn btn-secondary btn-lg btn-block">Submit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ============================================================== -->
-                            <!-- end influencer sidebar  -->
+                          
                             <!-- ============================================================== -->
                         </div>
                     </div>

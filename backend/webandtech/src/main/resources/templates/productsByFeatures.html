@@ -85,19 +85,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<nav class="col-md-3 header-right footer-bottom dropdown">
 				<div class="dropdown-content">
 					{{#login}}
-						<li><a href="perfil">Ajustes</a></li>
-						<li><a href="products">Pedidos</a></li>
+					{{#userr}}
+						<li><a href="/users/profile/{{user}}">Ajustes</a></li>
+						<li><a href="/users/orders/{{user}}">Pedidos</a></li>
+						<li><a href="/users/security/{{user}}">Seguridad</a></li>
 						{{#admin}}
-							<li><a href="#">Crear producto</a></li>
-							<li><a href="#">Consultar pedidos</a></li>
-							<li><a href="#">Consultar usuarios</a></li>
-							<li><a href="#">Consultar gráficas</a></li>
+							<li><a href="/admin/newProduct">Crear producto</a></li>
+							<li><a href="/admin/orders">Consultar pedidos</a></li>
+							<li><a href="/admin/users">Consultar usuarios</a></li>
+							<li><a href="/admin/graphics">Consultar gráficas</a></li>
 						{{/admin}}
 						<li>
 							<form action="/logout" method="POST">
 								<input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf" value="{{token}}"/>
 							</form>
 						</li>
+					{{/userr}}
 					{{/login}}
 				</div>	
 				<ul>
@@ -106,7 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="/login" class="use1"><span>Login</span></a></li>
 					{{/login}}
 					{{#login}}
-						<li><a href="/perfil" class="use1"></a>
+						<li><a class="use1"></a>
 					{{/login}}
 					</li>
 					<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
@@ -213,8 +216,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //banner-top -->
-
-
 	<!-- banner -->
 	<div class="page-head">
 		<div class="container">
@@ -362,7 +363,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!-- //products -->
 	<!-- //product-nav -->
-
+	<div class="clearfix"></div>
 	<div class="coupons">
 		<div class="container">
 			<div class="coupons-grids text-center">
@@ -392,21 +393,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 			<div class="col-md-3 footer-left">
-				<h2><a href="index.html"><img src="images/logo.jpg" alt=" " /></a></h2>
+				<h2><a href="/index"><img src="/images/logo.jpg" alt=" " /></a></h2>
 				<p>Nuestra tienda se compromete a traer siempre lo más nuevo en tecnología a precios excelentes y
 					con seguridad y garantía de que el producto llega a salvo a su casa.</p>
 			</div>
 			<div class="col-md-9 footer-right">
-				<div class="col-sm-6 newsleft">
-					<h3>REGÍSTRESE PARA RECIBIR OFERTAS !</h3>
-				</div>
-				<div class="col-sm-6 newsright">
-					<form>
-						<input type="text" value="Email" onfocus="this.value = '';"
-							onblur="if (this.value == '') {this.value = 'Email';}" required="">
-						<input type="submit" value="Submit">
-					</form>
-				</div>
 				<div class="clearfix"></div>
 				<div class="sign-grds">
 					<div class="col-md-4 sign-gd">
@@ -434,24 +425,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 sign-gd flickr-post">
 						<h4>Publicaciones</h4>
 						<ul>
-							<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b17.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b18.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b17.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b18.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a>
-							</li>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b16.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b17.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b18.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b16.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b17.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b18.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
 						</ul>
 					</div>
 					<div class="clearfix"></div>

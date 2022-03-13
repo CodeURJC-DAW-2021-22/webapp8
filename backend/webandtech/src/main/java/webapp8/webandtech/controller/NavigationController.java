@@ -263,6 +263,23 @@ public class NavigationController {
 
 		return "transacciones";
 	}
+	@GetMapping("/contact")
+	private String getContact(Model model,HttpServletRequest request) throws IOException {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken());
+		String userName = request.getUserPrincipal().getName();
+		if(request.getUserPrincipal() != null){
+			model.addAttribute("user", request.getUserPrincipal().getName());
+			model.addAttribute("login", (request.getUserPrincipal() != null));
+		}else{
+			model.addAttribute("login", false);
+		}
+		model.addAttribute("usersdata", userService.getUser(userName));
+		model.addAttribute("admin", request.isUserInRole("ADMIN"));
+		model.addAttribute("userr", request.isUserInRole("USER"));
+
+		return "contact";
+	}
 	@GetMapping("/users/security/{username}")
 	private String getUserSecurity(Model model,HttpServletRequest request) throws IOException {
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");

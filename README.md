@@ -209,15 +209,15 @@ Leyenda del diagrama:
 
 #### Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es
 
-> descripción de lo realizado en esta fase  
+> Creación de las pantallas para la creación de los nuevos productos, botones especiales para el administrador y usuario. Submenu en el icono de login. Creación del pdf al finalizar la compra de uno de los productos de la tienda. Pantalla de creación/actualización de productos y gestión de los linkeos del header, footer y el resto de las pantallas correspondientes.  
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |
-   | 1º | Nombre del commit	| commit | fichero |
-   | 2º	| Nombre del commit	| commit | fichero |
-   | 3º	| Nombre del commit	| commit | fichero |
-   | 4º	| Nombre del commit	| commit | fichero |
-   | 5º	| Nombre del commit	| commit | fichero |
+   | 1º | submenu creation in index.html	| [SubMenu](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/c35b115c52de1cede69a24bdf41bb017418773de)  | [Index.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/feature/FrontendOctavio/backend/webandtech/src/main/resources/templates/index.html) [Style](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/feature/FrontendOctavio/backend/webandtech/src/main/resources/static/css/style.css) 
+   | 2º	| Update template newProduct.html	| [Created template newProduct.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/a01632974a6c22c4538cb7b08a412e9356f2d0e5), [Update template newProduct.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/6a74a9dbd2e7137b86b8692de59646a28582ddd5)| [newProdcut.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/feature/FrontendOctavio/backend/webandtech/src/main/resources/templates/newProduct.html)|
+   | 3º	| Update pages and finished template product.html	| [Update pages and finished template product.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/fd9b7475700736ecf977226d910e17baa884a343) | [product](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/feature/FrontendOctavio/backend/webandtech/src/main/resources/templates/product.html) |
+   | 4º	| Update template productsByFeatures.html	| [Update template productsByFeatures.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/25cea8e04a3c56ed3fdb0492cfec7e12d00d6855) | [productsByFeatures.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/feature/FrontendOctavio/backend/webandtech/src/main/resources/templates/productsByFeatures.html) |
+   | 5º	| Generated PDF	| [GeneratePDF](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/99dfc089bbad4cc2ef20ecc2bc6238556463bf4e) |[GeneratePDF]( backend/webandtech/src/main/java/webapp8/webandtech/service/GeneratePDF.java)
 
 #### Víctor López Rodríguez | v.lopezrodr@alumnos.urjc.es
 

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import webapp8.webandtech.model.Order;
 import webapp8.webandtech.model.OrderModel;
 import webapp8.webandtech.model.Product;
+import webapp8.webandtech.model.Statistics;
 import webapp8.webandtech.model.User;
 import webapp8.webandtech.service.AdminService;
 import webapp8.webandtech.service.OrderService;
@@ -91,6 +92,7 @@ public class AdminController {
 	}
 	@GetMapping("/admin/graphics")
 	private String getGraphics(Model model,HttpServletRequest request) throws IOException {
+		model = adminService.getData(model);
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
 		model.addAttribute("token", token.getToken());
 		if(request.getUserPrincipal() != null){
@@ -105,4 +107,6 @@ public class AdminController {
 
 		return "graphics";
 	}
+	
+	
 }

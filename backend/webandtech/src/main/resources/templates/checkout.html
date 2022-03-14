@@ -232,16 +232,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<tr class="rem1">
 						<td class="invert-closeb">
 							<div class="rem">
-								<div class="close1"> </div>
+								<div class="">
+									<form action="/deleteProductShopCar" method="post">
+										<input type="hidden" name="_csrf" value="{{token}}"/>
+										<input type="hidden" name="idproduct" value="{{idproduct}}"/>
+										<input type="submit" class="close1">
+									</form> 
+								</div>
 							</div>
-							<script>$(document).ready(function(c) {
-								$('.close1').on('click', function(c){
-									$('.rem1').fadeOut('slow', function(c){
-										$('.rem1').remove();
-									});
-									});	  
-								});
-						   </script>
 						</td>
 						{{#img1}}
 						<td class="invert-image"><a href="/products/{{idproduct}}"><img src="https://localhost:8443/productImg1/{{idproduct}}" alt=" " class="img-responsive" /></a></td>

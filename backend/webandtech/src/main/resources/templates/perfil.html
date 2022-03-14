@@ -143,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="card-header">Foto del Perfil</div>
                 <div class="card-body text-center">
                     <!-- Perfil picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="https://localhost:8443/imageprofile{{user}};" alt="">
+                    <img class="img-account-profile rounded-circle mb-2" src="https://localhost:8443/imageprofile/{{user}}" alt="">
                     <!-- Perfil picture help block-->
                     <div class="small font-italic text-muted mb-4">PNG o JPG no mayor de 5 MB</div>
                     <label class="btn btn-primary">Cambiar foto<input
@@ -153,18 +153,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						accept="image/*">
 					</label>
                 </div>
-				{{/usersdata}}
             </div>
-			</form>
         </div>
         <div class="col-xl-8">
             <!-- Account details card-->
-			{{#usersdata}}
             <div class="card mb-4">
                 <div class="card-header">Detalles de la cuenta</div>
                 <div class="card-body">
-                    <form action="/modifyUser" method="POST" enctype="multipart/form-data">
-                        
 						<!-- Form Group (username)-->
                         
                         <!-- Form Row-->
@@ -177,7 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <!-- Form Group (last name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLastName">Nombre completo</label>
-                                <input class="form-control" name="completename" type="text" placeholder={{completname}} value="">
+                                <input class="form-control" name="completname" type="text" placeholder={{completname}} value="">
                             </div>
                         </div>
                         <!-- Form Row        -->

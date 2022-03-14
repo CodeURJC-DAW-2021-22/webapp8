@@ -16,9 +16,10 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
     public Product findByidproduct(Integer idproduct);
     public Product findBynameproduct (String nameproduct);
     public Page<Product> findByproductType(String typename, Pageable page);
-    public List<Product> findByproductType(ProductType typename);
+    public List<Product> findByproductType(String typename);
     public List<Product> findTopByOrderByIdproductDesc();
     public Page<Product> findByproductcategory(String productcategory, Pageable page);
+    public List<Product> findByproductcategory(String productcategory);
     public Page<Product> findByproductbrand(Brand brandname, Pageable page);
     
     //public boolean existsidproductBynameproduct(String nameproduct);

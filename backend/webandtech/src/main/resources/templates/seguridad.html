@@ -138,21 +138,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="card-header">Cambiar contraseña</div>
 				<div class="card-body">
 					{{#usersdata}}
-					<form action ="/changePassword" method="POST" enctype="multipart/form-data"></form>
+					<form action ="/users/changePassword" method="POST">
 						<!-- Form Group (current password)-->
 						<div class="mb-3">
 							<label class="small mb-1" for="currentPassword">Contraseña actual</label>
-							<input class="form-control" id="currentPassword" type="password" placeholder="Actual contraseña">
+							<input class="form-control" id="currentPassword" type="password" name="oldpassword" placeholder="Actual contraseña">
 						</div>
 						<!-- Form Group (new password)-->
 						<div class="mb-3">
 							<label class="small mb-1" for="newPassword">Nueva contraseña</label>
-							<input class="form-control" id="newPassword" type="password" placeholder="Nueva contraseña">
+							<input class="form-control" id="newPassword" type="password" name="newpassword" placeholder="Nueva contraseña">
 						</div>
 						<!-- Form Group (confirm password)-->
 						<div class="mb-3">
 							<label class="small mb-1" for="confirmPassword">Confirmar contraseña</label>
-							<input class="form-control" id="confirmPassword" type="password" placeholder="Confirmar nueva contraseña">
+							<input class="form-control" id="confirmPassword" type="password" name="repeatpassword" placeholder="Confirmar nueva contraseña">
 						</div>
 						<li><button type="submit">Guardar</button><input type="hidden"
 							name="_csrf" value="{{token}}" /></li>

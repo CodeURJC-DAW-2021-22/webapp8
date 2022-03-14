@@ -1,6 +1,7 @@
 package webapp8.webandtech.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -60,5 +61,12 @@ public class StoreController {
         rating.setIdproduct(product);
         ratingService.save(rating);
     	response.sendRedirect("/products/"+idproduct);
+    }
+    @PostMapping("/users/newOrders")
+    public void createNewOrders(List<Product> products, HttpServletResponse response, HttpServletRequest request, @RequestParam String user) throws IOException {
+        User userData = userService.getUser(user);
+        products.size();
+
+    	response.sendRedirect("/index");
     }
 }

@@ -178,11 +178,20 @@ Requisitos para la ejecución del programa:
 >-	BootStrap: 3.3.7
 >-	JQuery: 3.1.1-1
 
-### Diagrama de navegación
-Insertar diagrama
+### Diagrama con las entidades de la base de datos:
+![diagBBDD](https://user-images.githubusercontent.com/80538164/158103510-747e81d2-6515-4eca-9973-95a9183a8933.jpg)
+
 
 ### Diagrama de clases y templates
-Insertar diagrama
+Leyenda del diagrama:
+- Morado: Vistas
+- Verde: Controladores
+- Azul: Repositorios
+- Negro: Modelos
+- Rojo: Servicios
+- Azul claro: Seguridad
+![image](https://user-images.githubusercontent.com/80538164/158103472-d77a38ed-9732-412c-a0ac-958c824f0087.png)
+
 
 ### Participación de miembros
 

@@ -85,19 +85,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<nav class="col-md-3 header-right footer-bottom dropdown">
 				<div class="dropdown-content">
 					{{#login}}
-						<li><a href="perfil">Ajustes</a></li>
-						<li><a href="products">Pedidos</a></li>
+					{{#userr}}
+						<li><a href="/users/profile/{{user}}">Ajustes</a></li>
+						<li><a href="/users/orders/{{user}}">Pedidos</a></li>
+						<li><a href="/users/security/{{user}}">Seguridad</a></li>
 						{{#admin}}
-							<li><a href="#">Crear producto</a></li>
-							<li><a href="#">Consultar pedidos</a></li>
-							<li><a href="#">Consultar usuarios</a></li>
-							<li><a href="#">Consultar gráficas</a></li>
+							<li><a href="/admin/newProduct">Crear producto</a></li>
+							<li><a href="/admin/orders">Consultar pedidos</a></li>
+							<li><a href="/admin/users">Consultar usuarios</a></li>
+							<li><a href="/admin/graphics">Consultar gráficas</a></li>
 						{{/admin}}
 						<li>
 							<form action="/logout" method="POST">
 								<input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf" value="{{token}}"/>
 							</form>
 						</li>
+					{{/userr}}
 					{{/login}}
 				</div>	
 				<ul>
@@ -106,7 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="/login" class="use1"><span>Login</span></a></li>
 					{{/login}}
 					{{#login}}
-						<li><a href="/perfil" class="use1"></a>
+						<li><a class="use1"></a>
 					{{/login}}
 					</li>
 					<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
@@ -213,12 +216,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //banner-top -->
-
-
 	<!-- banner -->
 	<div class="page-head">
 		<div class="container">
-			<h3>Nombre</h3>
+			<h3>Productos</h3>
 		</div>
 	</div>
 	<!-- //banner -->
@@ -228,7 +229,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-4 products-left">
 
 				<div class="community-poll">
-					<h4>Community Poll</h4>
+					<h4>Tipo de producto</h4>
 					<div class="swit form">
 						<form>
 							<div class="check_box">
@@ -264,18 +265,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"></div>
 			</div>
 			<div class="col-md-8 products-right">
-				<h5>Product Compare(0)</h5>
 				<div class="sort-grid">
 					<div class="sorting">
-						<h6>Sort By</h6>
+						<h6>Ordenar por</h6>
 						<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-							<option value="null">Default</option>
-							<option value="null">Name(A - Z)</option>
-							<option value="null">Name(Z - A)</option>
-							<option value="null">Price(High - Low)</option>
-							<option value="null">Price(Low - High)</option>
-							<option value="null">Model(A - Z)</option>
-							<option value="null">Model(Z - A)</option>
+							<option value="null">Precio(Alto - Bajo)</option>
+							<option value="null">Price(Bajo - Alto)</option>
 						</select>
 						<div class="clearfix"></div>
 					</div>
@@ -305,12 +300,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<img class="img-responsive" src="images/logo.jpg" alt=" " />
 					</div>
 					<div class="col-sm-8 men-wear-right">
-						<h4>Exclusive Men's Collections</h4>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-							accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-							ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-							explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-							odit aut fugit. </p>
+						<h4>Los productos más novedosos</h4>
+						<p>Espero que nadie se pare a leer esto detenidamente
+							porque sería bastante violento pero vamos que el resumen
+							es que esta es la mejor tienda onlne del mundo y no hay duda
+							al respecto. </p>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -330,7 +324,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							{{/img1}}
 							<div class="men-cart-pro">
 								<div class="inner-men-cart-pro">
-									<a href="/products/{{idproduct}}" class="link-product-add-cart">Quick View</a>
+									<a href="/products/{{idproduct}}" class="link-product-add-cart">Vista rápida</a>
 								</div>
 							</div>
 
@@ -355,14 +349,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 			<div class="pagination-grid text-right">
 				<ul class="pagination paging">
-					<li><a aria-label="Next" id="viewMore" onclick="viewMoreProducts('{{category}}','{{type}}')"><span aria-hidden="true">Ver más</span></a></li>
+					<li><a aria-label="Next" id="viewMore" onclick="viewMoreProducts('{{category}}','{{type}}','{{token}}')"><span aria-hidden="true">Ver más</span></a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<!-- //products -->
 	<!-- //product-nav -->
-
+	<div class="clearfix"></div>
 	<div class="coupons">
 		<div class="container">
 			<div class="coupons-grids text-center">
@@ -392,21 +386,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 			<div class="col-md-3 footer-left">
-				<h2><a href="index.html"><img src="images/logo.jpg" alt=" " /></a></h2>
+				<h2><a href="/index"><img src="/images/logo.jpg" alt=" " /></a></h2>
 				<p>Nuestra tienda se compromete a traer siempre lo más nuevo en tecnología a precios excelentes y
 					con seguridad y garantía de que el producto llega a salvo a su casa.</p>
 			</div>
 			<div class="col-md-9 footer-right">
-				<div class="col-sm-6 newsleft">
-					<h3>REGÍSTRESE PARA RECIBIR OFERTAS !</h3>
-				</div>
-				<div class="col-sm-6 newsright">
-					<form>
-						<input type="text" value="Email" onfocus="this.value = '';"
-							onblur="if (this.value == '') {this.value = 'Email';}" required="">
-						<input type="submit" value="Submit">
-					</form>
-				</div>
 				<div class="clearfix"></div>
 				<div class="sign-grds">
 					<div class="col-md-4 sign-gd">
@@ -434,24 +418,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 sign-gd flickr-post">
 						<h4>Publicaciones</h4>
 						<ul>
-							<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b17.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b18.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b17.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b18.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a>
-							</li>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b16.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b17.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b18.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b16.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b17.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b18.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
 						</ul>
 					</div>
 					<div class="clearfix"></div>

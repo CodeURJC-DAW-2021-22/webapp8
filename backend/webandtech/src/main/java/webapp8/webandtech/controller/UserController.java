@@ -86,13 +86,14 @@ public class UserController {
     	response.sendRedirect("/login");
     }
     
-    @PostMapping("/changePassword")
-    public void modifyPassword(HttpServletResponse response, HttpServletRequest request, @RequestParam String oldpassword,  @RequestParam String newpassword,  @RequestParam String repeatpassword) throws IOException {
+    @PostMapping("/users/changePassword")
+    public void modifyPassword(HttpServletResponse response, HttpServletRequest request, @RequestParam String oldpassword,  @RequestParam String newpassword,  @RequestParam String repeatpassword) throws IOException, ServletException {
     	User prev = userService.getUser(request.getUserPrincipal().getName());
     	String page = "/error";
     	if(encoder.matches(oldpassword, prev.getPass())) {
     		if(newpassword.equals(repeatpassword)) {
     			userService.modifyPass(request.getUserPrincipal().getName(), newpassword);
+				request.logout();
     	    	page = "/login";
     		}
     		

@@ -51,8 +51,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
           http.authorizeRequests().antMatchers("/productImg1/**").permitAll();
           http.authorizeRequests().antMatchers("/productImg2").permitAll();
           http.authorizeRequests().antMatchers("/productImg3").permitAll();
+          http.authorizeRequests().antMatchers("/deleteProductShopCar").permitAll();
           http.authorizeRequests().antMatchers("/products/**").permitAll();
           http.authorizeRequests().antMatchers("/forgotPassword").permitAll();
+          http.authorizeRequests().antMatchers("/getMoreProductsPage").permitAll();
+          http.authorizeRequests().antMatchers("/moreProducts").permitAll();
           http.authorizeRequests().antMatchers("/error").permitAll();
           http.authorizeRequests().antMatchers("httpss://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js").permitAll();
           http.authorizeRequests().antMatchers("/carShop").permitAll();

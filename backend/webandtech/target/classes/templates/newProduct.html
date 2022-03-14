@@ -51,6 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 	<!-- header -->
+	<!-- header -->
 	<div class="header">
 		<div class="container">
 			<ul>
@@ -93,30 +94,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<nav class="col-md-3 header-right footer-bottom dropdown">
 				<div class="dropdown-content">
 					{{#login}}
-					<li><a href="perfil">Ajustes</a></li>
-					<li><a href="products">Pedidos</a></li>
-					{{#admin}}
-					<li><a href="/newProduct">Crear producto</a></li>
-					<li><a href="#">Consultar pedidos</a></li>
-					<li><a href="#">Consultar usuarios</a></li>
-					<li><a href="#">Consultar gráficas</a></li>
-					{{/admin}}
-					<li>
-						<form action="/logout" method="POST">
-							<input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf"
-								value="{{token}}" />
-						</form>
-					</li>
+					{{#userr}}
+						<li><a href="/users/profile/{{user}}">Ajustes</a></li>
+						<li><a href="/users/orders/{{user}}">Pedidos</a></li>
+						<li><a href="/users/security/{{user}}">Seguridad</a></li>
+						{{#admin}}
+							<li><a href="/admin/newProduct">Crear producto</a></li>
+							<li><a href="/admin/orders">Consultar pedidos</a></li>
+							<li><a href="/admin/users">Consultar usuarios</a></li>
+							<li><a href="/admin/graphics">Consultar gráficas</a></li>
+						{{/admin}}
+						<li>
+							<form action="/logout" method="POST">
+								<input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf" value="{{token}}"/>
+							</form>
+						</li>
+					{{/userr}}
 					{{/login}}
-				</div>
+				</div>	
 				<ul>
-
+					
 					{{^login}}
-					<li><a href="/login" class="use1"><span>Login</span></a></li>
+						<li><a href="/login" class="use1"><span>Login</span></a></li>
 					{{/login}}
 					{{#login}}
-					<li><a href="/perfil" class="use1"></a>
-						{{/login}}
+						<li><a class="use1"></a>
+					{{/login}}
 					</li>
 					<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
 					<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
@@ -129,102 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //header-bot -->
-	<!-- banner -->
-	<div class="ban-top">
-		<div class="container">
-			<div class="top_nav_left">
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-								data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav menu__list">
-								<li class="active menu__item menu__item--current"><a class="menu__link" href="/">Inicio
-										<span class="sr-only">(current)</span></a></li>
-								<li class="dropdown menu__item">
-									<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
-										aria-haspopup="true" aria-expanded="false">COMPONENTES<span
-											class="caret"></span></a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-												<a href="/components"><img src="/images/componentes.jpg" alt=" " /></a>
-											</div>
-											<div class="col-sm-3 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li><a href="/components?typeProduct=Placa base">Placas Bases</a>
-													</li>
-													<li><a href="/components?typeProduct=Procesador">Procesador</a></li>
-													<li><a href="/components?typeProduct=Disco duro">Discos Duros</a>
-													</li>
-													<li><a href="/components?typeProduct=Tarjeta grafica">Tarjetas
-															Gráficas</a></li>
-												</ul>
-											</div>
-
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
-								<li class="dropdown menu__item">
-									<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
-										aria-haspopup="true" aria-expanded="false">Periféricos <span
-											class="caret"></span></a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											<div class="col-sm-3 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li><a href="/peripherals?typeProduct=Teclado">Teclados</a></li>
-													<li><a href="/peripherals?typeProduct=Raton">Ratones</a></li>
-													<li><a href="/peripherals?typeProduct=Monitor">Monitores</a></li>
-													<li><a href="/peripherals?typeProduct=Auriculares">Auriculares</a>
-													</li>
-												</ul>
-											</div>
-											<div class="col-sm-6 multi-gd-img multi-gd-text ">
-												<a href="/peripherals"><img src="/images/perifericos.jpg" alt=" " /></a>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
-								<li class=" menu__item"><a class="menu__link" href="/phones">Teléfonos</a></li>
-								<li class=" menu__item"><a class="menu__link" href="/contact">Contacto</a></li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</div>
-			<div class="top_nav_right">
-				<div class="cart box_1">
-					<a href="/checkout">
-						<h3>
-							<div class="total">
-								<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
-								<span class="simpleCart_total"></span> (<span id="simpleCart_quantity"
-									class="simpleCart_quantity"></span> items)
-							</div>
-
-						</h3>
-					</a>
-					<p><a href="javascript:;" class="simpleCart_empty">Carro vacío</a></p>
-
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<!-- //banner-top -->
-
+	
 	<div class="container-xl px-4 mt-4">
 		<!-- Account page navigation-->
 		<hr class="mt-0 mb-4">
@@ -362,25 +270,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</form>
 	</div>
 
+	<!-- //product-nav -->
+	<div class="clearfix"></div>
+	<div class="coupons">
+		<div class="container">
+			<div class="coupons-grids text-center">
+				<div class="col-md-3 coupons-gd">
+					<h3>Compra tu producto de forma simple</h3>
+				</div>
+				<div class="col-md-3 coupons-gd">
+					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+					<h4>ACCEDE A TU CUENTA</h4>
+					<p>Si no tiene una puede crearsela de forma gratis y rápida.</p>
+				</div>
+				<div class="col-md-3 coupons-gd">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					<h4>SELECCIONA TU COMPRA</h4>
+					<p>Puede usar la función del carro de compra para adquirir varios objetos a la vez.</p>
+				</div>
+				<div class="col-md-3 coupons-gd">
+					<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
+					<h4>PAGUE COMO QUIERA</h4>
+					<p>Hemos facilitado varias formas de pago para que pueda elegir el que quiera.</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
 	<!-- footer -->
 	<div class="footer">
 		<div class="container">
 			<div class="col-md-3 footer-left">
-				<h2><a href="index.html"><img src="images/logo.jpg" alt=" " /></a></h2>
+				<h2><a href="/index"><img src="/images/logo.jpg" alt=" " /></a></h2>
 				<p>Nuestra tienda se compromete a traer siempre lo más nuevo en tecnología a precios excelentes y
 					con seguridad y garantía de que el producto llega a salvo a su casa.</p>
 			</div>
 			<div class="col-md-9 footer-right">
-				<div class="col-sm-6 newsleft">
-					<h3>REGÍSTRESE PARA RECIBIR OFERTAS !</h3>
-				</div>
-				<div class="col-sm-6 newsright">
-					<form>
-						<input type="text" value="Email" onfocus="this.value = '';"
-							onblur="if (this.value == '') {this.value = 'Email';}" required="">
-						<input type="submit" value="Submit">
-					</form>
-				</div>
 				<div class="clearfix"></div>
 				<div class="sign-grds">
 					<div class="col-md-4 sign-gd">
@@ -408,24 +333,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 sign-gd flickr-post">
 						<h4>Publicaciones</h4>
 						<ul>
-							<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b17.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b18.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b17.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b18.jpg" alt=" " class="img-responsive" /></a>
-							</li>
-							<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a>
-							</li>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b16.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b17.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b18.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b16.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b17.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b18.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
 						</ul>
 					</div>
 					<div class="clearfix"></div>
@@ -442,77 +367,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
-	<!-- login -->
-	<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content modal-info">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-							aria-hidden="true">&times;</span></button>
-				</div>
-				<div class="modal-body modal-spa">
-					<div class="login-grids">
-						<div class="login">
-							<div class="login-bottom">
-								<h3>Sign up for free</h3>
-								<form>
-									<div class="sign-up">
-										<h4>Email :</h4>
-										<input type="text" value="Type here" onfocus="this.value = '';"
-											onblur="if (this.value == '') {this.value = 'Type here';}" required="">
-									</div>
-									<div class="sign-up">
-										<h4>Password :</h4>
-										<input type="password" value="Password" onfocus="this.value = '';"
-											onblur="if (this.value == '') {this.value = 'Password';}" required="">
-
-									</div>
-									<div class="sign-up">
-										<h4>Re-type Password :</h4>
-										<input type="password" value="Password" onfocus="this.value = '';"
-											onblur="if (this.value == '') {this.value = 'Password';}" required="">
-
-									</div>
-									<div class="sign-up">
-										<input type="submit" value="REGISTER NOW">
-									</div>
-
-								</form>
-							</div>
-							<div class="login-right">
-								<h3>Sign in with your account</h3>
-								<form>
-									<div class="sign-in">
-										<h4>Email :</h4>
-										<input type="text" value="Type here" onfocus="this.value = '';"
-											onblur="if (this.value == '') {this.value = 'Type here';}" required="">
-									</div>
-									<div class="sign-in">
-										<h4>Password :</h4>
-										<input type="password" value="Password" onfocus="this.value = '';"
-											onblur="if (this.value == '') {this.value = 'Password';}" required="">
-										<a href="#">Forgot password?</a>
-									</div>
-									<div class="single-bottom">
-										<input type="checkbox" id="brand" value="">
-										<label for="brand"><span></span>Remember Me.</label>
-									</div>
-									<div class="sign-in">
-										<input type="submit" value="SIGNIN">
-									</div>
-								</form>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy
-								Policy</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //login -->
-
+	
 
 
 </body>

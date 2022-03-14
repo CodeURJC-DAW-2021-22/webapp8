@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import webapp8.webandtech.model.Product;
@@ -58,26 +59,8 @@ public class ProductController {
 		return productService.getProductType(productType);		
 	}
 
-	@GetMapping("/moreProducts")
-	private Page<Product> getMoreProducts(Pageable page){
-		return productService.getProductsPage(page);
-	}
-	@GetMapping("/moreProductsPage")
-	private Page<Product> getMoreProductsPage(Pageable page, @RequestParam(required = false) String productType, @RequestParam(required = false) String productcategory){
-		Page<Product> products;
-		if(productType != "undefined"){
-			products = productService.getMoreProductType(page,productType);
-		} else{
-			if(productcategory == "Componente"){
-				products = productService.getMoreComponents(page);
-			} else if(productcategory == "Periferico"){
-				products = productService.getMorePeripherals(page);
-			} else{
-				products = productService.getMorePhones(page);
-			}
-		}
-		return products;
-	}
+	
+	
 	
 	@GetMapping("/products")
 	private Page<Product> getProducts(Pageable page){

@@ -36,11 +36,11 @@ public class StoreController {
 
 		response.sendRedirect("/index");;
 	}
-    @PostMapping("/deleteProductShopCar")
+    @PostMapping("/users/deleteProductShopCar")
     public void deleteProductShopCar(HttpServletResponse response, HttpServletRequest request, @RequestParam int idproduct) throws IOException {
         Product product = productService.getProduct(idproduct);
         
-        boolean car = carShop.getCarShop().remove(product);
+        carShop.getCarShop().removeIf(carShop -> carShop.getIdproduct() == product.getIdproduct());
     	response.sendRedirect("/checkout");
     }
 }

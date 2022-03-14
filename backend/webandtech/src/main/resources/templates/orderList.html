@@ -5,20 +5,111 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- pignose css -->
+	<link href="/css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
+
+
+	<!-- //pignose css -->
+	<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- js -->
+	<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+	<!-- //js -->
+	<!-- cart -->
+	<script src="/js/simpleCart.min.js"></script>
+	<!-- cart -->
+	<!-- for bootstrap working -->
+	<script type="text/javascript" src="/js/bootstrap-3.1.1.min.js"></script>
+	<!-- //for bootstrap working -->
+	<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link
+		href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic'
+		rel='stylesheet' type='text/css'>
+	<script src="/js/jquery.easing.min.js"></script>
+	<script src="/js/pignose.layerslider.js"></script>
+	<script src="/js/easyResponsiveTabs.js"></script>
+	<script src="/js/script.js"></script>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/libs/css/style.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet" href="assets/vendor/charts/chartist-bundle/chartist.css">
-    <link rel="stylesheet" href="assets/vendor/charts/morris-bundle/morris.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/vendor/charts/c3charts/c3.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/libs/css/style.css">
+    <link rel="stylesheet" href="/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="/assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <title>Order List</title>
 </head>
 
 <body>
+
+    <!-- header -->
+	<div class="header">
+		<div class="container">
+			<ul>
+				<li><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Entrega gratuita y rápida</li>
+				<li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Envío gratis en todos los
+					pedidos</li>
+				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a
+						href="mailto:info@example.com">info@w&t.com</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- //header -->
+	<!-- header-bot -->
+	<div class="header-bot">
+		<div class="container">
+			<div class="col-md-3 header-left">
+				<h1><a href="/"><img src="/images/logo.jpg"></a></h1>
+			</div>
+			
+
+			<nav class="col-md-3 header-right footer-bottom dropdown">
+				<div class="dropdown-content">
+					{{#login}}
+					{{#userr}}
+						<li><a href="/users/profile/{{user}}">Ajustes</a></li>
+						<li><a href="/users/orders/{{user}}">Pedidos</a></li>
+                        <li><a href="/users/security/{{user}}">Seguridad</a></li>
+						{{#admin}}
+							<li><a href="/admin/newProduct">Crear producto</a></li>
+							<li><a href="/admin/orders">Consultar pedidos</a></li>
+							<li><a href="/admin/users">Consultar usuarios</a></li>
+							<li><a href="/admin/graphics">Consultar gráficas</a></li>
+						{{/admin}}
+						<li>
+							<form action="/logout" method="POST">
+								<input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf" value="{{token}}"/>
+							</form>
+						</li>
+					{{/userr}}
+					{{/login}}
+				</div>	
+				<ul>
+					
+					{{^login}}
+						<li><a href="/login" class="use1"><span>Login</span></a></li>
+					{{/login}}
+					{{#login}}
+						<li><a class="use1"></a>
+					{{/login}}
+					</li>
+					<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
+				</ul>
+			</nav>
+
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //header-bot -->
+	
     <!-- main wrapper -->
     <div class="dashboard-main-wrapper">
         <!-- wrapper  -->
@@ -33,11 +124,13 @@
                                 <div class="container-xl px-2 mt-4">
                                     <!-- Account page navigation-->
                                     <nav class="nav nav-borders">
-                                        <a class="nav-link active ms-0" href="graphics" target="__blank">GRÁFICOS</a>
-                                        <a class="nav-link" href="user-list" target="__blank">LISTA USUARIOS</a>
-                                        <a class="nav-link" href="order-list" target="__blank">LISTA PEDIDOS</a>
-                                        <a class="nav-link" href="new-product" target="__blank">CREAR PRODUCTO</a>
-                                        <a class="nav-link" href="index.html" target="__blank">SALIR</a>
+                                        {{#admin}}
+                                        <a class="nav-link" href="/admin/graphics" target="__blank">GRÁFICOS</a>
+                                        <a class="nav-link" href="/admin/users" target="__blank">LISTA USUARIOS</a>
+                                        <a class="nav-link active ms-0" href="/admin/orders" target="__blank">LISTA PEDIDOS</a>
+                                        <a class="nav-link" href="/admin/newProduct" target="__blank">CREAR PRODUCTO</a>
+                                        <a class="nav-link" href="/index" target="__blank">SALIR</a>
+                                        {{/admin}}
                                     </nav>
                                     <hr class="mt-0 mb-4">
                                 </div>
@@ -61,67 +154,23 @@
                                                     <th class="border-0">#</th>
                                                     <th class="border-0">Nombre producto</th>
                                                     <th class="border-0">ID</th>
-                                                    <th class="border-0">Cantidad</th>
                                                     <th class="border-0">Precio</th>
                                                     <th class="border-0">Fecha pedido</th>
                                                     <th class="border-0">Cliente</th>
-                                                    <th class="border-0">Estado</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                {{#adminsorders}}
                                                 <tr>
-                                                    <td>1</td> <!-- poner un contador-->
-                                                    <td>Product #1 </td> <!-- poner un contador-->
-                                                    <td>{{oredr.idproduct}} </td>
-                                                    <td>{{order.count}}</td>
-                                                    <!-- poner un contador para los productos que se han pedido-->
-                                                    <td>{{order.price}}</td>
-                                                    <td>{{order.date}}}}</td>
-                                                    <td>{{order.iduser}}</td>
-                                                    <td><span class="badge-dot badge-brand mr-1"></span>{{order.status}}
-                                                    </td> <!-- añadir el estado del producto-->
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
+                                                    <td>{{order.idorder}}</td>
 
-                                                    <td>Product #2 </td>
-                                                    <td>id000002 </td>
-                                                    <td>12</td>
-                                                    <td>$180.00</td>
-                                                    <td>25-08-2018 21:12:56</td>
-                                                    <td>Rachel J. Wicker </td>
-                                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered
-                                                    </td>
+                                                    <td>Pedido #{{order.idorder}} </td>
+                                                    <td>id{{order.idorder}} </td>
+                                                    <td>{{order.price}}€</td>
+                                                    <td>{{order.orderdate}}</td>
+                                                    <td>{{order.iduser.completname}} </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>3</td>
-
-                                                    <td>Product #3 </td>
-                                                    <td>id000003 </td>
-                                                    <td>23</td>
-                                                    <td>$820.00</td>
-                                                    <td>24-08-2018 14:12:77</td>
-                                                    <td>Michael K. Ledford </td>
-                                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-
-                                                    <td>Product #4 </td>
-                                                    <td>id000004 </td>
-                                                    <td>34</td>
-                                                    <td>$340.00</td>
-                                                    <td>23-08-2018 09:12:35</td>
-                                                    <td>Michael K. Ledford </td>
-                                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="9"><a href="#"
-                                                            class="btn btn-outline-light float-right">Ver detalles</a>
-                                                    </td>
-                                                </tr>
+                                                {{/adminsorders}}
                                             </tbody>
                                         </table>
                                     </div>
@@ -139,25 +188,25 @@
     <!-- ============================================================== -->
     <!-- Optional JavaScript -->
     <!-- jquery 3.3.1 -->
-    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
     <!-- slimscroll js -->
-    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
     <!-- main js -->
-    <script src="assets/libs/js/main-js.js"></script>
+    <script src="/assets/libs/js/main-js.js"></script>
     <!-- chart chartist js -->
-    <script src="assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <script src="/assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
     <!-- sparkline js -->
-    <script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <script src="/assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
     <!-- morris js -->
-    <script src="assets/vendor/charts/morris-bundle/raphael.min.js"></script>
-    <script src="assets/vendor/charts/morris-bundle/morris.js"></script>
+    <script src="/assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="/assets/vendor/charts/morris-bundle/morris.js"></script>
     <!-- chart c3 js -->
-    <script src="assets/vendor/charts/c3charts/c3.min.js"></script>
-    <script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
-    <script src="assets/vendor/charts/c3charts/C3chartjs.js"></script>
-    <script src="assets/libs/js/dashboard-ecommerce.js"></script>
+    <script src="/assets/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="/assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="/assets/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script src="/assets/libs/js/dashboard-ecommerce.js"></script>
 </body>
 
 </html>

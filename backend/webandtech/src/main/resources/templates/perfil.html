@@ -17,10 +17,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 <!-- //for-mobile-apps -->
 <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css">
 <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
 <!-- //js -->
 <!-- single -->
 <script src="/js/imagezoom.js"></script>
@@ -39,6 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 	<!-- header -->
+	<!-- header -->
 	<div class="header">
 		<div class="container">
 			<ul>
@@ -51,80 +53,85 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //header -->
-<!-- header-bot -->
-<div class="header-bot">
-	<div class="container">
-		<div class="col-md-3 header-left">
-			<h1><a href="index.html"><img src="images/logo.jpg"></a></h1>
-		</div>
-		<div class="col-md-6 header-middle">
-			<form>
-				<div class="search">
-					<input type="search" value="Buscar" onfocus="this.value = '';"
-						onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
-				</div>
-				<div class="section_room">
-					<select id="country" onchange="change_country(this.value)" class="frm-field required">
-						<option value="null">Todo</option>
-						<option value="AX">Componentes</option>
-						<option value="AX">Periféricos</option>
-						<option value="AX">Teléfonos</option>
-					</select>
-				</div>
-				<div class="sear-sub">
-					<input type="submit" value=" ">
-				</div>
-				<div class="clearfix"></div>
-			</form>
-		</div>
-		<div class="col-md-3 header-right footer-bottom">
-
-			<ul>
-				<li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a>
-
-				</li>
-				<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
-				<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
-				<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
-				<li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
-			</ul>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- //header-bot -->
-<!-- banner -->
-<div class="ban-top">
-	<div class="container">
-		<div class="top_nav_left">
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-							data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
+	<!-- header-bot -->
+	<div class="header-bot">
+		<div class="container">
+			<div class="col-md-3 header-left">
+				<h1><a href="/"><img src="/images/logo.jpg"></a></h1>
+			</div>
+			<div class="col-md-6 header-middle">
+				<form>
+					<div class="search">
+						<input type="search" value="Buscar" onfocus="this.value = '';"
+							onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
 					</div>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-				</div>
+					<div class="section_room">
+						<select id="country" onchange="change_country(this.value)" class="frm-field required">
+							<option value="null">Todo</option>
+							<option value="AX">Componentes</option>
+							<option value="AX">Periféricos</option>
+							<option value="AX">Teléfonos</option>
+						</select>
+					</div>
+					<div class="sear-sub">
+						<input type="submit" value=" ">
+					</div>
+					<div class="clearfix"></div>
+				</form>
+			</div>
+
+			<nav class="col-md-3 header-right footer-bottom dropdown">
+				<div class="dropdown-content">
+					{{#login}}
+					{{#userr}}
+						<li><a href="/users/profile/{{user}}">Perfil</a></li>
+						<li><a href="/users/orders/{{user}}">Pedidos</a></li>
+						<li><a href="/users/security/{{user}}">Seguridad</a></li>
+						
+						{{#admin}}
+							<li><a href="/admin/newProduct">Crear producto</a></li>
+							<li><a href="/admin/orders">Consultar pedidos</a></li>
+							<li><a href="/admin/users">Consultar usuarios</a></li>
+							<li><a href="/admin/graphics">Consultar gráficas</a></li>
+						{{/admin}}
+						<li>
+							<form action="/logout" method="POST">
+								<input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf" value="{{token}}"/>
+							</form>
+						</li>
+					{{/userr}}
+					{{/login}}
+				</div>	
+				<ul>
+					
+					{{^login}}
+						<li><a href="/login" class="use1"><span>Login</span></a></li>
+					{{/login}}
+					{{#login}}
+						<li><a class="use1"></a>
+					{{/login}}
+					</li>
+					<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
+				</ul>
 			</nav>
+
+			<div class="clearfix"></div>
 		</div>
-		<div class="clearfix"></div>
 	</div>
-</div>
+	<!-- //header-bot -->
+	
 <!-- //banner-top -->
 <div class="container-xl px-4 mt-4">
     <!-- Account page navigation-->
     <nav class="nav nav-borders">
-        <a class="nav-link active ms-0" href="perfil.html" target="__blank">Perfil</a>
-        <a class="nav-link" href="transacciones.html" target="__blank">Transacciones</a>
-        <a class="nav-link" href="seguridad.html" target="__blank">Seguridad</a>
-        <a class="nav-link" href="notificaciones.html"  target="__blank">Notificaciones</a>
-		<a class="nav-link" href="index.html"  target="__blank">Tienda</a>
+		{{#userr}}
+        <a class="nav-link active ms-0" href="/users/profile/{{user}}" target="__blank">Perfil</a>
+        <a class="nav-link" href="/users/orders/{{user}}" target="__blank">Pedidos</a>
+        <a class="nav-link" href="/users/security/{{user}}" target="__blank">Seguridad</a>
+		{{/userr}}
     </nav>
     <hr class="mt-0 mb-4">
     <div class="row">
@@ -132,10 +139,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<form action="/modifyUser" method="POST" enctype="multipart/form-data">
             <!-- Perfil picture card-->
             <div class="card mb-4 mb-xl-0">
+				{{#usersdata}}
                 <div class="card-header">Foto del Perfil</div>
                 <div class="card-body text-center">
                     <!-- Perfil picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="https://localhost:8443/imageprofile{{user}};" alt="">
+                    <img class="img-account-profile rounded-circle mb-2" src="https://localhost:8443/imageprofile/{{user}}" alt="">
                     <!-- Perfil picture help block-->
                     <div class="small font-italic text-muted mb-4">PNG o JPG no mayor de 5 MB</div>
                     <label class="btn btn-primary">Cambiar foto<input
@@ -144,19 +152,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						style="width: 0px;height: 0px;overflow: hidden;"
 						accept="image/*">
 					</label>
-					
                 </div>
             </div>
-			</form>
         </div>
         <div class="col-xl-8">
             <!-- Account details card-->
-			{{#usersdata}}
             <div class="card mb-4">
                 <div class="card-header">Detalles de la cuenta</div>
                 <div class="card-body">
-                    <form action="/modifyUser" method="POST" enctype="multipart/form-data">
-                        
 						<!-- Form Group (username)-->
                         
                         <!-- Form Row-->
@@ -169,7 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <!-- Form Group (last name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLastName">Nombre completo</label>
-                                <input class="form-control" name="completename" type="text" placeholder={{completname}} value="">
+                                <input class="form-control" name="completname" type="text" placeholder={{completname}} value="">
                             </div>
                         </div>
                         <!-- Form Row        -->
@@ -205,7 +208,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="footer">
 	<div class="container">
 		<div class="col-md-3 footer-left">
-			<h2><a href="/index"><img src="images/logo.jpg" alt=" " /></a></h2>
+			<h2><a href="/index"><img src="/images/logo.jpg" alt=" " /></a></h2>
 			<p>Nuestra tienda se compromete a traer siempre lo más nuevo en tecnología a precios excelentes y
 				con seguridad y garantía de que el producto llega a salvo a su casa.</p>
 		</div>

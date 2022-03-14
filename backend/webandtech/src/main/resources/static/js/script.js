@@ -130,38 +130,48 @@ $('#multi').mdbRange({
     });
 
 });
-function viewMoreProducts(category, typeProduct) {
+
+// function viewMoreProducts(category, typeProduct) {
+//     $.ajax({
+//         type: "GET",
+//         contentType: "application/json",
+//         url: ('/products/moreProducts?page=0&size=10&sort=idproduct&direction=asc'),
+//         success: function (result) {
+//             console.log(result);
+//         }
+//     });
+// }
+function viewMoreProducts(category, typeProduct, token) {
+    var base = '';
     size = 10;
     sort = 'idproduct';
     console.log(category, typeProduct);
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: ('/moreProductsPage?page=' + pageProduct + '&size=' + size + '&sort=' + sort + ',desc' + '&productType=' + typeProduct + '&productcategory=' + category),
+        url: ('/products/getMoreProductsPage?page=' + pageProduct + '&size=' + size + '&sort=' + sort + '&productType=' + typeProduct + '&productcategory=' + category),
         success: function (result) {
             console.log(result);
             $.each(result.content, function (index, value) {
                 base = base.concat("<div class='col-md-3 product-men'>");
 				base = base.concat("<div class='men-pro-item simpleCart_shelfItem'>");
 				base = base.concat("	<div class='men-thumb-item'>");
-				base = base.concat("		{{#"+value.img1+"}}");
-                base = base.concat("			<img src='https://localhost:8443/productImg1/{{"+value.idproduct+"}}' alt='' class='pro-image-front'>");
-                base = base.concat("			<img src='https://localhost:8443/productImg1/{{"+value.idproduct+"}}' alt='' class='pro-image-back'>");
-				base = base.concat("			{{/"+value.img1+"}}");
+                base = base.concat("			<img src='https://localhost:8443/productImg1/"+value.idproduct+"' alt='' class='pro-image-front'>");
+                base = base.concat("			<img src='https://localhost:8443/productImg1/"+value.idproduct+"' alt='' class='pro-image-back'>");
 				base = base.concat("			<div class='men-cart-pro'>");
 				base = base.concat("				<div class='inner-men-cart-pro'>");
-				base = base.concat("					<a href='/products/{{"+value.idproduct+"}}' class='link-product-add-cart'>Quick View</a>");
+				base = base.concat("					<a href='/products/"+value.idproduct+"' class='link-product-add-cart'>Quick View</a>");
 				base = base.concat("				</div>");
 				base = base.concat("			</div>");
 				base = base.concat("		</div>");
 				base = base.concat("		<div class='item-info-product '>");
-				base = base.concat("			<h4><a href='/products/{{"+value.idproduct+"}}'>{{"+value.nameproduct+"}}</a></h4>");
+				base = base.concat("			<h4><a href='/products/"+value.idproduct+"'>"+value.nameproduct+"</a></h4>");
 				base = base.concat("			<div class='info-product-price'>");
-				base = base.concat("				<span class='item_price'>{{"+value.price+"}}€</span>");
+				base = base.concat("				<span class='item_price'>"+value.price+"€</span>");
 				base = base.concat("			</div>");
 				base = base.concat("			<form action='/carShop' method='post'>");
-				base = base.concat("				<input type='hidden' name='_csrf' value='{{token}}'/>");
-				base = base.concat("				<input type='hidden' name='idproduct' value='{{"+value.idproduct+"}}'/>");
+				base = base.concat("				<input type='hidden' name='_csrf' value='"+token+"'/>");
+				base = base.concat("				<input type='hidden' name='idproduct' value='"+value.idproduct+"'/>");
 				base = base.concat("				<input type='submit' class='item_add single-item hvr-outline-out button2' value='Añadir al carro'>");
 				base = base.concat("			</form>");
 				base = base.concat("		</div>");
@@ -196,3 +206,4 @@ $(function () {
        }
        });
    });
+   

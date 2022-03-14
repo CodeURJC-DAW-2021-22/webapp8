@@ -22,10 +22,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import webapp8.webandtech.model.Order;
 import webapp8.webandtech.model.Product;
 import webapp8.webandtech.model.Statistics;
+import webapp8.webandtech.model.User;
 import webapp8.webandtech.service.AdminService;
 import webapp8.webandtech.service.ProductService;
+import webapp8.webandtech.service.UserService;
+import webapp8.webandtech.service.OrderService;
 
 @RestController
 @CrossOrigin
@@ -34,6 +38,10 @@ public class AjaxController {
     private ProductService productService;
 	@Autowired
     private AdminService adminService;
+	@Autowired
+    private OrderService orderService;
+	@Autowired
+    private UserService userService;
 
     @GetMapping("/products/moreProducts")
 	private Page<Product> getMoreProducts(Pageable page){
@@ -55,6 +63,20 @@ public class AjaxController {
 		}
 		return products;
 	}
+	@GetMapping("/admin/getMoreOrders")
+	private Page<Order> getOrders(Pageable page){
+		return orderService.getMoreAllOrders(page);
+	}
+	@GetMapping("/admin/getMoreUsers")
+	private Page<User> getMoreUsers(Pageable page){
+		return userService.getUsersPage(page);
+	}
 
+	@GetMapping("/users/getMoreOrders")
+	private Page<Order> getMoreUserOrders(Pageable page, @RequestParam String username){
+		User user = userService.getUser(username);
+		return orderService.getMoreUserOrders(user, page);
+		
+	}
 	
 }

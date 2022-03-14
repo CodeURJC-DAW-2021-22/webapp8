@@ -145,19 +145,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <th class="border-gray-200" scope="col">Cantidad</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="transaction">
+						{{#usersorders}}
                         <tr>
-                            {{#orders}}
-							<td>{{idorder}}</td>
-                            <td>{{orderdate}}</td>
-                            <td>{{price}}€</td>
-							{{/orders}}
+                            
+							<td>{{order.idorder}}</td>
+                            <td>{{order.orderdate}}</td>
+                            <td>{{order.price}}€</td>
+							
                         </tr>
+						{{/usersorders}}
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+	<div class="pagination-grid text-right">
+		<ul class="pagination paging">
+			<li><a aria-label="Next" id="viewMore" onclick="viewMoreTransactions('{{user}}')"><span aria-hidden="true">Ver más</span></a></li>
+		</ul>
+	</div>
 </div>
 
 

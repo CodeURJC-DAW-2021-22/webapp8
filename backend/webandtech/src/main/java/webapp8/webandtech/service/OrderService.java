@@ -28,17 +28,17 @@ public class OrderService {
         System.out.println(orders);
         return orders.getContent();
 	}
-    public List<Order> getMoreUserOrders(User user,Pageable page){
+    public Page<Order> getMoreUserOrders(User user,Pageable page){
         Page<Order> orders = orderRepository.findByIduser(user,page);
-        return orders.getContent();
+        return orders;
 	}
     public List<Order> getAllOrders(){
         Page<Order> orders = orderRepository.findAll(PageRequest.of(0, 10, Sort.by("idorder").descending()));
         return orders.getContent();
 	}
-    public List<Order> getMoreAllOrders(Pageable page){
+    public Page<Order> getMoreAllOrders(Pageable page){
         Page<Order> orders = orderRepository.findAll(page);
-        return orders.getContent();
+        return orders;
 	}
     public void saveOrder(Order order) throws IOException {
 		orderRepository.save(order);

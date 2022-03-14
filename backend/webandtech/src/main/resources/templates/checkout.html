@@ -268,8 +268,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="checkout-left">	
 				
 				<div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
-					<a href="index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Volver </a>
-					<a href="payment.html" class="botoncompra item_add hvr-outline-out button2">COMPRAR</a>
+					<a href="/index"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Volver </a>
+					<form action="/users/newOrders" method="post">
+						{{#shopCar}}
+						<input type="text" name="idproduct" value="{{idproduct}}" hidden>
+						{{/shopCar}}
+						<input type="text" name="idproduct" value="{{user}}" hidden>
+						<input type="hidden" name="_csrf" value="{{token}}"/>
+						<input type="hidden" name="idproduct" value="{{idproduct}}"/>
+						<input type="submit" class="item_add single-item hvr-outline-out button2" value="Comprar">
+					</form>
 					
 				</div>
 				<div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">

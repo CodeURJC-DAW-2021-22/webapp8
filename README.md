@@ -239,7 +239,7 @@ Leyenda del diagrama:
    | :---: | :---: | :---: | :---: |
    | 1º | Add productType repository	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/9bf6d096380e85d93ddcdeb670771b550c0934d5 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/repository/ProductTypeRepository.java |
    | 2º	| Add brand repository	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/e0b15cf32d9cd92dff9d96fa8ea7b839e93444ca | https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/repository/BrandRepository.java |
-   | 3º	| Add producttype model	| commhttps://github.com/CodeURJC-DAW-2021-22/webapp8/commit/fb8bff01fb3e5482d96b59e9b8c1df95fc9eeaa6it | https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/ProductType.java |
+   | 3º	| Add producttype model	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/fb8bff01fb3e5482d96b59e9b8c1df95fc9eeaa6it | https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/ProductType.java |
    | 4º	| Add model brand	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/23e8c5deed721a3ae0c76b0e8d7beb71e0f0571c | https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Brand.java |
    | 5º	| Add product controller and service	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/772e9371f2a00457b494a592192f490ef83e0130 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/ProductController.java |
 

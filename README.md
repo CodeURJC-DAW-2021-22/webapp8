@@ -185,62 +185,63 @@ Insertar diagrama
 Insertar diagrama
 
 ### Participación de miembros
-Guillermo Martín García	| g.martingarcia@alumnos.urjc.es
+
+#### Guillermo Martín García	| g.martingarcia@alumnos.urjc.es
 
 > descripción de lo realizado en esta fase  
 
-> * Nombre y enlace
-> * Nombre y enlace
-> * Nombre y enlace                   
-> * Nombre y enlace
-> * Nombre y enlace
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º | Nombre del commit	| commit | fichero |
+   | 2º	| Nombre del commit	| commit | fichero |
+   | 3º	| Nombre del commit	| commit | fichero |
+   | 4º	| Nombre del commit	| commit | fichero |
+   | 5º	| Nombre del commit	| commit | fichero |
 
-Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es
-
-> descripción de lo realizado en esta fase  
-
-> * Nombre y enlace
-> * Nombre y enlace
-> * Nombre y enlace                   
-> * Nombre y enlace
-> * Nombre y enlace
-
-Víctor López Rodríguez | v.lopezrodr@alumnos.urjc.es
+#### Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es
 
 > descripción de lo realizado en esta fase  
 
-> * Nombre y enlace
-> * Nombre y enlace
-> * Nombre y enlace                   
-> * Nombre y enlace
-> * Nombre y enlace
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º | Nombre del commit	| commit | fichero |
+   | 2º	| Nombre del commit	| commit | fichero |
+   | 3º	| Nombre del commit	| commit | fichero |
+   | 4º	| Nombre del commit	| commit | fichero |
+   | 5º	| Nombre del commit	| commit | fichero |
 
-Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es
-
-> descripción de lo realizado en esta fase  
-
-> * Nombre y enlace
-> * Nombre y enlace
-> * Nombre y enlace                   
-> * Nombre y enlace
-> * Nombre y enlace
-
-Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es
+#### Víctor López Rodríguez | v.lopezrodr@alumnos.urjc.es
 
 > descripción de lo realizado en esta fase  
 
-> * Nombre y enlace
-> * Nombre y enlace
-> * Nombre y enlace                   
-> * Nombre y enlace
-> * Nombre y enlace
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º | Nombre del commit	| commit | fichero |
+   | 2º	| Nombre del commit	| commit | fichero |
+   | 3º	| Nombre del commit	| commit | fichero |
+   | 4º	| Nombre del commit	| commit | fichero |
+   | 5º	| Nombre del commit	| commit | fichero |
 
-## Ficheros que más se haya participado
+#### Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es
 
-| Nombre | Correo | Ficheros |
-|---------------------------|---------------------------------|---------------------------------|
-| Guillermo Martín García	| g.martingarcia@alumnos.urjc.es	| Insertar ficheros |
-| Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es	| Insertar ficheros |
-| Víctor López Rodríguez |v.lopezrodr@alumnos.urjc.es	|Insertar ficheros |
-|	Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es | Insertar ficheros |
-| Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es| Insertar ficheros |
+> descripción de lo realizado en esta fase  
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º | Nombre del commit	| commit | fichero |
+   | 2º	| Nombre del commit	| commit | fichero |
+   | 3º	| Nombre del commit	| commit | fichero |
+   | 4º	| Nombre del commit	| commit | fichero |
+   | 5º	| Nombre del commit	| commit | fichero |
+
+#### Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es
+
+> descripción de lo realizado en esta fase  
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º | Nombre del commit	| commit | fichero |
+   | 2º	| Nombre del commit	| commit | fichero |
+   | 3º	| Nombre del commit	| commit | fichero |
+   | 4º	| Nombre del commit	| commit | fichero |
+   | 5º	| Nombre del commit	| commit | fichero |

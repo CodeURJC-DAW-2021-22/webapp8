@@ -201,11 +201,11 @@ Leyenda del diagrama:
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |
-   | 1º | Nombre del commit	| commit | fichero |
-   | 2º	| Nombre del commit	| commit | fichero |
-   | 3º	| Nombre del commit	| commit | fichero |
-   | 4º	| Nombre del commit	| commit | fichero |
-   | 5º	| Nombre del commit	| commit | fichero |
+   | 1º | update all parts app	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/b29b1f77c6960d9c1452a3b4350a31173e7b52ef | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/newProduct.html |
+   | 2º	| update app	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/a064c23f5847dad3fd4f3b8519410c6ae18de8a8 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/NavigationController.java |
+   | 3º	| update view	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/fc2a8b2b163b02269b73d7d9788a8bd734c09ff4 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/UserController.java |
+   | 4º	| update graphics	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/0b8e4aba1ade5452e9f59dfb234ab239e3876f91 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/AjaxController.java |
+   | 5º	| update ratings	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f6aa77939bd8be4632f2db8a82a4c5f8729b7602 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/UserController.java |
 
 #### Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es
 

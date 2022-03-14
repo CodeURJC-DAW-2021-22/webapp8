@@ -116,6 +116,74 @@ AdminGráficas- En esta pantalla permite a los administradores observar las graf
 
 # Fase 2
 
+### Capturas de pantalla
+
+Home - se ha modificado la página home con un menu para clientes, se han traducido información de la página al español, se muestran productos de la aplicación.
+![index](https://user-images.githubusercontent.com/80538164/158089195-3292af27-d828-4e57-9ff1-b9dbe3e1468e.jpg)
+
+Product - se ha modificado la página de productos de componentes y periféricos
+![products](https://user-images.githubusercontent.com/80538164/158089210-876e746e-11f4-471b-9556-ff3d0f2e18aa.jpg)
+
+Single product - se ha modificado la página cuando se muestra la información de un producto en concreto
+![singleproduct](https://user-images.githubusercontent.com/80538164/158089224-7b5dbddb-7891-456e-99a2-fe3c947415ea.jpg)
+
+SignIn / Login - página para el registro de un nuevo usuario o el logueo para un usuario ya registrado.
+![login](https://user-images.githubusercontent.com/80538164/158089249-087035e6-04f9-484e-b4d5-4e380b0391e1.jpg)
+
+Perfil - página donde el usuario puede modificar su información de la cuenta ya sea su nombre de usuario, su nombre completo, su dirección o su correo.
+![perfil](https://user-images.githubusercontent.com/80538164/158089257-6240c1f7-1549-4a5e-bfd1-7d48255c6101.jpg)
+
+Pedidos - página para ver información de los pedidos realizados.
+![Pedidos](https://user-images.githubusercontent.com/80538164/158089273-ad07b526-92ec-4d24-a4b0-3612df42dd5e.jpg)
+
+Seguridad - página para poder cambiar la contraseña de forma segura o darse de baja en la aplicación.
+![seguridad](https://user-images.githubusercontent.com/80538164/158089737-fc462d89-8b0e-4d6b-b29d-12d3e65ffb05.jpg)
+
+Checkout - modificación de la página del checkout, aparecerá un botón de compra si se ha registrado previamente en la aplicación
+![checkout](https://user-images.githubusercontent.com/80538164/158089293-33f62f5b-34c4-4fb8-affc-e27d1fca6d59.jpg)
+
+Graphics - página de admin que permite observar gráficas de las ventas de la aplicación.
+![graphics](https://user-images.githubusercontent.com/80538164/158089301-a599c332-0b15-4cfc-9b33-97d6e4e77000.jpg)
+
+Admin user list - página de admin que muestra la lista de usuarios dados de alta en la aplicación.
+![adminuserlist](https://user-images.githubusercontent.com/80538164/158089310-95847c03-ce19-42ef-98cb-e6f133d8f40f.jpg)
+
+Order list - página de admin que muestra la lista de pedidos que se han realizado en la aplicación.
+![orderlist](https://user-images.githubusercontent.com/80538164/158089317-11abed39-d954-427e-87de-630317c05c8d.jpg)
+
+New product - página de admin que facilita la creación de nuevos productos para la aplicación web.
+![newproduct](https://user-images.githubusercontent.com/80538164/158089329-1ad1fe7a-de35-4ac7-b989-a95943815994.jpg)
+
+Contact - modificación de la página de contactos, detalles referente a nuestra aplicación y traducido al español.
+![contact](https://user-images.githubusercontent.com/80538164/158089339-ec734dac-bc1b-489b-a75b-cdc1e81cb442.jpg)
+
+Error - página de error donde se redireccionará al usuario en caso de que exista algún error en la aplicación.
+![error](https://user-images.githubusercontent.com/80538164/158089363-4a988266-fa96-4fac-aa86-3b97f56a4d3b.jpg)
+
+### Diagrama de navegación
+![navegacionFase2](https://user-images.githubusercontent.com/80538164/158089514-d71d7b9c-502e-4ddf-840c-27bd2fa4f584.png)
+
+### Instrucciones de ejecución
+Para instalar y ejecutar la aplicación del grupo 8 se deben seguir los siguientes pasos:
+> 1.	Usamos el siguiente hipervínculo al repositorio de Github del grupo 8: https://github.com/CodeURJC-DAW-2021-22/webapp8 (Asegurarse que nos encontramos en la rama main).
+> 2.	Nos dirigimos a PostgreSQL "pgAdmin 4"  y en nuestro servidor local creamos una base de datos llamada webandtech (Es importante que esté vacío para que en la primera ejecución se carguen la información de la aplicación).
+> 3.	Una vez descargada la aplicación, en el entorno de desarrollo Eclipse con la extensión de spring preparada de antemano, abrimos el archivo application.properties y ponemos la contraseña y usuario que tengamos en nuestra base de datos de "pgAdmin 4" y ejecutamos el programa.
+> 4.	Sin parar la ejecución del programa, introduce la siguiente Url en un navegador: https://localhost:8443/
+> 5.	Una vez que nos cargue la pantalla de la tienda, la aplicación estará lista para usarse.
+
+Requisitos para la ejecución del programa:
+>-	PostgreSQL: 14.2
+>-	Pack de Spring Boot para Eclipse o en el entorno de desarrollo que se esté trabajando: (versión 2.6.3)
+>-	Versión de java: 17
+>-	BootStrap: 3.3.7
+>-	JQuery: 3.1.1-1
+
+### Diagrama de navegación
+Insertar diagrama
+
+### Diagrama de clases y templates
+Insertar diagrama
+
 ### Participación de miembros
 Guillermo Martín García	| g.martingarcia@alumnos.urjc.es
 

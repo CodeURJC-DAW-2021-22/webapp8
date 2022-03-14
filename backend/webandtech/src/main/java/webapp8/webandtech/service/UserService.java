@@ -41,8 +41,8 @@ public class UserService {
 	@Autowired
 	private PasswordEncoder encoder;
     
-    public Optional<User> getUserId(int id){
-		return userRepository.findById(id);
+    public User getUserId(int id){
+		return userRepository.findByIduser(id);
 	}
 	
 	public User getUser(String username) {

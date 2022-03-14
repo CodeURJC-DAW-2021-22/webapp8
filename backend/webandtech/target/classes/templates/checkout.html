@@ -233,7 +233,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<td class="invert-closeb">
 							<div class="rem">
 								<div class="">
-									<form action="/deleteProductShopCar" method="post">
+									<form action="/users/deleteProductShopCar" method="post">
 										<input type="hidden" name="_csrf" value="{{token}}"/>
 										<input type="hidden" name="idproduct" value="{{idproduct}}"/>
 										<input type="submit" class="close1">
@@ -245,7 +245,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<td class="invert-image"><a href="/products/{{idproduct}}"><img src="https://localhost:8443/productImg1/{{idproduct}}" alt=" " class="img-responsive" /></a></td>
 						{{/img1}}
 						<td class="invert">{{nameproduct}}</td>
-						<td class="invert">{{price}}</td>
+						<td class="invert">{{price}}€</td>
 					</tr>
 				{{/shopCar}}
 					
@@ -275,9 +275,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
 					<h4>Compra total</h4>
 					<ul>
-						{{#order}}
-						<li>{{idproducts}} <i>-</i> <span>{{price}}</span></li>
-						{{/order}}
+						
+						<li> <i>-</i> <span>{{priceCar}}€</span></li>
+						
 						
 					</ul>
 				</div>

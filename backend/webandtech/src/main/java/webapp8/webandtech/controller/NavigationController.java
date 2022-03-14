@@ -22,11 +22,13 @@ import webapp8.webandtech.model.CarShop;
 import webapp8.webandtech.model.Order;
 import webapp8.webandtech.model.OrderModel;
 import webapp8.webandtech.model.Product;
+import webapp8.webandtech.model.Rating;
 import webapp8.webandtech.model.User;
 // import webapp8.webandtech.service.AdminService;
 import webapp8.webandtech.service.LoaderService;
 import webapp8.webandtech.service.OrderService;
 import webapp8.webandtech.service.ProductService;
+import webapp8.webandtech.service.RatingService;
 import webapp8.webandtech.service.UserService;
 
 @Controller
@@ -37,8 +39,8 @@ public class NavigationController {
     private CarShop carShop;
     @Autowired
     private UserService userService;
-	// @Autowired
-    // private AdminService adminService;
+	@Autowired
+    private RatingService ratingService;
 	@Autowired
     private LoaderService loaderService;
 	@Autowired
@@ -99,6 +101,11 @@ public class NavigationController {
 	private String getCheckOut(Model model,HttpServletRequest request) throws IOException {
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
 		model.addAttribute("token", token.getToken());
+		List<Product> productos = carShop.getCarShop();
+		float totalPrice = 0;
+		for (Product product : productos){
+			totalPrice = totalPrice + product.getPrice();
+		}
 		if(request.getUserPrincipal() != null){
 			model.addAttribute("user", request.getUserPrincipal().getName());
 			model.addAttribute("login", (request.getUserPrincipal() != null));
@@ -106,6 +113,7 @@ public class NavigationController {
 			model.addAttribute("login", false);
 		}
 		System.out.println(carShop.getCarShop());
+		model.addAttribute("priceCar", totalPrice);
 		model.addAttribute("shopCar", carShop.getCarShop());
 		model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		model.addAttribute("userr", request.isUserInRole("USER"));
@@ -205,9 +213,11 @@ public class NavigationController {
 		}else{
 			model.addAttribute("login", false);
 		}
-		System.out.println(productService.getNewProucts());
-		System.out.println(idproduct);
-		model.addAttribute("product", productService.getProduct(idproduct));
+		Product product = productService.getProduct(idproduct);
+		List<Rating> ratings = ratingService.getRating(product);
+		
+		model.addAttribute("ratings", ratings);
+		model.addAttribute("product", product);
 		model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		model.addAttribute("userr", request.isUserInRole("USER"));
 		

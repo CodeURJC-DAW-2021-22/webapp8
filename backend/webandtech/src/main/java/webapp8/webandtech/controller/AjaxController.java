@@ -26,6 +26,7 @@ import webapp8.webandtech.model.Product;
 import webapp8.webandtech.model.Statistics;
 import webapp8.webandtech.service.AdminService;
 import webapp8.webandtech.service.ProductService;
+import webapp8.webandtech.service.OrderService;
 
 @RestController
 @CrossOrigin
@@ -34,6 +35,8 @@ public class AjaxController {
     private ProductService productService;
 	@Autowired
     private AdminService adminService;
+	@Autowired
+    private OrderService orderService;
 
     @GetMapping("/products/moreProducts")
 	private Page<Product> getMoreProducts(Pageable page){
@@ -55,6 +58,15 @@ public class AjaxController {
 		}
 		return products;
 	}
+	@GetMapping("/orders/moreOrders")
+	private Page<Order> getOrders(Pageable page){
+		return orderService.getOrdersPage(page);
+	}
 
+	@GetMapping("/orders/getMoreOrders")
+	private Page<Order> getMoreOrdersPage(Pageable page){
+		return orderService.getOrders(page);
+		
+	}
 	
 }

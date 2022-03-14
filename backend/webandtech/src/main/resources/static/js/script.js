@@ -207,3 +207,34 @@ $(function () {
        });
    });
    
+   function viewMoreTransactions(username) {
+    var base = '';
+    size = 10;
+    sort = 'idorder';
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: ('/products/getMoreOrders?page=' + pageProduct + '&size=' + size + '&sort=' + sort + '&username=' + username ),
+        success: function (result) {
+            console.log(result);
+            $.each(result.content, function (index, value) {
+                base = base.concat("<tr>")
+
+                base = base.concat("<td>"+value.idorder+"</td")
+                base = base.concat("<td>"+value.orderdate+"</td")
+                base = base.concat("<td>"+value.price+"</td")
+
+                base = base.concat("<tr>")
+				
+                
+                $(".single-pro").append(base);
+            });
+            
+            if (pageProduct + 1 <= result.totalPages) {
+                pageProduct++;
+            } else {
+                $("#viewMore").remove();
+            }
+        }
+    });
+};

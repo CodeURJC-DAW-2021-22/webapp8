@@ -197,7 +197,7 @@ Leyenda del diagrama:
 
 #### Guillermo Martín García	| g.martingarcia@alumnos.urjc.es
 
-> descripción de lo realizado en esta fase  
+> Realización de la aplicación básica de la aplicación y posterior actualización de todo. Modificación de los controladores y mapeado. Consulta y ayuda a los demás miembros del grupo.
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |

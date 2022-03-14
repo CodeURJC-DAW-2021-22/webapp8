@@ -207,3 +207,117 @@ $(function () {
        });
    });
    
+   function viewMoreTransactions(username) {
+    var base = '';
+    size = 10;
+    sort = 'idorder';
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: ('/users/getMoreOrders?page=' + pageProduct + '&size=' + size + '&sort=' + sort + '&username=' + username ),
+        success: function (result) {
+            console.log(result);
+            $.each(result.content, function (index, value) {
+                base = base.concat("<tr>")
+
+                base = base.concat("<td>"+value.idorder+"</td>");
+                base = base.concat("<td>"+value.orderdate+"</td>");
+                base = base.concat("<td>"+value.price+"</td>");
+
+                base = base.concat("<tr>")
+				
+                
+                $("#transaction").append(base);
+            });
+            
+            if (pageProduct + 1 <= result.totalPages) {
+                pageProduct++;
+            } else {
+                $("#viewMore").remove();
+            }
+        }
+    });
+};
+
+function viewMoreOrders() {
+    var base = '';
+    size = 10;
+    sort = 'idorder';
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: ('/admin/getMoreOrders?page=' + pageProduct + '&size=' + size + '&sort=' + sort),
+        success: function (result) {
+            console.log(result);
+            $.each(result.content, function (index, value) {
+                base = base.concat("<tr>");
+
+                base = base.concat("<td>"+value.idorder+"</td>");
+                base = base.concat("<td>Pedido #"+value.idorder+"</td>");
+                base = base.concat("<td>id"+value.orderdate+"</td>");
+                base = base.concat("<td>"+value.price+"€</td>");
+                base = base.concat("<td>"+value.orderdate+"</td>");
+                base = base.concat("<td>"+value.iduser.completname+"</td>");
+
+                base = base.concat("<tr>");
+				
+                
+                $("#transaction").append(base);
+            });
+            console.log(base)
+            if (pageProduct + 1 <= result.totalPages) {
+                pageProduct++;
+            } else {
+                $("#viewMore").remove();
+            }
+        }
+    });
+};
+
+
+function viewMoreUsers() {
+    var base = '';
+    size = 10;
+    sort = 'iduser';
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: ('/admin/getMoreUsers?page=' + pageProduct + '&size=' + size + '&sort=' + sort),
+        success: function (result) {
+            console.log(result);
+            $.each(result.content, function (index, value) {
+                    base = base.concat("            <div class='card'>");
+                    base = base.concat("            <div class='card-body'>");
+                    base = base.concat("                <div class='row align-items-center'>");
+                    base = base.concat("                   <div class='col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12'>");
+                    base = base.concat("                       <div class='user-avatar float-xl-left pr-4 float-none'>");
+                    base = base.concat("                           <img src='https://localhost:8443/imageprofile/"+value.username+" alt='User Avatar' class='rounded-circle user-avatar-xl'>");
+                    base = base.concat("                       </div>");
+                    base = base.concat("                       <div class='pl-xl-3'>");
+                    base = base.concat("                           <div class='m-b-0'>");
+                    base = base.concat("                               <div class='user-avatar-name d-inline-block'>");
+                    base = base.concat("                                   <h2 class='font-24 m-b-10'>"+value.completname+"</h2>");
+                    base = base.concat("                               </div>");
+                    base = base.concat("                           </div>");
+                    base = base.concat("                           <div class='user-avatar-address'>");
+                    base = base.concat("                               <p class='mb-2'><i class='fa fa-map-marker-alt mr-2  text-primary'></i>"+value.address+"");
+                    base = base.concat("                               </p>");
+                    base = base.concat("                           </div>");
+                    base = base.concat("                       </div>");
+                    base = base.concat("                   </div>");
+                    base = base.concat("               </div>");
+                    base = base.concat("           </div>");
+                    base = base.concat("       </div>");
+				
+                
+                $(".user-list").append(base);
+            });
+            console.log(base)
+            if (pageProduct + 1 <= result.totalPages) {
+                pageProduct++;
+            } else {
+                $("#viewMore").remove();
+            }
+        }
+    });
+};

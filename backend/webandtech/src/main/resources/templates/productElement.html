@@ -309,19 +309,21 @@
 										<p>{{ratingtext}}</p>
 									</div>
 
-									<div class="clearfix"> </div>
+									
 								</div>
+								<div class="clearfix"> </div>
+								
 								{{/ratings}}
-
+								{{#userr}}
 								<div class="add-review">
-									<h4>add a review</h4>
-									<form>
-										<input type="text" value="Name" required="">
-
-										<textarea type="text" required="">Message...</textarea>
-										<input type="submit" value="SEND">
+									<h4>Nueva reseña</h4>
+									<form action="/users/newRating" method="POST">
+										<input hidden type="text" name="idproduct" value="{{idproduct}}">
+										<textarea type="text" required="" name="ratingtext">Message...</textarea>
+										<input type="submit" value="Enviar"><input type="hidden"name="_csrf" value="{{token}}" />
 									</form>
 								</div>
+								{{/userr}}
 							</div>
 						</div>
 
@@ -334,34 +336,7 @@
 	{{/product}}
 	<!-- //single -->
 	<!-- //product-nav -->
-	<div class="coupons">
-		<div class="container">
-			<div class="coupons-grids text-center">
-				<div class="col-md-3 coupons-gd">
-					<h3>Buy your product in a simple way</h3>
-				</div>
-				<div class="col-md-3 coupons-gd">
-					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-					<h4>LOGIN TO YOUR ACCOUNT</h4>
-					<p>Neque porro quisquam est, qui dolorem ipsum quia dolor
-						sit amet, consectetur.</p>
-				</div>
-				<div class="col-md-3 coupons-gd">
-					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-					<h4>SELECT YOUR ITEM</h4>
-					<p>Neque porro quisquam est, qui dolorem ipsum quia dolor
-						sit amet, consectetur.</p>
-				</div>
-				<div class="col-md-3 coupons-gd">
-					<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
-					<h4>MAKE PAYMENT</h4>
-					<p>Neque porro quisquam est, qui dolorem ipsum quia dolor
-						sit amet, consectetur.</p>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
+
 	<!-- footer -->
 	<!-- //product-nav -->
 	<div class="clearfix"></div>

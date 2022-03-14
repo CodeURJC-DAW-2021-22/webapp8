@@ -245,12 +245,12 @@ Leyenda del diagrama:
 
 #### Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es
 
-> descripción de lo realizado en esta fase  
+> Este miembro del equipo se encargó de ingresar todos los datos al loader.java: usuarios, roles, productos, marcas, tipo de productos, sus respectivas imágenes,...  También se ha encargado de la documentación del README.md: las imágenes de las vistas y su navegación, elaborar los diagramas,...  Cabe destacar que realizó los primeros commits sobre las templates de perfil, transacciones y seguridad pero no aparecen los commits en el Github.
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |
-   | 1º | Nombre del commit	| commit | fichero |
-   | 2º	| Nombre del commit	| commit | fichero |
-   | 3º	| Nombre del commit	| commit | fichero |
-   | 4º	| Nombre del commit	| commit | fichero |
-   | 5º	| Nombre del commit	| commit | fichero |
+   | 1º | BBDD and Class diagrams	| [Update README](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/1cc607fccc6578859531b90402ac96f8dcba81a8) | [README.md](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |
+   | 2º	| Users Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f4223a9f78ed236c3510cdf7d51fe4c28470720d) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 3º	| Products Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/0f3d9e44b3ea760c2a879d7833ee3a99bd179e8b) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 4º	| Ratings Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/dcb3571037c140cae6af77ffa5f565d28393c9ce) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 5º	| Aplication images	| [Update README](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/bc1fc3f71ae2c366f97249f4edd99ba7b9fdc578) | [README.md](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |

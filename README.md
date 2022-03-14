@@ -221,15 +221,15 @@ Leyenda del diagrama:
 
 #### Víctor López Rodríguez | v.lopezrodr@alumnos.urjc.es
 
-> descripción de lo realizado en esta fase  
+> Cambios en todas las vistas, linkeos entre las páginas, modificacion del navigation controller y correccion de errores.
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |
-   | 1º | Nombre del commit	| commit | fichero |
-   | 2º	| Nombre del commit	| commit | fichero |
-   | 3º	| Nombre del commit	| commit | fichero |
-   | 4º	| Nombre del commit	| commit | fichero |
-   | 5º	| Nombre del commit	| commit | fichero |
+   | 1º | add error page	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/20dc182bcbc24bdb85c3654e264b46db6c816b26 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/perfil.html |
+   | 2º	| update templates	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/2b03ab0e3c532142d254cfa07f87aae992e8177f | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/seguridad.html |
+   | 3º	| update views	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f9d7b211d1dc147732b95c53d29813acec2c5bcc | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/error.html |
+   | 4º	| update views	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/391aef547c4eb0b3b309d8210cc0b238cd019002 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/transacciones.html |
+   | 5º	| update views	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f580f7ac56e5ea2107edf84789d9611dba08e30f | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/checkout.html |
 
 #### Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es
 

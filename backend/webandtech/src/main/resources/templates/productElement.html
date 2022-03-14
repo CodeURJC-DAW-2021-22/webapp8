@@ -309,19 +309,21 @@
 										<p>{{ratingtext}}</p>
 									</div>
 
-									<div class="clearfix"> </div>
+									
 								</div>
+								<div class="clearfix"> </div>
+								
 								{{/ratings}}
-
+								{{#userr}}
 								<div class="add-review">
-									<h4>add a review</h4>
-									<form>
-										<input type="text" value="Name" required="">
-
-										<textarea type="text" required="">Message...</textarea>
-										<input type="submit" value="SEND">
+									<h4>Nueva reseña</h4>
+									<form action="/users/newRating" method="POST">
+										<input hidden type="text" name="idproduct" value="{{idproduct}}">
+										<textarea type="text" required="" name="ratingtext">Message...</textarea>
+										<input type="submit" value="Enviar"><input type="hidden"name="_csrf" value="{{token}}" />
 									</form>
 								</div>
+								{{/userr}}
 							</div>
 						</div>
 

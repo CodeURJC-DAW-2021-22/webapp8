@@ -86,13 +86,14 @@ public class UserController {
     	response.sendRedirect("/login");
     }
     
-    @PostMapping("/changePassword")
-    public void modifyPassword(HttpServletResponse response, HttpServletRequest request, @RequestParam String oldpassword,  @RequestParam String newpassword,  @RequestParam String repeatpassword) throws IOException {
+    @PostMapping("/users/changePassword")
+    public void modifyPassword(HttpServletResponse response, HttpServletRequest request, @RequestParam String oldpassword,  @RequestParam String newpassword,  @RequestParam String repeatpassword) throws IOException, ServletException {
     	User prev = userService.getUser(request.getUserPrincipal().getName());
     	String page = "/error";
     	if(encoder.matches(oldpassword, prev.getPass())) {
     		if(newpassword.equals(repeatpassword)) {
     			userService.modifyPass(request.getUserPrincipal().getName(), newpassword);
+				request.logout();
     	    	page = "/login";
     		}
     		
@@ -100,16 +101,18 @@ public class UserController {
     	response.sendRedirect(page);
     }
     
-    @PostMapping("/deleteUser")
-    public void deleteUser(HttpServletResponse response, HttpServletRequest request, @RequestParam String email, @RequestParam String pass, @RequestParam String explication) throws IOException {
+    @PostMapping("/users/deleteUser")
+    public void deleteUser(HttpServletResponse response, HttpServletRequest request, @RequestParam String email, @RequestParam String pass, @RequestParam String explication) throws IOException, ServletException {
     	User prev = userService.getUser(request.getUserPrincipal().getName());
-    	if(email.equals(prev.getEmail())) {
-    		if(pass.equals(prev.getPass())) {
+    	String page = "/error";
+		if(email.equals(prev.getEmail())) {
+    		if(encoder.matches(pass, prev.getPass())) {
     			userService.deleteUser(request.getUserPrincipal().getName());
-    	    	response.sendRedirect("/index");
+    	    	request.logout();
+				page = "/login";
     		}
     	}
-    	response.sendRedirect("/error");
+    	response.sendRedirect(page);
     }
 
 }

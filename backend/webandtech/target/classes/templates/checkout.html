@@ -222,44 +222,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<table class="timetable_sub">
 				<thead>
 					<tr>
-						<th>Quitar</th>
-						<th>Producto</th>
-						<th>Cantidad</th>
-						<th>Nombre del producto</th>
-						<th>Precio</th>
+						<th>Remove</th>
+						<th>Product</th>
+						<th>Product Name</th>
+						<th>Price</th>
 					</tr>
 				</thead>
+				{{#shopCar}}
 					<tr class="rem1">
-						{{#product}}
 						<td class="invert-closeb">
 							<div class="rem">
-								<div class="close1"> </div>
-							</div>
-							<script>$(document).ready(function(c) {
-								$('.close1').on('click', function(c){
-									$('.rem1').fadeOut('slow', function(c){
-										$('.rem1').remove();
-									});
-									});	  
-								});
-						   </script>
-						</td>
-						{{#Img1}}
-						<td class="invert-image"><a href="#"><img src="https://localhost:8443/productImg1/{{idproduct}}" alt=" " class="img-responsive" /></a></td>
-						{{/Img1}}
-						<td class="invert">
-							 <div class="quantity"> 
-								<div class="quantity-select">                           
-									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
-									<div class="entry value-plus active">&nbsp;</div>
+								<div class="">
+									<form action="/users/deleteProductShopCar" method="post">
+										<input type="hidden" name="_csrf" value="{{token}}"/>
+										<input type="hidden" name="idproduct" value="{{idproduct}}"/>
+										<input type="submit" class="close1">
+									</form> 
 								</div>
 							</div>
 						</td>
-						<td class="invert">{{product.nameproduct}}</td>
-						<td class="invert">{{product.price}}</td>
-						{{/product}}
+						{{#img1}}
+						<td class="invert-image"><a href="/products/{{idproduct}}"><img src="https://localhost:8443/productImg1/{{idproduct}}" alt=" " class="img-responsive" /></a></td>
+						{{/img1}}
+						<td class="invert">{{nameproduct}}</td>
+						<td class="invert">{{price}}€</td>
 					</tr>
+				{{/shopCar}}
+					
 					
 								<!--quantity-->
 									<script>
@@ -286,9 +275,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
 					<h4>Compra total</h4>
 					<ul>
-						{{#order}}
-						<li>{{idproducts}} <i>-</i> <span>{{price}}</span></li>
-						{{/order}}
+						
+						<li> <i>-</i> <span>{{priceCar}}€</span></li>
+						
 						
 					</ul>
 				</div>

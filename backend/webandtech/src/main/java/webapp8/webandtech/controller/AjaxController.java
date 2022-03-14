@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import webapp8.webandtech.model.Product;
+import webapp8.webandtech.model.Statistics;
+import webapp8.webandtech.service.AdminService;
 import webapp8.webandtech.service.ProductService;
 
 @RestController
@@ -30,6 +32,8 @@ import webapp8.webandtech.service.ProductService;
 public class AjaxController {
     @Autowired
     private ProductService productService;
+	@Autowired
+    private AdminService adminService;
 
     @GetMapping("/products/moreProducts")
 	private Page<Product> getMoreProducts(Pageable page){
@@ -51,5 +55,6 @@ public class AjaxController {
 		}
 		return products;
 	}
-    
+
+	
 }

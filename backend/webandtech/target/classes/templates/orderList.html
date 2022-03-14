@@ -154,63 +154,23 @@
                                                     <th class="border-0">#</th>
                                                     <th class="border-0">Nombre producto</th>
                                                     <th class="border-0">ID</th>
-                                                    <th class="border-0">Cantidad</th>
                                                     <th class="border-0">Precio</th>
                                                     <th class="border-0">Fecha pedido</th>
                                                     <th class="border-0">Cliente</th>
-                                                    <th class="border-0">Estado</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                {{#adminsorders}}
                                                 <tr>
-                                                    <td>1</td> <!-- poner un contador-->
-                                                    <td>Product #1 </td> <!-- poner un contador-->
-                                                    <td> </td>
-                                                    <td></td>
-                                                    <!-- poner un contador para los productos que se han pedido-->
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td><span class="badge-dot badge-brand mr-1"></span>
-                                                    </td> <!-- añadir el estado del producto-->
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
+                                                    <td>{{order.idorder}}</td>
 
-                                                    <td>Product #2 </td>
-                                                    <td>id000002 </td>
-                                                    <td>12</td>
-                                                    <td>$180.00</td>
-                                                    <td>25-08-2018 21:12:56</td>
-                                                    <td>Rachel J. Wicker </td>
-                                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered
-                                                    </td>
+                                                    <td>Pedido #{{order.idorder}} </td>
+                                                    <td>id{{order.idorder}} </td>
+                                                    <td>{{order.price}}€</td>
+                                                    <td>{{order.orderdate}}</td>
+                                                    <td>{{order.iduser.completname}} </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>3</td>
-
-                                                    <td>Product #3 </td>
-                                                    <td>id000003 </td>
-                                                    <td>23</td>
-                                                    <td>$820.00</td>
-                                                    <td>24-08-2018 14:12:77</td>
-                                                    <td>Michael K. Ledford </td>
-                                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-
-                                                    <td>Product #4 </td>
-                                                    <td>id000004 </td>
-                                                    <td>34</td>
-                                                    <td>$340.00</td>
-                                                    <td>23-08-2018 09:12:35</td>
-                                                    <td>Michael K. Ledford </td>
-                                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered
-                                                    </td>
-                                                </tr>
-                                             
+                                                {{/adminsorders}}
                                             </tbody>
                                         </table>
                                     </div>

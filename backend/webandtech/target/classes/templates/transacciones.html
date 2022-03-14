@@ -146,13 +146,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </tr>
                     </thead>
                     <tbody>
+						{{#usersorders}}
                         <tr>
-                            {{#orders}}
-							<td>{{idorder}}</td>
-                            <td>{{orderdate}}</td>
-                            <td>{{price}}€</td>
-							{{/orders}}
+                            
+							<td>{{order.idorder}}</td>
+                            <td>{{order.orderdate}}</td>
+                            <td>{{order.price}}€</td>
+							
                         </tr>
+						{{/usersorders}}
                     </tbody>
                 </table>
             </div>

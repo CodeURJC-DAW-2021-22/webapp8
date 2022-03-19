@@ -159,11 +159,10 @@
                                                     <th class="border-0">Cliente</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="transaction">
                                                 {{#adminsorders}}
                                                 <tr>
                                                     <td>{{order.idorder}}</td>
-
                                                     <td>Pedido #{{order.idorder}} </td>
                                                     <td>id{{order.idorder}} </td>
                                                     <td>{{order.price}}€</td>
@@ -176,6 +175,12 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                        </div>
+                        <div class="pagination-grid text-right">
+                            <ul class="pagination paging">
+                                <li><a aria-label="Next" id="viewMore" onclick="viewMoreOrders()"><span aria-hidden="true">Ver más</span></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

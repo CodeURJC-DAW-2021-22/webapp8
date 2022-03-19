@@ -60,7 +60,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
           http.authorizeRequests().antMatchers("/error").permitAll();
           http.authorizeRequests().antMatchers("httpss://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js").permitAll();
           http.authorizeRequests().antMatchers("/carShop").permitAll();
-          http.authorizeRequests().antMatchers("/checkout").hasAnyRole("USER");
+          http.authorizeRequests().antMatchers("/checkout/**").hasAnyRole("USER");
           http.authorizeRequests().antMatchers("/users/**").hasAnyRole("USER");
           http.authorizeRequests().antMatchers("/admin/**").hasAnyRole("ADMIN");
  

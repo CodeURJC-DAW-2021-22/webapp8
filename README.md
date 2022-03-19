@@ -116,63 +116,141 @@ AdminGráficas- En esta pantalla permite a los administradores observar las graf
 
 # Fase 2
 
+### Capturas de pantalla
+
+Home - se ha modificado la página home con un menu para clientes, se han traducido información de la página al español, se muestran productos de la aplicación.
+![index](https://user-images.githubusercontent.com/80538164/158089195-3292af27-d828-4e57-9ff1-b9dbe3e1468e.jpg)
+
+Product - se ha modificado la página de productos de componentes y periféricos
+![products](https://user-images.githubusercontent.com/80538164/158089210-876e746e-11f4-471b-9556-ff3d0f2e18aa.jpg)
+
+Single product - se ha modificado la página cuando se muestra la información de un producto en concreto
+![singleproduct](https://user-images.githubusercontent.com/80538164/158089224-7b5dbddb-7891-456e-99a2-fe3c947415ea.jpg)
+
+SignIn / Login - página para el registro de un nuevo usuario o el logueo para un usuario ya registrado.
+![login](https://user-images.githubusercontent.com/80538164/158089249-087035e6-04f9-484e-b4d5-4e380b0391e1.jpg)
+
+Perfil - página donde el usuario puede modificar su información de la cuenta ya sea su nombre de usuario, su nombre completo, su dirección o su correo.
+![perfil](https://user-images.githubusercontent.com/80538164/158089257-6240c1f7-1549-4a5e-bfd1-7d48255c6101.jpg)
+
+Pedidos - página para ver información de los pedidos realizados.
+![Pedidos](https://user-images.githubusercontent.com/80538164/158089273-ad07b526-92ec-4d24-a4b0-3612df42dd5e.jpg)
+
+Seguridad - página para poder cambiar la contraseña de forma segura o darse de baja en la aplicación.
+![seguridad](https://user-images.githubusercontent.com/80538164/158089737-fc462d89-8b0e-4d6b-b29d-12d3e65ffb05.jpg)
+
+Checkout - modificación de la página del checkout, aparecerá un botón de compra si se ha registrado previamente en la aplicación
+![checkout](https://user-images.githubusercontent.com/80538164/158089293-33f62f5b-34c4-4fb8-affc-e27d1fca6d59.jpg)
+
+Graphics - página de admin que permite observar gráficas de las ventas de la aplicación.
+![graphics](https://user-images.githubusercontent.com/80538164/158089301-a599c332-0b15-4cfc-9b33-97d6e4e77000.jpg)
+
+Admin user list - página de admin que muestra la lista de usuarios dados de alta en la aplicación.
+![adminuserlist](https://user-images.githubusercontent.com/80538164/158089310-95847c03-ce19-42ef-98cb-e6f133d8f40f.jpg)
+
+Order list - página de admin que muestra la lista de pedidos que se han realizado en la aplicación.
+![orderlist](https://user-images.githubusercontent.com/80538164/158089317-11abed39-d954-427e-87de-630317c05c8d.jpg)
+
+New product - página de admin que facilita la creación de nuevos productos para la aplicación web.
+![newproduct](https://user-images.githubusercontent.com/80538164/158089329-1ad1fe7a-de35-4ac7-b989-a95943815994.jpg)
+
+Contact - modificación de la página de contactos, detalles referente a nuestra aplicación y traducido al español.
+![contact](https://user-images.githubusercontent.com/80538164/158089339-ec734dac-bc1b-489b-a75b-cdc1e81cb442.jpg)
+
+Error - página de error donde se redireccionará al usuario en caso de que exista algún error en la aplicación.
+![error](https://user-images.githubusercontent.com/80538164/158089363-4a988266-fa96-4fac-aa86-3b97f56a4d3b.jpg)
+
+### Diagrama de navegación
+![navegacionFase2](https://user-images.githubusercontent.com/80538164/158089514-d71d7b9c-502e-4ddf-840c-27bd2fa4f584.png)
+
+### Instrucciones de ejecución
+Para instalar y ejecutar la aplicación del grupo 8 se deben seguir los siguientes pasos:
+> 1.	Usamos el siguiente hipervínculo al repositorio de Github del grupo 8: https://github.com/CodeURJC-DAW-2021-22/webapp8 (Asegurarse que nos encontramos en la rama main).
+> 2.	Nos dirigimos a PostgreSQL "pgAdmin 4"  y en nuestro servidor local creamos una base de datos llamada webandtech (Es importante que esté vacío para que en la primera ejecución se carguen la información de la aplicación).
+> 3.	Una vez descargada la aplicación, en el entorno de desarrollo Eclipse con la extensión de spring preparada de antemano, abrimos el archivo application.properties y ponemos la contraseña y usuario que tengamos en nuestra base de datos de "pgAdmin 4" y ejecutamos el programa.
+> 4.	Sin parar la ejecución del programa, introduce la siguiente Url en un navegador: https://localhost:8443/
+> 5.	Una vez que nos cargue la pantalla de la tienda, la aplicación estará lista para usarse.
+
+Requisitos para la ejecución del programa:
+>-	PostgreSQL: 14.2
+>-	Pack de Spring Boot para Eclipse o en el entorno de desarrollo que se esté trabajando: (versión 2.6.3)
+>-	Versión de java: 17
+>-	BootStrap: 3.3.7
+>-	JQuery: 3.1.1-1
+
+### Diagrama con las entidades de la base de datos:
+![diagBBDD](https://user-images.githubusercontent.com/80538164/158103510-747e81d2-6515-4eca-9973-95a9183a8933.jpg)
+
+
+### Diagrama de clases y templates
+Leyenda del diagrama:
+- Morado: Vistas
+- Verde: Controladores
+- Azul: Repositorios
+- Negro: Modelos
+- Rojo: Servicios
+- Azul claro: Seguridad
+![image](https://user-images.githubusercontent.com/80538164/158103472-d77a38ed-9732-412c-a0ac-958c824f0087.png)
+
+
 ### Participación de miembros
-Guillermo Martín García	| g.martingarcia@alumnos.urjc.es
 
-> descripción de lo realizado en esta fase  
+#### Guillermo Martín García	| g.martingarcia@alumnos.urjc.es
 
-> * Nombre y enlace
-> * Nombre y enlace
-> * Nombre y enlace                   
-> * Nombre y enlace
-> * Nombre y enlace
+> Realización de la aplicación básica de la aplicación y posterior actualización de todo. Modificación de los controladores y mapeado. Consulta y ayuda a los demás miembros del grupo.
 
-Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º | update all parts app	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/b29b1f77c6960d9c1452a3b4350a31173e7b52ef | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/newProduct.html |
+   | 2º	| update app	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/a064c23f5847dad3fd4f3b8519410c6ae18de8a8 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/NavigationController.java |
+   | 3º	| update view	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/fc2a8b2b163b02269b73d7d9788a8bd734c09ff4 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/UserController.java |
+   | 4º	| update graphics	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/0b8e4aba1ade5452e9f59dfb234ab239e3876f91 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/AjaxController.java |
+   | 5º	| update ratings	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f6aa77939bd8be4632f2db8a82a4c5f8729b7602 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/UserController.java |
 
-> descripción de lo realizado en esta fase  
+#### Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es
 
-> * Nombre y enlace
-> * Nombre y enlace
-> * Nombre y enlace                   
-> * Nombre y enlace
-> * Nombre y enlace
+> Creación de las pantallas para la creación de los nuevos productos, botones especiales para el administrador y usuario. Submenu en el icono de login. Creación del pdf al finalizar la compra de uno de los productos de la tienda. Pantalla de creación/actualización de productos y gestión de los linkeos del header, footer y el resto de las pantallas correspondientes.  
 
-Víctor López Rodríguez | v.lopezrodr@alumnos.urjc.es
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º | submenu creation in index.html	| [SubMenu](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/c35b115c52de1cede69a24bdf41bb017418773de)  | [Index.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/feature/FrontendOctavio/backend/webandtech/src/main/resources/templates/index.html) [Style](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/feature/FrontendOctavio/backend/webandtech/src/main/resources/static/css/style.css) 
+   | 2º	| Update template newProduct.html	| [Created template newProduct.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/a01632974a6c22c4538cb7b08a412e9356f2d0e5), [Update template newProduct.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/6a74a9dbd2e7137b86b8692de59646a28582ddd5)| [newProdcut.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/feature/FrontendOctavio/backend/webandtech/src/main/resources/templates/newProduct.html)|
+   | 3º	| Update pages and finished template product.html	| [Update pages and finished template product.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/fd9b7475700736ecf977226d910e17baa884a343) | [product](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/feature/FrontendOctavio/backend/webandtech/src/main/resources/templates/product.html) |
+   | 4º	| Update template productsByFeatures.html	| [Update template productsByFeatures.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/25cea8e04a3c56ed3fdb0492cfec7e12d00d6855) | [productsByFeatures.html](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/feature/FrontendOctavio/backend/webandtech/src/main/resources/templates/productsByFeatures.html) |
+   | 5º	| Generated PDF	| [GeneratePDF](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/99dfc089bbad4cc2ef20ecc2bc6238556463bf4e) |[GeneratePDF]( backend/webandtech/src/main/java/webapp8/webandtech/service/GeneratePDF.java)
 
-> descripción de lo realizado en esta fase  
+#### Víctor López Rodríguez | v.lopezrodr@alumnos.urjc.es
 
-> * Nombre y enlace
-> * Nombre y enlace
-> * Nombre y enlace                   
-> * Nombre y enlace
-> * Nombre y enlace
+> Cambios en todas las vistas, linkeos entre las páginas, modificacion del navigation controller y correccion de errores.
 
-Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º | add error page	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/20dc182bcbc24bdb85c3654e264b46db6c816b26 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/perfil.html |
+   | 2º	| update templates	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/2b03ab0e3c532142d254cfa07f87aae992e8177f | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/seguridad.html |
+   | 3º	| update views	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f9d7b211d1dc147732b95c53d29813acec2c5bcc | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/error.html |
+   | 4º	| update views	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/391aef547c4eb0b3b309d8210cc0b238cd019002 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/transacciones.html |
+   | 5º	| update views	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f580f7ac56e5ea2107edf84789d9611dba08e30f | https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/resources/templates/checkout.html |
 
-> descripción de lo realizado en esta fase  
+#### Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es
 
-> * Nombre y enlace
-> * Nombre y enlace
-> * Nombre y enlace                   
-> * Nombre y enlace
-> * Nombre y enlace
+> Creación de modelos, repositorios, servicios y arreglo de errores de código 
 
-Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º | Add productType repository	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/9bf6d096380e85d93ddcdeb670771b550c0934d5 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/repository/ProductTypeRepository.java |
+   | 2º	| Add brand repository	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/e0b15cf32d9cd92dff9d96fa8ea7b839e93444ca | https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/repository/BrandRepository.java |
+   | 3º	| Add producttype model	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/fb8bff01fb3e5482d96b59e9b8c1df95fc9eeaa6it | https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/ProductType.java |
+   | 4º	| Add model brand	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/23e8c5deed721a3ae0c76b0e8d7beb71e0f0571c | https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Brand.java |
+   | 5º	| Add product controller and service	| https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/772e9371f2a00457b494a592192f490ef83e0130 | https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/ProductController.java |
 
-> descripción de lo realizado en esta fase  
+#### Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es
 
-> * Nombre y enlace
-> * Nombre y enlace
-> * Nombre y enlace                   
-> * Nombre y enlace
-> * Nombre y enlace
+> Este miembro del equipo se encargó de ingresar todos los datos al loader.java: usuarios, roles, productos, marcas, tipo de productos, sus respectivas imágenes,...  También se ha encargado de la documentación del README.md: las imágenes de las vistas y su navegación, elaborar los diagramas,...  Cabe destacar que realizó los primeros commits sobre las templates de perfil, transacciones y seguridad pero no aparecen los commits en el Github.
 
-## Ficheros que más se haya participado
-
-| Nombre | Correo | Ficheros |
-|---------------------------|---------------------------------|---------------------------------|
-| Guillermo Martín García	| g.martingarcia@alumnos.urjc.es	| Insertar ficheros |
-| Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es	| Insertar ficheros |
-| Víctor López Rodríguez |v.lopezrodr@alumnos.urjc.es	|Insertar ficheros |
-|	Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es | Insertar ficheros |
-| Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es| Insertar ficheros |
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º | BBDD and Class diagrams	| [Update README](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/1cc607fccc6578859531b90402ac96f8dcba81a8) | [README.md](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |
+   | 2º	| Users Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f4223a9f78ed236c3510cdf7d51fe4c28470720d) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 3º	| Products Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/0f3d9e44b3ea760c2a879d7833ee3a99bd179e8b) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 4º	| Ratings Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/dcb3571037c140cae6af77ffa5f565d28393c9ce) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 5º	| Aplication images	| [Update README](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/bc1fc3f71ae2c366f97249f4edd99ba7b9fdc578) | [README.md](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |

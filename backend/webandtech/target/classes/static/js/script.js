@@ -143,17 +143,18 @@ $('#multi').mdbRange({
 // }
 function viewMoreProducts(category, typeProduct, token) {
     var base = '';
-    size = 10;
+    size = 8;
     sort = 'idproduct';
     console.log(category, typeProduct);
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: ('/products/getMoreProductsPage?page=' + pageProduct + '&size=' + size + '&sort=' + sort + '&productType=' + typeProduct + '&productcategory=' + category),
+        url: ('/products/getMoreProductsPage?page=' + pageProduct + '&size=' + size + '&sort=' + sort + ',desc' + '&productType=' + typeProduct + '&productcategory=' + category),
         success: function (result) {
             console.log(result);
             $.each(result.content, function (index, value) {
-                base = base.concat("<div class='col-md-3 product-men'>");
+                console.log(value);
+                base = "<div class='col-md-3 product-men'>";
 				base = base.concat("<div class='men-pro-item simpleCart_shelfItem'>");
 				base = base.concat("	<div class='men-thumb-item'>");
                 base = base.concat("			<img src='https://localhost:8443/productImg1/"+value.idproduct+"' alt='' class='pro-image-front'>");
@@ -214,11 +215,11 @@ $(function () {
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: ('/users/getMoreOrders?page=' + pageProduct + '&size=' + size + '&sort=' + sort + '&username=' + username ),
+        url: ('/users/getMoreOrders?page=' + pageProduct + '&size=' + size + '&sort=' + sort + ',desc' + '&username=' + username ),
         success: function (result) {
             console.log(result);
             $.each(result.content, function (index, value) {
-                base = base.concat("<tr>")
+                base = "<tr>";
 
                 base = base.concat("<td>"+value.idorder+"</td>");
                 base = base.concat("<td>"+value.orderdate+"</td>");
@@ -246,15 +247,15 @@ function viewMoreOrders() {
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: ('/admin/getMoreOrders?page=' + pageProduct + '&size=' + size + '&sort=' + sort),
+        url: ('/admin/getMoreOrders?page=' + pageProduct + '&size=' + size + '&sort=' + sort + ',desc'),
         success: function (result) {
             console.log(result);
             $.each(result.content, function (index, value) {
-                base = base.concat("<tr>");
+                base = "<tr>";
 
                 base = base.concat("<td>"+value.idorder+"</td>");
                 base = base.concat("<td>Pedido #"+value.idorder+"</td>");
-                base = base.concat("<td>id"+value.orderdate+"</td>");
+                base = base.concat("<td>id"+value.idorder+"</td>");
                 base = base.concat("<td>"+value.price+"€</td>");
                 base = base.concat("<td>"+value.orderdate+"</td>");
                 base = base.concat("<td>"+value.iduser.completname+"</td>");

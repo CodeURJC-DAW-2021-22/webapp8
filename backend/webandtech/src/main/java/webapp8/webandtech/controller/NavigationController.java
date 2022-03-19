@@ -193,13 +193,10 @@ public class NavigationController {
 		model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		model.addAttribute("userr", request.isUserInRole("USER"));
 		model.addAttribute("typeProduct", typeProduct);
-		if(typeProduct != null){
-			model.addAttribute("products", productService.getProductType(typeProduct));
-			
-			System.out.println(typeProduct);
-		} else{
-			model.addAttribute("products", productService.getPhones());
-		}
+
+		model.addAttribute("products", productService.getPhones());
+		model.addAttribute("type", "undefined");
+		model.addAttribute("category", "telefono");
 
 		return "productsByFeatures";
 	}

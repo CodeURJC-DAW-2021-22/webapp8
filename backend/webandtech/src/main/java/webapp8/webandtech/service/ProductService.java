@@ -101,7 +101,7 @@ public class ProductService {
 		return products.getContent();
 	}
 	public List<Product> getComponents(){
-		Page<Product> components = productRepository.findByproductcategory("Componente",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		Page<Product> components = productRepository.findByproductcategory("Componente",PageRequest.of(0, 8, Sort.by("idproduct").descending()));
 		return components.getContent();
 	}
 	public Page<Product> getMoreComponents(Pageable page){
@@ -109,7 +109,7 @@ public class ProductService {
 		return components;
 	}
 	public List<Product> getPeripherals(){
-		Page<Product> peripherals = productRepository.findByproductcategory("Periferico",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		Page<Product> peripherals = productRepository.findByproductcategory("Periferico",PageRequest.of(0, 8, Sort.by("idproduct").descending()));
 		return peripherals.getContent();
 	}
 	public Page<Product> getMorePeripherals(Pageable page){
@@ -117,7 +117,7 @@ public class ProductService {
 		return peripherals;
 	}
 	public List<Product> getPhones(){
-		Page<Product> phones = productRepository.findByproductcategory("telefono",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		Page<Product> phones = productRepository.findByproductcategory("telefono",PageRequest.of(0, 8, Sort.by("idproduct").descending()));
 		return phones.getContent();
 	}
 	public Page<Product> getMorePhones(Pageable page){

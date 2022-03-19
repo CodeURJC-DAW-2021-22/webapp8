@@ -309,4 +309,23 @@ public class NavigationController {
 		return "seguridad";
 	}
 
+	@GetMapping("/admin/modifyProduct/{idproduct}")
+	private String getModifyProduct(Model model,HttpServletRequest request, @PathVariable int idproduct, HttpSession sesion, HttpServletResponse response) throws IOException {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken());
+		if(request.getUserPrincipal() != null){
+			model.addAttribute("user", request.getUserPrincipal().getName());
+			model.addAttribute("login", (request.getUserPrincipal() != null));
+		}else{
+			model.addAttribute("login", false);
+		}
+		
+		Product product = productService.getProduct(idproduct);
+		model.addAttribute("product", product);
+		model.addAttribute("admin", request.isUserInRole("ADMIN"));
+		model.addAttribute("userr", request.isUserInRole("USER"));
+		
+		return "modifyProduct";
+	}
+
 }

@@ -11,8 +11,8 @@ import webapp8.webandtech.model.Rating;
 import webapp8.webandtech.model.User;
 
 public interface RatingRepository extends JpaRepository<Rating, Integer>{
-    public List<Rating> findByidproduct(Product idproduct);
-    public Page<Rating> findByidproduct(Product idproduct, Pageable page);
+    public List<Rating> findByIdproduct(Product idproduct);
+    public Page<Rating> findByIdproduct(Product idproduct, Pageable page);
 	public List<Rating> findByiduser(User iduser);
 	public Rating findByIdproductAndIduser(Product idproduct, User iduser);
 	public Long deleteByIduser(User iduser);

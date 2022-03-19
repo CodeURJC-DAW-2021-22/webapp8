@@ -273,7 +273,13 @@
 					<input type="hidden" name="idproduct" value="{{idproduct}}" />
 					<input type="submit" class="item_add single-item hvr-outline-out button2" value="Añadir al carro">
 				</form>
-
+				{{#admin}}
+				<li><a href="/admin/modifyProduct/{{idproduct}}">Modificar producto</a></li>
+					<form action="/admin/deleteProduct" method="POST">
+					<button class="btn btn-danger-soft text-danger" type="submit">Borrar producto</button>
+								<input type="hidden" name="_csrf" value="{{token}}" />
+					</form>				
+				{{/admin}}
 			</div>
 			<div class="clearfix"> </div>
 

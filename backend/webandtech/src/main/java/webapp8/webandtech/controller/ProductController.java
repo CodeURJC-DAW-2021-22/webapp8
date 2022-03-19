@@ -39,6 +39,14 @@ public class ProductController {
 		response.sendRedirect("/index");
 	}
 
+	@PostMapping("/admin/productModify")
+	private void productModify(Product product, HttpServletResponse response, @RequestParam(required = false) MultipartFile image11, @RequestParam(required = false) MultipartFile image22, @RequestParam(required = false) MultipartFile image33) throws IOException {
+		System.out.println(product);
+		productService.saveProduct (product, image11, image22, image33);
+		response.sendRedirect("/index");
+	}	
+
+
 	@GetMapping("/componentPage")
 	private Page<Product> getComponentsPage(Pageable page){
 		return productService.getComponentsPage(page);		
@@ -96,4 +104,14 @@ public class ProductController {
 				.contentLength(product.getImage3().length())
 				.body(file);
     }
+
+	
+	//@PostMapping("/admin/deleteProduct")
+	//public boolean deleteProduct(@RequestParam int idproduct, HttpServletResponse request) {
+	//boolean succes = true;
+	//productService.delete(request.getUserPrincipal().getName(), idproduct);
+	//return succes;
+//}
+
+    
 }

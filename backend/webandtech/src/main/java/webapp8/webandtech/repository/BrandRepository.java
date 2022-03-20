@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import webapp8.webandtech.model.Brand;
-import webapp8.webandtech.model.Product;
 
 
 public interface BrandRepository extends JpaRepository<Brand, Integer>{

@@ -3,7 +3,7 @@ package webapp8.webandtech.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -115,7 +115,7 @@ public class NavigationController {
 		}
 		System.out.println(carShop.getCarShop());
 		model.addAttribute("priceCar", totalPrice);
-		model.addAttribute("shopCar", carShop.getCarShop());
+		model.addAttribute("shopCar", productos);
 		model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		model.addAttribute("userr", request.isUserInRole("USER"));
 
@@ -306,7 +306,7 @@ public class NavigationController {
 		return "seguridad";
 	}
 
-	@GetMapping("/admin/modifyProduct/{idproduct}")
+	@GetMapping("/products/modifyProduct/{idproduct}")
 	private String getModifyProduct(Model model,HttpServletRequest request, @PathVariable int idproduct, HttpSession sesion, HttpServletResponse response) throws IOException {
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
 		model.addAttribute("token", token.getToken());
@@ -318,6 +318,34 @@ public class NavigationController {
 		}
 		
 		Product product = productService.getProduct(idproduct);
+
+		if (product.getProductcategory().equals("Componente")){
+			model.addAttribute("componente", "componente");
+		} else if (product.getProductcategory().equals("Periferico")){
+			model.addAttribute("periferico", "Periferico");
+		} else {
+			model.addAttribute("telefono", "telefono");
+		}
+
+		if (product.getProductType().equals("Placa base")){
+			model.addAttribute("placa", "placa");
+		} else if (product.getProductType().equals("Disco duro")){
+			model.addAttribute("disco", "disco"); 
+		} else if (product.getProductType().equals("Procesador")){
+			model.addAttribute("prcesador", "prcesador");
+		} else if (product.getProductType().equals("Tarjeta grafica")){
+			model.addAttribute("tarjeta", "tarjeta");
+		} else if (product.getProductType().equals("Teclado")){
+			model.addAttribute("teclado", "teclado");
+		} else if (product.getProductType().equals("Raton")){
+			model.addAttribute("raton", "raton");
+		} else if (product.getProductType().equals("Monitor")){
+			model.addAttribute("monitor", "monitor");
+		} else if (product.getProductType().equals("Auriculares")){
+			model.addAttribute("auriculares", "auriculares");
+		} else {
+			model.addAttribute("telefono", "telefono");
+		} 
 		model.addAttribute("product", product);
 		model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		model.addAttribute("userr", request.isUserInRole("USER"));

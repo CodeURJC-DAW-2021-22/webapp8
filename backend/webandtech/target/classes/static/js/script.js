@@ -124,10 +124,7 @@ $('#multi').mdbRange({
     }
 });
 
-    $('.flexslider').flexslider({
-        animation: "slide",
-        controlNav: "thumbnails"
-    });
+    
 
 });
 
@@ -279,20 +276,20 @@ function viewMoreOrders() {
 function viewMoreUsers() {
     var base = '';
     size = 10;
-    sort = 'iduser';
+    sort = 'username';
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: ('/admin/getMoreUsers?page=' + pageProduct + '&size=' + size + '&sort=' + sort),
+        url: ('/admin/getMoreUsers?page=' + pageProduct + '&size=' + size + '&sort=' + sort + ',asc'),
         success: function (result) {
             console.log(result);
             $.each(result.content, function (index, value) {
-                    base = base.concat("            <div class='card'>");
+                    base = "            <div class='card'>";
                     base = base.concat("            <div class='card-body'>");
                     base = base.concat("                <div class='row align-items-center'>");
                     base = base.concat("                   <div class='col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12'>");
                     base = base.concat("                       <div class='user-avatar float-xl-left pr-4 float-none'>");
-                    base = base.concat("                           <img src='https://localhost:8443/imageprofile/"+value.username+" alt='User Avatar' class='rounded-circle user-avatar-xl'>");
+                    base = base.concat("                           <img src='https://localhost:8443/imageprofile/"+value.username+"' alt='User Avatar' class='rounded-circle user-avatar-xl'>");
                     base = base.concat("                       </div>");
                     base = base.concat("                       <div class='pl-xl-3'>");
                     base = base.concat("                           <div class='m-b-0'>");

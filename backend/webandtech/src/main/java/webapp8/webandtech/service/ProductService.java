@@ -16,10 +16,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.transaction.annotation.Transactional;
 
 import webapp8.webandtech.repository.ProductRepository;
-import webapp8.webandtech.repository.OrderRepository;
 import webapp8.webandtech.repository.RatingRepository;
-import webapp8.webandtech.repository.BrandRepository;
-import webapp8.webandtech.repository.ProductTypeRepository;
 import webapp8.webandtech.model.Product;
 
 @Service
@@ -30,12 +27,6 @@ public class ProductService {
 
 	@Autowired
 	private RatingRepository ratingRepository;
-
-	@Autowired
-	private ProductTypeRepository productTypeRepository;
-
-	@Autowired
-	private BrandRepository brandRepository;
 	
 
     public void save(Product product){
@@ -126,48 +117,72 @@ public class ProductService {
 	}
 
 	@Modifying
-	public void modifyDataProduct(Product product,int idproduct, String nameproduct, String productType, String productcategory, String description, String productbrand, float price) throws IOException {
-		Product prev = productRepository.findById(idproduct).orElseThrow(() -> new NoSuchElementException("Product not found"));
+	public void modifyDataProduct(Product product, MultipartFile image1, MultipartFile image2, MultipartFile image3) throws IOException {
+		Product prev = productRepository.findById(product.getIdproduct()).orElseThrow(() -> new NoSuchElementException("Product not found"));
+		
+		if(image1 != null){
+			if(!image1.isEmpty()) {
+				prev.setImage1(BlobProxy.generateProxy(image1.getInputStream(), image1.getSize()));
+				prev.setImg1(true);
+			} else {
+				prev.setImg1(false);
+			}
+		}
+		if(image2 != null){
+			if(!image2.isEmpty()) {
+				prev.setImage2(BlobProxy.generateProxy(image2.getInputStream(), image2.getSize()));
+				prev.setImg2(true);
+			} else {
+				prev.setImg2(false);
+			}
+		}
+		if(image3 != null){
+			if(!image3.isEmpty()) {
+				prev.setImage3(BlobProxy.generateProxy(image3.getInputStream(), image3.getSize()));
+				prev.setImg3(true);
+			} else {
+				prev.setImg3(false);
+			}
+		}
+		
 		
 		if(product.getNameproduct() != null) {
 			if(!product.getNameproduct().isEmpty()) {
 				prev.setNameproduct(product.getNameproduct());
 			}
 		}
-		
+		if(product.getProductcategory() != null) {
+			if(!product.getProductcategory().isEmpty()) {
+				prev.setProductcategory(product.getProductcategory());
+			}
+		}
 		if(product.getProductType() != null) {
 			if(!product.getProductType().isEmpty()) {
 				prev.setProductType(product.getProductType());
 			}
 		}
 		
-		if(product.getProductcategory() != null) {
-			if(!product.getProductcategory().isEmpty()) {
-				prev.setProductcategory(product.getProductcategory());
+		prev.setPrice(product.getPrice());
+		
+		if(product.getDescription() != null) {
+			if(!product.getDescription().isEmpty()) {
+				prev.setDescription(product.getDescription());
 			}
-		}	
-
+		}
 		if(product.getProductbrand() != null) {
 			if(!product.getProductbrand().isEmpty()) {
 				prev.setProductbrand(product.getProductbrand());
 			}
-		}	
-			
-		//if(product.getPrice() != null) {
-		//	if(!product.getPrice().isEmpty()) {
-		//		prev.setPrice(product.getPrice());
-		//	}
-		//}
-	
+		}
+		
+		
 		productRepository.save(prev);
 	}
 
 	@Transactional
 	public void deleteProductById(int idproduct) {
-		Product prev = productRepository.findById(idproduct).orElseThrow(() -> new NoSuchElementException("User not found"));
-		brandRepository.deleteByIdproduct(prev);
-    	productTypeRepository.deleteByIdproduct(prev);
-    	ratingRepository.deleteByIdproduct(prev);
-    	productRepository.deleteById(prev.getIdproduct());
+		Product prev = productRepository.findById(idproduct).orElseThrow(() -> new NoSuchElementException("Product not found"));
+    		ratingRepository.deleteByIdproduct(prev);
+    		productRepository.deleteById(prev.getIdproduct());
 	}
 }

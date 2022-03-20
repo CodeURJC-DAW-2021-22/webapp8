@@ -137,7 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- Account page navigation-->
 		<hr class="mt-0 mb-4">
         {{#product}}
-		<form action="productModify" method="POST" enctype="multipart/form-data">
+		<form action="/admin/productModify" method="POST" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-xl-4">
 					<!-- Perfil picture card-->
@@ -145,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="card-header">Foto 1</div>
 						<div class="card-body text-center">
 							<div class="drag-drop">
-                                <input type="file" id="photo" name="image11" accept="/image/*"/>
+                                <input type="file" id="photo" name="image11" accept="/image/*" value="Upload Photo" required=""/>
 								<span class="fa-stack fa-2x">
 									<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
 									<i class="fa fa-circle fa-stack-1x top medium"></i>
@@ -159,7 +159,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="card-header">Foto 2</div>
 						<div class="card-body text-center">
 							<div class="drag-drop">
-								<input type="file" id="photo1" name="image22" accept="/image/*"/>
+								<input type="file" id="photo1" name="image22" accept="/image/*" value="Upload Photo"/>
 								<span class="fa-stack fa-2x">
 									<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
 									<i class="fa fa-circle fa-stack-1x top medium"></i>
@@ -174,7 +174,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="card-header">Foto 3</div>
 						<div class="card-body text-center">
 							<div class="drag-drop">
-								<input type="file" id="photo2" name="image33" accept="/image/*"/>
+								<input type="file" id="photo2" name="image33" accept="/image/*" value="Upload Photo"/>
 								<span class="fa-stack fa-2x">
 									<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
 									<i class="fa fa-circle fa-stack-1x top medium"></i>
@@ -205,9 +205,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<label class="small mb-1" for="inputFirstName">Categoría: </label>
 									<select id="category" onchange="change_country(this.value)"
 										class="frm-field required sect" name="productcategory" >
-										<option value="Componente">Componente</option>
-										<option value="Periferico">Periferico</option>
-										<option value="telefono">telefono</option>
+										<option {{#componente}}selected{{/componente}} value="Componente">Componente</option>
+										<option {{#periferico}}selected{{/periferico}} value="Periferico">Periferico</option>
+										<option {{#telefono}}selected{{/telefono}} value="telefono">telefono</option>
 										
 									</select>
 								</div>
@@ -219,16 +219,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-6">
 									<label class="small mb-1" for="inputFirstName">Tipo: </label>
 									<select id="typeProduct" onchange="change_country(this.value)"
-										class="frm-field required sect" name="productType" >
-										<option value="Placa base">Placa Base</option>
-										<option value="Disco duro">Disco Duro</option>
-										<option value="Procesador">Procesador</option>
-										<option value="Tarjeta grafica">Tarjeta Gráfica</option>
-										<option value="Teclado">Teclado</option>
-										<option value="Raton">Ratón</option>
-										<option value="Monitor">Monitor</option>
-										<option value="Auriculares">Auriculares</option>
-										<option value="telefono">Teléfono</option>
+										class="frm-field required sect" name="productType">
+										<option {{#placa}}selected{{/placa}} value="Placa base">Placa Base</option>
+										<option {{#disco}}selected{{/disco}} value="Disco duro">Disco Duro</option>
+										<option {{#prcesador}}selected{{/prcesador}} value="Procesador">Procesador</option>
+										<option {{#tarjeta}}selected{{/tarjeta}} value="Tarjeta grafica">Tarjeta Gráfica</option>
+										<option {{#teclado}}selected{{/teclado}} value="Teclado">Teclado</option>
+										<option {{#raton}}selected{{/raton}} value="Raton">Ratón</option>
+										<option {{#monitor}}selected{{/monitor}} value="Monitor">Monitor</option>
+										<option {{#auriculares}}selected{{/auriculares}} value="Auriculares">Auriculares</option>
+										<option {{#telefono}}selected{{/telefono}} value="telefono">Teléfono</option>
 									</select>
 								</div>
 								<!-- Form Group (last name)-->
@@ -240,7 +240,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<!-- Form Group (Precio)-->
 								<div class="col-md-6">
 									<label class="small mb-1" for="inputLocation">Precio: </label>
-									<input class="form-control" id="inputLocation" type="text" placeholder={{price}} name="price" >
+									<input class="form-control" id="inputLocation" type="text" placeholder={{price}} name="price" required="">
 								</div>
 							</div>
 
@@ -260,7 +260,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</p>
 								</div>
 							</div>
-
+							<input type="hidden" name="idproduct" value="{{idproduct}}"/>
 							<!-- Save changes button-->
 							<button class="btn btn-success"type="submit" value="post"><input type="hidden" name="_csrf" value="{{token}}"/>Modificar producto</button>
 

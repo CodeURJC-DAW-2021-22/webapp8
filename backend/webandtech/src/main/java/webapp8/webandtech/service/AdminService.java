@@ -1,21 +1,14 @@
 package webapp8.webandtech.service;
 
-import java.io.IOException;
-import java.sql.Blob;
 import java.util.List;
 
-import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.springframework.data.domain.Sort;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import webapp8.webandtech.model.Order;
 import webapp8.webandtech.model.Product;
-import webapp8.webandtech.model.Statistics;
 import webapp8.webandtech.repository.OrderRepository;
 import webapp8.webandtech.repository.ProductRepository;
 import webapp8.webandtech.repository.RolRepository;

@@ -2,6 +2,8 @@ package webapp8.webandtech.service;
 
 import com.lowagie.text.*;
 import com.lowagie.text.pdf.PdfWriter;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import webapp8.webandtech.model.Order;
@@ -17,6 +19,9 @@ import com.lowagie.text.pdf.*;
 @Service
 public class PDFGeneratorService {
 
+    @Autowired
+	private OrderService orderService;
+    
     private void writeTableHeader(PdfPTable table) {
         PdfPCell cell = new PdfPCell();
         cell.setBackgroundColor(Color.BLUE);
@@ -25,7 +30,7 @@ public class PDFGeneratorService {
         Font font = FontFactory.getFont(FontFactory.HELVETICA);
         font.setColor(Color.WHITE);
          
-        cell.setPhrase(new Phrase("Imagen de Producto", font));
+        cell.setPhrase(new Phrase("Id de Producto", font));
          
         table.addCell(cell);
          
@@ -46,6 +51,7 @@ public class PDFGeneratorService {
     }
 
     public void export(HttpServletResponse response, Order order, List<Product> carts, User user) throws IOException {
+        List<Order> ord = orderService.getAllOrders();
         Document document = new Document(PageSize.A4);
         PdfWriter.getInstance(document, response.getOutputStream());
          
@@ -59,12 +65,12 @@ public class PDFGeneratorService {
          
         document.add(p);
         
-        // Image img = Image.getInstance(ClassLoader.getSystemResource("../../../../resources/static/images/logo.jpg"));
-        // img.scaleAbsolute(10, 10);
-        // Phrase phrase = new Phrase();
-        // phrase.add(new Chunk(img, 0,0));
-        // document.add(new Paragraph(phrase));
+        Image logo = Image.getInstance("backend/webandtech/src/main/resources/static/images/logo.jpg");
+        document.add(logo);
 
+        Paragraph idOrder = new Paragraph("Factura: "+ (ord.get(0).getIdorder()+1));
+        idOrder.setAlignment(Paragraph.ALIGN_LEFT);
+        document.add(idOrder);
         Paragraph client = new Paragraph("Cliente: "+ user.getCompletname());
         client.setAlignment(Paragraph.ALIGN_LEFT);
         document.add(client);
@@ -77,7 +83,7 @@ public class PDFGeneratorService {
          
         PdfPTable table = new PdfPTable(3);
         table.setWidthPercentage(100f);
-        table.setWidths(new float[] {3.5f, 3.0f, 3.0f});
+        table.setWidths(new float[] {2.5f, 4.0f, 3.0f});
         table.setSpacingBefore(10);
          
         writeTableHeader(table);

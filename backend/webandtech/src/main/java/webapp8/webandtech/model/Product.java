@@ -12,26 +12,38 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 
 @Entity
 @Table(name = "products")
 public class Product {
 	
+	public interface Basic{}
+	public interface Detailed extends Product.Basic{}
+
+	@JsonView(Basic.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idproduct;
+	@JsonView(Basic.class)
 	@Column
 	private String nameproduct;
+	@JsonView(Basic.class)
 	@Column
 	private float price;
+	@JsonView(Basic.class)
 	@Column(columnDefinition = "TEXT")
 	private String description;
+	@JsonView(Basic.class)
 	@Column
 	private float ratingProducto;
+	@JsonView(Detailed.class)
 	@Column
 	private String productType;
+	@JsonView(Detailed.class)
 	@Column
 	private String productcategory;
+	@JsonView(Detailed.class)
 	@Column
 	private String productbrand;
 	@Lob

@@ -10,19 +10,30 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @Table(name = "orders")
 public class Order {
+
+	public interface Basic{}
+	public interface Detailed extends Order.Basic{}
+
+	@JsonView(Basic.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idorder;
+	@JsonView(Basic.class)
 	@Column
 	private float price;
+	@JsonView(Detailed.class)
 	@OneToOne
 	@JoinColumn(name = "iduser", referencedColumnName = "iduser")
 	private User iduser;
+	@JsonView(Basic.class)
 	@Column
 	private String idproducts;
+	@JsonView(Basic.class)
 	@Column
 	private String orderdate;
 	

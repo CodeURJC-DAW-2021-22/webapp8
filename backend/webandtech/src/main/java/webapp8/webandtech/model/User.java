@@ -16,6 +16,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "users")
 public class User {
 	
+	public interface Basic{}
+	public interface Detailed extends User.Basic{}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int iduser;

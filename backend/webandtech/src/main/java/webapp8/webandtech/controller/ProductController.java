@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import webapp8.webandtech.model.Product;
@@ -38,6 +37,14 @@ public class ProductController {
 		productService.saveProduct (product, image11, image22, image33);
 		response.sendRedirect("/index");
 	}
+
+	@PostMapping("/admin/productModify")
+	private void productModify(Product product, HttpServletResponse response, @RequestParam(required = false) MultipartFile image11, @RequestParam(required = false) MultipartFile image22, @RequestParam(required = false) MultipartFile image33) throws IOException {
+		System.out.println(product);
+		productService.modifyDataProduct(product, image11, image22, image33);
+		response.sendRedirect("/index");
+	}	
+
 
 	@GetMapping("/componentPage")
 	private Page<Product> getComponentsPage(Pageable page){
@@ -96,4 +103,13 @@ public class ProductController {
 				.contentLength(product.getImage3().length())
 				.body(file);
     }
+
+	
+	@PostMapping("/admin/deleteProduct")
+	public void deleteProduct (HttpServletResponse response, @RequestParam int idproduct) throws IOException {
+		productService.deleteProductById(idproduct);
+		response.sendRedirect("/index");
+	}
+
+    
 }

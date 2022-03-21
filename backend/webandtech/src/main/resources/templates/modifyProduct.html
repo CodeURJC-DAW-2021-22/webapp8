@@ -3,6 +3,8 @@
 
 <head>
 	<title>W&T</title>
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
 	<!-- for-mobile-apps -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,12 +12,22 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- //for-mobile-apps -->
 	<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css">
+	<!-- pignose css -->
+	<link href="/css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
+
+
+	<!-- //pignose css -->
 	<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- js -->
 	<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+
+	<script src="/js/imagezoom.js"></script>
+	<script src="/js/jquery.flexslider.js"></script>
 	<!-- //js -->
 	<!-- cart -->
 	<script src="/js/simpleCart.min.js"></script>
@@ -28,11 +40,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic'
 		rel='stylesheet' type='text/css'>
 	<script src="/js/jquery.easing.min.js"></script>
+	<script src="/js/pignose.layerslider.js"></script>
+	<script src="/js/easyResponsiveTabs.js"></script>
 	<script src="/js/script.js"></script>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
 <body>
+	<!-- header -->
 	<!-- header -->
 	<div class="header">
 		<div class="container">
@@ -114,187 +132,146 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //header-bot -->
-	<!-- banner -->
-	<div class="ban-top">
-		<div class="container">
-			<div class="top_nav_left">
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-								data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav menu__list">
-								<li class="active menu__item menu__item--current"><a class="menu__link"
-										href="/">Inicio <span class="sr-only">(current)</span></a></li>
-								<li class="dropdown menu__item">
-									<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
-										aria-haspopup="true" aria-expanded="false">COMPONENTES<span
-											class="caret"></span></a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-												<a href="/components"><img src="/images/componentes.jpg"
-														alt=" " /></a>
-											</div>
-											<div class="col-sm-3 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li><a href="/components?typeProduct=Placa base">Placas Bases</a></li>
-													<li><a href="/components?typeProduct=Procesador">Procesador</a></li>
-													<li><a href="/components?typeProduct=Disco duro">Discos Duros</a></li>
-													<li><a href="/components?typeProduct=Tarjeta grafica">Tarjetas Gráficas</a></li>
-												</ul>
-											</div>
-
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
-								<li class="dropdown menu__item">
-									<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
-										aria-haspopup="true" aria-expanded="false">Periféricos <span
-											class="caret"></span></a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											<div class="col-sm-3 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li><a href="/peripherals?typeProduct=Teclado">Teclados</a></li>
-													<li><a href="/peripherals?typeProduct=Raton">Ratones</a></li>
-													<li><a href="/peripherals?typeProduct=Monitor">Monitores</a></li>
-													<li><a href="/peripherals?typeProduct=Auriculares">Auriculares</a></li>
-												</ul>
-											</div>
-											<div class="col-sm-6 multi-gd-img multi-gd-text ">
-												<a href="/peripherals"><img src="/images/perifericos.jpg"
-														alt=" " /></a>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
-								<li class=" menu__item"><a class="menu__link" href="/phones">Teléfonos</a></li>
-								<li class=" menu__item"><a class="menu__link" href="/contact">Contacto</a></li>
-							</ul>
+	
+	<div class="container-xl px-4 mt-4">
+		<!-- Account page navigation-->
+		<hr class="mt-0 mb-4">
+        {{#product}}
+		<form action="/admin/productModify" method="POST" enctype="multipart/form-data">
+			<div class="row">
+				<div class="col-xl-4">
+					<!-- Perfil picture card-->
+					<div class="card mb-4 mb-xl-0">
+						<div class="card-header">Foto 1</div>
+						<div class="card-body text-center">
+							<div class="drag-drop">
+                                <input type="file" id="photo" name="image11" accept="/image/*" value="Upload Photo" required=""/>
+								<span class="fa-stack fa-2x">
+									<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
+									<i class="fa fa-circle fa-stack-1x top medium"></i>
+									<i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
+								</span>
+							</div>
+							<button type="button" class="btn btn-danger">Cancelar</button>
 						</div>
 					</div>
-				</nav>
-			</div>
-			<div class="top_nav_right">
-				<div class="cart box_1">
-					<a href="/checkout">
-						<h3>
-							<div class="total">
-								<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
-								<span class="simpleCart_total"></span> (<span id="simpleCart_quantity"
-									class="simpleCart_quantity"></span> items)
+					<div class="card mb-4 mb-xl-0">
+						<div class="card-header">Foto 2</div>
+						<div class="card-body text-center">
+							<div class="drag-drop">
+								<input type="file" id="photo1" name="image22" accept="/image/*" value="Upload Photo"/>
+								<span class="fa-stack fa-2x">
+									<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
+									<i class="fa fa-circle fa-stack-1x top medium"></i>
+									<i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
+								</span>
+								<span class="desc">Pulse aquí para añadir archivos</span>
+							</div>
+							<button type="button" class="btn btn-danger">Cancelar</button>
+						</div>
+					</div>
+					<div class="card mb-4 mb-xl-0">
+						<div class="card-header">Foto 3</div>
+						<div class="card-body text-center">
+							<div class="drag-drop">
+								<input type="file" id="photo2" name="image33" accept="/image/*" value="Upload Photo"/>
+								<span class="fa-stack fa-2x">
+									<i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
+									<i class="fa fa-circle fa-stack-1x top medium"></i>
+									<i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
+								</span>
+								<span class="desc">Pulse aquí para añadir archivos</span>
+							</div>
+							<button type="button" class="btn btn-danger">Cancelar</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-8">
+					<!-- Account details card-->
+					<div class="card mb-4">
+						<div class="card-header">Detalles del producto</div>
+						<div class="card-body">
+
+							<!-- Form Group (producto)-->
+							<div class="mb-3">
+								<label class="small mb-1" for="inputUsername">Nombre del producto</label>
+								<input class="form-control" id="inputUsername" type="text"
+									placeholder="{{nameproduct}}" value=""name="nameproduct" >
+							</div>
+							<!-- Form Row-->
+							<div class="row gx-3 mb-3">
+								<!-- Form Group (first name)-->
+								<div class="col-md-6">
+									<label class="small mb-1" for="inputFirstName">Categoría: </label>
+									<select id="category" onchange="change_country(this.value)"
+										class="frm-field required sect" name="productcategory" >
+										<option {{#componente}}selected{{/componente}} value="Componente">Componente</option>
+										<option {{#periferico}}selected{{/periferico}} value="Periferico">Periferico</option>
+										<option {{#telefono}}selected{{/telefono}} value="telefono">telefono</option>
+										
+									</select>
+								</div>
+								<!-- Form Group (last name)-->
+
+							</div>
+							<div class="row gx-3 mb-3">
+								<!-- Form Group (first name)-->
+								<div class="col-md-6">
+									<label class="small mb-1" for="inputFirstName">Tipo: </label>
+									<select id="typeProduct" onchange="change_country(this.value)"
+										class="frm-field required sect" name="productType">
+										<option {{#placa}}selected{{/placa}} value="Placa base">Placa Base</option>
+										<option {{#disco}}selected{{/disco}} value="Disco duro">Disco Duro</option>
+										<option {{#prcesador}}selected{{/prcesador}} value="Procesador">Procesador</option>
+										<option {{#tarjeta}}selected{{/tarjeta}} value="Tarjeta grafica">Tarjeta Gráfica</option>
+										<option {{#teclado}}selected{{/teclado}} value="Teclado">Teclado</option>
+										<option {{#raton}}selected{{/raton}} value="Raton">Ratón</option>
+										<option {{#monitor}}selected{{/monitor}} value="Monitor">Monitor</option>
+										<option {{#auriculares}}selected{{/auriculares}} value="Auriculares">Auriculares</option>
+										<option {{#telefono}}selected{{/telefono}} value="telefono">Teléfono</option>
+									</select>
+								</div>
+								<!-- Form Group (last name)-->
+
 							</div>
 
-						</h3>
-					</a>
-					<p><a href="javascript:;" class="simpleCart_empty">Carro vacío</a></p>
-
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<!-- //banner-top -->
-<!-- banner -->
-<div class="page-head">
-	<div class="container">
-		<h3>Check Out</h3>
-	</div>
-</div>
-<!-- //banner -->
-<!-- check out -->
-<div class="checkout">
-	<div class="container">
-		<h3>Mi carrito</h3>
-		<div class="table-responsive checkout-right animated wow slideInUp" data-wow-delay=".5s">
-			<table class="timetable_sub">
-				<thead>
-					<tr>
-						<th>Remove</th>
-						<th>Product</th>
-						<th>Product Name</th>
-						<th>Price</th>
-					</tr>
-				</thead>
-				{{#shopCar}}
-					<tr class="rem1">
-						<td class="invert-closeb">
-							<div class="rem">
-								<div class="">
-									<form action="/users/deleteProductShopCar" method="post">
-										<input type="hidden" name="_csrf" value="{{token}}"/>
-										<input type="hidden" name="idproduct" value="{{idproduct}}"/>
-										<input type="submit" class="close1">
-									</form> 
+							<!-- Form Row        -->
+							<div class="row gx-3 mb-3">
+								<!-- Form Group (Precio)-->
+								<div class="col-md-6">
+									<label class="small mb-1" for="inputLocation">Precio: </label>
+									<input class="form-control" id="inputLocation" type="text" placeholder={{price}} name="price" required="">
 								</div>
 							</div>
-						</td>
-						{{#img1}}
-						<td class="invert-image"><a href="/products/{{idproduct}}"><img src="https://localhost:8443/productImg1/{{idproduct}}" alt=" " class="img-responsive" /></a></td>
-						{{/img1}}
-						<td class="invert">{{nameproduct}}</td>
-						<td class="invert">{{price}}€</td>
-					</tr>
-				{{/shopCar}}
-					
-					
-								<!--quantity-->
-									<script>
-									$('.value-plus').on('click', function(){
-										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
-										divUpd.text(newVal);
-									});
 
-									$('.value-minus').on('click', function(){
-										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
-										if(newVal>=1) divUpd.text(newVal);
-									});
-									</script>
-								<!--quantity-->
-			</table>
-		</div>
-		<div class="checkout-left">	
-				
-				<div class="checkout-right-basket animated wow slideInRight row" data-wow-delay=".5s">
-					<div class="col-md-7">
-						<a href="/index"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Volver </a>
-					</div>
-					<div class="col-md-5">
-						<a href="/users/newOrders" class="item_add single-item hvr-outline-out button2">Comprar</a>
-						<a href="/users/bill" target="_blank" class=" item_add single-item hvr-outline-out button2"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Factura</a>
-					</div>
-						
-						
+							<div class="row gx-3 mb-3">
+								<div class="col-md-6">
+									<label class="small mb-1" for="inputLocation">Descripción: </label>
+									<p><textarea name="description" rows="5" cols="90"
+											placeholder={{description}} 	></textarea></p>
+								</div>
+							</div>
 
-					
+							<div class="row gx-3 mb-3">
+								<div class="col-md-6">
+									<label class="small mb-1" for="inputLocation">Marca: </label>
+									<p><textarea name="productbrand" rows="1" cols="90"
+											placeholder={{productbrand}} ></textarea>
+									</p>
+								</div>
+							</div>
+							<input type="hidden" name="idproduct" value="{{idproduct}}"/>
+							<!-- Save changes button-->
+							<button class="btn btn-success"type="submit" value="post"><input type="hidden" name="_csrf" value="{{token}}"/>Modificar producto</button>
+
+						</div>
+					</div>
 				</div>
-				<div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
-					<h4>Compra total</h4>
-					<ul>
-						
-						<li> <i>-</i> <span>{{priceCar}}€</span></li>
-						
-						
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
 			</div>
+		</form>
+        {{/product}}
 	</div>
-</div>	
-<!-- //check out -->
-<!-- //product-nav -->
+
 	<!-- //product-nav -->
 	<div class="clearfix"></div>
 	<div class="coupons">
@@ -388,5 +365,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!-- //footer -->
 
+
+
+
+
+	
+
+
 </body>
+
 </html>

@@ -267,17 +267,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="checkout-left">	
 				
-				<div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
-					<a href="/index"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Volver </a>
-					<form action="/users/newOrders" method="post">
-						{{#shopCar}}
-						<input type="text" name="idproduct" value="{{idproduct}}" hidden>
-						{{/shopCar}}
-						<input type="text" name="idproduct" value="{{user}}" hidden>
-						<input type="hidden" name="_csrf" value="{{token}}"/>
-						<input type="hidden" name="idproduct" value="{{idproduct}}"/>
-						<input type="submit" class="item_add single-item hvr-outline-out button2" value="Comprar">
-					</form>
+				<div class="checkout-right-basket animated wow slideInRight row" data-wow-delay=".5s">
+					<div class="col-md-7">
+						<a href="/index"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Volver </a>
+					</div>
+					<div class="col-md-5">
+						<a href="/users/newOrders" class="item_add single-item hvr-outline-out button2">Comprar</a>
+						<a href="/users/bill" target="_blank" class=" item_add single-item hvr-outline-out button2"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Factura</a>
+					</div>
+						
+						
+
 					
 				</div>
 				<div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">

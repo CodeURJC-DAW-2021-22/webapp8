@@ -14,5 +14,9 @@ public class CarShop {
     public List<Product> getCarShop() {
         return carShop;
     }
+
+    public void setCarShop(List<Product> carShop) {
+        this.carShop = carShop;
+    }
     
 }

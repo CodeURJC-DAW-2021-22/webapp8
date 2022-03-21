@@ -10,7 +10,7 @@ import webapp8.webandtech.model.User;
 
 
 public interface RolRepository extends JpaRepository<Rol, Integer>{
-	public List<Rol> findByiduser(User iduser);
+	public List<Rol> findByIduser(User iduser);
 	public List<Rol> findByrol(String rol);
 	public Long deleteByIduser(User iduser);
 }

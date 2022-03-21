@@ -12,8 +12,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
 
 import webapp8.webandtech.repository.ProductRepository;
+import webapp8.webandtech.repository.RatingRepository;
 import webapp8.webandtech.model.Product;
 
 @Service
@@ -21,6 +24,10 @@ public class ProductService {
 
     @Autowired
     private ProductRepository productRepository;
+
+	@Autowired
+	private RatingRepository ratingRepository;
+	
 
     public void save(Product product){
         productRepository.save(product);
@@ -85,7 +92,7 @@ public class ProductService {
 		return products.getContent();
 	}
 	public List<Product> getComponents(){
-		Page<Product> components = productRepository.findByproductcategory("Componente",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		Page<Product> components = productRepository.findByproductcategory("Componente",PageRequest.of(0, 8, Sort.by("idproduct").descending()));
 		return components.getContent();
 	}
 	public Page<Product> getMoreComponents(Pageable page){
@@ -93,7 +100,7 @@ public class ProductService {
 		return components;
 	}
 	public List<Product> getPeripherals(){
-		Page<Product> peripherals = productRepository.findByproductcategory("Periferico",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		Page<Product> peripherals = productRepository.findByproductcategory("Periferico",PageRequest.of(0, 8, Sort.by("idproduct").descending()));
 		return peripherals.getContent();
 	}
 	public Page<Product> getMorePeripherals(Pageable page){
@@ -101,11 +108,81 @@ public class ProductService {
 		return peripherals;
 	}
 	public List<Product> getPhones(){
-		Page<Product> phones = productRepository.findByproductcategory("telefono",PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		Page<Product> phones = productRepository.findByproductcategory("telefono",PageRequest.of(0, 8, Sort.by("idproduct").descending()));
 		return phones.getContent();
 	}
 	public Page<Product> getMorePhones(Pageable page){
 		Page<Product> phones = productRepository.findByproductcategory("telefono",page);
 		return phones;
+	}
+
+	@Modifying
+	public void modifyDataProduct(Product product, MultipartFile image1, MultipartFile image2, MultipartFile image3) throws IOException {
+		Product prev = productRepository.findById(product.getIdproduct()).orElseThrow(() -> new NoSuchElementException("Product not found"));
+		
+		if(image1 != null){
+			if(!image1.isEmpty()) {
+				prev.setImage1(BlobProxy.generateProxy(image1.getInputStream(), image1.getSize()));
+				prev.setImg1(true);
+			} else {
+				prev.setImg1(false);
+			}
+		}
+		if(image2 != null){
+			if(!image2.isEmpty()) {
+				prev.setImage2(BlobProxy.generateProxy(image2.getInputStream(), image2.getSize()));
+				prev.setImg2(true);
+			} else {
+				prev.setImg2(false);
+			}
+		}
+		if(image3 != null){
+			if(!image3.isEmpty()) {
+				prev.setImage3(BlobProxy.generateProxy(image3.getInputStream(), image3.getSize()));
+				prev.setImg3(true);
+			} else {
+				prev.setImg3(false);
+			}
+		}
+		
+		
+		if(product.getNameproduct() != null) {
+			if(!product.getNameproduct().isEmpty()) {
+				prev.setNameproduct(product.getNameproduct());
+			}
+		}
+		if(product.getProductcategory() != null) {
+			if(!product.getProductcategory().isEmpty()) {
+				prev.setProductcategory(product.getProductcategory());
+			}
+		}
+		if(product.getProductType() != null) {
+			if(!product.getProductType().isEmpty()) {
+				prev.setProductType(product.getProductType());
+			}
+		}
+		
+		prev.setPrice(product.getPrice());
+		
+		if(product.getDescription() != null) {
+			if(!product.getDescription().isEmpty()) {
+				prev.setDescription(product.getDescription());
+			}
+		}
+		if(product.getProductbrand() != null) {
+			if(!product.getProductbrand().isEmpty()) {
+				prev.setProductbrand(product.getProductbrand());
+			}
+		}
+		
+		
+		productRepository.save(prev);
+	}
+
+	@Transactional
+	public void deleteProductById(int idproduct) {
+		Product prev = productRepository.findById(idproduct).orElseThrow(() -> new NoSuchElementException("Product not found"));
+    		ratingRepository.deleteByIdproduct(prev);
+    		productRepository.deleteById(prev.getIdproduct());
 	}
 }

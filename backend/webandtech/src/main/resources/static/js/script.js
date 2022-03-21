@@ -8,6 +8,7 @@ var pageusers;
 var useractual;
 let token;
 var pageProduct = 1;
+var pageByPrice = 0;
 var products = [];
 
 
@@ -124,36 +125,25 @@ $('#multi').mdbRange({
     }
 });
 
-    $('.flexslider').flexslider({
-        animation: "slide",
-        controlNav: "thumbnails"
-    });
+    
 
 });
 
-// function viewMoreProducts(category, typeProduct) {
-//     $.ajax({
-//         type: "GET",
-//         contentType: "application/json",
-//         url: ('/products/moreProducts?page=0&size=10&sort=idproduct&direction=asc'),
-//         success: function (result) {
-//             console.log(result);
-//         }
-//     });
-// }
+
 function viewMoreProducts(category, typeProduct, token) {
     var base = '';
-    size = 10;
+    size = 8;
     sort = 'idproduct';
     console.log(category, typeProduct);
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: ('/products/getMoreProductsPage?page=' + pageProduct + '&size=' + size + '&sort=' + sort + '&productType=' + typeProduct + '&productcategory=' + category),
+        url: ('/products/getMoreProductsPage?page=' + pageProduct + '&size=' + size + '&sort=' + sort + ',desc' + '&productType=' + typeProduct + '&productcategory=' + category),
         success: function (result) {
             console.log(result);
             $.each(result.content, function (index, value) {
-                base = base.concat("<div class='col-md-3 product-men'>");
+                console.log(value);
+                base = "<div class='col-md-3 product-men'>";
 				base = base.concat("<div class='men-pro-item simpleCart_shelfItem'>");
 				base = base.concat("	<div class='men-thumb-item'>");
                 base = base.concat("			<img src='https://localhost:8443/productImg1/"+value.idproduct+"' alt='' class='pro-image-front'>");
@@ -166,6 +156,7 @@ function viewMoreProducts(category, typeProduct, token) {
 				base = base.concat("		</div>");
 				base = base.concat("		<div class='item-info-product '>");
 				base = base.concat("			<h4><a href='/products/"+value.idproduct+"'>"+value.nameproduct+"</a></h4>");
+				base = base.concat("			<a hidden>"+value.productType+"</a>");
 				base = base.concat("			<div class='info-product-price'>");
 				base = base.concat("				<span class='item_price'>"+value.price+"€</span>");
 				base = base.concat("			</div>");
@@ -189,6 +180,7 @@ function viewMoreProducts(category, typeProduct, token) {
         }
     });
 };
+
 
 $(function () {
     // Slideshow 4
@@ -214,11 +206,11 @@ $(function () {
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: ('/users/getMoreOrders?page=' + pageProduct + '&size=' + size + '&sort=' + sort + '&username=' + username ),
+        url: ('/users/getMoreOrders?page=' + pageProduct + '&size=' + size + '&sort=' + sort + ',desc' + '&username=' + username ),
         success: function (result) {
             console.log(result);
             $.each(result.content, function (index, value) {
-                base = base.concat("<tr>")
+                base = "<tr>";
 
                 base = base.concat("<td>"+value.idorder+"</td>");
                 base = base.concat("<td>"+value.orderdate+"</td>");
@@ -246,15 +238,15 @@ function viewMoreOrders() {
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: ('/admin/getMoreOrders?page=' + pageProduct + '&size=' + size + '&sort=' + sort),
+        url: ('/admin/getMoreOrders?page=' + pageProduct + '&size=' + size + '&sort=' + sort + ',desc'),
         success: function (result) {
             console.log(result);
             $.each(result.content, function (index, value) {
-                base = base.concat("<tr>");
+                base = "<tr>";
 
                 base = base.concat("<td>"+value.idorder+"</td>");
                 base = base.concat("<td>Pedido #"+value.idorder+"</td>");
-                base = base.concat("<td>id"+value.orderdate+"</td>");
+                base = base.concat("<td>id"+value.idorder+"</td>");
                 base = base.concat("<td>"+value.price+"€</td>");
                 base = base.concat("<td>"+value.orderdate+"</td>");
                 base = base.concat("<td>"+value.iduser.completname+"</td>");
@@ -278,20 +270,20 @@ function viewMoreOrders() {
 function viewMoreUsers() {
     var base = '';
     size = 10;
-    sort = 'iduser';
+    sort = 'username';
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: ('/admin/getMoreUsers?page=' + pageProduct + '&size=' + size + '&sort=' + sort),
+        url: ('/admin/getMoreUsers?page=' + pageProduct + '&size=' + size + '&sort=' + sort + ',asc'),
         success: function (result) {
             console.log(result);
             $.each(result.content, function (index, value) {
-                    base = base.concat("            <div class='card'>");
+                    base = "            <div class='card'>";
                     base = base.concat("            <div class='card-body'>");
                     base = base.concat("                <div class='row align-items-center'>");
                     base = base.concat("                   <div class='col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12'>");
                     base = base.concat("                       <div class='user-avatar float-xl-left pr-4 float-none'>");
-                    base = base.concat("                           <img src='https://localhost:8443/imageprofile/"+value.username+" alt='User Avatar' class='rounded-circle user-avatar-xl'>");
+                    base = base.concat("                           <img src='https://localhost:8443/imageprofile/"+value.username+"' alt='User Avatar' class='rounded-circle user-avatar-xl'>");
                     base = base.concat("                       </div>");
                     base = base.concat("                       <div class='pl-xl-3'>");
                     base = base.concat("                           <div class='m-b-0'>");
@@ -320,4 +312,41 @@ function viewMoreUsers() {
             }
         }
     });
+
+};
+
+
+function SearchStatus1(filterValue) {
+    var input, filter, ul, li, a, i, txtValue;
+    console.log(filterValue);
+    input = filterValue;
+    filter = input.toUpperCase();
+    ul = document.getElementById("products");
+    li = ul.getElementsByClassName('product-men');
+    for (i = 0; i < li.length; i++) {
+        s = li[i].getElementsByClassName("type")[0];
+        txtValue = s.textContent || s.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+};
+function searchBarProducts() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("products");
+    li = ul.getElementsByClassName('product-men');
+    for (i = 0; i < li.length; i++) {
+        s = li[i].getElementsByClassName("item-info-product")[0];
+        a = s.getElementsByTagName("h4")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 };

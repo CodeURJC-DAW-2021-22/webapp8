@@ -3,11 +3,8 @@ package webapp8.webandtech.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.csrf.CsrfToken;
@@ -15,14 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import webapp8.webandtech.model.Order;
 import webapp8.webandtech.model.OrderModel;
 import webapp8.webandtech.model.Product;
-import webapp8.webandtech.model.Statistics;
-import webapp8.webandtech.model.User;
 import webapp8.webandtech.service.AdminService;
 import webapp8.webandtech.service.OrderService;
 import webapp8.webandtech.service.ProductService;
@@ -84,6 +77,7 @@ public class AdminController {
 		}else{
 			model.addAttribute("login", false);
 		}
+
 		model.addAttribute("userList", userService.getAllUsersPage());
 		model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		model.addAttribute("userr", request.isUserInRole("USER"));

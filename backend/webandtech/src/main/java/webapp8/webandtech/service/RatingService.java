@@ -1,6 +1,5 @@
 package webapp8.webandtech.service;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,11 +23,11 @@ public class RatingService {
         ratingRepository.save(rating);
     }
     public List<Rating> getRating(Product idProduct){
-		Page<Rating> components = ratingRepository.findByidproduct(idProduct,PageRequest.of(0, 10, Sort.by("idproduct").descending()));
+		Page<Rating> components = ratingRepository.findByIdproduct(idProduct,PageRequest.of(0, 10, Sort.by("idproduct").descending()));
 		return components.getContent();
 	}
 	public Page<Rating> getMoreRating(Pageable page, Product idProduct){
-		Page<Rating> components = ratingRepository.findByidproduct(idProduct,page);
+		Page<Rating> components = ratingRepository.findByIdproduct(idProduct,page);
 		return components;
 	}
 }

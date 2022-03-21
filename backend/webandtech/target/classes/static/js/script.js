@@ -8,6 +8,7 @@ var pageusers;
 var useractual;
 let token;
 var pageProduct = 1;
+var pageByPrice = 0;
 var products = [];
 
 
@@ -128,16 +129,7 @@ $('#multi').mdbRange({
 
 });
 
-// function viewMoreProducts(category, typeProduct) {
-//     $.ajax({
-//         type: "GET",
-//         contentType: "application/json",
-//         url: ('/products/moreProducts?page=0&size=10&sort=idproduct&direction=asc'),
-//         success: function (result) {
-//             console.log(result);
-//         }
-//     });
-// }
+
 function viewMoreProducts(category, typeProduct, token) {
     var base = '';
     size = 8;
@@ -164,6 +156,7 @@ function viewMoreProducts(category, typeProduct, token) {
 				base = base.concat("		</div>");
 				base = base.concat("		<div class='item-info-product '>");
 				base = base.concat("			<h4><a href='/products/"+value.idproduct+"'>"+value.nameproduct+"</a></h4>");
+				base = base.concat("			<a hidden>"+value.productType+"</a>");
 				base = base.concat("			<div class='info-product-price'>");
 				base = base.concat("				<span class='item_price'>"+value.price+"€</span>");
 				base = base.concat("			</div>");
@@ -187,6 +180,7 @@ function viewMoreProducts(category, typeProduct, token) {
         }
     });
 };
+
 
 $(function () {
     // Slideshow 4
@@ -318,4 +312,41 @@ function viewMoreUsers() {
             }
         }
     });
+
+};
+
+
+function SearchStatus1(filterValue) {
+    var input, filter, ul, li, a, i, txtValue;
+    console.log(filterValue);
+    input = filterValue;
+    filter = input.toUpperCase();
+    ul = document.getElementById("products");
+    li = ul.getElementsByClassName('product-men');
+    for (i = 0; i < li.length; i++) {
+        s = li[i].getElementsByClassName("type")[0];
+        txtValue = s.textContent || s.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+};
+function searchBarProducts() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("products");
+    li = ul.getElementsByClassName('product-men');
+    for (i = 0; i < li.length; i++) {
+        s = li[i].getElementsByClassName("item-info-product")[0];
+        a = s.getElementsByTagName("h4")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 };

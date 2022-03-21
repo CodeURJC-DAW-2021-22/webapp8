@@ -64,19 +64,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-6 header-middle">
 				<form>
 					<div class="search">
-						<input type="search" value="Buscar" onfocus="this.value = '';"
-							onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
+						<input id="myInput" type="search" onkeyup="searchBarProducts()"  required="">
 					</div>
-					<div class="section_room">
-						<select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">Todo</option>
-							<option value="AX">Componentes</option>
-							<option value="AX">Periféricos</option>
-							<option value="AX">Teléfonos</option>
-						</select>
-					</div>
+				
 					<div class="sear-sub">
-						<input type="submit" value=" ">
+						<input type="submit"  value=" ">
 					</div>
 					<div class="clearfix"></div>
 				</form>
@@ -233,32 +225,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="swit form">
 						<form>
 							<div class="check_box">
-								<div class="radio"> <label><input type="radio" name="radio"><i></i>Placas base</label> </div>
+								<div class="radio"> <label><input type="radio" name="radio" onclick="SearchStatus1(this.value)" value="Placa base"><i></i>Placas base</label> </div>
 							</div>
 							<div class="check_box">
-								<div class="radio"> <label><input type="radio" name="radio"><i></i>Procesadores</label>
+								<div class="radio"> <label><input type="radio" name="radio" onclick="SearchStatus1(this.value)" value="Procesador"><i></i>Procesadores</label>
 								</div>
 							</div>
 							<div class="check_box">
-								<div class="radio"> <label><input type="radio" name="radio"><i></i>Discos duros</label> </div>
+								<div class="radio"> <label><input type="radio" name="radio" onclick="SearchStatus1(this.value)" value="Disco duro"><i></i>Discos duros</label> </div>
 							</div>
 							<div class="check_box">
-								<div class="radio"> <label><input type="radio" name="radio"><i></i>Tarjetas gráficas</label>
+								<div class="radio"> <label><input type="radio" name="radio" onclick="SearchStatus1(this.value)" value="Tarjeta grafica"><i></i>Tarjetas gráficas</label>
 								</div>
 							</div>
 							<div class="check_box">
-								<div class="radio"> <label><input type="radio" name="radio"><i></i>Teclados</label> </div>
+								<div class="radio"> <label><input type="radio" name="radio" onclick="SearchStatus1(this.value)" value="Teclado"><i></i>Teclados</label> </div>
 							</div>
 							<div class="check_box">
-								<div class="radio"> <label><input type="radio" name="radio"><i></i>Ratones</label> </div>
+								<div class="radio"> <label><input type="radio" name="radio" onclick="SearchStatus1(this.value)" value="Raton"><i></i>Ratones</label> </div>
 							</div>
 							<div class="check_box">
-								<div class="radio"> <label><input type="radio" name="radio"><i></i>Monitores</label> </div>
+								<div class="radio"> <label><input type="radio" name="radio" onclick="SearchStatus1(this.value)" value="Monitor"><i></i>Monitores</label> </div>
 							</div>
 							<div class="check_box">
-								<div class="radio"> <label><input type="radio" name="radio"><i></i>Auriculares</label> </div>
+								<div class="radio"> <label><input type="radio" name="radio" onclick="SearchStatus1(this.value)" value="Auriculares"><i></i>Auriculares</label> </div>
 							</div>
-							<input type="submit" value="SEND">
+							
 						</form>
 					</div>
 				</div>
@@ -269,8 +261,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="sorting">
 						<h6>Ordenar por</h6>
 						<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-							<option value="null">Precio(Alto - Bajo)</option>
-							<option value="null">Price(Bajo - Alto)</option>
+							<option value="higth">Precio(Alto - Bajo)</option>
+							<option value="low">Price(Bajo - Alto)</option>
 						</select>
 						<div class="clearfix"></div>
 					</div>
@@ -331,6 +323,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="item-info-product ">
 							<h4><a href="/products/{{idproduct}}">{{nameproduct}}</a></h4>
+							<a class="type" hidden>{{productType}}</a>
 							<div class="info-product-price">
 								<span class="item_price">{{price}}€</span>
 							</div>

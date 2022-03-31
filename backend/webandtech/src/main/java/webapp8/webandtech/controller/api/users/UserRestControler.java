@@ -12,6 +12,29 @@ import webapp8.webandtech.service.UserService;
 @CrossOrigin
 @RequestMapping("api/users")
 public class UserRestControler {
+    
+	@Autowired
+	private UserService userService;
+
+	@Autowired
+	private ProductService productsService;
+
+	@Operation(summary = "Get a all users")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Users", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					) 
+	})
+	@JsonView(Users.Detailed.class)
+	@GetMapping("/")
+	public List<Users> getAllUsers(){
+		return userService.getAll();
+	}
 
 
 }
+

@@ -282,4 +282,59 @@ public class UserRestControler {
 					content = @Content
 					)
 	})
+	@GetMapping("/{id}/imageThemeProfile")
+	public ResponseEntity<Object> getImageThemeProfile( @Parameter(description="id of user to be searched") @PathVariable int id) throws SQLException{
+		Optional<Users> s = userService.getUserId(id);
+		if(s.isPresent()) {
+			if(s.get().getImageprofile() != null) {
+				Resource file = new InputStreamResource(s.get().getImageprofile().getBinaryStream());
+				return ResponseEntity.ok()
+						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
+						.contentLength(s.get().getImageprofile().length())
+						.body(file);
+			}else {
+				return ResponseEntity.noContent().build();
+			}
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+	}
+
+	@Operation(summary = "create a profile image user by id")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "201", 
+					description = "Create the ImageProfile", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "204", 
+					description = "Image not found", 
+					content = @Content
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "User not found", 
+					content = @Content
+					)
+	})
+	@PostMapping("/{id}/imageProfile")
+	public ResponseEntity<Object> uploadImageProfile( @Parameter(description="id of user to be searched") @PathVariable int id, @Parameter(description="user profile picture") @RequestParam MultipartFile image) throws SQLException, IOException{
+		Optional<Users> user = userService.getUserId(id);
+		if(user.isPresent()) {
+			if(image != null) {
+				user.get().setUserimg(BlobProxy.generateProxy(image.getInputStream(), image.getSize()));
+				userService.saveUser(user.get());
+				URI location = fromCurrentRequest().build().toUri();
+				return ResponseEntity.created(location).build();
+			}else {
+				return ResponseEntity.noContent().build();
+			}
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+	}
+
 }

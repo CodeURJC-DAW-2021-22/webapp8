@@ -337,4 +337,200 @@ public class UserRestControler {
 		}
 	}
 
+	@Operation(summary = "create a profile image theme user by id")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "201", 
+					description = "Create the ImageProfile Theme", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "204", 
+					description = "Image not found", 
+					content = @Content
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "User not found", 
+					content = @Content
+					)
+	})
+	@PostMapping("/{id}/imageThemeProfile")
+	public ResponseEntity<Object> uploadImageThemeProfile( @Parameter(description="id of user to be searched") @PathVariable int id, @Parameter(description="user theme page picture") @RequestParam MultipartFile image) throws SQLException, IOException{
+		Optional<Users> user = userService.getUserId(id);
+		if(user.isPresent()) {
+			if(image != null) {
+				user.get().setImageprofile(BlobProxy.generateProxy(image.getInputStream(), image.getSize()));
+				userService.saveUser(user.get());
+				URI location = fromCurrentRequest().build().toUri();
+				return ResponseEntity.created(location).build();
+			}else {
+				return ResponseEntity.noContent().build();
+			}
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+	}
+
+	@Operation(summary = "get all posts by user")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "found all posts by user id", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "User not found", 
+					content = @Content
+					)
+	})
+	@JsonView(Post.PostDetails.class)
+	@GetMapping("/{id}/posts")
+	public ResponseEntity<List<Post>> getAllPost( @Parameter(description="id of user to be searched") @PathVariable int id, @Parameter(description="page") @RequestParam(required = false) String page){
+		Optional<Users> user = userService.getUserId(id);
+		if(!user.isPresent()) {
+			return ResponseEntity.notFound().build();
+		}
+		if(page != null) {
+			return ResponseEntity.ok(postsService.getPostsByUser(id,page,5).getContent());
+		}else {
+			return ResponseEntity.ok(postsService.getAllPostsByUser(id));
+		}
+	}
+
+	@Operation(summary = "get all Products by user")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "found all products by user id", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "User not found", 
+					content = @Content
+					)
+	})
+	@JsonView(Product.Simple.class)
+	@GetMapping("/{id}/products")
+	public ResponseEntity<List<Product>> getAllProducts( @Parameter(description="id of user to be searched") @PathVariable int id, @Parameter(description="page") @RequestParam(required = false) String page){
+		Optional<Users> user = userService.getUserId(id);
+		if(!user.isPresent()) {
+			return ResponseEntity.notFound().build();
+		}
+		if(page != null) {
+			return ResponseEntity.ok( productsService.getProductsByUser(id,page,5).getContent() );
+		}else {
+			return ResponseEntity.ok(productsService.getAllProductsByUser(id));
+		}
+	}
+
+	@Operation(summary = "Get a followings by id users")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the followings", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "User not found", 
+					content = @Content
+					)
+	})
+	@JsonView(UsersRelations.Basic.class)
+	@GetMapping("/{id}/followings")
+	public ResponseEntity<List<UsersRelations>> getUserRelations( @Parameter(description="id of relation to be searched") @PathVariable int id){
+		Optional<Users> user = userService.getUserId(id);
+		if(user.isPresent()) {
+			return ResponseEntity.ok(userService.getFollowing(user.get().getUsername()));
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+	}
+
+	@Operation(summary = "Get a followers by id users")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the followers", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "User not found", 
+					content = @Content
+					)
+	})
+	@JsonView(UsersRelations.Basic.class)
+	@GetMapping("/{id}/followers")
+	public ResponseEntity<List<UsersRelations>> getRelationsUser( @Parameter(description="id of relation to be searched") @PathVariable int id){
+		Optional<Users> user = userService.getUserId(id);
+		if(user.isPresent()) {
+			return  ResponseEntity.ok(userService.getFollowers(user.get().getUsername()));
+		}else {
+			return  ResponseEntity.notFound().build();
+		}
+	}
+	
+	@Operation(summary = "Get a Bookmarks by id users")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the bookmarks", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "User not found", 
+					content = @Content
+					)
+	})
+	@GetMapping("/{id}/bookmarks")
+	public ResponseEntity<List<ListProducts>> getBookmarks(@Parameter(description="id of user to be searched") @PathVariable int id){
+		Optional<Users> user = userService.getUserId(id);
+		if(!user.isPresent()) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(productsService.getBookmarksByUser(id));
+	}
+	
+	@Operation(summary = "Get a Likes by id users")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the likes", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "User not found", 
+					content = @Content
+					)
+	})
+	@GetMapping("/{id}/likes")
+	public ResponseEntity<List<LikeAPost>> getLike(@Parameter(description="id of user to be searched") @PathVariable int id){
+		Optional<Users> user = userService.getUserId(id);
+		if(!user.isPresent()) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(postsService.getLikesByUser(id));
+	}
+
+
 }

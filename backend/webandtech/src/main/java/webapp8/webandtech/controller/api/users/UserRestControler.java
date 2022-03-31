@@ -172,5 +172,114 @@ public class UserRestControler {
 					content = @Content
 					) 
 	})
+	@JsonView(Users.Detailed.class)
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Users> deleteUser(@Parameter(description="id of user to be searched") @PathVariable int id){
+		Optional<Users> s = userService.getUserId(id);
+		if(s.isPresent()){
+			userService.deleteUserById(id);
+			return ResponseEntity.ok(s.get());
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+	}
 
+	@Operation(summary = "Get a all users type customers")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Users type customers", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					) 
+	})
+	@JsonView(Users.Detailed.class)
+	@GetMapping("/customers")
+	public List<Users> getUsers( @Parameter(description="page") @RequestParam(required = false) String page){
+		if(page != null) {
+			return userService.getCustomers(PageRequest.of(Integer.parseInt(page), 5)).getContent();
+		}else {
+			return userService.getAllUsers();
+		}
+	}
+
+	@Operation(summary = "Get a all users type companies")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Users type companies", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					) 
+	})
+	@JsonView(Users.Detailed.class)
+	@GetMapping("/companies")
+	public List<Users> getCompanies( @Parameter(description="page") @RequestParam(required = false) String page){
+		if(page != null) {
+			return userService.getCompanies(PageRequest.of(Integer.parseInt(page), 5)).getContent();
+		}else {
+			return userService.getAllCompanies();
+		}
+	}
+
+	@Operation(summary = "Get a profile image user by id")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Image Profile", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "204", 
+					description = "Image not found", 
+					content = @Content
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "User not found", 
+					content = @Content
+					)
+	})
+	@GetMapping("/{id}/imageProfile")
+	public ResponseEntity<Object> getImageProfile(@Parameter(description="id of user to be searched") @PathVariable int id) throws SQLException{
+		Optional<Users> s = userService.getUserId(id);
+		if(s.isPresent()) {
+			if(s.get().getUserimg() != null) {
+				Resource file = new InputStreamResource(s.get().getUserimg().getBinaryStream());
+				return ResponseEntity.ok()
+						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
+						.contentLength(s.get().getUserimg().length())
+						.body(file);
+			}else {
+				return ResponseEntity.noContent().build();
+			}
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+	}
+
+	@Operation(summary = "Get a profile theme image user by id")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Image Profile Theme", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "204", 
+					description = "Image not found", 
+					content = @Content
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "User not found", 
+					content = @Content
+					)
+	})
 }

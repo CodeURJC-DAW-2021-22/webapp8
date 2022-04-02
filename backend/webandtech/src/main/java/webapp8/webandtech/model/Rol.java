@@ -9,15 +9,23 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @Table(name="roles")
 public class Rol {
 
+	public interface Basic{}
+	public interface Detailed extends Rol.Basic{}
+
+	@JsonView(Basic.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idroles;
+	@JsonView(Basic.class)
 	@Column
 	private String rol;
+	@JsonView(Detailed.class)
 	@OneToOne
 	@JoinColumn(name = "iduser", referencedColumnName = "iduser")
 	private User iduser;

@@ -11,23 +11,29 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 
 @Entity
 @Table(name = "users")
 public class User {
-	
+
 	public interface Basic{}
 	public interface Detailed extends User.Basic{}
-
+	
+	@JsonView(Basic.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int iduser;
+	@JsonView(Detailed.class)
 	@Column
 	private String email;
+	@JsonView(Basic.class)
 	@Column
 	private String username;
+	@JsonView(Detailed.class)
 	@Column
 	private String pass;
+	@JsonView(Detailed.class)
 	@Column
 	private String completname;
 	@Lob
@@ -35,6 +41,7 @@ public class User {
 	private Blob userimg;
 	@Column
 	private boolean userprofile;
+	@JsonView(Detailed.class)
 	@Column
 	private String address;
 	

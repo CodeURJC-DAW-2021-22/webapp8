@@ -44,4 +44,58 @@ import webapp8.webandtech.service.ProductService;
 public class ProductsRestController {
 
 
+    @Autowired
+	private ProductService productService;	
+
+	@Operation(summary = "Get a all Products")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Products", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					) 
+	})
+	@JsonView(Product.ProductDetails.class)
+	@GetMapping("/")
+	public List<Product> getAllProducts( @Parameter(description="page") @RequestParam(required = false) String page ){
+		if(page != null) {
+			return productService.getProductsPage(PageRequest.of(Integer.parseInt(page), 5)).getContent();
+		}else {
+			return productService.getAll();
+		}
+	}
+
+
+	@Operation(summary = "Create a Products")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "201", 
+					description = "Successful Products creation", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "406", 
+					description = "Not Acceptable Post title exists", 
+					content = @Content
+					) 
+	})
+	@JsonView(Product.ProductDetails.class)
+	@PostMapping("/")
+	public ResponseEntity<Product> registerProduct( @Parameter(description="Object Type Product") @RequestBody Product product) throws IOException{
+		if (productService.existsProduct(product.getTitle())) {
+			return new ResponseEntity<Product>(product,HttpStatus.NOT_ACCEPTABLE);
+		}
+		product.setImg0(false);
+		product.setImg1(false);
+		product.setImg2(false);
+		productService.save(product); 
+		product = productService.getProductByTitle(product.getTitle());
+		URI location = fromCurrentRequest().path("/{id}").buildAndExpand(product.getIdproduct()).toUri();
+		return ResponseEntity.created(location).body(product);
+	}
+
 }

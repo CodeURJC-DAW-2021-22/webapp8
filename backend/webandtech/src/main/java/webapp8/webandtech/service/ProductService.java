@@ -27,8 +27,13 @@ public class ProductService {
 
 	@Autowired
 	private RatingRepository ratingRepository;
-	
 
+
+
+	//api methods
+
+
+	//normal methods
     public void save(Product product){
         productRepository.save(product);
     }

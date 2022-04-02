@@ -10,22 +10,32 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 
 
 @Entity
 @Table(name = "ratings")
 public class Rating {
 	
+	public interface Basic{}
+	public interface Detailed extends Rating.Basic{}
+
+	@JsonView(Basic.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idrating;
+	@JsonView(Basic.class)
 	@Column
 	private float reviewrating;
+	@JsonView(Basic.class)
 	@Column(columnDefinition = "TEXT")
 	private String ratingtext;
+	@JsonView(Detailed.class)
 	@OneToOne
 	@JoinColumn(name = "idproduct", referencedColumnName = "idproduct")
 	private Product idproduct;
+	@JsonView(Detailed.class)
 	@OneToOne
 	@JoinColumn(name = "iduser", referencedColumnName = "iduser")
 	private User iduser;

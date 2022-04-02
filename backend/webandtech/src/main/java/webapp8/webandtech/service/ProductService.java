@@ -3,6 +3,7 @@ package webapp8.webandtech.service;
 import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,20 @@ public class ProductService {
 
 	@Autowired
 	private RatingRepository ratingRepository;
-	
 
+
+
+	//api methods
+	public void deleteProductApiById(int id) {
+		Product pref = productRepository.findByIdproduct(id);
+		productRepository.deleteById(pref.getIdproduct());
+	}
+
+	public Optional<Product> getProductById(int id) {
+		return productRepository.findById(id);
+	}
+
+	//normal methods
     public void save(Product product){
         productRepository.save(product);
     }
@@ -61,6 +74,10 @@ public class ProductService {
 
     public Product getProduct(int idproduct) {
 		return productRepository.findById(idproduct).orElseThrow(() -> new NoSuchElementException("Product not found"));
+	}
+    
+	public Product getProductByName(String nameproduct) {
+		return productRepository.findBynameproduct(nameproduct);
 	}
 
 	public Page<Product> getComponentsPage(Pageable page){
@@ -114,6 +131,9 @@ public class ProductService {
 	public Page<Product> getMorePhones(Pageable page){
 		Page<Product> phones = productRepository.findByproductcategory("telefono",page);
 		return phones;
+	}
+	public boolean existsProduct(String nameProduct) {         
+		return productRepository.existsIdproductBynameproduct(nameProduct);     
 	}
 
 	@Modifying
@@ -185,4 +205,6 @@ public class ProductService {
     		ratingRepository.deleteByIdproduct(prev);
     		productRepository.deleteById(prev.getIdproduct());
 	}
+
+	
 }

@@ -47,7 +47,7 @@ public class ProductsRestController {
     @Autowired
 	private ProductService productService;	
 
-	@Operation(summary = "Get a all Products")
+	@Operation(summary = "Get New Six Products")
 	@ApiResponses(value = { 
 			@ApiResponse(
 					responseCode = "200", 
@@ -57,14 +57,12 @@ public class ProductsRestController {
 							)}
 					) 
 	})
-	@JsonView(Product.ProductDetails.class)
+	@JsonView(Product.Detailed.class)
 	@GetMapping("/")
-	public List<Product> getAllProducts( @Parameter(description="page") @RequestParam(required = false) String page ){
-		if(page != null) {
-			return productService.getProductsPage(PageRequest.of(Integer.parseInt(page), 5)).getContent();
-		}else {
-			return productService.getAll();
-		}
+	public List<Product> getAllProducts(){
+		
+		return productService.getNewProucts();
+		
 	}
 
 
@@ -83,17 +81,17 @@ public class ProductsRestController {
 					content = @Content
 					) 
 	})
-	@JsonView(Product.ProductDetails.class)
+	@JsonView(Product.Detailed.class)
 	@PostMapping("/")
 	public ResponseEntity<Product> registerProduct( @Parameter(description="Object Type Product") @RequestBody Product product) throws IOException{
-		if (productService.existsProduct(product.getTitle())) {
+		if (productService.existsProduct(product.getNameproduct())) {
 			return new ResponseEntity<Product>(product,HttpStatus.NOT_ACCEPTABLE);
 		}
 		product.setImg1(false);
 		product.setImg2(false);
 		product.setImg3(false);
 		productService.save(product); 
-		product = productService.getProductByTitle(product.getTitle());
+		product = productService.getProductByName(product.getNameproduct());
 		URI location = fromCurrentRequest().path("/{id}").buildAndExpand(product.getIdproduct()).toUri();
 		return ResponseEntity.created(location).body(product);
 	}
@@ -113,7 +111,7 @@ public class ProductsRestController {
 					content = @Content
 					) 
 	})
-	@JsonView(Product.ProductDetails.class)
+	@JsonView(Product.Detailed.class)
 	@GetMapping("/{id}")
 	public ResponseEntity<Product> getProduct ( @Parameter(description="id of Product to be searched") @PathVariable int id) throws IOException{
 		Optional<Product> product = productService.getProductById(id);
@@ -124,11 +122,11 @@ public class ProductsRestController {
 		}
 	}
 
-	@Operation(summary = "Create a Product")
+	@Operation(summary = "Delete a Product")
 	@ApiResponses(value = { 
 			@ApiResponse(
 					responseCode = "201", 
-					description = "Successful Product creation", 
+					description = "Successful Product delete", 
 					content = {@Content(
 							mediaType = "application/json"
 							)}
@@ -139,281 +137,281 @@ public class ProductsRestController {
 					content = @Content
 					) 
 	})
-	@JsonView(Product.ProductDetails.class)
+	@JsonView(Product.Detailed.class)
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Product> deleteProduct( @Parameter(description="id of Product to be searched") @PathVariable int id){
 		Optional<Product> product = productService.getProductById(id);
 		if(product.isPresent()){
-			productService.deleteProductbyid(product.get().getIdproduct());
+			productService.deleteProductApiById(product.get().getIdproduct());
 			return ResponseEntity.ok(product.get());
 		}else {
 			return ResponseEntity.notFound().build();
 		}
 	}
 
-	@Operation(summary = "Modify a Product")
-	@ApiResponses(value = { 
-			@ApiResponse(
-					responseCode = "201", 
-					description = "Successful Product modification", 
-					content = {@Content(
-							mediaType = "application/json"
-							)}
-					),
-			@ApiResponse(
-					responseCode = "404", 
-					description = "Product not found", 
-					content = @Content
-					),
-			@ApiResponse(
-					responseCode = "406", 
-					description = "Not Acceptable Post title exists", 
-					content = @Content
-					) 
-	})
-	@JsonView(Product.ProductDetails.class)
-	@PutMapping("/{id}")
-	public ResponseEntity<Product> replaceProduct( @Parameter(description="id of Product to be searched") @PathVariable int id, @Parameter(description="Object Type Product") @RequestBody Product newproduct) throws IOException{
-		if (productService.existsProduct(newproduct.getTitle())) {
-			return new ResponseEntity<Product>(newproduct,HttpStatus.NOT_ACCEPTABLE);
-		}
-		Optional<Product> product = productService.getProductById(id);
-		if(!product.isEmpty()) {
-			newproduct.setIdproduct(id);
-			productService.saveProduct(newproduct);
-			newproduct = productService.getProductById(id).get();
-			return ResponseEntity.ok(newproduct);
-		}else {
-			return ResponseEntity.notFound().build();
-		}
-	}
+// 	@Operation(summary = "Modify a Product")
+// 	@ApiResponses(value = { 
+// 			@ApiResponse(
+// 					responseCode = "201", 
+// 					description = "Successful Product modification", 
+// 					content = {@Content(
+// 							mediaType = "application/json"
+// 							)}
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "404", 
+// 					description = "Product not found", 
+// 					content = @Content
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "406", 
+// 					description = "Not Acceptable Post title exists", 
+// 					content = @Content
+// 					) 
+// 	})
+// 	@JsonView(Product.Detailed.class)
+// 	@PutMapping("/{id}")
+// 	public ResponseEntity<Product> replaceProduct( @Parameter(description="id of Product to be searched") @PathVariable int id, @Parameter(description="Object Type Product") @RequestBody Product newproduct) throws IOException{
+// 		if (productService.existsProduct(newproduct.getTitle())) {
+// 			return new ResponseEntity<Product>(newproduct,HttpStatus.NOT_ACCEPTABLE);
+// 		}
+// 		Optional<Product> product = productService.getProductById(id);
+// 		if(!product.isEmpty()) {
+// 			newproduct.setIdproduct(id);
+// 			productService.saveProduct(newproduct);
+// 			newproduct = productService.getProductById(id).get();
+// 			return ResponseEntity.ok(newproduct);
+// 		}else {
+// 			return ResponseEntity.notFound().build();
+// 		}
+// 	}
 
-	@Operation(summary = "Get a Image 0 Product by its id")
-	@ApiResponses(value = { 
-			@ApiResponse(
-					responseCode = "200", 
-					description = "Found the Image Product", 
-					content = {@Content(
-							mediaType = "application/json"
-							)}
-					),
-			@ApiResponse(
-					responseCode = "404", 
-					description = "Product not found", 
-					content = @Content
-					),
-			@ApiResponse(
-					responseCode = "204", 
-					description = "Image not found", 
-					content = @Content
-					)
-	})
-	@GetMapping("/{id}/image1")
-	public ResponseEntity<Object> getImage0( @Parameter(description="id of Product to be searched") @PathVariable int id) throws SQLException{
-		Optional<Product> product = productService.getProductById(id);
-		if(product.isPresent()) {
-			if(product.get().getImage1() != null) {
-				Resource file = new InputStreamResource(product.get().getImage1().getBinaryStream());
-				return ResponseEntity.ok()
-						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
-						.contentLength(product.get().getImage1().length())
-						.body(file);
-			}else {
-				return ResponseEntity.noContent().build();
-			}
-		}else {
-			return ResponseEntity.notFound().build();
-		}
-	}
+// 	@Operation(summary = "Get a Image 0 Product by its id")
+// 	@ApiResponses(value = { 
+// 			@ApiResponse(
+// 					responseCode = "200", 
+// 					description = "Found the Image Product", 
+// 					content = {@Content(
+// 							mediaType = "application/json"
+// 							)}
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "404", 
+// 					description = "Product not found", 
+// 					content = @Content
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "204", 
+// 					description = "Image not found", 
+// 					content = @Content
+// 					)
+// 	})
+// 	@GetMapping("/{id}/image1")
+// 	public ResponseEntity<Object> getImage0( @Parameter(description="id of Product to be searched") @PathVariable int id) throws SQLException{
+// 		Optional<Product> product = productService.getProductById(id);
+// 		if(product.isPresent()) {
+// 			if(product.get().getImage1() != null) {
+// 				Resource file = new InputStreamResource(product.get().getImage1().getBinaryStream());
+// 				return ResponseEntity.ok()
+// 						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
+// 						.contentLength(product.get().getImage1().length())
+// 						.body(file);
+// 			}else {
+// 				return ResponseEntity.noContent().build();
+// 			}
+// 		}else {
+// 			return ResponseEntity.notFound().build();
+// 		}
+// 	}
 
-	@Operation(summary = "Get a Image 1 Product by its id")
-	@ApiResponses(value = { 
-			@ApiResponse(
-					responseCode = "200", 
-					description = "Found the Image Product", 
-					content = {@Content(
-							mediaType = "application/json"
-							)}
-					),
-			@ApiResponse(
-					responseCode = "404", 
-					description = "Product not found", 
-					content = @Content
-					),
-			@ApiResponse(
-					responseCode = "204", 
-					description = "Image not found", 
-					content = @Content
-					)
-	})
-	@GetMapping("/{id}/image2")
-	public ResponseEntity<Object> getImage1( @Parameter(description="id of Product to be searched") @PathVariable int id) throws SQLException{
-		Optional<Product> product = productService.getProductById(id);
-		if(product.isPresent()) {
-			if(product.get().getImage2() != null) {
-				Resource file = new InputStreamResource(product.get().getImage2().getBinaryStream());
-				return ResponseEntity.ok()
-						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
-						.contentLength(product.get().getImage2().length())
-						.body(file);
-			}else {
-				return ResponseEntity.noContent().build();
-			}
-		}else {
-			return ResponseEntity.notFound().build();
-		}
-	}
+// 	@Operation(summary = "Get a Image 1 Product by its id")
+// 	@ApiResponses(value = { 
+// 			@ApiResponse(
+// 					responseCode = "200", 
+// 					description = "Found the Image Product", 
+// 					content = {@Content(
+// 							mediaType = "application/json"
+// 							)}
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "404", 
+// 					description = "Product not found", 
+// 					content = @Content
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "204", 
+// 					description = "Image not found", 
+// 					content = @Content
+// 					)
+// 	})
+// 	@GetMapping("/{id}/image2")
+// 	public ResponseEntity<Object> getImage1( @Parameter(description="id of Product to be searched") @PathVariable int id) throws SQLException{
+// 		Optional<Product> product = productService.getProductById(id);
+// 		if(product.isPresent()) {
+// 			if(product.get().getImage2() != null) {
+// 				Resource file = new InputStreamResource(product.get().getImage2().getBinaryStream());
+// 				return ResponseEntity.ok()
+// 						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
+// 						.contentLength(product.get().getImage2().length())
+// 						.body(file);
+// 			}else {
+// 				return ResponseEntity.noContent().build();
+// 			}
+// 		}else {
+// 			return ResponseEntity.notFound().build();
+// 		}
+// 	}
 
-	@Operation(summary = "Get a Image 2 Product by its id")
-	@ApiResponses(value = { 
-			@ApiResponse(
-					responseCode = "200", 
-					description = "Found the Image Product", 
-					content = {@Content(
-							mediaType = "application/json"
-							)}
-					),
-			@ApiResponse(
-					responseCode = "404", 
-					description = "Product not found", 
-					content = @Content
-					),
-			@ApiResponse(
-					responseCode = "204", 
-					description = "Image not found", 
-					content = @Content
-					)
-	})
-	@GetMapping("/{id}/image2")
-	public ResponseEntity<Object> getImage2( @Parameter(description="id of Product to be searched") @PathVariable int id) throws SQLException{
-		Optional<Product> product = productService.getProductById(id);
-		if(product.isPresent()) {
-			if(product.get().getImage2() != null) {
-				Resource file = new InputStreamResource(product.get().getImage2().getBinaryStream());
-				return ResponseEntity.ok()
-						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
-						.contentLength(product.get().getImage2().length())
-						.body(file);
-			}else {
-				return ResponseEntity.noContent().build();
-			}
-		}else {
-			return ResponseEntity.notFound().build();
-		}
-	}
+// 	@Operation(summary = "Get a Image 2 Product by its id")
+// 	@ApiResponses(value = { 
+// 			@ApiResponse(
+// 					responseCode = "200", 
+// 					description = "Found the Image Product", 
+// 					content = {@Content(
+// 							mediaType = "application/json"
+// 							)}
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "404", 
+// 					description = "Product not found", 
+// 					content = @Content
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "204", 
+// 					description = "Image not found", 
+// 					content = @Content
+// 					)
+// 	})
+// 	@GetMapping("/{id}/image2")
+// 	public ResponseEntity<Object> getImage2( @Parameter(description="id of Product to be searched") @PathVariable int id) throws SQLException{
+// 		Optional<Product> product = productService.getProductById(id);
+// 		if(product.isPresent()) {
+// 			if(product.get().getImage2() != null) {
+// 				Resource file = new InputStreamResource(product.get().getImage2().getBinaryStream());
+// 				return ResponseEntity.ok()
+// 						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
+// 						.contentLength(product.get().getImage2().length())
+// 						.body(file);
+// 			}else {
+// 				return ResponseEntity.noContent().build();
+// 			}
+// 		}else {
+// 			return ResponseEntity.notFound().build();
+// 		}
+// 	}
 
-	@Operation(summary = "Create a Image 0 Product by its id")
-	@ApiResponses(value = { 
-			@ApiResponse(
-					responseCode = "201", 
-					description = "Create the Image Product", 
-					content = {@Content(
-							mediaType = "application/json"
-							)}
-					),
-			@ApiResponse(
-					responseCode = "404", 
-					description = "Product not found", 
-					content = @Content
-					),
-			@ApiResponse(
-					responseCode = "204", 
-					description = "Image not found", 
-					content = @Content
-					)
-	})
-	@PostMapping("/{id}/image0")
-	public ResponseEntity<Object> uploadImage0( @Parameter(description="id of Product to be searched") @PathVariable int id, @Parameter(description="Image 0 Product") @RequestParam() MultipartFile image) throws SQLException, IOException{
-		Optional<Product> product = productService.getProductById(id);
-		if(product.isPresent()) {
-			if(image != null) {
-				product.get().setImage0(BlobProxy.generateProxy(image.getInputStream(), image.getSize()));
-				product.get().setImg0(true);
-				productService.saveProduct(product.get());
-				URI location = fromCurrentRequest().build().toUri();
-				return ResponseEntity.created(location).build();
-			}else {
-				return ResponseEntity.noContent().build();
-			}
-		}else {
-			return ResponseEntity.notFound().build();
-		}
-	}
+// 	@Operation(summary = "Create a Image 0 Product by its id")
+// 	@ApiResponses(value = { 
+// 			@ApiResponse(
+// 					responseCode = "201", 
+// 					description = "Create the Image Product", 
+// 					content = {@Content(
+// 							mediaType = "application/json"
+// 							)}
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "404", 
+// 					description = "Product not found", 
+// 					content = @Content
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "204", 
+// 					description = "Image not found", 
+// 					content = @Content
+// 					)
+// 	})
+// 	@PostMapping("/{id}/image0")
+// 	public ResponseEntity<Object> uploadImage0( @Parameter(description="id of Product to be searched") @PathVariable int id, @Parameter(description="Image 0 Product") @RequestParam() MultipartFile image) throws SQLException, IOException{
+// 		Optional<Product> product = productService.getProductById(id);
+// 		if(product.isPresent()) {
+// 			if(image != null) {
+// 				product.get().setImage0(BlobProxy.generateProxy(image.getInputStream(), image.getSize()));
+// 				product.get().setImg0(true);
+// 				productService.saveProduct(product.get());
+// 				URI location = fromCurrentRequest().build().toUri();
+// 				return ResponseEntity.created(location).build();
+// 			}else {
+// 				return ResponseEntity.noContent().build();
+// 			}
+// 		}else {
+// 			return ResponseEntity.notFound().build();
+// 		}
+// 	}
 
-	@Operation(summary = "Create a Image 1 Product by its id")
-	@ApiResponses(value = { 
-			@ApiResponse(
-					responseCode = "201", 
-					description = "Create the Image Product", 
-					content = {@Content(
-							mediaType = "application/json"
-							)}
-					),
-			@ApiResponse(
-					responseCode = "404", 
-					description = "Product not found", 
-					content = @Content
-					),
-			@ApiResponse(
-					responseCode = "204", 
-					description = "Image not found", 
-					content = @Content
-					)
-	})
-	@PostMapping("/{id}/image1")
-	public ResponseEntity<Object> uploadImage1( @Parameter(description="id of Product to be searched") @PathVariable int id, @Parameter(description="Image 1 Product") @RequestParam() MultipartFile image) throws SQLException, IOException{
-		Optional<Product> product = productService.getProductById(id);
-		if(product.isPresent()) {
-			if(image != null) {
-				product.get().setImage1(BlobProxy.generateProxy(image.getInputStream(), image.getSize()));
-				product.get().setImg1(true);
-				productService.saveProduct(product.get());
-				URI location = fromCurrentRequest().build().toUri();
-				return ResponseEntity.created(location).build();
-			}else {
-				return ResponseEntity.noContent().build();
-			}
-		}else {
-			return ResponseEntity.notFound().build();
-		}
-	}
+// 	@Operation(summary = "Create a Image 1 Product by its id")
+// 	@ApiResponses(value = { 
+// 			@ApiResponse(
+// 					responseCode = "201", 
+// 					description = "Create the Image Product", 
+// 					content = {@Content(
+// 							mediaType = "application/json"
+// 							)}
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "404", 
+// 					description = "Product not found", 
+// 					content = @Content
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "204", 
+// 					description = "Image not found", 
+// 					content = @Content
+// 					)
+// 	})
+// 	@PostMapping("/{id}/image1")
+// 	public ResponseEntity<Object> uploadImage1( @Parameter(description="id of Product to be searched") @PathVariable int id, @Parameter(description="Image 1 Product") @RequestParam() MultipartFile image) throws SQLException, IOException{
+// 		Optional<Product> product = productService.getProductById(id);
+// 		if(product.isPresent()) {
+// 			if(image != null) {
+// 				product.get().setImage1(BlobProxy.generateProxy(image.getInputStream(), image.getSize()));
+// 				product.get().setImg1(true);
+// 				productService.saveProduct(product.get());
+// 				URI location = fromCurrentRequest().build().toUri();
+// 				return ResponseEntity.created(location).build();
+// 			}else {
+// 				return ResponseEntity.noContent().build();
+// 			}
+// 		}else {
+// 			return ResponseEntity.notFound().build();
+// 		}
+// 	}
 
-	@Operation(summary = "Create a Image 2 Product by its id")
-	@ApiResponses(value = { 
-			@ApiResponse(
-					responseCode = "201", 
-					description = "Create the Image Product", 
-					content = {@Content(
-							mediaType = "application/json"
-							)}
-					),
-			@ApiResponse(
-					responseCode = "404", 
-					description = "Product not found", 
-					content = @Content
-					),
-			@ApiResponse(
-					responseCode = "204", 
-					description = "Image not found", 
-					content = @Content
-					)
-	})
-	@PostMapping("/{id}/image2")
-	public ResponseEntity<Object> uploadImage2( @Parameter(description="id of Product to be searched") @PathVariable int id, @Parameter(description="Image 2 Product") @RequestParam() MultipartFile image) throws SQLException, IOException{
-		Optional<Product> product = productService.getProductById(id);
-		if(product.isPresent()) {
-			if(image != null) {
-				product.get().setImage2(BlobProxy.generateProxy(image.getInputStream(), image.getSize()));
-				product.get().setImg2(true);
-				productService.saveProduct(product.get());
-				URI location = fromCurrentRequest().build().toUri();
-				return ResponseEntity.created(location).build();
-			}else {
-				return ResponseEntity.noContent().build();
-			}
-		}else {
-			return ResponseEntity.notFound().build();
-		}
-	}	
+// 	@Operation(summary = "Create a Image 2 Product by its id")
+// 	@ApiResponses(value = { 
+// 			@ApiResponse(
+// 					responseCode = "201", 
+// 					description = "Create the Image Product", 
+// 					content = {@Content(
+// 							mediaType = "application/json"
+// 							)}
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "404", 
+// 					description = "Product not found", 
+// 					content = @Content
+// 					),
+// 			@ApiResponse(
+// 					responseCode = "204", 
+// 					description = "Image not found", 
+// 					content = @Content
+// 					)
+// 	})
+// 	@PostMapping("/{id}/image2")
+// 	public ResponseEntity<Object> uploadImage2( @Parameter(description="id of Product to be searched") @PathVariable int id, @Parameter(description="Image 2 Product") @RequestParam() MultipartFile image) throws SQLException, IOException{
+// 		Optional<Product> product = productService.getProductById(id);
+// 		if(product.isPresent()) {
+// 			if(image != null) {
+// 				product.get().setImage2(BlobProxy.generateProxy(image.getInputStream(), image.getSize()));
+// 				product.get().setImg2(true);
+// 				productService.saveProduct(product.get());
+// 				URI location = fromCurrentRequest().build().toUri();
+// 				return ResponseEntity.created(location).build();
+// 			}else {
+// 				return ResponseEntity.noContent().build();
+// 			}
+// 		}else {
+// 			return ResponseEntity.notFound().build();
+// 		}
+// 	}	
 
 }

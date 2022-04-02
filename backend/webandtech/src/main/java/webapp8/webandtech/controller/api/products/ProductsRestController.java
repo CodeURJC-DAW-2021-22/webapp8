@@ -89,9 +89,9 @@ public class ProductsRestController {
 		if (productService.existsProduct(product.getTitle())) {
 			return new ResponseEntity<Product>(product,HttpStatus.NOT_ACCEPTABLE);
 		}
-		product.setImg0(false);
 		product.setImg1(false);
 		product.setImg2(false);
+		product.setImg3(false);
 		productService.save(product); 
 		product = productService.getProductByTitle(product.getTitle());
 		URI location = fromCurrentRequest().path("/{id}").buildAndExpand(product.getIdproduct()).toUri();
@@ -208,15 +208,15 @@ public class ProductsRestController {
 					content = @Content
 					)
 	})
-	@GetMapping("/{id}/image0")
+	@GetMapping("/{id}/image1")
 	public ResponseEntity<Object> getImage0( @Parameter(description="id of Product to be searched") @PathVariable int id) throws SQLException{
 		Optional<Product> product = productService.getProductById(id);
 		if(product.isPresent()) {
-			if(product.get().getImage0() != null) {
-				Resource file = new InputStreamResource(product.get().getImage0().getBinaryStream());
+			if(product.get().getImage1() != null) {
+				Resource file = new InputStreamResource(product.get().getImage1().getBinaryStream());
 				return ResponseEntity.ok()
 						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
-						.contentLength(product.get().getImage0().length())
+						.contentLength(product.get().getImage1().length())
 						.body(file);
 			}else {
 				return ResponseEntity.noContent().build();
@@ -246,15 +246,15 @@ public class ProductsRestController {
 					content = @Content
 					)
 	})
-	@GetMapping("/{id}/image1")
+	@GetMapping("/{id}/image2")
 	public ResponseEntity<Object> getImage1( @Parameter(description="id of Product to be searched") @PathVariable int id) throws SQLException{
 		Optional<Product> product = productService.getProductById(id);
 		if(product.isPresent()) {
-			if(product.get().getImage1() != null) {
-				Resource file = new InputStreamResource(product.get().getImage1().getBinaryStream());
+			if(product.get().getImage2() != null) {
+				Resource file = new InputStreamResource(product.get().getImage2().getBinaryStream());
 				return ResponseEntity.ok()
 						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
-						.contentLength(product.get().getImage1().length())
+						.contentLength(product.get().getImage2().length())
 						.body(file);
 			}else {
 				return ResponseEntity.noContent().build();

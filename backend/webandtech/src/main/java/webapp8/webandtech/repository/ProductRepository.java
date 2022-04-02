@@ -20,6 +20,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
     public Page<Product> findByproductcategory(String productcategory, Pageable page);
     public List<Product> findByproductcategory(String productcategory);
     public Page<Product> findByproductbrand(Brand brandname, Pageable page);
+    public boolean existsIdproductBynameproduct(String nameproduct);
     
     //public boolean existsidproductBynameproduct(String nameproduct);
 }

@@ -66,88 +66,88 @@ public class ProductsRestController {
 	}
 
 
-// 	@Operation(summary = "Create a Products")
-// 	@ApiResponses(value = { 
-// 			@ApiResponse(
-// 					responseCode = "201", 
-// 					description = "Successful Products creation", 
-// 					content = {@Content(
-// 							mediaType = "application/json"
-// 							)}
-// 					),
-// 			@ApiResponse(
-// 					responseCode = "406", 
-// 					description = "Not Acceptable Post title exists", 
-// 					content = @Content
-// 					) 
-// 	})
-// 	@JsonView(Product.Detailed.class)
-// 	@PostMapping("/")
-// 	public ResponseEntity<Product> registerProduct( @Parameter(description="Object Type Product") @RequestBody Product product) throws IOException{
-// 		if (productService.existsProduct(product.getTitle())) {
-// 			return new ResponseEntity<Product>(product,HttpStatus.NOT_ACCEPTABLE);
-// 		}
-// 		product.setImg1(false);
-// 		product.setImg2(false);
-// 		product.setImg3(false);
-// 		productService.save(product); 
-// 		product = productService.getProductByTitle(product.getTitle());
-// 		URI location = fromCurrentRequest().path("/{id}").buildAndExpand(product.getIdproduct()).toUri();
-// 		return ResponseEntity.created(location).body(product);
-// 	}
+	@Operation(summary = "Create a Products")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "201", 
+					description = "Successful Products creation", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "406", 
+					description = "Not Acceptable Post title exists", 
+					content = @Content
+					) 
+	})
+	@JsonView(Product.Detailed.class)
+	@PostMapping("/")
+	public ResponseEntity<Product> registerProduct( @Parameter(description="Object Type Product") @RequestBody Product product) throws IOException{
+		if (productService.existsProduct(product.getNameproduct())) {
+			return new ResponseEntity<Product>(product,HttpStatus.NOT_ACCEPTABLE);
+		}
+		product.setImg1(false);
+		product.setImg2(false);
+		product.setImg3(false);
+		productService.save(product); 
+		product = productService.getProductByName(product.getNameproduct());
+		URI location = fromCurrentRequest().path("/{id}").buildAndExpand(product.getIdproduct()).toUri();
+		return ResponseEntity.created(location).body(product);
+	}
 
-//     @Operation(summary = "Get a products by its id")
-// 	@ApiResponses(value = { 
-// 			@ApiResponse(
-// 					responseCode = "200", 
-// 					description = "Found the Product", 
-// 					content = {@Content(
-// 							mediaType = "application/json"
-// 							)}
-// 					),
-// 			@ApiResponse(
-// 					responseCode = "404", 
-// 					description = "Product not found", 
-// 					content = @Content
-// 					) 
-// 	})
-// 	@JsonView(Product.Detailed.class)
-// 	@GetMapping("/{id}")
-// 	public ResponseEntity<Product> getProduct ( @Parameter(description="id of Product to be searched") @PathVariable int id) throws IOException{
-// 		Optional<Product> product = productService.getProductById(id);
-// 		if(!product.isEmpty()) {
-// 			return ResponseEntity.ok(product.get());
-// 		}else {
-// 			return ResponseEntity.notFound().build();
-// 		}
-// 	}
+    @Operation(summary = "Get a products by its id")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Product", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "Product not found", 
+					content = @Content
+					) 
+	})
+	@JsonView(Product.Detailed.class)
+	@GetMapping("/{id}")
+	public ResponseEntity<Product> getProduct ( @Parameter(description="id of Product to be searched") @PathVariable int id) throws IOException{
+		Optional<Product> product = productService.getProductById(id);
+		if(!product.isEmpty()) {
+			return ResponseEntity.ok(product.get());
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+	}
 
-// 	@Operation(summary = "Create a Product")
-// 	@ApiResponses(value = { 
-// 			@ApiResponse(
-// 					responseCode = "201", 
-// 					description = "Successful Product creation", 
-// 					content = {@Content(
-// 							mediaType = "application/json"
-// 							)}
-// 					),
-// 			@ApiResponse(
-// 					responseCode = "404", 
-// 					description = "Product not found", 
-// 					content = @Content
-// 					) 
-// 	})
-// 	@JsonView(Product.Detailed.class)
-// 	@DeleteMapping("/{id}")
-// 	public ResponseEntity<Product> deleteProduct( @Parameter(description="id of Product to be searched") @PathVariable int id){
-// 		Optional<Product> product = productService.getProductById(id);
-// 		if(product.isPresent()){
-// 			productService.deleteProductbyid(product.get().getIdproduct());
-// 			return ResponseEntity.ok(product.get());
-// 		}else {
-// 			return ResponseEntity.notFound().build();
-// 		}
-// 	}
+	@Operation(summary = "Delete a Product")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "201", 
+					description = "Successful Product delete", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "Product not found", 
+					content = @Content
+					) 
+	})
+	@JsonView(Product.Detailed.class)
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Product> deleteProduct( @Parameter(description="id of Product to be searched") @PathVariable int id){
+		Optional<Product> product = productService.getProductById(id);
+		if(product.isPresent()){
+			productService.deleteProductApiById(product.get().getIdproduct());
+			return ResponseEntity.ok(product.get());
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+	}
 
 // 	@Operation(summary = "Modify a Product")
 // 	@ApiResponses(value = { 

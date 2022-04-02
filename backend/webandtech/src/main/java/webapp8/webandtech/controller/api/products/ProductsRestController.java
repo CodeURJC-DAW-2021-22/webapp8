@@ -188,6 +188,82 @@ public class ProductsRestController {
 		}
 	}
 
+	@Operation(summary = "Get a Image 0 Product by its id")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Image Product", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "Product not found", 
+					content = @Content
+					),
+			@ApiResponse(
+					responseCode = "204", 
+					description = "Image not found", 
+					content = @Content
+					)
+	})
+	@GetMapping("/{id}/image0")
+	public ResponseEntity<Object> getImage0( @Parameter(description="id of Product to be searched") @PathVariable int id) throws SQLException{
+		Optional<Product> product = productService.getProductById(id);
+		if(product.isPresent()) {
+			if(product.get().getImage0() != null) {
+				Resource file = new InputStreamResource(product.get().getImage0().getBinaryStream());
+				return ResponseEntity.ok()
+						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
+						.contentLength(product.get().getImage0().length())
+						.body(file);
+			}else {
+				return ResponseEntity.noContent().build();
+			}
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+	}
+
+	@Operation(summary = "Get a Image 1 Product by its id")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Image Product", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "Product not found", 
+					content = @Content
+					),
+			@ApiResponse(
+					responseCode = "204", 
+					description = "Image not found", 
+					content = @Content
+					)
+	})
+	@GetMapping("/{id}/image1")
+	public ResponseEntity<Object> getImage1( @Parameter(description="id of Product to be searched") @PathVariable int id) throws SQLException{
+		Optional<Product> product = productService.getProductById(id);
+		if(product.isPresent()) {
+			if(product.get().getImage1() != null) {
+				Resource file = new InputStreamResource(product.get().getImage1().getBinaryStream());
+				return ResponseEntity.ok()
+						.header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
+						.contentLength(product.get().getImage1().length())
+						.body(file);
+			}else {
+				return ResponseEntity.noContent().build();
+			}
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+	}
+
 	
 
 }

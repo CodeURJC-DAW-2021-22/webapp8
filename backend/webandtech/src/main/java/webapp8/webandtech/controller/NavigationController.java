@@ -24,7 +24,6 @@ import webapp8.webandtech.model.OrderModel;
 import webapp8.webandtech.model.Product;
 import webapp8.webandtech.model.Rating;
 import webapp8.webandtech.model.User;
-// import webapp8.webandtech.service.AdminService;
 import webapp8.webandtech.service.LoaderService;
 import webapp8.webandtech.service.OrderService;
 import webapp8.webandtech.service.ProductService;

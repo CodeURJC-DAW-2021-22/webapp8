@@ -29,6 +29,8 @@ public class ProductService {
 	@Autowired
 	private RatingRepository ratingRepository;
 
+	private String nameproduct;
+
 
 
 	//api methods
@@ -40,6 +42,21 @@ public class ProductService {
 	public Optional<Product> getProductById(int id) {
 		return productRepository.findById(id);
 	}
+
+	public void saveProduct(Product newproduct) {
+		productRepository.save(newproduct);
+
+	}
+	
+	public boolean existsProduct(String nameproduct) {
+		return productRepository.existsIdproductBynameproduct(nameproduct);
+	}
+
+	public boolean existsProductById(Product idproduct) {
+		Optional<Product> product = productRepository.findById(idproduct.getIdproduct());
+		return product.isPresent();
+	}
+
 
 	//normal methods
     public void save(Product product){
@@ -132,9 +149,7 @@ public class ProductService {
 		Page<Product> phones = productRepository.findByproductcategory("telefono",page);
 		return phones;
 	}
-	public boolean existsProduct(String nameProduct) {         
-		return productRepository.existsIdproductBynameproduct(nameProduct);     
-	}
+	
 
 	@Modifying
 	public void modifyDataProduct(Product product, MultipartFile image1, MultipartFile image2, MultipartFile image3) throws IOException {
@@ -205,6 +220,9 @@ public class ProductService {
     		ratingRepository.deleteByIdproduct(prev);
     		productRepository.deleteById(prev.getIdproduct());
 	}
+
+    
+
 
 	
 }

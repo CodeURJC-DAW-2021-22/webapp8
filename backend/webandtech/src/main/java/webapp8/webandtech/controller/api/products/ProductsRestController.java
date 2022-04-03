@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,7 +37,9 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import webapp8.webandtech.model.Product;
+import webapp8.webandtech.model.Rating;
 import webapp8.webandtech.service.ProductService;
+import webapp8.webandtech.service.RatingService;
 
 @RestController
 @CrossOrigin
@@ -46,6 +49,9 @@ public class ProductsRestController {
 
     @Autowired
 	private ProductService productService;	
+	
+    @Autowired
+	private RatingService ratingService;
 
 	@Operation(summary = "Get New Six Products")
 	@ApiResponses(value = { 
@@ -414,5 +420,116 @@ public class ProductsRestController {
 			return ResponseEntity.notFound().build();
 		}
 	}	
+
+	@Operation(summary = "Get a peripheral")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Product", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "Product not found", 
+					content = @Content
+					) 
+	})
+	@JsonView(Product.Detailed.class)
+	@GetMapping("/peripherals")
+	public List<Product> getPeripheralsPage ( @Parameter(description="page") @RequestParam(required = false) String page, @Parameter(description="typeProduct") @RequestParam(required = false) String typeProduct) throws IOException{
+		
+		if(typeProduct != null) {
+			return productService.getMoreProductType(PageRequest.of(Integer.parseInt(page), 10,Sort.by("idproduct").ascending()), typeProduct).getContent();
+		}else {
+			return productService.getPeripheralsPage(PageRequest.of(Integer.parseInt(page), 10,Sort.by("idproduct").ascending())).getContent();
+		}
+	}
+	@Operation(summary = "Get a component")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Product", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "Product not found", 
+					content = @Content
+					) 
+	})
+	@JsonView(Product.Detailed.class)
+	@GetMapping("/components")
+	public List<Product> getComponentsPage ( @Parameter(description="page") @RequestParam(required = false) String page, @Parameter(description="typeProduct") @RequestParam(required = false) String typeProduct) throws IOException{
+		
+		if(typeProduct != null) {
+			return productService.getMoreProductType(PageRequest.of(Integer.parseInt(page), 10,Sort.by("idproduct").ascending()), typeProduct).getContent();
+		}else {
+			return productService.getComponentsPage(PageRequest.of(Integer.parseInt(page), 10,Sort.by("idproduct").ascending())).getContent();
+		}
+	}
+
+	@Operation(summary = "Get a phone")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Product", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "Product not found", 
+					content = @Content
+					) 
+	})
+	@JsonView(Product.Detailed.class)
+	@GetMapping("/phones")
+	public List<Product> getPhonesPage ( @Parameter(description="page") @RequestParam(required = false) String page, @Parameter(description="typeProduct") @RequestParam(required = false) String typeProduct) throws IOException{
+		
+		if(typeProduct != null) {
+			return productService.getMoreProductType(PageRequest.of(Integer.parseInt(page), 10,Sort.by("idproduct").ascending()), typeProduct).getContent();
+		}else {
+			return productService.getPhonesPage(PageRequest.of(Integer.parseInt(page), 10,Sort.by("idproduct").ascending())).getContent();
+		}
+	}
+	
+	@Operation(summary = "Ratings")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the Image Product", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "Product not found", 
+					content = @Content
+					),
+			@ApiResponse(
+					responseCode = "204", 
+					description = "Image not found", 
+					content = @Content
+					)
+	})
+	@GetMapping("/{id}/ratings")
+	public List<Rating> getProductRatings( @Parameter(description="id of Product to be searched") @PathVariable int id, @Parameter(description="page") @RequestParam(required = false) String page) throws SQLException{
+		Optional<Product> product = productService.getProductById(id);
+		if(!product.isEmpty()) { 
+			List<Rating> productList = ratingService.getMoreRating(PageRequest.of(Integer.parseInt(page), 10,Sort.by("idproduct").ascending()), product.get()).getContent();
+			return productList;
+		}else {
+				return null;
+			}
+		
+	}
+
+
 
 }

@@ -155,6 +155,11 @@ public class UserService {
 	public void saveUser(User user) {
 		user.setPass(encoder.encode(user.getPass()));
 		userRepository.save(user);
+		User use =  (userRepository.findByusername(user.getUsername()).orElseThrow(() -> new NoSuchElementException("User not found")));
+			Rol r = new Rol();
+			r.setIduser(use);
+			r.setRol("USER");
+			rolRepository.save(r);
 	}
 	
 	@Transactional

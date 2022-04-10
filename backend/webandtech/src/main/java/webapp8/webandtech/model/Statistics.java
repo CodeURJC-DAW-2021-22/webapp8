@@ -2,150 +2,148 @@ package webapp8.webandtech.model;
 
 public class Statistics {
 
-	private double components = 0;
-	private double peripherals = 0;
-	private double phone = 0;
-	private double moderBoard = 0;
-	private double processor = 0;
-	private double hardDisck = 0;
-	private double graphicCard = 0;
-	private double keyBoard = 0;
-	private double mouse = 0;
-	private double monitors = 0;
-	private double headPhones = 0;
-	private double users = 0;
-	private double admins = 0;
-	private int earnings = 0;
+	private int components = 0;
+	private int peripherals = 0;
+	private int phone = 0;
+	private int moderBoard = 0;
+	private int processor = 0;
+	private int hardDisck = 0;
+	private int graphicCard = 0;
+	private int keyBoard = 0;
+	private int mouse = 0;
+	private int monitors = 0;
+	private int headPhones = 0;
+	private int tusers = 0;
+	private int users = 0;
+	private int admins = 0;
+	private float earnings = 0;
 	private int products = 0;
 	private int customers = 0;
-
-	
-	public double getComponents() {
+	public Statistics(int components, int peripherals, int phone, int moderBoard, int processor, int hardDisck,
+			int graphicCard, int keyBoard, int mouse, int monitors, int headPhones, int tusers, int users, int admins,
+			float earnings, int products, int customers) {
+		super();
+		this.components = components;
+		this.peripherals = peripherals;
+		this.phone = phone;
+		this.moderBoard = moderBoard;
+		this.processor = processor;
+		this.hardDisck = hardDisck;
+		this.graphicCard = graphicCard;
+		this.keyBoard = keyBoard;
+		this.mouse = mouse;
+		this.monitors = monitors;
+		this.headPhones = headPhones;
+		this.tusers = tusers;
+		this.users = users;
+		this.admins = admins;
+		this.earnings = earnings;
+		this.products = products;
+		this.customers = customers;
+	}
+	public int getComponents() {
 		return components;
 	}
-
-	public void setComponents(double components) {
+	public void setComponents(int components) {
 		this.components = components;
 	}
-
-	public double getPeripherals() {
+	public int getPeripherals() {
 		return peripherals;
 	}
-
-	public void setPeripherals(double peripherals) {
+	public void setPeripherals(int peripherals) {
 		this.peripherals = peripherals;
 	}
-
-	public double getPhone() {
+	public int getPhone() {
 		return phone;
 	}
-
-	public void setPhone(double phone) {
+	public void setPhone(int phone) {
 		this.phone = phone;
 	}
-
-	public double getModerBoard() {
+	public int getModerBoard() {
 		return moderBoard;
 	}
-
-	public void setModerBoard(double moderBoard) {
+	public void setModerBoard(int moderBoard) {
 		this.moderBoard = moderBoard;
 	}
-
-	public double getProcessor() {
+	public int getProcessor() {
 		return processor;
 	}
-
-	public void setProcessor(double processor) {
+	public void setProcessor(int processor) {
 		this.processor = processor;
 	}
-
-	public double getHardDisck() {
+	public int getHardDisck() {
 		return hardDisck;
 	}
-
-	public void setHardDisck(double hardDisck) {
+	public void setHardDisck(int hardDisck) {
 		this.hardDisck = hardDisck;
 	}
-
-	public double getGraphicCard() {
+	public int getGraphicCard() {
 		return graphicCard;
 	}
-
-	public void setGraphicCard(double graphicCard) {
+	public void setGraphicCard(int graphicCard) {
 		this.graphicCard = graphicCard;
 	}
-
-	public double getKeyBoard() {
+	public int getKeyBoard() {
 		return keyBoard;
 	}
-
-	public void setKeyBoard(double keyBoard) {
+	public void setKeyBoard(int keyBoard) {
 		this.keyBoard = keyBoard;
 	}
-
-	public double getMouse() {
+	public int getMouse() {
 		return mouse;
 	}
-
-	public void setMouse(double mouse) {
+	public void setMouse(int mouse) {
 		this.mouse = mouse;
 	}
-
-	public double getMonitors() {
+	public int getMonitors() {
 		return monitors;
 	}
-
-	public void setMonitors(double monitors) {
+	public void setMonitors(int monitors) {
 		this.monitors = monitors;
 	}
-
-	public double getHeadPhones() {
+	public int getHeadPhones() {
 		return headPhones;
 	}
-
-	public void setHeadPhones(double headPhones) {
+	public void setHeadPhones(int headPhones) {
 		this.headPhones = headPhones;
 	}
-
-	public double getUsers() {
+	public int getTusers() {
+		return tusers;
+	}
+	public void setTusers(int tusers) {
+		this.tusers = tusers;
+	}
+	public int getUsers() {
 		return users;
 	}
-
-	public void setUsers(double users) {
+	public void setUsers(int users) {
 		this.users = users;
 	}
-
-	public double getAdmins() {
+	public int getAdmins() {
 		return admins;
 	}
-
-	public void setAdmins(double admins) {
+	public void setAdmins(int admins) {
 		this.admins = admins;
 	}
-
-	public int getEarnings() {
+	public float getEarnings() {
 		return earnings;
 	}
-
-	public void setEarnings(int earnings) {
+	public void setEarnings(float earnings) {
 		this.earnings = earnings;
 	}
-
 	public int getProducts() {
 		return products;
 	}
-
 	public void setProducts(int products) {
 		this.products = products;
 	}
-
 	public int getCustomers() {
 		return customers;
 	}
-
 	public void setCustomers(int customers) {
 		this.customers = customers;
 	}
 
+	
+	
 }

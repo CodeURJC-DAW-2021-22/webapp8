@@ -13,12 +13,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.transaction.annotation.Transactional;
 
+import webapp8.webandtech.model.Product;
 import webapp8.webandtech.repository.ProductRepository;
 import webapp8.webandtech.repository.RatingRepository;
-import webapp8.webandtech.model.Product;
+
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ProductService {

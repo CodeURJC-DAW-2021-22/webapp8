@@ -272,7 +272,8 @@ Documentación API REST:
 
 
 
-![diagrama de clases](  link diagrama   )
+![diagrama de clases]( ![imagen](https://user-images.githubusercontent.com/79695876/162638645-46ea2c53-3a0b-486d-82e3-5eb5898261fa.png)
+
 
 
 ### Instrucciones de ejecución de la aplicación dockerizada:

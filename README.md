@@ -263,16 +263,17 @@ Leyenda del diagrama:
 ### Aplicación implementada en Heroku
 https://codeurjc-daw-2021-22-webapp8.herokuapp.com/ 
 
-### Documentación API Rest
-Archivo yaml: 
+##Credenciales de usuario de ejemplo:
+Nombre de usuario: Jonathan
+Contraseña: f
 
-Documentación API REST: 
+### Documentación API Rest
+Archivo yaml: (LINK)
+Documentación API REST: (LINK)
 
 ### Actualización del diagrama de clases:
 
-
-
-![diagrama de clases]( ![imagen](https://user-images.githubusercontent.com/79695876/162638645-46ea2c53-3a0b-486d-82e3-5eb5898261fa.png)
+![imagen](https://user-images.githubusercontent.com/79695876/162638645-46ea2c53-3a0b-486d-82e3-5eb5898261fa.png)
 
 
 
@@ -293,7 +294,7 @@ Documentación API REST:
 ### Documentación para construcción de la imagen docker:
 LINUX:
 
-1. Clonar repositorio mediante git clone "https://github.com/CodeURJC-DAW-2020-21/webapp12.git"
+1. Clonar repositorio mediante git clone "https://github.com/CodeURJC-DAW-2020-21/webapp8.git"
 
 2. Descargar Docker 
 
@@ -315,8 +316,8 @@ Para implementar la aplicación en Heroku, debe seguir los siguientes pasos:
 4. Abra cualquier shell de tipo "bash".
 5. Inicie sesión en Heroku usando el comando "heroku login".
 6. Use el comando "cd" hasta llegar a la carpeta "Docker".
-7. Ejecute el comando "./create_heroku_app.sh codeurjc-daw-2021-22-webapp1".
-8. Ejecute el comando "./deploy_heroku_app.sh codeurjc-daw-2021-22-webapp1".
+7. Ejecute el comando "./create_heroku_app.sh codeurjc-daw-2021-22-webapp8".
+8. Ejecute el comando "./deploy_heroku_app.sh codeurjc-daw-2021-22-webapp8".
 9. Abra su panel de Heroku, haga clic en el nuevo repositorio y luego haga clic en "Abrir aplicación".
 
 

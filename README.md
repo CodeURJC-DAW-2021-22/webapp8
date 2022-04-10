@@ -268,8 +268,8 @@ Nombre de usuario: Jonathan
 Contraseña: f
 
 ### Documentación API Rest
-Archivo yaml: (LINK)
-Documentación API REST: (LINK)
+*Archivo yaml: (LINK)
+*Documentación API REST: (LINK)
 
 ### Actualización del diagrama de clases:
 

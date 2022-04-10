@@ -329,11 +329,11 @@ Para implementar la aplicación en Heroku, debe seguir los siguientes pasos:
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |
-   | 1º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 2º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 3º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 4º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 5º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 1º |Añadir la base de la aplicación, archivos jwt y varias actualizaciones	| [Update app api](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/2f951f1ce85c26bb4db11eecb6ee3a677ba688a0)  | [UserRestController](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/api/users/UserRestControler.java)|
+   | 2º |Borrado de cosas sobrantes y actualización de partes de la API	| [Update api](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/656e71e44666f750519b785970a2d065c1652240)  | [AdminRestController](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/api/admins/AdminRestController.java)|
+   | 3º |Añadir rest security config | [Update security api](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/14f2df0d4a8a64b0ab57638011663245b00f44ac)  | [LoginApiController](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/api/auth/LoginApiController.java)|
+   | 4º |Actualización de varias partes de la app	| [Update app](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/b1c6b58a3621edc7bd03d658df7d8c096c227418)  | [pom.xml](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/pom.xml)|
+   | 5º |Modificación de varias partes destacando product service	| [Update app](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/73810a2a4231856fa67ca0f040516fbcbfab959f)  | [ProductService](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/service/ProductService.java)|
    
 #### Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es
 
@@ -354,11 +354,12 @@ Para implementar la aplicación en Heroku, debe seguir los siguientes pasos:
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |
-   | 1º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 2º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 3º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 4º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 5º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 1º |Modificar el product service para que funcione con API rest	| [Updates](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/7838eb496725bbc0d6fc013dafc63eb85a9c9e43)  | [ProductService](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/service/ProductService.java)|
+   | 2º |Modificacion del product rest controller	| [update productcrontroller](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/e2b2e9c28aeab1f2de0afb87f4bd43d2b2984c9c)  | [ProductsRestController](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/api/products/ProductsRestController.java)|
+   | 3º |Modificacion del product rest controller	| [update productcrontroller](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/cccc7dcb014b9434fd81829dfb73bb30257b40f7)  | [UserRestController](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/UserController.java)|
+   | 4º |Modificacion del product rest controller	| [update productrestcontroller](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/b224faa4f147621a0a270fd0941d1f23ab13c4e8)  | [ProductRepository](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/repository/ProductRepository.java)|
+   | 5º |Modicicaciones para los productos	| [update API](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/e8517894af9a99bd44551bc79718cbbde4e2f0a6)  | [RatingService](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/service/RatingService.java)|
+
 
 #### Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es
 

@@ -12,7 +12,7 @@ import webapp8.webandtech.model.User;
 
 
 public interface UserRepository extends JpaRepository<User, Integer>{
-	public User findByIduser(int iduser);
+	public Optional<User> findByIduser(int iduser);
 	public Page<User> findAll(Pageable page);
 	public List<User> findAll();
 	public Optional<User> findByusername(String username);

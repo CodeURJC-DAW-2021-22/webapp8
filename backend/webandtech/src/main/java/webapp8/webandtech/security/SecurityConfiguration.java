@@ -57,15 +57,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
           http.authorizeRequests().antMatchers("/forgotPassword").permitAll();
           http.authorizeRequests().antMatchers("/getMoreProductsPage").permitAll();
           http.authorizeRequests().antMatchers("/moreProducts").permitAll();
+          http.authorizeRequests().antMatchers("/api/**").permitAll();
           http.authorizeRequests().antMatchers("/error").permitAll();
           http.authorizeRequests().antMatchers("httpss://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js").permitAll();
+          http.authorizeRequests().antMatchers("/swagger-ui.html").permitAll();
+		http.authorizeRequests().antMatchers("/v3/**").permitAll();
+		http.authorizeRequests().antMatchers("/swagger-ui/**").permitAll();
+		http.csrf().ignoringAntMatchers("/swagger-ui/**");
+		http.csrf().ignoringAntMatchers("/v3/**");
           http.authorizeRequests().antMatchers("/carShop").permitAll();
           http.authorizeRequests().antMatchers("/checkout/**").hasAnyRole("USER");
           http.authorizeRequests().antMatchers("/users/**").hasAnyRole("USER");
           http.authorizeRequests().antMatchers("/admin/**").hasAnyRole("ADMIN");
  
           
-          http.authorizeRequests().anyRequest().authenticated();
+		http.authorizeRequests().anyRequest().authenticated();
  
           http.formLogin().loginPage("/login");
           http.formLogin().usernameParameter("username");

@@ -3,6 +3,7 @@ package webapp8.webandtech.service;
 import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +13,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.transaction.annotation.Transactional;
 
+import webapp8.webandtech.model.Product;
 import webapp8.webandtech.repository.ProductRepository;
 import webapp8.webandtech.repository.RatingRepository;
-import webapp8.webandtech.model.Product;
+
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ProductService {
@@ -27,8 +29,37 @@ public class ProductService {
 
 	@Autowired
 	private RatingRepository ratingRepository;
-	
 
+	private String nameproduct;
+
+
+
+	//api methods
+	public void deleteProductApiById(int id) {
+		Product pref = productRepository.findByIdproduct(id);
+		productRepository.deleteById(pref.getIdproduct());
+	}
+
+	public Optional<Product> getProductById(int id) {
+		return productRepository.findById(id);
+	}
+
+	public void saveProduct(Product newproduct) {
+		productRepository.save(newproduct);
+
+	}
+	
+	public boolean existsProduct(String nameproduct) {
+		return productRepository.existsIdproductBynameproduct(nameproduct);
+	}
+
+	public boolean existsProductById(Product idproduct) {
+		Optional<Product> product = productRepository.findById(idproduct.getIdproduct());
+		return product.isPresent();
+	}
+
+
+	//normal methods
     public void save(Product product){
         productRepository.save(product);
     }
@@ -61,6 +92,10 @@ public class ProductService {
 
     public Product getProduct(int idproduct) {
 		return productRepository.findById(idproduct).orElseThrow(() -> new NoSuchElementException("Product not found"));
+	}
+    
+	public Product getProductByName(String nameproduct) {
+		return productRepository.findBynameproduct(nameproduct);
 	}
 
 	public Page<Product> getComponentsPage(Pageable page){
@@ -115,6 +150,7 @@ public class ProductService {
 		Page<Product> phones = productRepository.findByproductcategory("telefono",page);
 		return phones;
 	}
+	
 
 	@Modifying
 	public void modifyDataProduct(Product product, MultipartFile image1, MultipartFile image2, MultipartFile image3) throws IOException {
@@ -185,4 +221,9 @@ public class ProductService {
     		ratingRepository.deleteByIdproduct(prev);
     		productRepository.deleteById(prev.getIdproduct());
 	}
+
+    
+
+
+	
 }

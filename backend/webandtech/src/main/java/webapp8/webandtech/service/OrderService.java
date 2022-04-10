@@ -40,6 +40,9 @@ public class OrderService {
         Page<Order> orders = orderRepository.findAll(page);
         return orders;
 	}
+    public List<Order> getAll(){
+        return orderRepository.findAll();
+	}
     public void saveOrder(Order order) throws IOException {
 		orderRepository.save(order);
 	}

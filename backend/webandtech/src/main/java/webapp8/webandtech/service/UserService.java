@@ -41,7 +41,7 @@ public class UserService {
 	@Autowired
 	private PasswordEncoder encoder;
     
-    public User getUserId(int id){
+    public Optional<User> getUserId(int id){
 		return userRepository.findByIduser(id);
 	}
 	
@@ -155,6 +155,11 @@ public class UserService {
 	public void saveUser(User user) {
 		user.setPass(encoder.encode(user.getPass()));
 		userRepository.save(user);
+		User use =  (userRepository.findByusername(user.getUsername()).orElseThrow(() -> new NoSuchElementException("User not found")));
+			Rol r = new Rol();
+			r.setIduser(use);
+			r.setRol("USER");
+			rolRepository.save(r);
 	}
 	
 	@Transactional

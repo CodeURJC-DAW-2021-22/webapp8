@@ -254,3 +254,121 @@ Leyenda del diagrama:
    | 3º	| Products Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/0f3d9e44b3ea760c2a879d7833ee3a99bd179e8b) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
    | 4º	| Ratings Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/dcb3571037c140cae6af77ffa5f565d28393c9ce) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
    | 5º	| Aplication images	| [Update README](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/bc1fc3f71ae2c366f97249f4edd99ba7b9fdc578) | [README.md](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |
+   
+   
+
+
+# Fase 3
+###API REST a la aplicación web y despliegue con docker.
+### Aplicación implementada en Heroku
+https://codeurjc-daw-2021-22-webapp8.herokuapp.com/ 
+
+### Documentación API Rest
+Archivo yaml: 
+
+Documentación API REST: 
+
+### Actualización del diagrama de clases:
+
+
+
+![diagrama de clases](     )
+
+
+### Instrucciones de ejecución de la aplicación dockerizada:
+
+1. Es necesaria la instalacion de docker y docker compose. 
+
+2. Abrir la terminal navegar hasta la carpeta Docker. 
+
+3.1. Windows: Escribir el comando: "docker-compose up --build". 
+
+3.2. Linux: Escribir el comando: "sudo docker-compose up --build".
+
+4. Una vez finalizado el proceso de construcción de docker abrir el navegador y escribir:"https://localhost:8443/". 
+
+5. Una vez escrita te redirigida a la pantalla de registro de la aplicacion: "https://localhost:8443/sign-in" una vez se cargue estará lista para ser utilizada.
+
+### Documentación para construcción de la imagen docker:
+LINUX:
+
+1. Clonar repositorio mediante git clone "https://github.com/CodeURJC-DAW-2020-21/webapp12.git"
+
+2. Descargar Docker 
+
+3. Descargar Docker Compose
+
+4. Navegar hasta la carpeta Docker
+
+5. Ejecutar el comando: "chmod 777 create_image.sh"
+
+6. Ejecutar el comando: "./create_image.sh"
+
+
+
+
+### Participación de miembros
+
+#### Guillermo Martín García	| g.martingarcia@alumnos.urjc.es
+
+> 
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 2º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 3º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 4º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 5º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   
+#### Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es
+
+
+> 
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 2º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 3º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 4º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 5º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+
+#### Víctor López Rodríguez | v.lopezrodr@alumnos.urjc.es
+
+> 
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 2º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 3º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 4º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 5º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+
+#### Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es
+
+
+> 
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 2º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 3º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 4º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 5º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+
+#### Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es
+
+
+> 
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 2º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 3º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 4º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 5º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   

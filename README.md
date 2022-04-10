@@ -272,7 +272,7 @@ Documentación API REST:
 
 
 
-![diagrama de clases](     )
+![diagrama de clases](  link diagrama   )
 
 
 ### Instrucciones de ejecución de la aplicación dockerizada:
@@ -305,6 +305,18 @@ LINUX:
 6. Ejecutar el comando: "./create_image.sh"
 
 
+### Instrucciones para implementar la aplicación en Heroku 
+Para implementar la aplicación en Heroku, debe seguir los siguientes pasos:
+
+1. Crea una cuenta en Heroku.
+2. Instale el paquete Heroku.
+3. Instalar experto.
+4. Abra cualquier shell de tipo "bash".
+5. Inicie sesión en Heroku usando el comando "heroku login".
+6. Use el comando "cd" hasta llegar a la carpeta "Docker".
+7. Ejecute el comando "./create_heroku_app.sh codeurjc-daw-2021-22-webapp1".
+8. Ejecute el comando "./deploy_heroku_app.sh codeurjc-daw-2021-22-webapp1".
+9. Abra su panel de Heroku, haga clic en el nuevo repositorio y luego haga clic en "Abrir aplicación".
 
 
 ### Participación de miembros

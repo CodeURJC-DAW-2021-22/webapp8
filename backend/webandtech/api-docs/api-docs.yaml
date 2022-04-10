@@ -1,0 +1,325 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8443
+  description: Generated server url
+paths:
+  /api/users/{id}:
+    get:
+      tags:
+      - user-rest-controler
+      summary: Get a user by its id
+      operationId: getUsersById
+      parameters:
+      - name: id
+        in: path
+        description: id of user to be searched
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "404":
+          description: User not found
+          content: {}
+        "200":
+          description: Found the User
+          content:
+            application/json: {}
+    put:
+      tags:
+      - user-rest-controler
+      summary: Modify a user
+      operationId: replaceUser
+      parameters:
+      - name: id
+        in: path
+        description: id of user to be searched
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User_Detailed'
+        required: true
+      responses:
+        "404":
+          description: User not found
+          content: {}
+        "201":
+          description: Successful user modification
+          content:
+            application/json: {}
+        "406 ":
+          description: Not Acceptable user creation the username or email is token
+          content:
+            application/json: {}
+    delete:
+      tags:
+      - user-rest-controler
+      summary: Delete a user
+      operationId: deleteUser
+      parameters:
+      - name: id
+        in: path
+        description: id of user to be searched
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "404":
+          description: User not found
+          content: {}
+        "200":
+          description: Successful user delete
+          content:
+            application/json: {}
+  /api/users/{id}/imageProfile:
+    get:
+      tags:
+      - user-rest-controler
+      summary: Get a profile image user by id
+      operationId: getImageProfile
+      parameters:
+      - name: id
+        in: path
+        description: id of user to be searched
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "404":
+          description: User not found
+          content: {}
+        "200":
+          description: Found the Image Profile
+          content:
+            application/json: {}
+        "204":
+          description: Image not found
+    post:
+      tags:
+      - user-rest-controler
+      summary: create a profile image user by id
+      operationId: uploadImageProfile
+      parameters:
+      - name: id
+        in: path
+        description: id of user to be searched
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - image
+              type: object
+              properties:
+                image:
+                  type: string
+                  description: user profile picture
+                  format: binary
+      responses:
+        "404":
+          description: User not found
+          content: {}
+        "201":
+          description: Create the ImageProfile
+          content:
+            application/json: {}
+        "204":
+          description: Image not found
+  /api/users/:
+    get:
+      tags:
+      - user-rest-controler
+      summary: Get a all users
+      operationId: getAllUsers
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: string
+        "200":
+          description: Found the Users
+          content:
+            application/json: {}
+    post:
+      tags:
+      - user-rest-controler
+      summary: Create a user
+      operationId: registerUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User_Detailed'
+        required: true
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: string
+        "201":
+          description: Successful user creation
+          content:
+            application/json: {}
+        "406 ":
+          description: Not Acceptable user creation the username or email is token
+          content:
+            application/json: {}
+  /api/auth/refresh:
+    post:
+      tags:
+      - login-api-controller
+      operationId: refreshToken
+      parameters:
+      - name: refreshToken
+        in: cookie
+        required: false
+        schema:
+          type: string
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: string
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+  /api/auth/logout:
+    post:
+      tags:
+      - login-api-controller
+      operationId: logOut
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: string
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+  /api/auth/login:
+    post:
+      tags:
+      - login-api-controller
+      operationId: login
+      parameters:
+      - name: accessToken
+        in: cookie
+        required: false
+        schema:
+          type: string
+      - name: refreshToken
+        in: cookie
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+        required: true
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: string
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+  /api/users/customers:
+    get:
+      tags:
+      - user-rest-controler
+      summary: Get a all users type customers
+      operationId: getUsers
+      parameters:
+      - name: page
+        in: query
+        description: page
+        required: false
+        schema:
+          type: string
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: string
+        "200":
+          description: Found the Users type customers
+          content:
+            application/json: {}
+components:
+  schemas:
+    User_Detailed:
+      type: object
+      properties:
+        iduser:
+          type: integer
+          format: int32
+        email:
+          type: string
+        username:
+          type: string
+        pass:
+          type: string
+        completname:
+          type: string
+        userprofile:
+          type: boolean
+        address:
+          type: string
+      description: Object Json Type Users
+    AuthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - SUCCESS
+          - FAILURE
+        message:
+          type: string
+        error:
+          type: string
+    LoginRequest:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string

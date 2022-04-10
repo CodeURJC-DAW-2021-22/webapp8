@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- pignose css -->
+    <link href="/css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
+
+
+    <!-- //pignose css -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- js -->
+    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <!-- cart -->
+    <script src="/js/simpleCart.min.js"></script>
+    <!-- cart -->
+    <!-- for bootstrap working -->
+    <script type="text/javascript" src="/js/bootstrap-3.1.1.min.js"></script>
+    <!-- //for bootstrap working -->
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link
+        href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic'
+        rel='stylesheet' type='text/css'>
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/pignose.layerslider.js"></script>
+    <script src="/js/easyResponsiveTabs.js"></script>
+    <script src="/js/script.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/libs/css/style.css">
+    <link rel="stylesheet" href="/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <title>Users list</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <ul>
+                <li><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Entrega gratuita y rápida</li>
+                <li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Envío gratis en todos los
+                    pedidos</li>
+                <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a
+                        href="mailto:info@example.com">info@w&t.com</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //header -->
+    <!-- header-bot -->
+    <div class="header-bot">
+        <div class="container">
+            <div class="col-md-3 header-left">
+                <h1><a href="/"><img src="/images/logo.jpg"></a></h1>
+            </div>
+
+
+            <nav class="col-md-3 header-right footer-bottom dropdown">
+                <div class="dropdown-content">
+                    {{#login}}
+                    {{#userr}}
+                    <li><a href="/users/profile/{{user}}">Ajustes</a></li>
+                    <li><a href="/users/orders/{{user}}">Pedidos</a></li>
+                    <li><a href="/users/security/{{user}}">Seguridad</a></li>
+                    {{#admin}}
+                    <li><a href="/admin/newProduct">Crear producto</a></li>
+                    <li><a href="/admin/orders">Consultar pedidos</a></li>
+                    <li><a href="/admin/users">Consultar usuarios</a></li>
+                    <li><a href="/admin/graphics">Consultar gráficas</a></li>
+                    {{/admin}}
+                    <li>
+                        <form action="/logout" method="POST">
+                            <input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf"
+                                value="{{token}}" />
+                        </form>
+                    </li>
+                    {{/userr}}
+                    {{/login}}
+                </div>
+                <ul>
+
+                    {{^login}}
+                    <li><a href="/login" class="use1"><span>Login</span></a></li>
+                    {{/login}}
+                    {{#login}}
+                    <li><a class="use1"></a>
+                        {{/login}}
+                    </li>
+                    <li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
+                    <li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
+                    <li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
+                    <li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
+                </ul>
+            </nav>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //header-bot -->
+
+
+
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <div class="dashboard-wrapper">
+            <div class="influence-finder">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h3 class="mb-2">LISTADO DE USUARIOS</h3>
+                                <div class="container-xl px-2 mt-4">
+                                    <!-- Account page navigation-->
+                                    <nav class="nav nav-borders">
+                                        {{#admin}}
+                                        <a class="nav-link" href="/admin/graphics" target="__blank">GRÁFICOS</a>
+                                        <a class="nav-link active ms-0" href="/admin/users" target="__blank">LISTA
+                                            USUARIOS</a>
+                                        <a class="nav-link" href="/admin/orders" target="__blank">LISTA PEDIDOS</a>
+                                        <a class="nav-link" href="/admin/newProduct" target="__blank">CREAR PRODUCTO</a>
+                                        <a class="nav-link" href="/index" target="__blank">SALIR</a>
+                                        {{/admin}}
+                                    </nav>
+                                    <hr class="mt-0 mb-4">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- content -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <!-- ============================================================== -->
+
+                        <!-- ============================================================== -->
+                        <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 user-list">
+                            <!-- ============================================================== -->
+                            <!-- card influencer one -->
+                            <!-- ============================================================== -->
+                            {{#userList}}
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <div class="user-avatar float-xl-left pr-4 float-none">
+                                                <img src="https://codeurjc-daw-2021-22-webapp8.herokuapp.com/imageprofile/{{username}}"
+                                                    alt="User Avatar" class="rounded-circle user-avatar-xl">
+                                            </div>
+                                            <div class="pl-xl-3">
+                                                <div class="m-b-0">
+                                                    <div class="user-avatar-name d-inline-block">
+                                                        <h2 class="font-24 m-b-10">{{completname}}</h2>
+                                                    </div>
+
+                                                </div>
+                                                <div class="user-avatar-address">
+                                                    <p class="mb-2"><i
+                                                            class="fa fa-map-marker-alt mr-2  text-primary"></i>{{address}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/userList}}
+                            <!-- ============================================================== -->
+                            <!-- end card influencer one -->
+                            <!-- ============================================================== -->
+
+
+                            <!-- ============================================================== -->
+                            <!-- end content -->
+                            <!-- ============================================================== -->
+
+                            <!-- ============================================================== -->
+
+                            <!-- ============================================================== -->
+                        </div>
+                        <div class="pagination-grid text-right">
+                            <ul class="pagination paging">
+                                <li><a aria-label="Next" id="viewMore" onclick="viewMoreUsers()"><span aria-hidden="true">Ver más</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- footer -->
+                    <!-- ============================================================== -->
+                    <div class="footer">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <a>Copyright © 2018 Web And Tech.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end footer -->
+                    <!-- ============================================================== -->
+                </div>
+                <!-- ============================================================== -->
+                <!-- end wrapper  -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- end main wrapper  -->
+            <!-- ============================================================== -->
+            <!-- Optional JavaScript -->
+            <!-- jquery 3.3.1 -->
+            <script src="/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+            <!-- bootstap bundle js -->
+            <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+            <!-- slimscroll js -->
+            <script src="/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+            <!-- main js -->
+            <script src="/assets/libs/js/main-js.js"></script>
+</body>
+
+</html>

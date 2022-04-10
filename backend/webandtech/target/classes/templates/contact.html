@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>W&T</title>
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Smart Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css">
+	<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- js -->
+	<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+	<!-- //js -->
+	<!-- cart -->
+	<script src="/js/simpleCart.min.js"></script>
+	<!-- cart -->
+	<!-- for bootstrap working -->
+	<script type="text/javascript" src="/js/bootstrap-3.1.1.min.js"></script>
+	<!-- //for bootstrap working -->
+	<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link
+		href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic'
+		rel='stylesheet' type='text/css'>
+	<script src="/js/jquery.easing.min.js"></script>
+	<script src="/js/script.js"></script>
+</head>
+
+<body>
+	<!-- header -->
+	<div class="header">
+		<div class="container">
+			<ul>
+				<li><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Entrega gratuita y rápida</li>
+				<li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Envío gratis en todos los
+					pedidos</li>
+				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a
+						href="mailto:info@example.com">info@w&t.com</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- //header -->
+	<!-- header-bot -->
+	<div class="header-bot">
+		<div class="container">
+			<div class="col-md-3 header-left">
+				<h1><a href="/"><img src="/images/logo.jpg"></a></h1>
+			</div>
+			<div class="col-md-6 header-middle">
+				<form>
+					<div class="search">
+						<input type="search" value="Buscar" onfocus="this.value = '';"
+							onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
+					</div>
+					<div class="section_room">
+						<select id="country" onchange="change_country(this.value)" class="frm-field required">
+							<option value="null">Todo</option>
+							<option value="AX">Componentes</option>
+							<option value="AX">Periféricos</option>
+							<option value="AX">Teléfonos</option>
+						</select>
+					</div>
+					<div class="sear-sub">
+						<input type="submit" value=" ">
+					</div>
+					<div class="clearfix"></div>
+				</form>
+			</div>
+
+			<nav class="col-md-3 header-right footer-bottom dropdown">
+				<div class="dropdown-content">
+					{{#login}}
+					{{#userr}}
+						<li><a href="/users/profile/{{user}}">Ajustes</a></li>
+						<li><a href="/users/orders/{{user}}">Pedidos</a></li>
+						<li><a href="/users/security/{{user}}">Seguridad</a></li>
+						{{#admin}}
+							<li><a href="/admin/newProduct">Crear producto</a></li>
+							<li><a href="/admin/orders">Consultar pedidos</a></li>
+							<li><a href="/admin/users">Consultar usuarios</a></li>
+							<li><a href="/admin/graphics">Consultar gráficas</a></li>
+						{{/admin}}
+						<li>
+							<form action="/logout" method="POST">
+								<input id="logout" type="submit" value="Logout" /><input type="hidden" name="_csrf" value="{{token}}"/>
+							</form>
+						</li>
+					{{/userr}}
+					{{/login}}
+				</div>	
+				<ul>
+					
+					{{^login}}
+						<li><a href="/login" class="use1"><span>Login</span></a></li>
+					{{/login}}
+					{{#login}}
+						<li><a class="use1"></a>
+					{{/login}}
+					</li>
+					<li><a class="fb" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="twi" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="insta" href="https://www.urjc.es/" target="_blank"></a></li>
+					<li><a class="you" href="https://www.urjc.es/" target="_blank"></a></li>
+				</ul>
+			</nav>
+
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //header-bot -->
+	<!-- banner -->
+	<div class="ban-top">
+		<div class="container">
+			<div class="top_nav_left">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+								data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav menu__list">
+								<li class="active menu__item menu__item--current"><a class="menu__link"
+										href="/">Inicio <span class="sr-only">(current)</span></a></li>
+								<li class="dropdown menu__item">
+									<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
+										aria-haspopup="true" aria-expanded="false">COMPONENTES<span
+											class="caret"></span></a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<div class="row">
+											<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
+												<a href="/components"><img src="/images/componentes.jpg"
+														alt=" " /></a>
+											</div>
+											<div class="col-sm-3 multi-gd-img">
+												<ul class="multi-column-dropdown">
+													<li><a href="/components?typeProduct=Placa base">Placas Bases</a></li>
+													<li><a href="/components?typeProduct=Procesador">Procesador</a></li>
+													<li><a href="/components?typeProduct=Disco duro">Discos Duros</a></li>
+													<li><a href="/components?typeProduct=Tarjeta grafica">Tarjetas Gráficas</a></li>
+												</ul>
+											</div>
+
+											<div class="clearfix"></div>
+										</div>
+									</ul>
+								</li>
+								<li class="dropdown menu__item">
+									<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
+										aria-haspopup="true" aria-expanded="false">Periféricos <span
+											class="caret"></span></a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<div class="row">
+											<div class="col-sm-3 multi-gd-img">
+												<ul class="multi-column-dropdown">
+													<li><a href="/peripherals?typeProduct=Teclado">Teclados</a></li>
+													<li><a href="/peripherals?typeProduct=Raton">Ratones</a></li>
+													<li><a href="/peripherals?typeProduct=Monitor">Monitores</a></li>
+													<li><a href="/peripherals?typeProduct=Auriculares">Auriculares</a></li>
+												</ul>
+											</div>
+											<div class="col-sm-6 multi-gd-img multi-gd-text ">
+												<a href="/peripherals"><img src="/images/perifericos.jpg"
+														alt=" " /></a>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</ul>
+								</li>
+								<li class=" menu__item"><a class="menu__link" href="/phones">Teléfonos</a></li>
+								<li class=" menu__item"><a class="menu__link" href="/contact">Contacto</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="top_nav_right">
+				<div class="cart box_1">
+					<a href="/checkout">
+						<h3>
+							<div class="total">
+								<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
+								<span class="simpleCart_total"></span> (<span id="simpleCart_quantity"
+									class="simpleCart_quantity"></span> items)
+							</div>
+
+						</h3>
+					</a>
+					<p><a href="javascript:;" class="simpleCart_empty">Carro vacío</a></p>
+
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //banner-top -->
+<!-- banner -->
+<div class="page-head">
+	<div class="container">
+		<h3>Contacto</h3>
+	</div>
+</div>
+<!-- //banner -->
+<!-- contact -->
+	<div class="contact">
+		<div class="container">
+			<div class="contact-grids">
+				<div class="col-md-4 contact-grid text-center animated wow slideInLeft" data-wow-delay=".5s">
+					<div class="contact-grid1">
+						<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
+						<h4>Dirección</h4>
+						<li>Universidad Rey Juan Carlos</li>
+						<li>Móstoles</li>
+					</div>
+				</div>
+				<div class="col-md-4 contact-grid text-center animated wow slideInUp" data-wow-delay=".5s">
+					<div class="contact-grid2">
+						<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
+						<h4>Llámanos</h4>
+						<li>+1234 758 839</li>
+						<li>+1273 748 730</li>
+					</div>
+				</div>
+				<div class="col-md-4 contact-grid text-center animated wow slideInRight" data-wow-delay=".5s">
+					<div class="contact-grid3">
+						<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+						<h4>Email</h4>
+						<li>info@example1.com</li>
+						<li>info@example2.com</li>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="map wow fadeInDown animated" data-wow-delay=".5s">
+				<h3 class="tittle">Ver en el mapa</h3>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3041.319096902545!2d-3.8778373843690663!3d40.33526683590997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418e7adf68f543%3A0x841755428455a90b!2sUniversidad%20Rey%20Juan%20Carlos!5e0!3m2!1ses!2ses!4v1644584418782!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>			</div>
+		</div>
+	</div>
+	
+<!-- //contact -->
+
+<!-- //product-nav -->
+	<!-- //product-nav -->
+	<div class="clearfix"></div>
+	<div class="coupons">
+		<div class="container">
+			<div class="coupons-grids text-center">
+				<div class="col-md-3 coupons-gd">
+					<h3>Compra tu producto de forma simple</h3>
+				</div>
+				<div class="col-md-3 coupons-gd">
+					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+					<h4>ACCEDE A TU CUENTA</h4>
+					<p>Si no tiene una puede crearsela de forma gratis y rápida.</p>
+				</div>
+				<div class="col-md-3 coupons-gd">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					<h4>SELECCIONA TU COMPRA</h4>
+					<p>Puede usar la función del carro de compra para adquirir varios objetos a la vez.</p>
+				</div>
+				<div class="col-md-3 coupons-gd">
+					<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
+					<h4>PAGUE COMO QUIERA</h4>
+					<p>Hemos facilitado varias formas de pago para que pueda elegir el que quiera.</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-3 footer-left">
+				<h2><a href="/index"><img src="/images/logo.jpg" alt=" " /></a></h2>
+				<p>Nuestra tienda se compromete a traer siempre lo más nuevo en tecnología a precios excelentes y
+					con seguridad y garantía de que el producto llega a salvo a su casa.</p>
+			</div>
+			<div class="col-md-9 footer-right">
+				<div class="clearfix"></div>
+				<div class="sign-grds">
+					<div class="col-md-4 sign-gd">
+						<h4>Información</h4>
+						<ul>
+							<li><a href="index.html">Inicio</a></li>
+							<li><a href="componentes.html">Componentes</a></li>
+							<li><a href="perifericos.html">Periféricos</a></li>
+							<li><a href="electronics.html">Teléfonos</a></li>
+							<li><a href="contact.html">Contactos</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-4 sign-gd-two">
+						<h4>Infomación de la tienda</h4>
+						<ul>
+							<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Dirección: Avenida
+								de Carlos, s/n <span>Madrid</span></li>
+							<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a
+									href="mailto:info@example.com">info@w&t.com</a></li>
+							<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +1234 567 567
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-4 sign-gd flickr-post">
+						<h4>Publicaciones</h4>
+						<ul>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b16.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b17.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b18.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b16.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b17.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b18.jpg" alt=" "
+										class="img-responsive" /></a></li>
+							<li><a href="single.html"><img src="/images/b15.jpg" alt=" "
+										class="img-responsive" /></a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<p class="copy-right">&copy 2022 W&T. Todos los derechos reservdos | Design by <a href="http://urjc.es/"
+					target="_blank">Alumnos de la URJC</a></p>
+		</div>
+	</div>
+	<!-- //footer -->
+
+</body>
+</html>

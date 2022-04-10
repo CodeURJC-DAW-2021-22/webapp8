@@ -41,8 +41,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import webapp8.webandtech.model.Order;
 import webapp8.webandtech.model.Product;
 import webapp8.webandtech.model.User;
+import webapp8.webandtech.model.CarShop;
 import webapp8.webandtech.service.OrderService;
 import webapp8.webandtech.service.UserService;
+import webapp8.webandtech.service.ProductService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
@@ -57,7 +59,12 @@ public class UserRestControler {
 	
 	@Autowired
 	private OrderService orderService;
+	
+	@Autowired
+	private ProductService productService;
 
+	@Autowired
+    private CarShop carShop;
 
 	@Operation(summary = "Get a user by its id")
 	@ApiResponses(value = { 
@@ -360,7 +367,55 @@ public class UserRestControler {
 	}
 
 	
-
-
-
+	// @Operation(summary = "Add product to carshop")
+	// @ApiResponses(value = { 
+	// 		@ApiResponse(
+	// 				responseCode = "201", 
+	// 				description = "Successful add product", 
+	// 				content = {@Content(
+	// 						mediaType = "application/json"
+	// 						)}
+	// 				),
+	// 		@ApiResponse(
+	// 				responseCode = "406 ", 
+	// 				description = "Not Acceptable add product", 
+	// 				content = {@Content(
+	// 						mediaType = "application/json"
+	// 						)}
+	// 				)
+	// })
+	// @JsonView(User.Detailed.class)
+	// @PostMapping("/{id}/carShop")
+	// public ResponseEntity<CarShop> shopcarUser(@Parameter(description="id of user to be searched") @PathVariable int id, @Parameter(description="Object Json Type Users") @RequestBody List<Product> products) throws IOException{
+	// 	Optional<User> user = userService.getUserId(id);
+	// 	String idsProducts = "";
+	// 		Product product = productService.getProductById(id);
+    //     	carShop.getCarShop().add(product);
+	// 		System.out.println(carShop.getCarShop().size());
+	// 		return ResponseEntity.ok(carShop);
+	// }
+	
+	
+	// @Operation(summary = "Remove product in car shop")
+	// @ApiResponses(value = { 
+	// 		@ApiResponse(
+	// 				responseCode = "201", 
+	// 				description = "Successful remove product", 
+	// 				content = {@Content(
+	// 						mediaType = "application/json"
+	// 						)}
+	// 				),
+	// 		@ApiResponse(
+	// 				responseCode = "406", 
+	// 				description = "Not Acceptable Post title exists", 
+	// 				content = @Content
+	// 				) 
+	// })
+	// @JsonView(Product.Detailed.class)
+	// @PostMapping("/users/deleteProductShopCar")
+    // public void deleteProductShopCar( @RequestParam int idproduct) throws IOException {
+    //     Product product = productService.getProductById(id);
+        
+    //     carShop.getCarShop().removeIf(carShop -> carShop.getIdproduct() == product.getIdproduct());
+    // }
 }

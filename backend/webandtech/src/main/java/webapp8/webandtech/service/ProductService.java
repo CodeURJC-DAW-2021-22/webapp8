@@ -104,11 +104,11 @@ public class ProductService {
 	}
 
 	public Page<Product> getPeripheralsPage(Pageable page){
-		return productRepository.findByproductcategory("peripheral", page);
+		return productRepository.findByproductcategory("Periferico", page);
 	}
 
 	public Page<Product> getPhonesPage(Pageable page){
-		return productRepository.findByproductcategory("phone", page);
+		return productRepository.findByproductcategory("telefono", page);
 	}
 	
 	public List<Product> getProductType(String productType){

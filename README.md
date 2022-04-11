@@ -249,11 +249,11 @@ Leyenda del diagrama:
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |
-   | 1º | BBDD and Class diagrams	| [Update README](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/1cc607fccc6578859531b90402ac96f8dcba81a8) | [README.md](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |
-   | 2º	| Users Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f4223a9f78ed236c3510cdf7d51fe4c28470720d) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
-   | 3º	| Products Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/0f3d9e44b3ea760c2a879d7833ee3a99bd179e8b) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
-   | 4º	| Ratings Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/dcb3571037c140cae6af77ffa5f565d28393c9ce) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
-   | 5º	| Aplication images	| [Update README](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/bc1fc3f71ae2c366f97249f4edd99ba7b9fdc578) | [README.md](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |
+   | 1º | BBDD and Class diagrams	| (https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/1cc607fccc6578859531b90402ac96f8dcba81a8) | (https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |
+   | 2º	| Users Loader	| (https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f4223a9f78ed236c3510cdf7d51fe4c28470720d) | (https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 3º	| Products Loader	| (https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/0f3d9e44b3ea760c2a879d7833ee3a99bd179e8b) | (https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 4º	| Ratings Loader	| (https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/dcb3571037c140cae6af77ffa5f565d28393c9ce) | (https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 5º	| Aplication images	| (https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/bc1fc3f71ae2c366f97249f4edd99ba7b9fdc578) | (https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |
    
    
 
@@ -381,9 +381,9 @@ Para implementar la aplicación en Heroku, debe seguir los siguientes pasos:
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |
-   | 1º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 2º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 3º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 4º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 5º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 1º |Creacion de Dockerfile y dockerizacion de la app	| [add Dockerfile](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/138efb01500c9174b30c995ad97ab67b404016e3)  | [Dockerfile](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/feature/docker/docker/Dockerfile)|
+   | 2º |Creacion del contenedor de la app con docker-compose	| [add docker-compose](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/ceaae46af748ca308b1ec1a40e2fbf10709ff17e)  | [docker-compose.yml](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/feature/docker/docker/docker-compose.yml)|
+   | 3º |Configuracion del pom para heroku	| [update pom](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/e54e7a6a2bb3efe8e5497d7ee9ce3ff41f6b6b5a)  | [pom.xml](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/feature/docker/backend/webandtech/pom.xml)|
+   | 4º |Configuracion de la base de datos para heroku	| [add DatabaseConfig](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/652baec620e5c94466787d4154fb3c763cd378fe)  | [DatabaseConfig.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/feature/docker/backend/webandtech/src/main/java/webapp8/webandtech/DatabaseConfig.java)|
+   | 5º |Configuracion del puerto en application.properties para heroku	| [update application.properties](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/0e0ae6fe6c94037d1fea1ae0896fec7c7a9a6493)  | [application.properties](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/feature/docker/backend/webandtech/src/main/resources/application.properties)|
    

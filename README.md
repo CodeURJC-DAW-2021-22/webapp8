@@ -368,11 +368,11 @@ Para implementar la aplicación en Heroku, debe seguir los siguientes pasos:
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |
-   | 1º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 2º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 3º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 4º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 5º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 1º |Añadir API REST User Model	| [API REST User Model](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/d9c2a0700e41f1c96886e107fdac6359b9bac886)  | [User](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/User.java)|
+   | 2º |Añadir API REST Rol Model	| [API REST Rol Model](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/fd93cee5f70accd76a861af7d5a268f00fceb828)  | [Rol](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Rol.java)|
+   | 3º |Añadir API REST Rating Model	| [API REST Rating Model](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/4ae213684c3b7552d33cbdda6b2cf25b583e86c8)  | [Rating](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Rating.java)|
+   | 4º |Añadir API REST Product Model	| [API REST Product Model](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/5009d2686aca7b93fa96f3f577ffb442de316d17)  | [Product](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Product.java)|
+   | 5º |Añadir API REST Order Model	| [API REST Order Model](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/2d6d90a79d3a57eeeba4009f97f774c53dfcc844)  | [Order](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Order.java)|
 
 #### Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es
 

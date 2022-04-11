@@ -259,16 +259,20 @@ Leyenda del diagrama:
 
 
 # Fase 3
-###API REST a la aplicación web y despliegue con docker.
+## API REST a la aplicación web y despliegue con docker.
 ### Aplicación implementada en Heroku
-https://codeurjc-daw-2021-22-webapp8.herokuapp.com/ 
+https://codeurjc-daw-2021-22-webapp8.herokuapp.com/
 
-##Credenciales de usuario de ejemplo:
+### Credenciales de usuario de ejemplo:
+
 Nombre de usuario: Jonathan
+
 Contraseña: f
 
 ### Documentación API Rest
-*Archivo yaml: (LINK)
+
+*Archivo yaml: https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/api-docs/api-docs.yaml
+
 *Documentación API REST: (LINK)
 
 ### Actualización del diagrama de clases:
@@ -289,7 +293,7 @@ Contraseña: f
 
 4. Una vez finalizado el proceso de construcción de docker abrir el navegador y escribir:"https://localhost:8443/". 
 
-5. Una vez escrita te redirigida a la pantalla de registro de la aplicacion: "https://localhost:8443/sign-in" una vez se cargue estará lista para ser utilizada.
+5. Una vez escrita te redirigida a la pantalla de inicio de la aplicacion: "https://localhost:8443/index" una vez se cargue estará lista para ser utilizada.
 
 ### Documentación para construcción de la imagen docker:
 LINUX:

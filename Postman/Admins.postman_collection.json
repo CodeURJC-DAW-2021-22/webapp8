@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "f82841a4-b7e1-4fea-9f48-ff041e5d7fde",
+		"name": "Admins",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:8443/api/admins/customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/admins/customers",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"admins",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/admins/customers?page=0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/admins/customers?page=0",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"admins",
+						"customers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/admins/orders?page=0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/admins/orders?page=0",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"admins",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/admins/statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/admins/statistics",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"admins",
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

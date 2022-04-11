@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "b7a364eb-d412-4082-b8d8-15b73256ca62",
+		"name": "Login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:8443/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"Jonathan\", \"password\": \"f\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/auth/refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/auth/refresh",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/auth/logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/auth/logout",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

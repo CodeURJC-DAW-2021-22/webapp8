@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "df496550-d85e-4d26-8539-e9bfae68a213",
+		"name": "Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:8443/api/products/ Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/components",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/components/?page=0",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"components",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/peripherals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/peripherals/?page=0",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"peripherals",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/phones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/phones/?page=0",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"phones",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \r\n        \r\n        \"nameproduct\": \"Auriculares Forgeon cosa\",\r\n        \"description\": \" Desde Forgeon presentamos los nuevos auriculares Forgeon General Wireless Headset 2,4 GHz. Unos auriculares con unosacabados de primera, acompañados de la más novedosa tecnología de triple conexión que te da la libertad que necesitaspara jugar cómodamente. Esto unido a sus extras y a su peso de tan solo 350 g hace de estos auriculares imprescindiblesen tu setup gaming ¡No te quedes sin ellos!\",\r\n        \"price\": 146 ,\r\n        \"productcategory\": \"Periferico\" ,\r\n        \"productbrand\": \"forgeon\",\r\n        \"productType\": \"Auriculares\",\r\n        \"ratingProducto\": 4,\r\n \r\n        \"img1\": true,\r\n        \"img2\": true,\r\n        \"img3\": true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/1",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/ratings",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/1/ratings",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"1",
+						"ratings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/19",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \r\n        \r\n        \"nameproduct\": \"Auriculares Forgeon cosassss\",\r\n        \"description\": \" Desde Forgeon presentamos los nuevos auriculares Forgeon General Wireless Headset 2,4 GHz. Unos auriculares con unosacabados de primera, acompañados de la más novedosa tecnología de triple conexión que te da la libertad que necesitaspara jugar cómodamente. Esto unido a sus extras y a su peso de tan solo 350 g hace de estos auriculares imprescindiblesen tu setup gaming ¡No te quedes sin ellos!\",\r\n        \"price\": 155 ,\r\n        \"productcategory\": \"Periferico\" ,\r\n        \"productbrand\": \"forgeon\",\r\n        \"productType\": \"Auriculares\",\r\n        \"ratingProducto\": 4\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/20",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/20",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/2/image0",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/1/image1",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"1",
+						"image1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/2/image2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/11/image2",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"11",
+						"image2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/2/image2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/2/image2",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"2",
+						"image2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/2/image1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Guileath/Documents/webapp8/backend/webandtech/src/main/resources/static/images/auriculares2_1.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/20/image1",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"20",
+						"image1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/2/image2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/zectr/Pictures/spice.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/2/image2",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"2",
+						"image2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/2/image3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/zectr/Pictures/FondoEscritorio.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://codeurjc-daw-2021-22-webapp8.herokuapp.com/api/products/2/image3",
+					"protocol": "https",
+					"host": [
+						"codeurjc-daw-2021-22-webapp8",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"2",
+						"image3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

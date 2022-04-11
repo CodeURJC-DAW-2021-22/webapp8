@@ -125,12 +125,12 @@ paths:
         "404":
           description: Product not found
           content: {}
-        "406":
-          description: Not Acceptable Post title exists
         "201":
           description: Successful Product modification
           content:
             application/json: {}
+        "406":
+          description: Not Acceptable Post title exists
     delete:
       tags:
       - products-rest-controller
@@ -303,6 +303,73 @@ paths:
           description: Successful user creation
           content:
             application/json: {}
+  /api/products/{id}/ratings:
+    get:
+      tags:
+      - products-rest-controller
+      summary: Ratings
+      operationId: getProductRatings
+      parameters:
+      - name: id
+        in: path
+        description: id of Product to be searched
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: page
+        in: query
+        description: page
+        required: false
+        schema:
+          type: string
+      responses:
+        "404":
+          description: ratings not found
+          content: {}
+        "200":
+          description: Found the ratings Product
+          content:
+            application/json: {}
+        "204":
+          description: ratings not found
+    post:
+      tags:
+      - products-rest-controller
+      summary: Ratings
+      operationId: setProductRatings
+      parameters:
+      - name: id
+        in: path
+        description: id of Product to be searched
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ratingtext:
+                  type: string
+                  description: Text of rating
+                iduser:
+                  type: integer
+                  description: Id user
+                  format: int32
+        required: true
+      responses:
+        "404":
+          description: ratings not found
+          content: {}
+        "200":
+          description: Found the ratings Product
+          content:
+            application/json: {}
+        "204":
+          description: ratings not found
   /api/products/{id}/image3:
     get:
       tags:
@@ -321,12 +388,12 @@ paths:
         "404":
           description: Product not found
           content: {}
-        "204":
-          description: Image not found
         "200":
           description: Found the Image Product
           content:
             application/json: {}
+        "204":
+          description: Image not found
     post:
       tags:
       - products-rest-controller
@@ -380,12 +447,12 @@ paths:
         "404":
           description: Product not found
           content: {}
-        "204":
-          description: Image not found
         "200":
           description: Found the Image Product
           content:
             application/json: {}
+        "204":
+          description: Image not found
     post:
       tags:
       - products-rest-controller
@@ -439,12 +506,12 @@ paths:
         "404":
           description: Product not found
           content: {}
-        "204":
-          description: Image not found
         "200":
           description: Found the Image Product
           content:
             application/json: {}
+        "204":
+          description: Image not found
     post:
       tags:
       - products-rest-controller
@@ -598,36 +665,6 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/AuthResponse'
-  /api/products/{id}/ratings:
-    get:
-      tags:
-      - products-rest-controller
-      summary: Ratings
-      operationId: getProductRatings
-      parameters:
-      - name: id
-        in: path
-        description: id of Product to be searched
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: page
-        in: query
-        description: page
-        required: false
-        schema:
-          type: string
-      responses:
-        "404":
-          description: Product not found
-          content: {}
-        "204":
-          description: Image not found
-        "200":
-          description: Found the Image Product
-          content:
-            application/json: {}
   /api/products/phones:
     get:
       tags:

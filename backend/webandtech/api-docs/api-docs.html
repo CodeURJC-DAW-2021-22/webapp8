@@ -873,6 +873,20 @@ ul.nav-tabs {
   }
 };
     defs["inline_object_1"] = {
+  "type" : "object",
+  "properties" : {
+    "ratingtext" : {
+      "type" : "string",
+      "description" : "Text of rating"
+    },
+    "iduser" : {
+      "type" : "integer",
+      "description" : "Id user",
+      "format" : "int32"
+    }
+  }
+};
+    defs["inline_object_2"] = {
   "required" : [ "image" ],
   "type" : "object",
   "properties" : {
@@ -883,7 +897,7 @@ ul.nav-tabs {
     }
   }
 };
-    defs["inline_object_2"] = {
+    defs["inline_object_3"] = {
   "required" : [ "image" ],
   "type" : "object",
   "properties" : {
@@ -894,7 +908,7 @@ ul.nav-tabs {
     }
   }
 };
-    defs["inline_object_3"] = {
+    defs["inline_object_4"] = {
   "required" : [ "image" ],
   "type" : "object",
   "properties" : {
@@ -1060,6 +1074,9 @@ ul.nav-tabs {
                     </li>
                     <li data-group="ProductsRestController" data-name="replaceProduct" class="">
                       <a href="#api-ProductsRestController-replaceProduct">replaceProduct</a>
+                    </li>
+                    <li data-group="ProductsRestController" data-name="setProductRatings" class="">
+                      <a href="#api-ProductsRestController-setProductRatings">setProductRatings</a>
                     </li>
                     <li data-group="ProductsRestController" data-name="uploadImage1" class="">
                       <a href="#api-ProductsRestController-uploadImage1">uploadImage1</a>
@@ -4585,28 +4602,6 @@ id of Product to be searched
 
                             <div class="tab-content" id="responses-ProductsRestController-getImage1-404-wrapper" style='margin-bottom: 10px;'>
                             </div>
-                            <h3 id="examples-ProductsRestController-getImage1-title-204"></h3>
-                            <p id="examples-ProductsRestController-getImage1-description-204" class="marked"></p>
-                            <script>
-                              var responseProductsRestController204_description = `Image not found`;
-                              var responseProductsRestController204_description_break = responseProductsRestController204_description.indexOf('\n');
-                              if (responseProductsRestController204_description_break == -1) {
-                                $("#examples-ProductsRestController-getImage1-title-204").text("Status: 204 - " + responseProductsRestController204_description);
-                              } else {
-                                $("#examples-ProductsRestController-getImage1-title-204").text("Status: 204 - " + responseProductsRestController204_description.substring(0, responseProductsRestController204_description_break));
-                                $("#examples-ProductsRestController-getImage1-description-204").html(responseProductsRestController204_description.substring(responseProductsRestController204_description_break));
-                              }
-                            </script>
-
-
-                            <ul id="responses-detail-ProductsRestController-getImage1-204" class="nav nav-tabs nav-tabs-examples" >
-
-
-                            </ul>
-
-
-                            <div class="tab-content" id="responses-ProductsRestController-getImage1-204-wrapper" style='margin-bottom: 10px;'>
-                            </div>
                             <h3 id="examples-ProductsRestController-getImage1-title-200"></h3>
                             <p id="examples-ProductsRestController-getImage1-description-200" class="marked"></p>
                             <script>
@@ -4628,6 +4623,28 @@ id of Product to be searched
 
 
                             <div class="tab-content" id="responses-ProductsRestController-getImage1-200-wrapper" style='margin-bottom: 10px;'>
+                            </div>
+                            <h3 id="examples-ProductsRestController-getImage1-title-204"></h3>
+                            <p id="examples-ProductsRestController-getImage1-description-204" class="marked"></p>
+                            <script>
+                              var responseProductsRestController204_description = `Image not found`;
+                              var responseProductsRestController204_description_break = responseProductsRestController204_description.indexOf('\n');
+                              if (responseProductsRestController204_description_break == -1) {
+                                $("#examples-ProductsRestController-getImage1-title-204").text("Status: 204 - " + responseProductsRestController204_description);
+                              } else {
+                                $("#examples-ProductsRestController-getImage1-title-204").text("Status: 204 - " + responseProductsRestController204_description.substring(0, responseProductsRestController204_description_break));
+                                $("#examples-ProductsRestController-getImage1-description-204").html(responseProductsRestController204_description.substring(responseProductsRestController204_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-ProductsRestController-getImage1-204" class="nav nav-tabs nav-tabs-examples" >
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-ProductsRestController-getImage1-204-wrapper" style='margin-bottom: 10px;'>
                             </div>
                         </article>
                       </div>
@@ -4920,28 +4937,6 @@ id of Product to be searched
 
                             <div class="tab-content" id="responses-ProductsRestController-getImage2-404-wrapper" style='margin-bottom: 10px;'>
                             </div>
-                            <h3 id="examples-ProductsRestController-getImage2-title-204"></h3>
-                            <p id="examples-ProductsRestController-getImage2-description-204" class="marked"></p>
-                            <script>
-                              var responseProductsRestController204_description = `Image not found`;
-                              var responseProductsRestController204_description_break = responseProductsRestController204_description.indexOf('\n');
-                              if (responseProductsRestController204_description_break == -1) {
-                                $("#examples-ProductsRestController-getImage2-title-204").text("Status: 204 - " + responseProductsRestController204_description);
-                              } else {
-                                $("#examples-ProductsRestController-getImage2-title-204").text("Status: 204 - " + responseProductsRestController204_description.substring(0, responseProductsRestController204_description_break));
-                                $("#examples-ProductsRestController-getImage2-description-204").html(responseProductsRestController204_description.substring(responseProductsRestController204_description_break));
-                              }
-                            </script>
-
-
-                            <ul id="responses-detail-ProductsRestController-getImage2-204" class="nav nav-tabs nav-tabs-examples" >
-
-
-                            </ul>
-
-
-                            <div class="tab-content" id="responses-ProductsRestController-getImage2-204-wrapper" style='margin-bottom: 10px;'>
-                            </div>
                             <h3 id="examples-ProductsRestController-getImage2-title-200"></h3>
                             <p id="examples-ProductsRestController-getImage2-description-200" class="marked"></p>
                             <script>
@@ -4963,6 +4958,28 @@ id of Product to be searched
 
 
                             <div class="tab-content" id="responses-ProductsRestController-getImage2-200-wrapper" style='margin-bottom: 10px;'>
+                            </div>
+                            <h3 id="examples-ProductsRestController-getImage2-title-204"></h3>
+                            <p id="examples-ProductsRestController-getImage2-description-204" class="marked"></p>
+                            <script>
+                              var responseProductsRestController204_description = `Image not found`;
+                              var responseProductsRestController204_description_break = responseProductsRestController204_description.indexOf('\n');
+                              if (responseProductsRestController204_description_break == -1) {
+                                $("#examples-ProductsRestController-getImage2-title-204").text("Status: 204 - " + responseProductsRestController204_description);
+                              } else {
+                                $("#examples-ProductsRestController-getImage2-title-204").text("Status: 204 - " + responseProductsRestController204_description.substring(0, responseProductsRestController204_description_break));
+                                $("#examples-ProductsRestController-getImage2-description-204").html(responseProductsRestController204_description.substring(responseProductsRestController204_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-ProductsRestController-getImage2-204" class="nav nav-tabs nav-tabs-examples" >
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-ProductsRestController-getImage2-204-wrapper" style='margin-bottom: 10px;'>
                             </div>
                         </article>
                       </div>
@@ -5255,28 +5272,6 @@ id of Product to be searched
 
                             <div class="tab-content" id="responses-ProductsRestController-getImage3-404-wrapper" style='margin-bottom: 10px;'>
                             </div>
-                            <h3 id="examples-ProductsRestController-getImage3-title-204"></h3>
-                            <p id="examples-ProductsRestController-getImage3-description-204" class="marked"></p>
-                            <script>
-                              var responseProductsRestController204_description = `Image not found`;
-                              var responseProductsRestController204_description_break = responseProductsRestController204_description.indexOf('\n');
-                              if (responseProductsRestController204_description_break == -1) {
-                                $("#examples-ProductsRestController-getImage3-title-204").text("Status: 204 - " + responseProductsRestController204_description);
-                              } else {
-                                $("#examples-ProductsRestController-getImage3-title-204").text("Status: 204 - " + responseProductsRestController204_description.substring(0, responseProductsRestController204_description_break));
-                                $("#examples-ProductsRestController-getImage3-description-204").html(responseProductsRestController204_description.substring(responseProductsRestController204_description_break));
-                              }
-                            </script>
-
-
-                            <ul id="responses-detail-ProductsRestController-getImage3-204" class="nav nav-tabs nav-tabs-examples" >
-
-
-                            </ul>
-
-
-                            <div class="tab-content" id="responses-ProductsRestController-getImage3-204-wrapper" style='margin-bottom: 10px;'>
-                            </div>
                             <h3 id="examples-ProductsRestController-getImage3-title-200"></h3>
                             <p id="examples-ProductsRestController-getImage3-description-200" class="marked"></p>
                             <script>
@@ -5298,6 +5293,28 @@ id of Product to be searched
 
 
                             <div class="tab-content" id="responses-ProductsRestController-getImage3-200-wrapper" style='margin-bottom: 10px;'>
+                            </div>
+                            <h3 id="examples-ProductsRestController-getImage3-title-204"></h3>
+                            <p id="examples-ProductsRestController-getImage3-description-204" class="marked"></p>
+                            <script>
+                              var responseProductsRestController204_description = `Image not found`;
+                              var responseProductsRestController204_description_break = responseProductsRestController204_description.indexOf('\n');
+                              if (responseProductsRestController204_description_break == -1) {
+                                $("#examples-ProductsRestController-getImage3-title-204").text("Status: 204 - " + responseProductsRestController204_description);
+                              } else {
+                                $("#examples-ProductsRestController-getImage3-title-204").text("Status: 204 - " + responseProductsRestController204_description.substring(0, responseProductsRestController204_description_break));
+                                $("#examples-ProductsRestController-getImage3-description-204").html(responseProductsRestController204_description.substring(responseProductsRestController204_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-ProductsRestController-getImage3-204" class="nav nav-tabs nav-tabs-examples" >
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-ProductsRestController-getImage3-204-wrapper" style='margin-bottom: 10px;'>
                             </div>
                         </article>
                       </div>
@@ -6601,7 +6618,7 @@ page
                             <h3 id="examples-ProductsRestController-getProductRatings-title-404"></h3>
                             <p id="examples-ProductsRestController-getProductRatings-description-404" class="marked"></p>
                             <script>
-                              var responseProductsRestController404_description = `Product not found`;
+                              var responseProductsRestController404_description = `ratings not found`;
                               var responseProductsRestController404_description_break = responseProductsRestController404_description.indexOf('\n');
                               if (responseProductsRestController404_description_break == -1) {
                                 $("#examples-ProductsRestController-getProductRatings-title-404").text("Status: 404 - " + responseProductsRestController404_description);
@@ -6620,32 +6637,10 @@ page
 
                             <div class="tab-content" id="responses-ProductsRestController-getProductRatings-404-wrapper" style='margin-bottom: 10px;'>
                             </div>
-                            <h3 id="examples-ProductsRestController-getProductRatings-title-204"></h3>
-                            <p id="examples-ProductsRestController-getProductRatings-description-204" class="marked"></p>
-                            <script>
-                              var responseProductsRestController204_description = `Image not found`;
-                              var responseProductsRestController204_description_break = responseProductsRestController204_description.indexOf('\n');
-                              if (responseProductsRestController204_description_break == -1) {
-                                $("#examples-ProductsRestController-getProductRatings-title-204").text("Status: 204 - " + responseProductsRestController204_description);
-                              } else {
-                                $("#examples-ProductsRestController-getProductRatings-title-204").text("Status: 204 - " + responseProductsRestController204_description.substring(0, responseProductsRestController204_description_break));
-                                $("#examples-ProductsRestController-getProductRatings-description-204").html(responseProductsRestController204_description.substring(responseProductsRestController204_description_break));
-                              }
-                            </script>
-
-
-                            <ul id="responses-detail-ProductsRestController-getProductRatings-204" class="nav nav-tabs nav-tabs-examples" >
-
-
-                            </ul>
-
-
-                            <div class="tab-content" id="responses-ProductsRestController-getProductRatings-204-wrapper" style='margin-bottom: 10px;'>
-                            </div>
                             <h3 id="examples-ProductsRestController-getProductRatings-title-200"></h3>
                             <p id="examples-ProductsRestController-getProductRatings-description-200" class="marked"></p>
                             <script>
-                              var responseProductsRestController200_description = `Found the Image Product`;
+                              var responseProductsRestController200_description = `Found the ratings Product`;
                               var responseProductsRestController200_description_break = responseProductsRestController200_description.indexOf('\n');
                               if (responseProductsRestController200_description_break == -1) {
                                 $("#examples-ProductsRestController-getProductRatings-title-200").text("Status: 200 - " + responseProductsRestController200_description);
@@ -6663,6 +6658,28 @@ page
 
 
                             <div class="tab-content" id="responses-ProductsRestController-getProductRatings-200-wrapper" style='margin-bottom: 10px;'>
+                            </div>
+                            <h3 id="examples-ProductsRestController-getProductRatings-title-204"></h3>
+                            <p id="examples-ProductsRestController-getProductRatings-description-204" class="marked"></p>
+                            <script>
+                              var responseProductsRestController204_description = `ratings not found`;
+                              var responseProductsRestController204_description_break = responseProductsRestController204_description.indexOf('\n');
+                              if (responseProductsRestController204_description_break == -1) {
+                                $("#examples-ProductsRestController-getProductRatings-title-204").text("Status: 204 - " + responseProductsRestController204_description);
+                              } else {
+                                $("#examples-ProductsRestController-getProductRatings-title-204").text("Status: 204 - " + responseProductsRestController204_description.substring(0, responseProductsRestController204_description_break));
+                                $("#examples-ProductsRestController-getProductRatings-description-204").html(responseProductsRestController204_description.substring(responseProductsRestController204_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-ProductsRestController-getProductRatings-204" class="nav nav-tabs nav-tabs-examples" >
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-ProductsRestController-getProductRatings-204-wrapper" style='margin-bottom: 10px;'>
                             </div>
                         </article>
                       </div>
@@ -7407,6 +7424,28 @@ $(document).ready(function() {
 
                             <div class="tab-content" id="responses-ProductsRestController-replaceProduct-404-wrapper" style='margin-bottom: 10px;'>
                             </div>
+                            <h3 id="examples-ProductsRestController-replaceProduct-title-201"></h3>
+                            <p id="examples-ProductsRestController-replaceProduct-description-201" class="marked"></p>
+                            <script>
+                              var responseProductsRestController201_description = `Successful Product modification`;
+                              var responseProductsRestController201_description_break = responseProductsRestController201_description.indexOf('\n');
+                              if (responseProductsRestController201_description_break == -1) {
+                                $("#examples-ProductsRestController-replaceProduct-title-201").text("Status: 201 - " + responseProductsRestController201_description);
+                              } else {
+                                $("#examples-ProductsRestController-replaceProduct-title-201").text("Status: 201 - " + responseProductsRestController201_description.substring(0, responseProductsRestController201_description_break));
+                                $("#examples-ProductsRestController-replaceProduct-description-201").html(responseProductsRestController201_description.substring(responseProductsRestController201_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-ProductsRestController-replaceProduct-201" class="nav nav-tabs nav-tabs-examples" >
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-ProductsRestController-replaceProduct-201-wrapper" style='margin-bottom: 10px;'>
+                            </div>
                             <h3 id="examples-ProductsRestController-replaceProduct-title-406"></h3>
                             <p id="examples-ProductsRestController-replaceProduct-description-406" class="marked"></p>
                             <script>
@@ -7429,27 +7468,398 @@ $(document).ready(function() {
 
                             <div class="tab-content" id="responses-ProductsRestController-replaceProduct-406-wrapper" style='margin-bottom: 10px;'>
                             </div>
-                            <h3 id="examples-ProductsRestController-replaceProduct-title-201"></h3>
-                            <p id="examples-ProductsRestController-replaceProduct-description-201" class="marked"></p>
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-ProductsRestController-setProductRatings">
+                      <article id="api-ProductsRestController-setProductRatings-0" data-group="User" data-name="setProductRatings" data-version="0">
+                        <div class="pull-left">
+                          <h1>setProductRatings</h1>
+                          <p>Ratings</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/api/products/{id}/ratings</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-ProductsRestController-setProductRatings-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-ProductsRestController-setProductRatings-0-java">Java</a></li>
+                          <li class=""><a href="#examples-ProductsRestController-setProductRatings-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-ProductsRestController-setProductRatings-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-ProductsRestController-setProductRatings-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-ProductsRestController-setProductRatings-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-ProductsRestController-setProductRatings-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-ProductsRestController-setProductRatings-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-ProductsRestController-setProductRatings-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-ProductsRestController-setProductRatings-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-ProductsRestController-setProductRatings-0-python">Python</a></li>
+                          <li class=""><a href="#examples-ProductsRestController-setProductRatings-0-rust">Rust</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-ProductsRestController-setProductRatings-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST \
+ -H "Accept: application/json" \
+ -H "Content-Type: application/json" \
+ "http://localhost:8443/api/products/{id}/ratings" \
+ -d ''
+</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-ProductsRestController-setProductRatings-0-java">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.*;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.model.*;
+import org.openapitools.client.api.ProductsRestControllerApi;
+
+import java.io.File;
+import java.util.*;
+
+public class ProductsRestControllerApiExample {
+    public static void main(String[] args) {
+
+        // Create an instance of the API class
+        ProductsRestControllerApi apiInstance = new ProductsRestControllerApi();
+        Integer id = 56; // Integer | id of Product to be searched
+        InlineObject1 inlineObject1 = ; // InlineObject1 | 
+
+        try {
+            apiInstance.setProductRatings(id, inlineObject1);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductsRestControllerApi#setProductRatings");
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-ProductsRestController-setProductRatings-0-android">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.api.ProductsRestControllerApi;
+
+public class ProductsRestControllerApiExample {
+    public static void main(String[] args) {
+        ProductsRestControllerApi apiInstance = new ProductsRestControllerApi();
+        Integer id = 56; // Integer | id of Product to be searched
+        InlineObject1 inlineObject1 = ; // InlineObject1 | 
+
+        try {
+            apiInstance.setProductRatings(id, inlineObject1);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductsRestControllerApi#setProductRatings");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-ProductsRestController-setProductRatings-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-ProductsRestController-setProductRatings-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
+
+// Create an instance of the API class
+ProductsRestControllerApi *apiInstance = [[ProductsRestControllerApi alloc] init];
+Integer *id = 56; // id of Product to be searched (default to null)
+InlineObject1 *inlineObject1 = ; // 
+
+// Ratings
+[apiInstance setProductRatingsWith:id
+    inlineObject1:inlineObject1
+              completionHandler: ^(NSError* error) {
+    if (error) {
+        NSLog(@"Error: %@", error);
+    }
+}];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-ProductsRestController-setProductRatings-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var OpenApiDefinition = require('open_api_definition');
+
+// Create an instance of the API class
+var api = new OpenApiDefinition.ProductsRestControllerApi()
+var id = 56; // {Integer} id of Product to be searched
+var inlineObject1 = ; // {InlineObject1} 
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.setProductRatings(id, inlineObject1, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-ProductsRestController-setProductRatings-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-ProductsRestController-setProductRatings-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class setProductRatingsExample
+    {
+        public void main()
+        {
+
+            // Create an instance of the API class
+            var apiInstance = new ProductsRestControllerApi();
+            var id = 56;  // Integer | id of Product to be searched (default to null)
+            var inlineObject1 = new InlineObject1(); // InlineObject1 | 
+
+            try {
+                // Ratings
+                apiInstance.setProductRatings(id, inlineObject1);
+            } catch (Exception e) {
+                Debug.Print("Exception when calling ProductsRestControllerApi.setProductRatings: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-ProductsRestController-setProductRatings-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Create an instance of the API class
+$api_instance = new OpenAPITools\Client\Api\ProductsRestControllerApi();
+$id = 56; // Integer | id of Product to be searched
+$inlineObject1 = ; // InlineObject1 | 
+
+try {
+    $api_instance->setProductRatings($id, $inlineObject1);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductsRestControllerApi->setProductRatings: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-ProductsRestController-setProductRatings-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::OPenAPIClient::Configuration;
+use WWW::OPenAPIClient::ProductsRestControllerApi;
+
+# Create an instance of the API class
+my $api_instance = WWW::OPenAPIClient::ProductsRestControllerApi->new();
+my $id = 56; # Integer | id of Product to be searched
+my $inlineObject1 = WWW::OPenAPIClient::Object::InlineObject1->new(); # InlineObject1 | 
+
+eval {
+    $api_instance->setProductRatings(id => $id, inlineObject1 => $inlineObject1);
+};
+if ($@) {
+    warn "Exception when calling ProductsRestControllerApi->setProductRatings: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-ProductsRestController-setProductRatings-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = openapi_client.ProductsRestControllerApi()
+id = 56 # Integer | id of Product to be searched (default to null)
+inlineObject1 =  # InlineObject1 | 
+
+try:
+    # Ratings
+    api_instance.set_product_ratings(id, inlineObject1)
+except ApiException as e:
+    print("Exception when calling ProductsRestControllerApi->setProductRatings: %s\n" % e)</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-ProductsRestController-setProductRatings-0-rust">
+                              <pre class="prettyprint"><code class="language-rust">extern crate ProductsRestControllerApi;
+
+pub fn main() {
+    let id = 56; // Integer
+    let inlineObject1 = ; // InlineObject1
+
+    let mut context = ProductsRestControllerApi::Context::default();
+    let result = client.setProductRatings(id, inlineObject1, &context).wait();
+
+    println!("{:?}", result);
+}
+</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Scopes</h2>
+                          <table>
+                            
+                          </table>
+
+                          <h2>Parameters</h2>
+
+                            <div class="methodsubtabletitle">Path parameters</div>
+                            <table id="methodsubtable">
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">id*</td>
+<td>
+
+
+    <div id="d2e199_setProductRatings_id">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+                    <span class="format">
+                        (int32)
+                    </span>
+
+                    <div class="inner description marked">
+id of Product to be searched
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                            </table>
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">inlineObject1 <span style="color:red;">*</span></td>
+<td>
+<p class="marked"></p>
+<script>
+$(document).ready(function() {
+  var schemaWrapper = {
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/inline_object_1"
+      }
+    }
+  },
+  "required" : true
+};
+
+  var schema = findNode('schema',schemaWrapper).schema;
+  if (!schema) {
+    schema = schemaWrapper.schema;
+  }
+  if (schema.$ref != null) {
+    schema = defsParser.$refs.get(schema.$ref);
+  } else {
+    schemaWrapper.definitions = Object.assign({}, defs);
+    $RefParser.dereference(schemaWrapper).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+  var result = $('#d2e199_setProductRatings_inlineObject1');
+  result.empty();
+  result.append(view.render());
+});
+</script>
+<div id="d2e199_setProductRatings_inlineObject1"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3 id="examples-ProductsRestController-setProductRatings-title-404"></h3>
+                            <p id="examples-ProductsRestController-setProductRatings-description-404" class="marked"></p>
                             <script>
-                              var responseProductsRestController201_description = `Successful Product modification`;
-                              var responseProductsRestController201_description_break = responseProductsRestController201_description.indexOf('\n');
-                              if (responseProductsRestController201_description_break == -1) {
-                                $("#examples-ProductsRestController-replaceProduct-title-201").text("Status: 201 - " + responseProductsRestController201_description);
+                              var responseProductsRestController404_description = `ratings not found`;
+                              var responseProductsRestController404_description_break = responseProductsRestController404_description.indexOf('\n');
+                              if (responseProductsRestController404_description_break == -1) {
+                                $("#examples-ProductsRestController-setProductRatings-title-404").text("Status: 404 - " + responseProductsRestController404_description);
                               } else {
-                                $("#examples-ProductsRestController-replaceProduct-title-201").text("Status: 201 - " + responseProductsRestController201_description.substring(0, responseProductsRestController201_description_break));
-                                $("#examples-ProductsRestController-replaceProduct-description-201").html(responseProductsRestController201_description.substring(responseProductsRestController201_description_break));
+                                $("#examples-ProductsRestController-setProductRatings-title-404").text("Status: 404 - " + responseProductsRestController404_description.substring(0, responseProductsRestController404_description_break));
+                                $("#examples-ProductsRestController-setProductRatings-description-404").html(responseProductsRestController404_description.substring(responseProductsRestController404_description_break));
                               }
                             </script>
 
 
-                            <ul id="responses-detail-ProductsRestController-replaceProduct-201" class="nav nav-tabs nav-tabs-examples" >
+                            <ul id="responses-detail-ProductsRestController-setProductRatings-404" class="nav nav-tabs nav-tabs-examples" >
 
 
                             </ul>
 
 
-                            <div class="tab-content" id="responses-ProductsRestController-replaceProduct-201-wrapper" style='margin-bottom: 10px;'>
+                            <div class="tab-content" id="responses-ProductsRestController-setProductRatings-404-wrapper" style='margin-bottom: 10px;'>
+                            </div>
+                            <h3 id="examples-ProductsRestController-setProductRatings-title-200"></h3>
+                            <p id="examples-ProductsRestController-setProductRatings-description-200" class="marked"></p>
+                            <script>
+                              var responseProductsRestController200_description = `Found the ratings Product`;
+                              var responseProductsRestController200_description_break = responseProductsRestController200_description.indexOf('\n');
+                              if (responseProductsRestController200_description_break == -1) {
+                                $("#examples-ProductsRestController-setProductRatings-title-200").text("Status: 200 - " + responseProductsRestController200_description);
+                              } else {
+                                $("#examples-ProductsRestController-setProductRatings-title-200").text("Status: 200 - " + responseProductsRestController200_description.substring(0, responseProductsRestController200_description_break));
+                                $("#examples-ProductsRestController-setProductRatings-description-200").html(responseProductsRestController200_description.substring(responseProductsRestController200_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-ProductsRestController-setProductRatings-200" class="nav nav-tabs nav-tabs-examples" >
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-ProductsRestController-setProductRatings-200-wrapper" style='margin-bottom: 10px;'>
+                            </div>
+                            <h3 id="examples-ProductsRestController-setProductRatings-title-204"></h3>
+                            <p id="examples-ProductsRestController-setProductRatings-description-204" class="marked"></p>
+                            <script>
+                              var responseProductsRestController204_description = `ratings not found`;
+                              var responseProductsRestController204_description_break = responseProductsRestController204_description.indexOf('\n');
+                              if (responseProductsRestController204_description_break == -1) {
+                                $("#examples-ProductsRestController-setProductRatings-title-204").text("Status: 204 - " + responseProductsRestController204_description);
+                              } else {
+                                $("#examples-ProductsRestController-setProductRatings-title-204").text("Status: 204 - " + responseProductsRestController204_description.substring(0, responseProductsRestController204_description_break));
+                                $("#examples-ProductsRestController-setProductRatings-description-204").html(responseProductsRestController204_description.substring(responseProductsRestController204_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-ProductsRestController-setProductRatings-204" class="nav nav-tabs nav-tabs-examples" >
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-ProductsRestController-setProductRatings-204-wrapper" style='margin-bottom: 10px;'>
                             </div>
                         </article>
                       </div>
@@ -7509,10 +7919,10 @@ public class ProductsRestControllerApiExample {
         // Create an instance of the API class
         ProductsRestControllerApi apiInstance = new ProductsRestControllerApi();
         Integer id = 56; // Integer | id of Product to be searched
-        InlineObject3 inlineObject3 = ; // InlineObject3 | 
+        InlineObject4 inlineObject4 = ; // InlineObject4 | 
 
         try {
-            apiInstance.uploadImage1(id, inlineObject3);
+            apiInstance.uploadImage1(id, inlineObject4);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProductsRestControllerApi#uploadImage1");
             e.printStackTrace();
@@ -7529,10 +7939,10 @@ public class ProductsRestControllerApiExample {
     public static void main(String[] args) {
         ProductsRestControllerApi apiInstance = new ProductsRestControllerApi();
         Integer id = 56; // Integer | id of Product to be searched
-        InlineObject3 inlineObject3 = ; // InlineObject3 | 
+        InlineObject4 inlineObject4 = ; // InlineObject4 | 
 
         try {
-            apiInstance.uploadImage1(id, inlineObject3);
+            apiInstance.uploadImage1(id, inlineObject4);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProductsRestControllerApi#uploadImage1");
             e.printStackTrace();
@@ -7550,11 +7960,11 @@ public class ProductsRestControllerApiExample {
 // Create an instance of the API class
 ProductsRestControllerApi *apiInstance = [[ProductsRestControllerApi alloc] init];
 Integer *id = 56; // id of Product to be searched (default to null)
-InlineObject3 *inlineObject3 = ; //  (optional)
+InlineObject4 *inlineObject4 = ; //  (optional)
 
 // Create a Image 1 Product by its id
 [apiInstance uploadImage1With:id
-    inlineObject3:inlineObject3
+    inlineObject4:inlineObject4
               completionHandler: ^(NSError* error) {
     if (error) {
         NSLog(@"Error: %@", error);
@@ -7570,7 +7980,7 @@ InlineObject3 *inlineObject3 = ; //  (optional)
 var api = new OpenApiDefinition.ProductsRestControllerApi()
 var id = 56; // {Integer} id of Product to be searched
 var opts = {
-  'inlineObject3':  // {InlineObject3} 
+  'inlineObject4':  // {InlineObject4} 
 };
 
 var callback = function(error, data, response) {
@@ -7604,11 +8014,11 @@ namespace Example
             // Create an instance of the API class
             var apiInstance = new ProductsRestControllerApi();
             var id = 56;  // Integer | id of Product to be searched (default to null)
-            var inlineObject3 = new InlineObject3(); // InlineObject3 |  (optional) 
+            var inlineObject4 = new InlineObject4(); // InlineObject4 |  (optional) 
 
             try {
                 // Create a Image 1 Product by its id
-                apiInstance.uploadImage1(id, inlineObject3);
+                apiInstance.uploadImage1(id, inlineObject4);
             } catch (Exception e) {
                 Debug.Print("Exception when calling ProductsRestControllerApi.uploadImage1: " + e.Message );
             }
@@ -7625,10 +8035,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Create an instance of the API class
 $api_instance = new OpenAPITools\Client\Api\ProductsRestControllerApi();
 $id = 56; // Integer | id of Product to be searched
-$inlineObject3 = ; // InlineObject3 | 
+$inlineObject4 = ; // InlineObject4 | 
 
 try {
-    $api_instance->uploadImage1($id, $inlineObject3);
+    $api_instance->uploadImage1($id, $inlineObject4);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsRestControllerApi->uploadImage1: ', $e->getMessage(), PHP_EOL;
 }
@@ -7643,10 +8053,10 @@ use WWW::OPenAPIClient::ProductsRestControllerApi;
 # Create an instance of the API class
 my $api_instance = WWW::OPenAPIClient::ProductsRestControllerApi->new();
 my $id = 56; # Integer | id of Product to be searched
-my $inlineObject3 = WWW::OPenAPIClient::Object::InlineObject3->new(); # InlineObject3 | 
+my $inlineObject4 = WWW::OPenAPIClient::Object::InlineObject4->new(); # InlineObject4 | 
 
 eval {
-    $api_instance->uploadImage1(id => $id, inlineObject3 => $inlineObject3);
+    $api_instance->uploadImage1(id => $id, inlineObject4 => $inlineObject4);
 };
 if ($@) {
     warn "Exception when calling ProductsRestControllerApi->uploadImage1: $@\n";
@@ -7663,11 +8073,11 @@ from pprint import pprint
 # Create an instance of the API class
 api_instance = openapi_client.ProductsRestControllerApi()
 id = 56 # Integer | id of Product to be searched (default to null)
-inlineObject3 =  # InlineObject3 |  (optional)
+inlineObject4 =  # InlineObject4 |  (optional)
 
 try:
     # Create a Image 1 Product by its id
-    api_instance.upload_image1(id, inlineObject3=inlineObject3)
+    api_instance.upload_image1(id, inlineObject4=inlineObject4)
 except ApiException as e:
     print("Exception when calling ProductsRestControllerApi->uploadImage1: %s\n" % e)</code></pre>
                             </div>
@@ -7677,10 +8087,10 @@ except ApiException as e:
 
 pub fn main() {
     let id = 56; // Integer
-    let inlineObject3 = ; // InlineObject3
+    let inlineObject4 = ; // InlineObject4
 
     let mut context = ProductsRestControllerApi::Context::default();
-    let result = client.uploadImage1(id, inlineObject3, &context).wait();
+    let result = client.uploadImage1(id, inlineObject4, &context).wait();
 
     println!("{:?}", result);
 }
@@ -7736,7 +8146,7 @@ id of Product to be searched
                                 <th width="150px">Name</th>
                                 <th>Description</th>
                               </tr>
-                                <tr><td style="width:150px;">inlineObject3 </td>
+                                <tr><td style="width:150px;">inlineObject4 </td>
 <td>
 <p class="marked"></p>
 <script>
@@ -7745,7 +8155,7 @@ $(document).ready(function() {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/inline_object_3"
+        "$ref" : "#/components/schemas/inline_object_4"
       }
     }
   }
@@ -7765,12 +8175,12 @@ $(document).ready(function() {
   }
 
   var view = new JSONSchemaView(schema,2,{isBodyParam: true});
-  var result = $('#d2e199_uploadImage1_inlineObject3');
+  var result = $('#d2e199_uploadImage1_inlineObject4');
   result.empty();
   result.append(view.render());
 });
 </script>
-<div id="d2e199_uploadImage1_inlineObject3"></div>
+<div id="d2e199_uploadImage1_inlineObject4"></div>
 </td>
 </tr>
 
@@ -7903,10 +8313,10 @@ public class ProductsRestControllerApiExample {
         // Create an instance of the API class
         ProductsRestControllerApi apiInstance = new ProductsRestControllerApi();
         Integer id = 56; // Integer | id of Product to be searched
-        InlineObject2 inlineObject2 = ; // InlineObject2 | 
+        InlineObject3 inlineObject3 = ; // InlineObject3 | 
 
         try {
-            apiInstance.uploadImage2(id, inlineObject2);
+            apiInstance.uploadImage2(id, inlineObject3);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProductsRestControllerApi#uploadImage2");
             e.printStackTrace();
@@ -7923,10 +8333,10 @@ public class ProductsRestControllerApiExample {
     public static void main(String[] args) {
         ProductsRestControllerApi apiInstance = new ProductsRestControllerApi();
         Integer id = 56; // Integer | id of Product to be searched
-        InlineObject2 inlineObject2 = ; // InlineObject2 | 
+        InlineObject3 inlineObject3 = ; // InlineObject3 | 
 
         try {
-            apiInstance.uploadImage2(id, inlineObject2);
+            apiInstance.uploadImage2(id, inlineObject3);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProductsRestControllerApi#uploadImage2");
             e.printStackTrace();
@@ -7944,11 +8354,11 @@ public class ProductsRestControllerApiExample {
 // Create an instance of the API class
 ProductsRestControllerApi *apiInstance = [[ProductsRestControllerApi alloc] init];
 Integer *id = 56; // id of Product to be searched (default to null)
-InlineObject2 *inlineObject2 = ; //  (optional)
+InlineObject3 *inlineObject3 = ; //  (optional)
 
 // Create a Image 2 Product by its id
 [apiInstance uploadImage2With:id
-    inlineObject2:inlineObject2
+    inlineObject3:inlineObject3
               completionHandler: ^(NSError* error) {
     if (error) {
         NSLog(@"Error: %@", error);
@@ -7964,7 +8374,7 @@ InlineObject2 *inlineObject2 = ; //  (optional)
 var api = new OpenApiDefinition.ProductsRestControllerApi()
 var id = 56; // {Integer} id of Product to be searched
 var opts = {
-  'inlineObject2':  // {InlineObject2} 
+  'inlineObject3':  // {InlineObject3} 
 };
 
 var callback = function(error, data, response) {
@@ -7998,11 +8408,11 @@ namespace Example
             // Create an instance of the API class
             var apiInstance = new ProductsRestControllerApi();
             var id = 56;  // Integer | id of Product to be searched (default to null)
-            var inlineObject2 = new InlineObject2(); // InlineObject2 |  (optional) 
+            var inlineObject3 = new InlineObject3(); // InlineObject3 |  (optional) 
 
             try {
                 // Create a Image 2 Product by its id
-                apiInstance.uploadImage2(id, inlineObject2);
+                apiInstance.uploadImage2(id, inlineObject3);
             } catch (Exception e) {
                 Debug.Print("Exception when calling ProductsRestControllerApi.uploadImage2: " + e.Message );
             }
@@ -8019,10 +8429,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Create an instance of the API class
 $api_instance = new OpenAPITools\Client\Api\ProductsRestControllerApi();
 $id = 56; // Integer | id of Product to be searched
-$inlineObject2 = ; // InlineObject2 | 
+$inlineObject3 = ; // InlineObject3 | 
 
 try {
-    $api_instance->uploadImage2($id, $inlineObject2);
+    $api_instance->uploadImage2($id, $inlineObject3);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsRestControllerApi->uploadImage2: ', $e->getMessage(), PHP_EOL;
 }
@@ -8037,10 +8447,10 @@ use WWW::OPenAPIClient::ProductsRestControllerApi;
 # Create an instance of the API class
 my $api_instance = WWW::OPenAPIClient::ProductsRestControllerApi->new();
 my $id = 56; # Integer | id of Product to be searched
-my $inlineObject2 = WWW::OPenAPIClient::Object::InlineObject2->new(); # InlineObject2 | 
+my $inlineObject3 = WWW::OPenAPIClient::Object::InlineObject3->new(); # InlineObject3 | 
 
 eval {
-    $api_instance->uploadImage2(id => $id, inlineObject2 => $inlineObject2);
+    $api_instance->uploadImage2(id => $id, inlineObject3 => $inlineObject3);
 };
 if ($@) {
     warn "Exception when calling ProductsRestControllerApi->uploadImage2: $@\n";
@@ -8057,11 +8467,11 @@ from pprint import pprint
 # Create an instance of the API class
 api_instance = openapi_client.ProductsRestControllerApi()
 id = 56 # Integer | id of Product to be searched (default to null)
-inlineObject2 =  # InlineObject2 |  (optional)
+inlineObject3 =  # InlineObject3 |  (optional)
 
 try:
     # Create a Image 2 Product by its id
-    api_instance.upload_image2(id, inlineObject2=inlineObject2)
+    api_instance.upload_image2(id, inlineObject3=inlineObject3)
 except ApiException as e:
     print("Exception when calling ProductsRestControllerApi->uploadImage2: %s\n" % e)</code></pre>
                             </div>
@@ -8071,10 +8481,10 @@ except ApiException as e:
 
 pub fn main() {
     let id = 56; // Integer
-    let inlineObject2 = ; // InlineObject2
+    let inlineObject3 = ; // InlineObject3
 
     let mut context = ProductsRestControllerApi::Context::default();
-    let result = client.uploadImage2(id, inlineObject2, &context).wait();
+    let result = client.uploadImage2(id, inlineObject3, &context).wait();
 
     println!("{:?}", result);
 }
@@ -8130,7 +8540,7 @@ id of Product to be searched
                                 <th width="150px">Name</th>
                                 <th>Description</th>
                               </tr>
-                                <tr><td style="width:150px;">inlineObject2 </td>
+                                <tr><td style="width:150px;">inlineObject3 </td>
 <td>
 <p class="marked"></p>
 <script>
@@ -8139,7 +8549,7 @@ $(document).ready(function() {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/inline_object_2"
+        "$ref" : "#/components/schemas/inline_object_3"
       }
     }
   }
@@ -8159,12 +8569,12 @@ $(document).ready(function() {
   }
 
   var view = new JSONSchemaView(schema,2,{isBodyParam: true});
-  var result = $('#d2e199_uploadImage2_inlineObject2');
+  var result = $('#d2e199_uploadImage2_inlineObject3');
   result.empty();
   result.append(view.render());
 });
 </script>
-<div id="d2e199_uploadImage2_inlineObject2"></div>
+<div id="d2e199_uploadImage2_inlineObject3"></div>
 </td>
 </tr>
 
@@ -8297,10 +8707,10 @@ public class ProductsRestControllerApiExample {
         // Create an instance of the API class
         ProductsRestControllerApi apiInstance = new ProductsRestControllerApi();
         Integer id = 56; // Integer | id of Product to be searched
-        InlineObject1 inlineObject1 = ; // InlineObject1 | 
+        InlineObject2 inlineObject2 = ; // InlineObject2 | 
 
         try {
-            apiInstance.uploadImage3(id, inlineObject1);
+            apiInstance.uploadImage3(id, inlineObject2);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProductsRestControllerApi#uploadImage3");
             e.printStackTrace();
@@ -8317,10 +8727,10 @@ public class ProductsRestControllerApiExample {
     public static void main(String[] args) {
         ProductsRestControllerApi apiInstance = new ProductsRestControllerApi();
         Integer id = 56; // Integer | id of Product to be searched
-        InlineObject1 inlineObject1 = ; // InlineObject1 | 
+        InlineObject2 inlineObject2 = ; // InlineObject2 | 
 
         try {
-            apiInstance.uploadImage3(id, inlineObject1);
+            apiInstance.uploadImage3(id, inlineObject2);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProductsRestControllerApi#uploadImage3");
             e.printStackTrace();
@@ -8338,11 +8748,11 @@ public class ProductsRestControllerApiExample {
 // Create an instance of the API class
 ProductsRestControllerApi *apiInstance = [[ProductsRestControllerApi alloc] init];
 Integer *id = 56; // id of Product to be searched (default to null)
-InlineObject1 *inlineObject1 = ; //  (optional)
+InlineObject2 *inlineObject2 = ; //  (optional)
 
 // Create a Image 3 Product by its id
 [apiInstance uploadImage3With:id
-    inlineObject1:inlineObject1
+    inlineObject2:inlineObject2
               completionHandler: ^(NSError* error) {
     if (error) {
         NSLog(@"Error: %@", error);
@@ -8358,7 +8768,7 @@ InlineObject1 *inlineObject1 = ; //  (optional)
 var api = new OpenApiDefinition.ProductsRestControllerApi()
 var id = 56; // {Integer} id of Product to be searched
 var opts = {
-  'inlineObject1':  // {InlineObject1} 
+  'inlineObject2':  // {InlineObject2} 
 };
 
 var callback = function(error, data, response) {
@@ -8392,11 +8802,11 @@ namespace Example
             // Create an instance of the API class
             var apiInstance = new ProductsRestControllerApi();
             var id = 56;  // Integer | id of Product to be searched (default to null)
-            var inlineObject1 = new InlineObject1(); // InlineObject1 |  (optional) 
+            var inlineObject2 = new InlineObject2(); // InlineObject2 |  (optional) 
 
             try {
                 // Create a Image 3 Product by its id
-                apiInstance.uploadImage3(id, inlineObject1);
+                apiInstance.uploadImage3(id, inlineObject2);
             } catch (Exception e) {
                 Debug.Print("Exception when calling ProductsRestControllerApi.uploadImage3: " + e.Message );
             }
@@ -8413,10 +8823,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Create an instance of the API class
 $api_instance = new OpenAPITools\Client\Api\ProductsRestControllerApi();
 $id = 56; // Integer | id of Product to be searched
-$inlineObject1 = ; // InlineObject1 | 
+$inlineObject2 = ; // InlineObject2 | 
 
 try {
-    $api_instance->uploadImage3($id, $inlineObject1);
+    $api_instance->uploadImage3($id, $inlineObject2);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsRestControllerApi->uploadImage3: ', $e->getMessage(), PHP_EOL;
 }
@@ -8431,10 +8841,10 @@ use WWW::OPenAPIClient::ProductsRestControllerApi;
 # Create an instance of the API class
 my $api_instance = WWW::OPenAPIClient::ProductsRestControllerApi->new();
 my $id = 56; # Integer | id of Product to be searched
-my $inlineObject1 = WWW::OPenAPIClient::Object::InlineObject1->new(); # InlineObject1 | 
+my $inlineObject2 = WWW::OPenAPIClient::Object::InlineObject2->new(); # InlineObject2 | 
 
 eval {
-    $api_instance->uploadImage3(id => $id, inlineObject1 => $inlineObject1);
+    $api_instance->uploadImage3(id => $id, inlineObject2 => $inlineObject2);
 };
 if ($@) {
     warn "Exception when calling ProductsRestControllerApi->uploadImage3: $@\n";
@@ -8451,11 +8861,11 @@ from pprint import pprint
 # Create an instance of the API class
 api_instance = openapi_client.ProductsRestControllerApi()
 id = 56 # Integer | id of Product to be searched (default to null)
-inlineObject1 =  # InlineObject1 |  (optional)
+inlineObject2 =  # InlineObject2 |  (optional)
 
 try:
     # Create a Image 3 Product by its id
-    api_instance.upload_image3(id, inlineObject1=inlineObject1)
+    api_instance.upload_image3(id, inlineObject2=inlineObject2)
 except ApiException as e:
     print("Exception when calling ProductsRestControllerApi->uploadImage3: %s\n" % e)</code></pre>
                             </div>
@@ -8465,10 +8875,10 @@ except ApiException as e:
 
 pub fn main() {
     let id = 56; // Integer
-    let inlineObject1 = ; // InlineObject1
+    let inlineObject2 = ; // InlineObject2
 
     let mut context = ProductsRestControllerApi::Context::default();
-    let result = client.uploadImage3(id, inlineObject1, &context).wait();
+    let result = client.uploadImage3(id, inlineObject2, &context).wait();
 
     println!("{:?}", result);
 }
@@ -8524,7 +8934,7 @@ id of Product to be searched
                                 <th width="150px">Name</th>
                                 <th>Description</th>
                               </tr>
-                                <tr><td style="width:150px;">inlineObject1 </td>
+                                <tr><td style="width:150px;">inlineObject2 </td>
 <td>
 <p class="marked"></p>
 <script>
@@ -8533,7 +8943,7 @@ $(document).ready(function() {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/inline_object_1"
+        "$ref" : "#/components/schemas/inline_object_2"
       }
     }
   }
@@ -8553,12 +8963,12 @@ $(document).ready(function() {
   }
 
   var view = new JSONSchemaView(schema,2,{isBodyParam: true});
-  var result = $('#d2e199_uploadImage3_inlineObject1');
+  var result = $('#d2e199_uploadImage3_inlineObject2');
   result.empty();
   result.append(view.render());
 });
 </script>
-<div id="d2e199_uploadImage3_inlineObject1"></div>
+<div id="d2e199_uploadImage3_inlineObject2"></div>
 </td>
 </tr>
 

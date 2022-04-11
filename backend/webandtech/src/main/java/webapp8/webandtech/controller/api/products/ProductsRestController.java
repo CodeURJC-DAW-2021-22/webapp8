@@ -38,8 +38,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import webapp8.webandtech.model.Product;
 import webapp8.webandtech.model.Rating;
+import webapp8.webandtech.model.User;
 import webapp8.webandtech.service.ProductService;
 import webapp8.webandtech.service.RatingService;
+import webapp8.webandtech.service.UserService;
 
 @RestController
 @CrossOrigin
@@ -52,6 +54,9 @@ public class ProductsRestController {
 	
     @Autowired
 	private RatingService ratingService;
+
+    @Autowired
+	private UserService userService;
 
 	@Operation(summary = "Get New Six Products")
 	@ApiResponses(value = { 
@@ -502,19 +507,19 @@ public class ProductsRestController {
 	@ApiResponses(value = { 
 			@ApiResponse(
 					responseCode = "200", 
-					description = "Found the Image Product", 
+					description = "Found the ratings Product", 
 					content = {@Content(
 							mediaType = "application/json"
 							)}
 					),
 			@ApiResponse(
 					responseCode = "404", 
-					description = "Product not found", 
+					description = "ratings not found", 
 					content = @Content
 					),
 			@ApiResponse(
 					responseCode = "204", 
-					description = "Image not found", 
+					description = "ratings not found", 
 					content = @Content
 					)
 	})
@@ -524,6 +529,42 @@ public class ProductsRestController {
 		if(!product.isEmpty()) { 
 			List<Rating> productList = ratingService.getMoreRating(PageRequest.of(Integer.parseInt(page), 10,Sort.by("idproduct").ascending()), product.get()).getContent();
 			return productList;
+		}else {
+				return null;
+			}
+		
+	}
+
+	@Operation(summary = "Ratings")
+	@ApiResponses(value = { 
+			@ApiResponse(
+					responseCode = "200", 
+					description = "Found the ratings Product", 
+					content = {@Content(
+							mediaType = "application/json"
+							)}
+					),
+			@ApiResponse(
+					responseCode = "404", 
+					description = "ratings not found", 
+					content = @Content
+					),
+			@ApiResponse(
+					responseCode = "204", 
+					description = "ratings not found", 
+					content = @Content
+					)
+	})
+	@PostMapping("/{id}/ratings")
+	public Rating setProductRatings( @Parameter(description="id of Product to be searched") @PathVariable int id, @Parameter(description="Text of rating") @RequestBody String ratingtext, @Parameter(description="Id user") @RequestBody int iduser) throws SQLException{
+		Optional<Product> product = productService.getProductById(id);
+		Optional<User> user = userService.getUserId(iduser);
+		Rating rating = new Rating();
+		if(!product.isEmpty()) { 
+			rating.setIduser(user.get());
+        	rating.setIdproduct(product.get());
+        	ratingService.save(rating);
+			return rating;
 		}else {
 				return null;
 			}

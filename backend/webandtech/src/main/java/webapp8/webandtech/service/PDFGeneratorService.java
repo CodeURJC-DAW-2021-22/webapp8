@@ -65,8 +65,8 @@ public class PDFGeneratorService {
          
         document.add(p);
         
-        Image logo = Image.getInstance("backend/webandtech/src/main/resources/static/images/logo.jpg");
-        document.add(logo);
+        // Image logo = Image.getInstance("backend/webandtech/src/main/resources/static/images/logo.jpg");
+        // document.add(logo);
 
         Paragraph idOrder = new Paragraph("Factura: "+ (ord.get(0).getIdorder()+1));
         idOrder.setAlignment(Paragraph.ALIGN_LEFT);

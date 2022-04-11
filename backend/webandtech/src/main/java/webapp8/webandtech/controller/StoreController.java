@@ -101,7 +101,6 @@ public class StoreController {
 		order.setOrderdate(date);
         orderService.saveOrder(order);
         carShop.getCarShop().clear();
-        //new pdf
         response.sendRedirect("/index");
     
     }

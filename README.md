@@ -249,8 +249,141 @@ Leyenda del diagrama:
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |
-   | 1º | BBDD and Class diagrams	| [Update README](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/1cc607fccc6578859531b90402ac96f8dcba81a8) | [README.md](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |
-   | 2º	| Users Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f4223a9f78ed236c3510cdf7d51fe4c28470720d) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
-   | 3º	| Products Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/0f3d9e44b3ea760c2a879d7833ee3a99bd179e8b) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
-   | 4º	| Ratings Loader	| [Update Loader](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/dcb3571037c140cae6af77ffa5f565d28393c9ce) | [Loader.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
-   | 5º	| Aplication images	| [Update README](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/bc1fc3f71ae2c366f97249f4edd99ba7b9fdc578) | [README.md](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |
+   | 1º | BBDD and Class diagrams	| (https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/1cc607fccc6578859531b90402ac96f8dcba81a8) | (https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |
+   | 2º	| Users Loader	| (https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/f4223a9f78ed236c3510cdf7d51fe4c28470720d) | (https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 3º	| Products Loader	| (https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/0f3d9e44b3ea760c2a879d7833ee3a99bd179e8b) | (https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 4º	| Ratings Loader	| (https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/dcb3571037c140cae6af77ffa5f565d28393c9ce) | (https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Loader.java) |
+   | 5º	| Aplication images	| (https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/bc1fc3f71ae2c366f97249f4edd99ba7b9fdc578) | (https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/README.md) |
+   
+   
+
+
+# Fase 3
+###API REST a la aplicación web y despliegue con docker.
+### Aplicación implementada en Heroku
+https://codeurjc-daw-2021-22-webapp8.herokuapp.com/ 
+
+##Credenciales de usuario de ejemplo:
+Nombre de usuario: Jonathan
+Contraseña: f
+
+### Documentación API Rest
+*Archivo yaml: (LINK)
+*Documentación API REST: (LINK)
+
+### Actualización del diagrama de clases:
+
+![imagen](https://user-images.githubusercontent.com/79695876/162638645-46ea2c53-3a0b-486d-82e3-5eb5898261fa.png)
+
+
+
+### Instrucciones de ejecución de la aplicación dockerizada:
+
+1. Es necesaria la instalacion de docker y docker compose. 
+
+2. Abrir la terminal navegar hasta la carpeta Docker. 
+
+3.1. Windows: Escribir el comando: "docker-compose up --build". 
+
+3.2. Linux: Escribir el comando: "sudo docker-compose up --build".
+
+4. Una vez finalizado el proceso de construcción de docker abrir el navegador y escribir:"https://localhost:8443/". 
+
+5. Una vez escrita te redirigida a la pantalla de registro de la aplicacion: "https://localhost:8443/sign-in" una vez se cargue estará lista para ser utilizada.
+
+### Documentación para construcción de la imagen docker:
+LINUX:
+
+1. Clonar repositorio mediante git clone "https://github.com/CodeURJC-DAW-2020-21/webapp8.git"
+
+2. Descargar Docker 
+
+3. Descargar Docker Compose
+
+4. Navegar hasta la carpeta Docker
+
+5. Ejecutar el comando: "chmod 777 create_image.sh"
+
+6. Ejecutar el comando: "./create_image.sh"
+
+
+### Instrucciones para implementar la aplicación en Heroku 
+Para implementar la aplicación en Heroku, debe seguir los siguientes pasos:
+
+1. Crea una cuenta en Heroku.
+2. Instale el paquete Heroku.
+3. Instalar experto.
+4. Abra cualquier shell de tipo "bash".
+5. Inicie sesión en Heroku usando el comando "heroku login".
+6. Use el comando "cd" hasta llegar a la carpeta "Docker".
+7. Ejecute el comando "./create_heroku_app.sh codeurjc-daw-2021-22-webapp8".
+8. Ejecute el comando "./deploy_heroku_app.sh codeurjc-daw-2021-22-webapp8".
+9. Abra su panel de Heroku, haga clic en el nuevo repositorio y luego haga clic en "Abrir aplicación".
+
+
+### Participación de miembros
+
+#### Guillermo Martín García	| g.martingarcia@alumnos.urjc.es
+
+> 
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º |Añadir la base de la aplicación, archivos jwt y varias actualizaciones	| [Update app api](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/2f951f1ce85c26bb4db11eecb6ee3a677ba688a0)  | [UserRestController](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/api/users/UserRestControler.java)|
+   | 2º |Borrado de cosas sobrantes y actualización de partes de la API	| [Update api](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/656e71e44666f750519b785970a2d065c1652240)  | [AdminRestController](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/api/admins/AdminRestController.java)|
+   | 3º |Añadir rest security config | [Update security api](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/14f2df0d4a8a64b0ab57638011663245b00f44ac)  | [LoginApiController](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/api/auth/LoginApiController.java)|
+   | 4º |Actualización de varias partes de la app	| [Update app](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/b1c6b58a3621edc7bd03d658df7d8c096c227418)  | [pom.xml](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/pom.xml)|
+   | 5º |Modificación de varias partes destacando product service	| [Update app](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/73810a2a4231856fa67ca0f040516fbcbfab959f)  | [ProductService](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/service/ProductService.java)|
+   
+#### Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es
+
+
+> 
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 2º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 3º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 4º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 5º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+
+#### Víctor López Rodríguez | v.lopezrodr@alumnos.urjc.es
+
+> 
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º |Modificar el product service para que funcione con API rest	| [Updates](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/7838eb496725bbc0d6fc013dafc63eb85a9c9e43)  | [ProductService](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/service/ProductService.java)|
+   | 2º |Modificacion del product rest controller	| [update productcrontroller](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/e2b2e9c28aeab1f2de0afb87f4bd43d2b2984c9c)  | [ProductsRestController](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/api/products/ProductsRestController.java)|
+   | 3º |Modificacion del product rest controller	| [update productcrontroller](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/cccc7dcb014b9434fd81829dfb73bb30257b40f7)  | [UserRestController](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/controller/UserController.java)|
+   | 4º |Modificacion del product rest controller	| [update productrestcontroller](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/b224faa4f147621a0a270fd0941d1f23ab13c4e8)  | [ProductRepository](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/repository/ProductRepository.java)|
+   | 5º |Modicicaciones para los productos	| [update API](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/e8517894af9a99bd44551bc79718cbbde4e2f0a6)  | [RatingService](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/main/backend/webandtech/src/main/java/webapp8/webandtech/service/RatingService.java)|
+
+
+#### Rodrigo Montilla Fernández | r.montilla.2019@alumnos.urjc.es
+
+
+> 
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º |Añadir API REST User Model	| [API REST User Model](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/d9c2a0700e41f1c96886e107fdac6359b9bac886)  | [User](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/User.java)|
+   | 2º |Añadir API REST Rol Model	| [API REST Rol Model](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/fd93cee5f70accd76a861af7d5a268f00fceb828)  | [Rol](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Rol.java)|
+   | 3º |Añadir API REST Rating Model	| [API REST Rating Model](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/4ae213684c3b7552d33cbdda6b2cf25b583e86c8)  | [Rating](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Rating.java)|
+   | 4º |Añadir API REST Product Model	| [API REST Product Model](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/5009d2686aca7b93fa96f3f577ffb442de316d17)  | [Product](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Product.java)|
+   | 5º |Añadir API REST Order Model	| [API REST Order Model](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/2d6d90a79d3a57eeeba4009f97f774c53dfcc844)  | [Order](https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/src/main/java/webapp8/webandtech/model/Order.java)|
+
+#### Fernando Prieto Olías	| f.prieto.2019@alumnos.urjc.es
+
+
+> 
+
+| Número	| Descripción	| Commit | Archivos |
+   | :---: | :---: | :---: | :---: |
+   | 1º |Creacion de Dockerfile y dockerizacion de la app	| [add Dockerfile](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/138efb01500c9174b30c995ad97ab67b404016e3)  | [Dockerfile](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/feature/docker/docker/Dockerfile)|
+   | 2º |Creacion del contenedor de la app con docker-compose	| [add docker-compose](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/ceaae46af748ca308b1ec1a40e2fbf10709ff17e)  | [docker-compose.yml](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/feature/docker/docker/docker-compose.yml)|
+   | 3º |Configuracion del pom para heroku	| [update pom](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/e54e7a6a2bb3efe8e5497d7ee9ce3ff41f6b6b5a)  | [pom.xml](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/feature/docker/backend/webandtech/pom.xml)|
+   | 4º |Configuracion de la base de datos para heroku	| [add DatabaseConfig](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/652baec620e5c94466787d4154fb3c763cd378fe)  | [DatabaseConfig.java](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/feature/docker/backend/webandtech/src/main/java/webapp8/webandtech/DatabaseConfig.java)|
+   | 5º |Configuracion del puerto en application.properties para heroku	| [update application.properties](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/0e0ae6fe6c94037d1fea1ae0896fec7c7a9a6493)  | [application.properties](https://github.com/CodeURJC-DAW-2021-22/webapp8/blame/feature/docker/backend/webandtech/src/main/resources/application.properties)|
+   

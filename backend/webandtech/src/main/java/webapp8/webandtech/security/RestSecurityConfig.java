@@ -49,6 +49,8 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.antMatcher("/api/**");
 
 		/*Users*/
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/users/**").hasRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/users/").permitAll();
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/users/**").hasRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/users/**").hasRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/users/**").hasRole("USER");
@@ -58,6 +60,13 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/products/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/products/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/products/**").hasRole("ADMIN");
+		
+		/*admins*/
+		
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/admins/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/admins/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/admins/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/admins/**").hasRole("ADMIN");
 
 		/*Statitics*/
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/statistics/**").hasRole("ADMIN");

@@ -342,19 +342,19 @@ Para implementar la aplicación en Heroku, debe seguir los siguientes pasos:
 #### Sergio Octavio Mancebo	| s.octavio.2018@alumnos.urjc.es
 
 
-> 
+> Sergio ha sido el encargado de realizar el controlador de UserRestControler, además de diseñar el Diagrama de Clases y redactar el [README](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/6efc7b8a96d4dade971117b02f8e447cc8dcca6d) para esta Fase 3.
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |
-   | 1º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 2º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 3º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 4º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
-   | 5º |DESCRIPCION	| [COMMIT](link)  | [claseJAVA](link)|
+   | 1º | Implementación UserRestControler | [Add UserRestControler ](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/df54016451cc49b9c775cfa20aa13e7a8496f792)  | [UserRestControler.java](backend/webandtech/src/main/java/webapp8/webandtech/controller/api/users/UserRestControler.java)|
+   | 2º |Implementación UserRestControler	| [Add UserRestControler ](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/71f9a7e8405d89e0e4dd80bfeb68150bb78279a0)  | [UserRestControler.java](backend/webandtech/src/main/java/webapp8/webandtech/controller/api/users/UserRestControler.java)|
+   | 3º |Implementación UserRestControler	| [Add UserRestControler ](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/8bcb9707ef467db2063a8e41f32bc4314b3b00af)  | [UserRestControler.java](backend/webandtech/src/main/java/webapp8/webandtech/controller/api/users/UserRestControler.java)|
+   | 4º |Implementación UserRestControler	| [Add UserRestControler ](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/193898a15428c763cd9685001c90cf20da58d09f)  | [UserRestControler.java](backend/webandtech/src/main/java/webapp8/webandtech/controller/api/users/UserRestControler.java)|
+   | 5º |Implementación UserRestControler	| [Add UserRestControler ](https://github.com/CodeURJC-DAW-2021-22/webapp8/commit/df54016451cc49b9c775cfa20aa13e7a8496f792)  | [UserRestControler.java](backend/webandtech/src/main/java/webapp8/webandtech/controller/api/users/UserRestControler.java)|
 
 #### Víctor López Rodríguez | v.lopezrodr@alumnos.urjc.es
 
-> 
+
 
 | Número	| Descripción	| Commit | Archivos |
    | :---: | :---: | :---: | :---: |

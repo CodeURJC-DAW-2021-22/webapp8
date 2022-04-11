@@ -273,7 +273,7 @@ Contraseña: f
 
 *Archivo yaml: https://github.com/CodeURJC-DAW-2021-22/webapp8/blob/main/backend/webandtech/api-docs/api-docs.yaml
 
-*Documentación API REST: (LINK)
+*Documentación API REST: https://rawcdn.githack.com/CodeURJC-DAW-2021-22/webapp8/7dde1b87c7c046e7c02de58391e7e06e63f4adf8/backend/webandtech/api-docs/api-docs.html
 
 ### Actualización del diagrama de clases:
 

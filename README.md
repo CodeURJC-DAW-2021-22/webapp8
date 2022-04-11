@@ -298,7 +298,7 @@ Contraseña: f
 ### Documentación para construcción de la imagen docker:
 LINUX:
 
-1. Clonar repositorio mediante git clone "https://github.com/CodeURJC-DAW-2020-21/webapp8.git"
+1. Clonar repositorio mediante git clone https://github.com/CodeURJC-DAW-2021-22/webapp8.git
 
 2. Descargar Docker 
 

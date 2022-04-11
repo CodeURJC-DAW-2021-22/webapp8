@@ -24,7 +24,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int iduser;
-	@JsonView(Detailed.class)
+	@JsonView(Basic.class)
 	@Column
 	private String email;
 	@JsonView(Basic.class)
@@ -33,7 +33,7 @@ public class User {
 	@JsonView(Detailed.class)
 	@Column
 	private String pass;
-	@JsonView(Detailed.class)
+	@JsonView(Basic.class)
 	@Column
 	private String completname;
 	@Lob
@@ -41,7 +41,7 @@ public class User {
 	private Blob userimg;
 	@Column
 	private boolean userprofile;
-	@JsonView(Detailed.class)
+	@JsonView(Basic.class)
 	@Column
 	private String address;
 	

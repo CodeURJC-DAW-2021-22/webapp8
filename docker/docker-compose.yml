@@ -5,8 +5,8 @@ services:
     ports:
       - "8443:8443"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://ec2-52-73-155-171.compute-1.amazonaws.com:5432/db6ur7a8r51q3a
-      - SPRING_DATASOURCE_USERNAME=xrlxwzkarguimj
-      - SPRING_DATASOURCE_PASSWORD=5f77730cc7043e05b1eff7e68221ad9c95c055fd99b5c8c2707e5ac1f0fb9d3a
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://ec2-44-194-92-192.compute-1.amazonaws.com:5432/df61ip4spl1gtn
+      - SPRING_DATASOURCE_USERNAME=nokxfzhoweailt
+      - SPRING_DATASOURCE_PASSWORD=4dcdbcd230adc7a742697c006b64ce540734d2b8f71c43bc82bbff5193152b21
     volumes:
       - .:/usr/app

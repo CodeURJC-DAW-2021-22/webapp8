@@ -1,0 +1,253 @@
+# Created at 2022-04-17T22:59:56.753
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:398)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+
+# Created at 2022-04-17T22:59:57.271
+Unexpected IOException with stream: 2022-04-17 22:59:57.270  INFO 25960 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+
+
+# Created at 2022-04-17T22:59:57.283
+Unexpected IOException with stream: 2022-04-17 22:59:57.282  INFO 25960 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+
+
+# Created at 2022-04-17T22:59:58.148
+Unexpected IOException with stream: 2022-04-17 22:59:58.148  WARN 25960 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+
+
+# Created at 2022-04-17T22:59:58.977
+Unexpected IOException with stream: 2022-04-17 22:59:58.976 DEBUG 25960 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+
+
+# Created at 2022-04-17T22:59:59.175
+Unexpected IOException with stream: 2022-04-17 22:59:59.174 DEBUG 25960 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 83 mappings in 'requestMappingHandlerMapping'
+
+
+# Created at 2022-04-17T22:59:59.184
+Unexpected IOException with stream: 2022-04-17 22:59:59.183  INFO 25960 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+
+
+# Created at 2022-04-17T23:00:00.011
+Unexpected IOException with stream: 2022-04-17 23:00:00.009 DEBUG 25960 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
+
+
+# Created at 2022-04-17T23:00:00.038
+Unexpected IOException with stream: 2022-04-17 23:00:00.037 DEBUG 25960 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+
+
+# Created at 2022-04-17T23:00:00.675
+Unexpected IOException with stream: 2022-04-17 23:00:00.674 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_USER')] for Ant [pattern='/api/users/**', GET]
+
+
+# Created at 2022-04-17T23:00:00.676
+Unexpected IOException with stream: 2022-04-17 23:00:00.675 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/api/users/', POST]
+
+
+# Created at 2022-04-17T23:00:00.677
+Unexpected IOException with stream: 2022-04-17 23:00:00.676 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_USER')] for Ant [pattern='/api/users/**', POST]
+
+
+# Created at 2022-04-17T23:00:00.677
+Unexpected IOException with stream: 2022-04-17 23:00:00.677 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_USER')] for Ant [pattern='/api/users/**', PUT]
+
+
+# Created at 2022-04-17T23:00:00.678
+Unexpected IOException with stream: 2022-04-17 23:00:00.678 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_USER')] for Ant [pattern='/api/users/**', DELETE]
+
+
+# Created at 2022-04-17T23:00:00.679
+Unexpected IOException with stream: 2022-04-17 23:00:00.679 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_ADMIN')] for Ant [pattern='/api/products/**', POST]
+
+
+# Created at 2022-04-17T23:00:00.680
+Unexpected IOException with stream: 2022-04-17 23:00:00.679 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_ADMIN')] for Ant [pattern='/api/products/**', PUT]
+
+
+# Created at 2022-04-17T23:00:00.681
+Unexpected IOException with stream: 2022-04-17 23:00:00.680 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_ADMIN')] for Ant [pattern='/api/products/**', DELETE]
+
+
+# Created at 2022-04-17T23:00:00.681
+Unexpected IOException with stream: 2022-04-17 23:00:00.681 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_ADMIN')] for Ant [pattern='/api/admins/**', GET]
+
+
+# Created at 2022-04-17T23:00:00.682
+Unexpected IOException with stream: 2022-04-17 23:00:00.682 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_ADMIN')] for Ant [pattern='/api/admins/**', POST]
+
+
+# Created at 2022-04-17T23:00:00.683
+Unexpected IOException with stream: 2022-04-17 23:00:00.682 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_ADMIN')] for Ant [pattern='/api/admins/**', PUT]
+
+
+# Created at 2022-04-17T23:00:00.684
+Unexpected IOException with stream: 2022-04-17 23:00:00.683 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_ADMIN')] for Ant [pattern='/api/admins/**', DELETE]
+
+
+# Created at 2022-04-17T23:00:00.685
+Unexpected IOException with stream: 2022-04-17 23:00:00.684 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasRole('ROLE_ADMIN')] for Ant [pattern='/api/statistics/**', GET]
+
+
+# Created at 2022-04-17T23:00:00.685
+Unexpected IOException with stream: 2022-04-17 23:00:00.685 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for any request
+
+
+# Created at 2022-04-17T23:00:00.701
+Unexpected IOException with stream: 2022-04-17 23:00:00.701  INFO 25960 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/api/**'] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3bf306d3, org.springframework.security.web.context.SecurityContextPersistenceFilter@42a89cef, org.springframework.security.web.header.HeaderWriterFilter@1267f832, org.springframework.security.web.authentication.logout.LogoutFilter@1f3310fc, webapp8.webandtech.security.jwt.JwtRequestFilter@2665a2e7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f473daf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5319e4fc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5101b9, org.springframework.security.web.session.SessionManagementFilter@659565ed, org.springframework.security.web.access.ExceptionTranslationFilter@79d8075c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@28721794]
+
+
+# Created at 2022-04-17T23:00:00.716
+Unexpected IOException with stream: 2022-04-17 23:00:00.715 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/css/**']
+
+
+# Created at 2022-04-17T23:00:00.716
+Unexpected IOException with stream: 2022-04-17 23:00:00.716 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/js/**']
+
+
+# Created at 2022-04-17T23:00:00.717
+Unexpected IOException with stream: 2022-04-17 23:00:00.717 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/lib/**']
+
+
+# Created at 2022-04-17T23:00:00.717
+Unexpected IOException with stream: 2022-04-17 23:00:00.717 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/images/**']
+
+
+# Created at 2022-04-17T23:00:00.718
+Unexpected IOException with stream: 2022-04-17 23:00:00.718 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/fonts/**']
+
+
+# Created at 2022-04-17T23:00:00.718
+Unexpected IOException with stream: 2022-04-17 23:00:00.718 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/ajax/**']
+
+
+# Created at 2022-04-17T23:00:00.719
+Unexpected IOException with stream: 2022-04-17 23:00:00.719 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/']
+
+
+# Created at 2022-04-17T23:00:00.719
+Unexpected IOException with stream: 2022-04-17 23:00:00.719 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/index']
+
+
+# Created at 2022-04-17T23:00:00.720
+Unexpected IOException with stream: 2022-04-17 23:00:00.719 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/login']
+
+
+# Created at 2022-04-17T23:00:00.720
+Unexpected IOException with stream: 2022-04-17 23:00:00.720 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/registerUser']
+
+
+# Created at 2022-04-17T23:00:00.721
+Unexpected IOException with stream: 2022-04-17 23:00:00.721 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/components']
+
+
+# Created at 2022-04-17T23:00:00.722
+Unexpected IOException with stream: 2022-04-17 23:00:00.721 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/peripherals']
+
+
+# Created at 2022-04-17T23:00:00.722
+Unexpected IOException with stream: 2022-04-17 23:00:00.722 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/phones']
+
+
+# Created at 2022-04-17T23:00:00.723
+Unexpected IOException with stream: 2022-04-17 23:00:00.722 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/productImg1/**']
+
+
+# Created at 2022-04-17T23:00:00.723
+Unexpected IOException with stream: 2022-04-17 23:00:00.723 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/productImg2/**']
+
+
+# Created at 2022-04-17T23:00:00.723
+Unexpected IOException with stream: 2022-04-17 23:00:00.723 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/productImg3/**']
+
+
+# Created at 2022-04-17T23:00:00.724
+Unexpected IOException with stream: 2022-04-17 23:00:00.724 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/imageprofile/**']
+
+
+# Created at 2022-04-17T23:00:00.724
+Unexpected IOException with stream: 2022-04-17 23:00:00.724 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/deleteProductShopCar']
+
+
+# Created at 2022-04-17T23:00:00.725
+Unexpected IOException with stream: 2022-04-17 23:00:00.725 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/products/**']
+
+
+# Created at 2022-04-17T23:00:00.725
+Unexpected IOException with stream: 2022-04-17 23:00:00.725 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/forgotPassword']
+
+
+# Created at 2022-04-17T23:00:00.726
+Unexpected IOException with stream: 2022-04-17 23:00:00.726 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/getMoreProductsPage']
+
+
+# Created at 2022-04-17T23:00:00.726
+Unexpected IOException with stream: 2022-04-17 23:00:00.726 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/moreProducts']
+
+
+# Created at 2022-04-17T23:00:00.727
+Unexpected IOException with stream: 2022-04-17 23:00:00.726 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/api/**']
+
+
+# Created at 2022-04-17T23:00:00.727
+Unexpected IOException with stream: 2022-04-17 23:00:00.727 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/error']
+
+
+# Created at 2022-04-17T23:00:00.728
+Unexpected IOException with stream: 2022-04-17 23:00:00.727 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='httpss://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js']
+
+
+# Created at 2022-04-17T23:00:00.728
+Unexpected IOException with stream: 2022-04-17 23:00:00.728 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/swagger-ui.html']
+
+
+# Created at 2022-04-17T23:00:00.729
+Unexpected IOException with stream: 2022-04-17 23:00:00.728 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/v3/**']
+
+
+# Created at 2022-04-17T23:00:00.729
+Unexpected IOException with stream: 2022-04-17 23:00:00.729 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/swagger-ui/**']
+
+
+# Created at 2022-04-17T23:00:00.730
+Unexpected IOException with stream: 2022-04-17 23:00:00.729 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/carShop']
+
+
+# Created at 2022-04-17T23:00:00.730
+Unexpected IOException with stream: 2022-04-17 23:00:00.730 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/checkout/**']
+
+
+# Created at 2022-04-17T23:00:00.730
+Unexpected IOException with stream: 2022-04-17 23:00:00.730 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/users/**']
+
+
+# Created at 2022-04-17T23:00:00.731
+Unexpected IOException with stream: 2022-04-17 23:00:00.731 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/admin/**']
+
+
+# Created at 2022-04-17T23:00:00.731
+Unexpected IOException with stream: 2022-04-17 23:00:00.731 DEBUG 25960 --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [authenticated] for any request
+
+
+# Created at 2022-04-17T23:00:00.745
+Unexpected IOException with stream: 2022-04-17 23:00:00.745  INFO 25960 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c6553c6, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a49753, org.springframework.security.web.header.HeaderWriterFilter@55159007, org.springframework.security.web.csrf.CsrfFilter@19f9404d, org.springframework.security.web.authentication.logout.LogoutFilter@455cb6d9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@383a5260, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e68ccc9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1784fcab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59ac60d1, org.springframework.security.web.session.SessionManagementFilter@edf4973, org.springframework.security.web.access.ExceptionTranslationFilter@63d43a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@648bfebe]
+
+
+# Created at 2022-04-17T23:00:00.844
+Unexpected IOException with stream: 2022-04-17 23:00:00.843  INFO 25960 --- [           main] webapp8.webandtech.AppTest               : Started AppTest in 10.707 seconds (JVM running for 11.791)
+
+
+# Created at 2022-04-17T23:00:00.875
+Unexpected IOException: 5,1,webapp8.webandtech.AppTest,contextLoads,null,null,null
+
+
+# Created at 2022-04-17T23:00:01.185
+Unexpected IOException: 6,1,webapp8.webandtech.AppTest,contextLoads,null,null,null
+
+
+# Created at 2022-04-17T23:00:01.188
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,webapp8.webandtech.AppTest,null,null,null
+
+
